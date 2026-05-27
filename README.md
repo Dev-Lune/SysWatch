@@ -12,13 +12,13 @@ Just a 6-character pairing code and you're done.
 
 <table><tr>
 <td><a href="https://github.com/Dev-Lune/SysWatch/releases/latest"><img src="./images/btn-download-desktop.svg" alt="Download the desktop app — Windows, macOS, Linux" width="380"></a></td>
-<td><a href="https://play.google.com/store/apps/details?id=dev.syswatch.remote"><img src="./images/btn-google-play.svg" alt="Get SysWatch on Google Play" width="380"></a></td>
+<td><a href="https://play.google.com/store/apps/details?id=in.devlune.syswatch"><img src="./images/btn-google-play.svg" alt="Get SysWatch on Google Play" width="380"></a></td>
 </tr></table>
 
-<table><tr>
+<!-- <table><tr>
 <td><a href="https://github.com/Dev-Lune/SysWatch"><img src="./images/btn-star-github.svg" alt="Star SysWatch on GitHub" width="260"></a></td>
 <td><a href="https://buymeacoffee.com/devlune"><img src="./images/btn-buy-coffee.svg" alt="Buy us a coffee — support SysWatch" width="260"></a></td>
-</tr></table>
+</tr></table> -->
 
 <sub>🛡 MIT License  ·  🪶 Built on Tauri v2 + Rust + React  ·  🏠 Made by <a href="https://devlune.in">DevLune Studio</a>, Hyderabad, IN</sub>
 
@@ -129,7 +129,7 @@ on the other side of the house is still plugged in.
 <br><sub>All installers live in the latest GitHub release.</sub>
 </td>
 <td width="50%" align="center">
-<a href="https://play.google.com/store/apps/details?id=dev.syswatch.remote"><img src="./images/btn-google-play.svg" alt="Get SysWatch on Google Play" width="380"></a>
+<a href="https://play.google.com/store/apps/details?id=in.devlune.syswatch"><img src="./images/btn-google-play.svg" alt="Get SysWatch on Google Play" width="380"></a>
 <br><sub>Android 7.0 (API 24) and newer.</sub>
 </td>
 </tr></table>
