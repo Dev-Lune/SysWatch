@@ -1,3 +1,42 @@
+# SysWatch 0.2.0 release notes
+
+**Released:** 10 Nov 2026 · **Desktop:** Windows 10 / 11, 64-bit · **Android app:** 1.1.0, not on Google Play yet at the time of this release
+
+## Download
+
+| File | For |
+|---|---|
+| `SysWatch_0.2.0_x64-setup.exe` | Most people. Run it and follow the installer. |
+| `SysWatch_0.2.0_x64_en-US.msi` | IT-managed PCs that need an MSI. |
+
+Step by step guide: <https://devlune.in/download/syswatch>
+
+Windows SmartScreen will warn that the installer is unrecognised, because it is not code signed yet. Choose **More info**, then **Run anyway**.
+
+## What is new
+
+- **Local mode.** Connect the phone straight to the PC over Wi-Fi. Instant, private, no internet needed.
+- **Tailscale.** Use local mode from anywhere.
+- **A redesigned Android app** with your own accent colour, themes, card order, standby faces and widget looks.
+- **Thirteen desktop reliability fixes**, including a crash loop and a missing pairing code on fresh installs.
+- **Update notices** in both apps.
+
+The full list is in the [changelog](./CHANGELOG.md).
+
+## Updating from 0.1.0
+
+Install 0.2.0 over the old version. Your pairing code and settings are kept, and the app stays in Cloud mode, exactly as before. To try Local mode, open Settings, switch the connection to Local, and scan the new QR code with the phone.
+
+**Local mode needs Android app 1.1.0 or newer.** Until that version reaches Google Play, stay on Cloud mode: the current Play version (1.0) does not understand local pairing codes.
+
+## Known limits
+
+- Windows only for now.
+- Not code signed.
+- Local mode is unencrypted on the local network.
+
+---
+
 # SysWatch v0.1.0 — Release Notes
 
 **Release Date:** 2026-05-12  
@@ -61,7 +100,6 @@ This is the initial release. All features listed in `FEATURES.md` are shipping f
 ## Support
 
 - ⭐ Star the repo → [github.com/Dev-Lune/SysWatch](https://github.com/Dev-Lune/SysWatch)
-- ☕ Buy us a coffee → [buymeacoffee.com/devlune](https://buymeacoffee.com/devlune)
 - 💬 Discord → [discord.gg/BXu9qxgaE8](https://discord.gg/BXu9qxgaE8)
 - 🐛 Issues → [github.com/Dev-Lune/SysWatch/issues](https://github.com/Dev-Lune/SysWatch/issues)
 

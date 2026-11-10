@@ -1,3 +1,61 @@
+# SysWatch feature list
+
+Current versions: desktop 0.2.0, Android 1.1.0. Added in these versions:
+
+## Connection
+
+| Mode | How it works | Needs |
+|---|---|---|
+| Cloud | The desktop app sends readings through the SysWatch cloud relay every 2 seconds; the phone subscribes. Works from anywhere. | Internet on both |
+| Local | The phone connects straight to the desktop app on port 47800 and receives every sample as it is taken. | Same Wi-Fi, or Tailscale |
+
+- Pair by scanning one QR code. It carries the code, the mode, the PC's addresses and the port.
+- In local mode the phone finds the PC again by itself if the router gives it a new address.
+- The phone tries each address in order: Wi-Fi first, Tailscale last.
+- Read only: the phone cannot control or run anything on the PC.
+
+## Android app 1.1.0
+
+**Overview**
+- Cards for CPU, GPU, memory, network, storage, battery and system uptime
+- A history graph on every reading
+- Your alert limit drawn as a red line on the gauge, bar and graph
+- Show, hide and reorder cards; roomy or compact layout
+- One column on a phone, a grid on tablets and in landscape
+
+**Look**
+- One accent colour, chosen by you: amber, cyan, green, violet, rose, mono, or matched to your wallpaper on Android 12 and newer
+- Light, dark and true black themes
+
+**Alerts**
+- Rules as sentences: "CPU load above 90%"
+- Limits on load, memory, battery, network speed, storage and temperatures
+- A quiet period per alert: 1 minute, 5 minutes, 15 minutes or 1 hour
+- One-tap starter alerts; export and import as a file
+
+**Standby**
+- 24 always-on faces for a phone on a stand: 16 instrument faces and 8 art faces, portrait and landscape, picked from a gallery
+- Burn-in protection, optional dim after 30 seconds
+
+**Widget**
+- Four looks: rings, bars, numerals, trace
+- Three sizes; shows "PC offline" when readings stop
+
+**Updates**
+- Google Play in-app updates, and a one-time list of what changed after updating
+
+## Desktop app 0.2.0
+
+- Choose Cloud or Local on first run; change it in Settings without restarting
+- Pairing screen lists the PC's addresses and marks the Tailscale one
+- Tells you when a newer version is out
+- Tray icon with show, pair, pause and quit; optional start with Windows
+- Windows 10 and 11, 64-bit
+
+---
+
+The original 0.1.0 catalogue follows.
+
 # SysWatch v0.1.0 — Feature Catalogue
 
 ## Desktop Agent (Windows)

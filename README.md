@@ -1,215 +1,213 @@
-<div align="center">
+<p align="center">
+  <img src="./images/banner.png" alt="SysWatch" width="880">
+</p>
 
-<img src="./images/banner.png" alt="SysWatch banner" width="880">
+<h1 align="center">SysWatch</h1>
 
-# SysWatch
+<p align="center">
+  <b>Your PC's gauges, on your phone.</b><br>
+  A small desktop app reads your CPU, GPU, memory, network, storage and battery.<br>
+  Your phone shows them live, and tells you when one crosses a limit you set.
+</p>
 
-**Watch your PC from your phone — in real time, without the cloud headache.**
+<p align="center">
+  <a href="https://devlune.in/download/syswatch"><img src="https://img.shields.io/badge/Download_for_Windows-E0A458?style=for-the-badge&logo=windows11&logoColor=111111" alt="Download for Windows"></a>
+  <a href="https://play.google.com/store/apps/details?id=in.devlune.syswatch"><img src="https://img.shields.io/badge/Get_it_on_Google_Play-16181B?style=for-the-badge&logo=googleplay&logoColor=E0A458" alt="Get it on Google Play"></a>
+</p>
 
-Low-footprint desktop agent that streams your computer's live hardware telemetry
-straight to your phone over Supabase Realtime. No accounts. No data pipelines.
-Just a 6-character pairing code and you're done.
+<p align="center">
+  <a href="https://github.com/Dev-Lune/SysWatch/releases/latest"><img src="https://img.shields.io/github/v/release/Dev-Lune/SysWatch?label=desktop&color=E0A458&labelColor=16181B" alt="Latest desktop release"></a>
+  <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-E0A458?labelColor=16181B" alt="Windows 10 and 11">
+  <img src="https://img.shields.io/badge/Android-7.0%2B-E0A458?labelColor=16181B" alt="Android 7.0 and newer">
+  <img src="https://img.shields.io/badge/price-free%2C%20no%20ads-E0A458?labelColor=16181B" alt="Free, no ads">
+  <a href="https://github.com/sponsors/Dev-Lune"><img src="https://img.shields.io/badge/Sponsor-16181B?logo=githubsponsors&logoColor=EE8FA8" alt="Sponsor"></a>
+</p>
 
-<table><tr>
-<td><a href="https://github.com/Dev-Lune/SysWatch/releases/latest"><img src="./images/btn-download-desktop.svg" alt="Download the desktop app — Windows, macOS, Linux" width="380"></a></td>
-<td><a href="https://play.google.com/store/apps/details?id=in.devlune.syswatch"><img src="./images/btn-google-play.svg" alt="Get SysWatch on Google Play" width="380"></a></td>
-</tr></table>
-
-<!-- <table><tr>
-<td><a href="https://github.com/Dev-Lune/SysWatch"><img src="./images/btn-star-github.svg" alt="Star SysWatch on GitHub" width="260"></a></td>
-<td><a href="https://buymeacoffee.com/devlune"><img src="./images/btn-buy-coffee.svg" alt="Buy us a coffee — support SysWatch" width="260"></a></td>
-</tr></table> -->
-
-<sub>🛡 MIT License  ·  🪶 Built on Tauri v2 + Rust + React  ·  🏠 Made by <a href="https://devlune.in">DevLune Studio</a>, Hyderabad, IN</sub>
-
-</div>
-
----
-
-## What is SysWatch?
-
-SysWatch is a two-piece system:
-
-- 🖥 **A tiny desktop agent** that lives in your tray and samples your CPU, GPU,
-  RAM, disk, network, and battery a few times a second.
-- 📱 **A mobile companion** that shows the same metrics on your phone as live,
-  beautiful tiles with sparklines and alerts.
-
-Pair them once with a 6-character code. From then on, glance at your phone to
-see if your game PC is thermal-throttling, your render is done, or your laptop
-on the other side of the house is still plugged in.
-
----
-
-## ✨ Features
+<br>
 
 <table>
-<tr>
-<td width="50%" valign="top">
-
-### 🎯 Designed for glanceability
-- 3×2 grid of **glass tiles** — everything at a glance.
-- **Sparklines** on every metric so you see trend, not just a number.
-- **Dark-first** UI with optional Material You dynamic color on Android 12+.
-- **Reduced-motion** toggle that respects your OS setting.
-
-</td>
-<td width="50%" valign="top">
-
-### 📊 Metrics that matter
-- **CPU** — per-core utilisation, total, frequency, package temperature.
-- **GPU** — NVML when available, `sysinfo` fallback; name + load + temp.
-- **RAM** — used / total, with swap.
-- **Disk** — per-volume usage + aggregate read/write throughput.
-- **Network** — up / down bytes per second.
-- **Battery** — percentage, AC-in state, time-to-full / -empty.
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 🔐 Your data, your backend
-- **No SysWatch account.** Ever.
-- The only server involved is **your own Supabase project** (free tier is plenty).
-- Pairing is an **offline handshake** — your phone never learns your machine's
-  IP; it only learns the 6-char code you typed.
-- **Row-level security** makes codes un-enumerable from anonymous clients.
-- Process-list broadcasting is **off by default**.
-
-</td>
-<td width="50%" valign="top">
-
-### 🪶 Built to disappear
-- **Tray-first**: main window hides after launch; tray controls Show / Pair /
-  Pause / Quit.
-- **~30–60 MB RAM, <1% CPU** on a modern laptop while streaming.
-- **Autostart-ready** with a one-click "Launch at login" toggle.
-- **Native installers** for Windows (MSI), macOS (DMG), and Linux (AppImage /
-  deb / rpm).
-- **Offline-tolerant**: sampling keeps running; publishing just pauses when the
-  network is down.
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 🔔 Alerts that come to you
-- Threshold rules on any metric: "CPU > 90% for 30 s", "Battery < 15%",
-  "Disk read < 5 MB/s during export", …
-- Severity levels with **per-rule cooldowns** so you don't get spammed.
-- **Export / import** rule sets as JSON.
-
-</td>
-<td width="50%" valign="top">
-
-### 📱 Phone-first companion
-- Same tiles, reshaped for a phone: 2-column on compact, 3 on medium, 4 on
-  tablets.
-- **Bottom-sheet detail view** for each tile.
-- **Deep links**: scan a QR on the desktop or tap
-  `syswatch://pair?code=ABC123` from anywhere.
-- **Keep-screen-on** and low-power toggles for when the phone is your
-  always-on second display.
-
-</td>
-</tr>
+  <tr>
+    <td align="center" width="25%"><img src="./images/shot-overview.png" alt="Overview with a large CPU reading and its history graph" width="210"><br><sub><b>Overview</b><br>Big readable numbers</sub></td>
+    <td align="center" width="25%"><img src="./images/shot-gauges.png" alt="Overview drawn as dial gauges" width="210"><br><sub><b>Gauges</b><br>One of five layouts</sub></td>
+    <td align="center" width="25%"><img src="./images/shot-standby.png" alt="Standby face showing one large figure on a black screen" width="210"><br><sub><b>Standby</b><br>24 always-on faces</sub></td>
+    <td align="center" width="25%"><img src="./images/shot-settings.png" alt="Settings with accent colour, theme and card order" width="210"><br><sub><b>Make it yours</b><br>Accent, theme, layout</sub></td>
+  </tr>
 </table>
 
----
-
-## 📥 Download
-
-<div align="center">
-
-<table><tr>
-<td width="50%" align="center">
-<a href="https://github.com/Dev-Lune/SysWatch/releases/latest"><img src="./images/btn-download-desktop.svg" alt="Download the desktop app — Windows, macOS, Linux" width="380"></a>
-<br><sub>All installers live in the latest GitHub release.</sub>
-</td>
-<td width="50%" align="center">
-<a href="https://play.google.com/store/apps/details?id=in.devlune.syswatch"><img src="./images/btn-google-play.svg" alt="Get SysWatch on Google Play" width="380"></a>
-<br><sub>Android 7.0 (API 24) and newer.</sub>
-</td>
-</tr></table>
-
-</div>
-
-### Desktop — pick your installer
-
-| Platform | Installer |
-| --- | --- |
-| **Windows** 10 / 11 (x64) | `SysWatch_x.y.z_x64_en-US.msi` |
-| **macOS** (Apple Silicon + Intel) | `SysWatch_x.y.z_universal.dmg` |
-| **Linux** | `SysWatch_x.y.z.AppImage` · `syswatch_x.y.z_amd64.deb` · `.rpm` |
-
-> All release artefacts: [github.com/Dev-Lune/SysWatch/releases](https://github.com/Dev-Lune/SysWatch/releases)
+<p align="center"><sub>Screens from version 1.1 of the Android app, showing sample data.</sub></p>
 
 ---
 
-## 🚀 Getting started in 60 seconds
+## Get started in three steps
 
-1. **Install the desktop app** from the link above and launch it.
-2. On first run, paste your Supabase URL + anon key (or use the build that
-   already has them baked in). Onboarding walks you through it.
-3. The tray icon appears. Open the **Pairing** tab — you'll see a big
-   6-character code like `A3K9X7`.
-4. **Install the Android app** from Google Play.
-5. Type the code into your phone (or scan the QR). Tap **Connect**.
-6. That's it — your phone is now a live dashboard for your PC.
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h3>1 &nbsp; Install on your PC</h3>
+      Open the <a href="https://devlune.in/download/syswatch">download page</a>, get the Windows installer and run it. SysWatch sits in the system tray.
+    </td>
+    <td width="33%" valign="top">
+      <h3>2 &nbsp; Install on your phone</h3>
+      Get <a href="https://play.google.com/store/apps/details?id=in.devlune.syswatch">SysWatch on Google Play</a> and open it.
+    </td>
+    <td width="33%" valign="top">
+      <h3>3 &nbsp; Scan the code</h3>
+      Open <b>Pairing</b> on the PC and scan the QR code with the phone. No account, nothing to type.
+    </td>
+  </tr>
+</table>
 
-Want to stop streaming? Right-click the tray icon → **Pause**. Want to quit?
-**Quit**. Close the window by mistake? SysWatch asks the first time — pick
-"move to tray" and it never bothers you again.
+> [!TIP]
+> Never installed software from outside a store before? The **[download and setup guide](https://devlune.in/download/syswatch)** walks through every screen, including the Windows warning you will see and what to click.
 
----
+## Download
 
-## 🔒 Privacy at a glance
+| Your PC | Status | Where |
+|---|---|---|
+| **Windows 10 / 11** (64-bit) | Available | [Download page](https://devlune.in/download/syswatch) · [GitHub release](https://github.com/Dev-Lune/SysWatch/releases/latest) |
+| **Linux** | Not available yet | Planned. No Linux build has been made or tested. |
+| **macOS** | Not available yet | Planned, same as Linux. |
+| **Android phone** | Available | [Google Play](https://play.google.com/store/apps/details?id=in.devlune.syswatch) |
 
-- SysWatch does not ship any data to us. Ever.
-- The desktop app makes outbound HTTPS requests **only** to the Supabase project
-  you configured. Typical payload: ~800 bytes of JSON every 2 seconds.
-- Credentials (pairing code + Supabase keys) live in your **OS keychain**
-  (Windows Credential Manager, macOS Keychain, Secret Service on Linux).
-- Process names and PIDs are **never** broadcast unless you explicitly flip
-  the toggle in Settings → Privacy.
+> [!NOTE]
+> The Windows installer is not code signed yet, so Windows SmartScreen shows "Windows protected your PC". Choose **More info**, then **Run anyway**.
 
-Full policy: [privacy policy](https://github.com/Dev-Lune/SysWatch/blob/main/PRIVACY.md) ·
-[terms of use](https://github.com/Dev-Lune/SysWatch/blob/main/TERMS.md).
+## Two ways to connect
 
----
+Pick one when the desktop app first opens. You can change it later in Settings.
 
-## 💚 Support the project
+| | Cloud | Local |
+|---|---|---|
+| **Works from** | Anywhere with internet | Same Wi-Fi, or anywhere with Tailscale |
+| **Needs** | Internet on PC and phone | Nothing extra on Wi-Fi |
+| **Speed** | About 2 seconds per update | Instant, straight from the PC |
+| **Where the readings go** | Through the SysWatch cloud relay | Never leave your network |
 
-SysWatch is free, ad-free, and tracker-free. If it earns a spot on your second
-monitor or saves you a trip upstairs, here's how you can help:
+```mermaid
+flowchart LR
+  PC["Your PC<br>SysWatch desktop"]
+  Phone["Your phone<br>SysWatch app"]
+  Relay(["Cloud relay"])
+  PC -- "Cloud mode" --> Relay --> Phone
+  PC == "Local mode: Wi-Fi or Tailscale, port 47800" ==> Phone
+```
 
-- ⭐ **[Star the repo](https://github.com/Dev-Lune/SysWatch)** — it's the
-  single biggest signal for hobby projects.
-- ☕ **[Buy us a coffee](https://buymeacoffee.com/devlune)** — pays for code
-  signing certs, Play Console, and the occasional late-night debugging snack.
-- 💬 **[Join the Discord](https://discord.gg/BXu9qxgaE8)** — feature ideas,
-  release chatter, and screenshots welcome.
-- 🐛 **[File an issue](https://github.com/Dev-Lune/SysWatch/issues)** — bug
-  reports with logs are gold.
-- 🛠 **[Hire the studio](https://devlune.in)** — we ship web, Android, and
-  end-to-end products for startups.
+<details>
+<summary><b>Use local mode away from home with Tailscale</b></summary>
 
----
+<br>
 
-## 📜 License
+Tailscale gives your PC and phone a private, encrypted link that works from anywhere, as if they shared one Wi-Fi. It is a separate product with a free personal plan.
 
-Released under the [MIT License](https://github.com/Dev-Lune/SysWatch/blob/main/LICENSE).
-© **DevLune Studio**, Hyderabad, IN — [devlune.in](https://devlune.in).
+1. Install Tailscale on your PC from [tailscale.com/download](https://tailscale.com/download) and sign in.
+2. Install Tailscale on your phone and sign in with the **same account**.
+3. In SysWatch on the PC, set the connection to **Local** and open **Pairing**. An address labelled **Tailscale** appears.
+4. Scan the QR code with the phone.
 
-Hardware vendor marks (NVIDIA, AMD, Intel, Apple, Samsung, etc.) are trademarks
-of their respective owners. SysWatch displays them solely to identify detected
-hardware and is not affiliated with nor endorsed by these vendors. Vendor icon
-paths are from [simpleicons.org](https://simpleicons.org) (CC0).
+At home the phone uses your Wi-Fi address. Away from home, with Tailscale on, it switches by itself.
 
-<div align="center">
+</details>
 
-**Made with ❤ by [DevLune Studio](https://devlune.in).**
+## What it does
 
-</div>
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>See everything at a glance</h3>
+      <ul>
+        <li>CPU, GPU, memory, network, storage, battery and uptime</li>
+        <li>History graph on every reading</li>
+        <li>Five Overview layouts, phone and tablet</li>
+        <li>Only real readings: nothing is shown that your PC does not report</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Alerts that come to you</h3>
+      <ul>
+        <li>"CPU load above 90%", "Battery level below 20%"</li>
+        <li>Each limit is drawn as a red line on its gauge</li>
+        <li>Quiet period per alert, so one spike is one notification</li>
+        <li>Export and import your rules</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Make it yours</h3>
+      <ul>
+        <li>Pick your accent colour</li>
+        <li>Light, dark or true black</li>
+        <li>Choose which cards show and in what order</li>
+        <li>Roomy or compact layout</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>A second screen on your desk</h3>
+      <ul>
+        <li>24 standby faces, instruments and art, portrait and landscape</li>
+        <li>Burn-in protection and auto dim</li>
+        <li>Home screen widget in four looks</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Light on your PC</h3>
+      <ul>
+        <li>Lives in the tray, starts with Windows if you want</li>
+        <li>Pause and resume from the tray</li>
+        <li>NVIDIA GPUs read through NVML; other GPUs show what the system exposes</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Stays up to date</h3>
+      <ul>
+        <li>The phone app updates through Google Play and tells you what changed</li>
+        <li>The desktop app tells you when a new version is out</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+## Privacy, plainly
+
+- **No account.** A 6-character pairing code is the only thing linking phone and PC.
+- **Read only.** The phone can see readings. It cannot control, change or run anything on your PC.
+- **Local mode** keeps readings on your own network. It is not encrypted there, so use it on networks you trust, or over Tailscale, which encrypts everything.
+- **Cloud mode** relays readings through the SysWatch cloud relay so the phone can reach the PC from anywhere.
+- Running program names are not sent unless you switch that on.
+
+Full policy: [devlune.in/privacy](https://devlune.in/privacy) · [Terms](https://devlune.in/terms)
+
+## If it does not connect
+
+| What you see | What to check |
+|---|---|
+| "PC not reachable" in local mode | Phone and PC on the same Wi-Fi (guest Wi-Fi isolates devices). Windows Firewall allowed SysWatch. Desktop app running. |
+| Connects at home, not outside | Local mode needs Tailscale away from home. |
+| "Code not found" | The PC made a new code. Open Pairing on the PC and scan again. |
+| Stuck on "Paused" | The desktop app is paused. Open it and press Resume. |
+
+Still stuck? [Open an issue](https://github.com/Dev-Lune/SysWatch/issues) or ask on [Discord](https://discord.gg/BXu9qxgaE8).
+
+## About this repository
+
+This repository is SysWatch's public home: releases, the changelog and these docs. Installers are attached to each [release](https://github.com/Dev-Lune/SysWatch/releases).
+
+- [Changelog](./CHANGELOG.md)
+- [Release notes](./RELEASE_NOTES.md)
+- [Feature list](./FEATURES.md)
+- [Install guide](./docs/INSTALL.md) · [Tailscale guide](./docs/TAILSCALE.md)
+
+## Support SysWatch
+
+SysWatch is free and has no ads. If it earns a place on your desk:
+
+<p>
+  <a href="https://github.com/sponsors/Dev-Lune"><img src="https://img.shields.io/badge/Sponsor_on_GitHub-16181B?style=for-the-badge&logo=githubsponsors&logoColor=EE8FA8" alt="Sponsor on GitHub"></a>
+  <a href="https://github.com/Dev-Lune/SysWatch"><img src="https://img.shields.io/badge/Star_this_repo-16181B?style=for-the-badge&logo=github&logoColor=ECEDEF" alt="Star this repo"></a>
+</p>
+
+<p align="center">
+  <sub>Made by <a href="https://devlune.in">DevLune</a>, Hyderabad. Crafted in the dark. Shipped to the world.</sub>
+</p>
