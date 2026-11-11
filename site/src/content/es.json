@@ -57,7 +57,7 @@
     "lead": "Elige un color de acento y un tema, y coloca las tarjetas en tu orden. El panel sigue siendo sereno en cualquier caso.",
     "cells": [
       { "t": "Tu color de acento", "d": "Ámbar, cian, verde, violeta, rosa o mono, o a juego con tu fondo de pantalla en Android 12 y posteriores." },
-      { "t": "Tres temas", "d": "Claro, oscuro o negro puro." },
+      { "t": "Seis estilos, tres temas", "d": "Pegatinas, Sólido, Cabecera, Mosaico, Cápsulas o Clásico, cada uno en claro, oscuro o negro puro." },
       { "t": "Cinco diseños para el Resumen", "d": "Puente (Bridge), Indicadores (Gauges), Gráficas (Strip charts), Registro (Ledger) y Enfoque (Focus)." },
       { "t": "Tus tarjetas, tu orden", "d": "Elige qué tarjetas se muestran y en qué orden, en modo amplio o compacto." }
     ],

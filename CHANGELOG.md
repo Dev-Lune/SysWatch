@@ -20,12 +20,14 @@ Desktop 0.3.0 and Android 1.2.0. The Android version reaches Google Play separat
 **Android**
 - Now playing card on Overview and five music standby faces: Poster, Ambient, Glossy, Vinyl, Quiet. Their colours come from the cover.
 - Standby faces can dim when idle or stay bright, and can fill the whole screen. Both are chosen where you pick a face.
+- A new design in six styles: Stickers (the default), Solid, Banner, Tiles, Pills and Classic (the previous look), each in light, dark and true black, chosen in setup or Settings. Cobalt is the new default accent.
 - A short guide in setup and in Settings: how SysWatch works, and the pros and limits of each connection.
 
 **Desktop**
 - English, German, French, Spanish and Russian, using the same translation files as the phone app. Starts in the Windows language; a picker in setup and Settings; updates over the air.
 - Lightweight mode, and the window is closed rather than hidden when SysWatch goes to the tray: about 55 to 73 MB and under 0.5% of one core while hidden.
 - Now playing card on the dashboard.
+- Three looks: the original glass, Bold light and Bold dark, chosen in setup or Settings. Existing installs keep glass.
 
 ### Changed
 - Cloud mode publishes at most every 2 seconds.

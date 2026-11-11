@@ -15,18 +15,19 @@ OUT = os.path.join(ROOT, "assets", "img")
 # name: (source file, crop box, output widths). Portrait crops drop the status bar (9:19).
 PORTRAIT = (0, 100, 1080, 2380)
 TALL = (0, 72, 1080, 2352)  # the 1080x2424 music face captures, same 9:19 crop
+APP = (0, 126, 1080, 2406)  # 1080x2424 app screens from the Pixel 9 emulator: the crop starts under its status bar
 JOBS = {
     "face-poster": ("11-standby-poster.png", TALL, (360, 720)),
     "face-vinyl": ("12-standby-vinyl.png", TALL, (360, 720)),
     "face-glossy": ("13-standby-glossy.png", TALL, (360, 720)),
-    "overview": ("01-overview.png", PORTRAIT, (360, 720)),
-    "alerts": ("07-alert-editor.png", PORTRAIT, (360, 720)),
-    "settings": ("02-settings.png", PORTRAIT, (360, 720)),
-    "gallery": ("03-standby-gallery.png", PORTRAIT, (360, 720)),
+    "overview": ("01-overview.png", APP, (360, 720)),
+    "alerts": ("07-alert-editor.png", APP, (360, 720)),
+    "settings": ("02-settings.png", APP, (360, 720)),
+    "gallery": ("03-standby-gallery.png", APP, (360, 720)),
     "face-ink": ("04-standby-ink.png", PORTRAIT, (360, 720)),
     "face-bauhaus": ("05-standby-bauhaus.png", PORTRAIT, (360, 720)),
     "face-blocks": ("09-standby-blocks.png", PORTRAIT, (360, 720)),
-    "landscape-light": ("08-overview-landscape-light.png", (0, 80, 2400, 1080), (720, 1440)),
+    "landscape-light": ("08-overview-landscape-light.png", (0, 90, 2376, 1080), (720, 1440)),  # 2424x1080, 2.4:1 under the status bar
 }
 
 os.makedirs(OUT, exist_ok=True)

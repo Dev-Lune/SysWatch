@@ -16,6 +16,7 @@ Windows SmartScreen will warn that the installer is unrecognised, because it is 
 - **Now playing.** The phone shows what your PC is playing, with its cover, on Overview and in five music standby faces. Local and Tailscale only: it never goes through the cloud.
 - **Play, pause and skip from the phone**, in Local and Tailscale mode. On by default; switch it off in Settings on the PC.
 - **Your language.** The Windows app is now in English, German, French, Spanish and Russian. It starts in your Windows language; change it in setup or Settings. New text arrives without an update.
+- **Three looks.** Keep the original glass, or pick Bold light or Bold dark in setup or Settings. If you are updating, nothing changes until you choose.
 - **Lightweight mode.** Hidden in the tray, SysWatch now uses about 55 to 73 MB instead of about 500 MB, and under half a percent of one CPU core.
 - **Cloud sends at most every 2 seconds.**
 - **The tray menu** follows your language, even when the window has never been opened.

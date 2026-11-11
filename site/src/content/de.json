@@ -57,7 +57,7 @@
     "lead": "Wähle Akzentfarbe und Design und bring die Karten in deine Reihenfolge. Die Oberfläche bleibt in jedem Fall ruhig.",
     "cells": [
       { "t": "Deine Akzentfarbe", "d": "Bernstein, Cyan, Grün, Violett, Rosé oder Mono, oder passend zum Hintergrundbild ab Android 12." },
-      { "t": "Drei Designs", "d": "Hell, dunkel oder rein schwarz." },
+      { "t": "Sechs Stile, drei Designs", "d": "Sticker, Vollfarbe, Banner, Kacheln, Kapseln oder Klassisch, jeweils hell, dunkel oder rein schwarz." },
       { "t": "Fünf Layouts für die Übersicht", "d": "Brücke (Bridge), Rundanzeigen (Gauges), Verlaufskurven (Strip charts), Hauptbuch (Ledger) und Fokus (Focus)." },
       { "t": "Deine Karten, deine Reihenfolge", "d": "Du bestimmst, welche Karten erscheinen und in welcher Reihenfolge, luftig oder kompakt." }
     ],

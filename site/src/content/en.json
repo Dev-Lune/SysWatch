@@ -57,7 +57,7 @@
     "lead": "Pick an accent and a theme, then put the cards in your order. It stays one calm panel either way.",
     "cells": [
       { "t": "Your accent colour", "d": "Amber, cyan, green, violet, rose or mono, or matched to your wallpaper on Android 12 and newer." },
-      { "t": "Three themes", "d": "Light, dark or true black." },
+      { "t": "Six styles, three themes", "d": "Stickers, Solid, Banner, Tiles, Pills or Classic, each in light, dark or true black." },
       { "t": "Five Overview layouts", "d": "Bridge, Gauges, Strip charts, Ledger and Focus." },
       { "t": "Your cards, your order", "d": "Choose which cards show and in what order, roomy or compact." }
     ],

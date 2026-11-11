@@ -29,7 +29,8 @@ Current versions: desktop 0.3.0, Android 1.2.0.
 - One column on a phone, a grid on tablets and in landscape
 
 **Look**
-- One accent colour, chosen by you: amber, cyan, green, violet, rose, mono, or matched to your wallpaper on Android 12 and newer
+- Six styles: Stickers (the default), Solid, Banner, Tiles, Pills and Classic, chosen in setup or Settings
+- One accent colour, chosen by you: cobalt, amber, cyan, green, violet, rose, mono, or matched to your wallpaper on Android 12 and newer
 - Light, dark and true black themes
 
 **Alerts**
@@ -61,6 +62,7 @@ Current versions: desktop 0.3.0, Android 1.2.0.
 - Now playing card, read from Windows media controls; shared with the phone over the local connection only
 - English, German, French, Spanish and Russian, starting in the Windows language; new text arrives without an update
 - Lightweight mode; hidden in the tray it uses about 55 to 73 MB and under 0.5% of one core
+- Three looks: the original glass, Bold light and Bold dark, chosen in setup or Settings
 - Choose Cloud or Local on first run; change it in Settings without restarting
 - Pairing screen lists the PC's addresses and marks the Tailscale one
 - Tells you when a newer version is out

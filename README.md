@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./images/feature-graphic.png" alt="SysWatch: your PC's gauges, on your phone" width="880">
+  <img src="./images/feature-graphic.png" alt="SysWatch: your PC, on your phone" width="880">
 </p>
 
 <h1 align="center">SysWatch</h1>
@@ -29,12 +29,12 @@
   <tr>
     <td align="center" width="25%"><img src="./images/store-01-overview.png" alt="Overview screen with a large CPU reading and its graph" width="210"><br><sub><b>Live readings</b></sub></td>
     <td align="center" width="25%"><img src="./images/store-02-alerts.png" alt="Alert editor" width="210"><br><sub><b>Alerts</b></sub></td>
-    <td align="center" width="25%"><img src="./images/store-03-settings.png" alt="Settings with accent colours and card order" width="210"><br><sub><b>Your look</b></sub></td>
+    <td align="center" width="25%"><img src="./images/store-03-settings.png" alt="Settings with the list of six styles" width="210"><br><sub><b>Six styles</b></sub></td>
     <td align="center" width="25%"><img src="./images/store-04-standby.png" alt="Gallery of standby faces" width="210"><br><sub><b>29 standby faces</b></sub></td>
   </tr>
   <tr>
-    <td align="center" width="25%"><img src="./images/store-05-ink.png" alt="Ink standby face" width="210"><br><sub><b>Art faces</b></sub></td>
-    <td align="center" width="25%"><img src="./images/store-06-bauhaus.png" alt="Bauhaus standby face" width="210"><br><sub><b>Readings as art</b></sub></td>
+    <td align="center" width="25%"><img src="./images/store-05-playing.png" alt="Poster, Vinyl and Glossy music faces showing what the PC is playing" width="210"><br><sub><b>Now playing</b></sub></td>
+    <td align="center" width="25%"><img src="./images/store-06-art.png" alt="Ink, Bauhaus and Blocks art faces" width="210"><br><sub><b>Art faces</b></sub></td>
     <td align="center" width="25%"><img src="./images/store-07-landscape.png" alt="Overview in landscape" width="210"><br><sub><b>Landscape and tablet</b></sub></td>
     <td align="center" width="25%"><img src="./images/store-08-connection.png" alt="Diagram of local, Tailscale and cloud connection" width="210"><br><sub><b>Three ways to connect</b></sub></td>
   </tr>
@@ -141,6 +141,7 @@ At home the phone uses your Wi-Fi address. Away from home, with Tailscale on, it
     <td width="50%" valign="top">
       <h3>Make it yours</h3>
       <ul>
+        <li>Six styles, in light, dark or true black</li>
         <li>Pick your accent colour</li>
         <li>Light, dark or true black</li>
         <li>Choose which cards show and in what order</li>

@@ -57,7 +57,7 @@
     "lead": "Choisissez une couleur d'accent et un thème, puis rangez les cartes dans votre ordre. Le panneau reste sobre dans tous les cas.",
     "cells": [
       { "t": "Votre couleur d'accent", "d": "Ambre, cyan, vert, violet, rose ou mono, ou assortie à votre fond d'écran à partir d'Android 12." },
-      { "t": "Trois thèmes", "d": "Clair, sombre ou noir absolu." },
+      { "t": "Six styles, trois thèmes", "d": "Autocollants, Aplat, Bandeau, Tuiles, Pastilles ou Classique, chacun en clair, sombre ou noir absolu." },
       { "t": "Cinq dispositions pour la Vue d'ensemble", "d": "Passerelle (Bridge), Cadrans (Gauges), Courbes (Strip charts), Registre (Ledger) et Focus." },
       { "t": "Vos cartes, votre ordre", "d": "Choisissez les cartes affichées et leur ordre, en mode aéré ou compact." }
     ],
