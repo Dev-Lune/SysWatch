@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./images/banner.png" alt="SysWatch" width="880">
+  <img src="./images/feature-graphic.png" alt="SysWatch: your PC's gauges, on your phone" width="880">
 </p>
 
 <h1 align="center">SysWatch</h1>
@@ -27,14 +27,18 @@
 
 <table>
   <tr>
-    <td align="center" width="25%"><img src="./images/shot-overview.png" alt="Overview with a large CPU reading and its history graph" width="210"><br><sub><b>Overview</b><br>Big readable numbers</sub></td>
-    <td align="center" width="25%"><img src="./images/shot-gauges.png" alt="Overview drawn as dial gauges" width="210"><br><sub><b>Gauges</b><br>One of five layouts</sub></td>
-    <td align="center" width="25%"><img src="./images/shot-standby.png" alt="Standby face showing one large figure on a black screen" width="210"><br><sub><b>Standby</b><br>24 always-on faces</sub></td>
-    <td align="center" width="25%"><img src="./images/shot-settings.png" alt="Settings with accent colour, theme and card order" width="210"><br><sub><b>Make it yours</b><br>Accent, theme, layout</sub></td>
+    <td align="center" width="25%"><img src="./images/store-01-overview.png" alt="Overview screen with a large CPU reading and its graph" width="210"><br><sub><b>Live readings</b></sub></td>
+    <td align="center" width="25%"><img src="./images/store-02-alerts.png" alt="Alert editor" width="210"><br><sub><b>Alerts</b></sub></td>
+    <td align="center" width="25%"><img src="./images/store-03-settings.png" alt="Settings with accent colours and card order" width="210"><br><sub><b>Your look</b></sub></td>
+    <td align="center" width="25%"><img src="./images/store-04-standby.png" alt="Gallery of standby faces" width="210"><br><sub><b>24 standby faces</b></sub></td>
+  </tr>
+  <tr>
+    <td align="center" width="25%"><img src="./images/store-05-ink.png" alt="Ink standby face" width="210"><br><sub><b>Art faces</b></sub></td>
+    <td align="center" width="25%"><img src="./images/store-06-bauhaus.png" alt="Bauhaus standby face" width="210"><br><sub><b>Readings as art</b></sub></td>
+    <td align="center" width="25%"><img src="./images/store-07-landscape.png" alt="Overview in landscape" width="210"><br><sub><b>Landscape and tablet</b></sub></td>
+    <td align="center" width="25%"><img src="./images/store-08-connection.png" alt="Diagram of local, Tailscale and cloud connection" width="210"><br><sub><b>Three ways to connect</b></sub></td>
   </tr>
 </table>
-
-<p align="center"><sub>Screens from version 1.1 of the Android app, showing sample data.</sub></p>
 
 ---
 
@@ -72,28 +76,30 @@
 > [!NOTE]
 > The Windows installer is not code signed yet, so Windows SmartScreen shows "Windows protected your PC". Choose **More info**, then **Run anyway**.
 
-## Two ways to connect
+## Three ways to connect
 
-Pick one when the desktop app first opens. You can change it later in Settings.
+Both apps ask the same question the first time they open. Pick the same answer on each; the QR code on the PC carries it anyway. You can change it later in Settings.
 
-| | Cloud | Local |
-|---|---|---|
-| **Works from** | Anywhere with internet | Same Wi-Fi, or anywhere with Tailscale |
-| **Needs** | Internet on PC and phone | Nothing extra on Wi-Fi |
-| **Speed** | About 2 seconds per update | Instant, straight from the PC |
-| **Where the readings go** | Through the SysWatch cloud relay | Never leave your network |
+| | Local | Cloud by DevLune | Tailscale |
+|---|---|---|---|
+| **Works from** | The same Wi-Fi | Anywhere with internet | Anywhere |
+| **Set up** | Nothing | Nothing | About five minutes, once |
+| **Speed** | Instant, straight from the PC | About 2 seconds per update | Instant, straight from the PC |
+| **Where the readings go** | Never leave your network | Through DevLune's relay | Through your own private Tailscale link |
+
+Not sure? Pick **Local** if the phone usually sits near the PC.
 
 ```mermaid
 flowchart LR
   PC["Your PC<br>SysWatch desktop"]
   Phone["Your phone<br>SysWatch app"]
-  Relay(["Cloud relay"])
-  PC -- "Cloud mode" --> Relay --> Phone
+  Relay(["DevLune relay"])
+  PC -- "Cloud by DevLune" --> Relay --> Phone
   PC == "Local mode: Wi-Fi or Tailscale, port 47800" ==> Phone
 ```
 
 <details>
-<summary><b>Use local mode away from home with Tailscale</b></summary>
+<summary><b>Setting up Tailscale</b></summary>
 
 <br>
 
@@ -174,7 +180,7 @@ At home the phone uses your Wi-Fi address. Away from home, with Tailscale on, it
 - **No account.** A 6-character pairing code is the only thing linking phone and PC.
 - **Read only.** The phone can see readings. It cannot control, change or run anything on your PC.
 - **Local mode** keeps readings on your own network. It is not encrypted there, so use it on networks you trust, or over Tailscale, which encrypts everything.
-- **Cloud mode** relays readings through the SysWatch cloud relay so the phone can reach the PC from anywhere.
+- **Cloud by DevLune** relays readings through DevLune's relay so the phone can reach the PC from anywhere. You never enter any server details.
 - Running program names are not sent unless you switch that on.
 
 Full policy: [devlune.in/privacy](https://devlune.in/privacy) · [Terms](https://devlune.in/terms)
