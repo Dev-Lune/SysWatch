@@ -15,6 +15,7 @@ const pathOf = (lang, key) => (key === "home" ? (lang === "en" ? "/" : `/${lang}
 const fileOf = (path) => (path === "/" ? "index.html" : `${path.slice(1)}.html`);
 const urlOf = (lang, key) => ORIGIN + pathOf(lang, key);
 
+const RELEASE = readFileSync(join(ROOT, "src", "build.mjs"), "utf8").match(/const RELEASE = \{ version: "([^"]+)"/)[1];
 const fails = [];
 const fail = (where, what) => fails.push(`${where}: ${what}`);
 const read = (f) => readFileSync(join(ROOT, f), "utf8");
@@ -64,7 +65,9 @@ for (const key of KEYS) for (const lang of LANGS) {
   }
 
   for (const img of html.match(/<img [^>]*>/g) ?? []) {
-    for (const a of ["width", "height", "alt"]) if (!new RegExp(` ${a}="[^"]+"`).test(img)) fail(f, `img without ${a}: ${img.slice(0, 80)}`);
+    for (const a of ["width", "height"]) if (!new RegExp(` ${a}="[^"]+"`).test(img)) fail(f, `img without ${a}: ${img.slice(0, 80)}`);
+    // alt="" is allowed only for the logo, which sits in a link that carries aria-label="SysWatch".
+    if (!/ alt="[^"]+"/.test(img) && !(/ alt=""/.test(img) && /\/icon-\d+\.webp/.test(img))) fail(f, `img without alt: ${img.slice(0, 80)}`);
   }
 
   // The CSP allows no inline style and no script. JSON-LD is a data block, not a script the browser runs.
@@ -90,6 +93,13 @@ for (const key of KEYS) for (const lang of LANGS) {
   }
   for (const [, inner] of html.matchAll(/<a [^>]*>([\s\S]*?)<\/a>/g)) if (/^(click here|here|read more|learn more|more)$/i.test(text(inner).trim())) fail(f, `vague link text "${inner}"`);
   for (const a of new Set(all(html, /(\/(?:assets\/[\w./-]+|favicon[\w.-]*|apple-touch-icon\.png|site\.webmanifest))/g))) if (!existsSync(join(ROOT, a))) fail(f, `missing file ${a}`);
+
+  // The only version number a page may print is the release that is out (build.mjs RELEASE):
+  // features of an unreleased build can be described, its version cannot.
+  for (const v of new Set(html.match(/\b\d+\.\d+\.\d+\b/g) ?? [])) if (v !== RELEASE) fail(f, `mentions version ${v}, but the release is ${RELEASE}`);
+  // Each page preloads the display and body fonts for its own script.
+  const script = lang === "ru" ? "cyrillic" : "latin";
+  for (const font of ["unbounded", "rubik"]) if (!html.includes(`<link rel="preload" href="/assets/fonts/${font}-${script}.woff2"`)) fail(f, `does not preload ${font}-${script}`);
 
   // Structured data.
   let graph = [];

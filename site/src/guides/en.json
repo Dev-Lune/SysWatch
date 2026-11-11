@@ -20,7 +20,7 @@
         { "steps": [
           "Download <code>SysWatch_{version}_x64-setup.exe</code> and run it.",
           "Windows SmartScreen may say “Windows protected your PC”. Choose <b>More info</b>, then <b>Run anyway</b>. The installer is not code signed yet.",
-          "Finish the installer and open SysWatch. It lives in the system tray.",
+          "Finish the installer and open SysWatch. It lives in the system tray. Setup lets you pick its language; it starts in your Windows language.",
           "Choose how your phone connects. The first run shows three cards: Local, Cloud by DevLune and Tailscale. Pick one, follow the steps it shows, and it ends on the pairing code."
         ], "id": "windows" },
         { "h2": "Choose how your phone connects", "id": "connect" },
@@ -30,11 +30,13 @@
           "rows": [
             ["Works from", "The same Wi-Fi", "Anywhere with internet", "Anywhere"],
             ["Needs", "Nothing else", "Internet on PC and phone", "Tailscale on PC and phone, set up once"],
-            ["Speed", "Instant, straight from the PC", "About 2 seconds per update", "Instant, straight from the PC"],
+            ["Speed", "Instant, straight from the PC", "At most one update every 2 seconds", "Instant, straight from the PC"],
+            ["Now playing and media control", "Yes", "No", "Yes"],
             ["Where the readings go", "They never leave your network", "Through DevLune's relay", "Through your own private Tailscale link"]
           ]
         } },
         { "p": "Not sure? Pick <b>Local</b> if the phone sits near the PC, and <b>Cloud by DevLune</b> if you check your PC from outside and do not want to set up Tailscale. Local and Tailscale need the latest version of both apps." },
+        { "p": "Now playing, and play, pause and skip from the phone, work in Local and Tailscale mode only. Control from the phone is on by default; switch it off in the desktop app's Settings, under Media." },
         { "note": "Local mode uses one port, <b>47800</b>. The first time, Windows Firewall asks whether to allow SysWatch on private networks: choose <b>Allow</b>. Local mode is not encrypted, and the 6-character pairing code is the only lock, so use it on networks you trust: your home Wi-Fi, or Tailscale, which encrypts everything itself." },
         { "p": "Want local speed away from home? The <a href=\"{tailscale}\">Tailscale guide</a> takes about five minutes." },
         { "h2": "Pair the phone", "id": "pair" },
@@ -83,6 +85,7 @@
           "On Android, Tailscale counts as the phone's VPN. Only one VPN can run at a time.",
           "If you paired before installing Tailscale, scan the QR code again so the phone learns the Tailscale address.",
           "No Tailscale address in the Pairing screen? Tailscale is not connected on the PC. Open it from the tray and sign in, then reopen Pairing.",
+          "Now playing and media control work over Tailscale just as they do at home.",
           "The PC must be awake. Tailscale cannot reach a sleeping computer."
         ] },
         { "p": "Installing SysWatch for the first time? Start with the <a href=\"{guide}\">install guide</a>." }
@@ -94,7 +97,7 @@
       "crumb": "Translation guide",
       "kicker": "Translation guide",
       "h1": "Translate SysWatch",
-      "lead": "SysWatch speaks English, German, French, Spanish and Russian. You can add your language, or fix a wording in one that exists. No programming needed: it is one text file per language.",
+      "lead": "SysWatch speaks English, German, French, Spanish and Russian, on the phone and on Windows. You can add your language, or fix a wording in one that exists. No programming needed: it is one text file per language.",
       "blocks": [
         { "note": "When a translation is merged, <b>every SysWatch app picks it up by itself</b> within a day, or at once from Settings, Language, Check now. No app update needed." },
         { "h2": "Add your language", "id": "add" },
@@ -105,6 +108,7 @@
           "<b>Open a pull request.</b> A check runs by itself and tells you, in plain words, if anything needs fixing. Once it is green, the translation is reviewed and merged."
         ], "id": "add" },
         { "p": "You do not have to finish in one go. Strings you leave out show in English, and the app tells people how complete a language is. But do not leave a string empty: delete the whole line instead." },
+        { "p": "One file covers both apps. Strings whose names start with <code>desktop_</code> belong to the Windows app, the rest to the phone app." },
         { "h2": "Fix an existing translation", "id": "fix" },
         { "p": "Edit the file for that language (<code>de.xml</code>, <code>fr.xml</code>, <code>es.xml</code>, <code>ru.xml</code>), change the text and open a pull request. Say in a sentence why the new wording is better." },
         { "h2": "The rules, all five of them", "id": "rules" },

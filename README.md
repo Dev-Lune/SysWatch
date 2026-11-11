@@ -30,7 +30,7 @@
     <td align="center" width="25%"><img src="./images/store-01-overview.png" alt="Overview screen with a large CPU reading and its graph" width="210"><br><sub><b>Live readings</b></sub></td>
     <td align="center" width="25%"><img src="./images/store-02-alerts.png" alt="Alert editor" width="210"><br><sub><b>Alerts</b></sub></td>
     <td align="center" width="25%"><img src="./images/store-03-settings.png" alt="Settings with accent colours and card order" width="210"><br><sub><b>Your look</b></sub></td>
-    <td align="center" width="25%"><img src="./images/store-04-standby.png" alt="Gallery of standby faces" width="210"><br><sub><b>24 standby faces</b></sub></td>
+    <td align="center" width="25%"><img src="./images/store-04-standby.png" alt="Gallery of standby faces" width="210"><br><sub><b>29 standby faces</b></sub></td>
   </tr>
   <tr>
     <td align="center" width="25%"><img src="./images/store-05-ink.png" alt="Ink standby face" width="210"><br><sub><b>Art faces</b></sub></td>
@@ -150,7 +150,8 @@ At home the phone uses your Wi-Fi address. Away from home, with Tailscale on, it
     <td width="50%" valign="top">
       <h3>A second screen on your desk</h3>
       <ul>
-        <li>24 standby faces, instruments and art, portrait and landscape</li>
+        <li>29 standby faces, instruments, art and music, portrait and landscape</li>
+        <li>Now playing: what your PC plays, with its cover, and play, pause and skip from the phone (Local and Tailscale)</li>
         <li>Burn-in protection and auto dim</li>
         <li>Home screen widget in four looks</li>
       </ul>
@@ -179,7 +180,7 @@ At home the phone uses your Wi-Fi address. Away from home, with Tailscale on, it
 ## Privacy, plainly
 
 - **No account.** A 6-character pairing code is the only thing linking phone and PC.
-- **Read only.** The phone can see readings. It cannot control, change or run anything on your PC.
+- **Read only, except media.** The phone can see readings. In Local and Tailscale mode it can also play, pause and skip what your PC is playing; switch that off in Settings on the PC. It cannot change or run anything else.
 - **Local mode** keeps readings on your own network. It is not encrypted there, so use it on networks you trust, or over Tailscale, which encrypts everything.
 - **Cloud by DevLune** relays readings through DevLune's relay so the phone can reach the PC from anywhere. You never enter any server details.
 - Running program names are not sent unless you switch that on.

@@ -1,20 +1,25 @@
 # SysWatch feature list
 
-Current versions: desktop 0.2.0, Android 1.1.0. Added in these versions:
+Current versions: desktop 0.3.0, Android 1.2.0.
 
 ## Connection
 
 | Mode | How it works | Needs |
 |---|---|---|
-| Cloud | The desktop app sends readings through the SysWatch cloud relay every 2 seconds; the phone subscribes. Works from anywhere. | Internet on both |
+| Cloud | The desktop app sends readings through the SysWatch cloud relay at most every 2 seconds; the phone subscribes. Works from anywhere. | Internet on both |
 | Local | The phone connects straight to the desktop app on port 47800 and receives every sample as it is taken. | Same Wi-Fi, or Tailscale |
 
 - Pair by scanning one QR code. It carries the code, the mode, the PC's addresses and the port.
 - In local mode the phone finds the PC again by itself if the router gives it a new address.
 - The phone tries each address in order: Wi-Fi first, Tailscale last.
-- Read only: the phone cannot control or run anything on the PC.
+- Read only, except media: in Local and Tailscale mode the phone can play, pause and skip what the PC is playing (switch it off in Settings on the PC). It cannot change or run anything else.
 
-## Android app 1.1.0
+## Android app 1.2.0
+
+**Now playing** (Local and Tailscale)
+- What the PC is playing, with its cover and progress, on Overview
+- Five music standby faces: Poster, Ambient, Glossy, Vinyl, Quiet, coloured from the cover
+- Play, pause and skip from the phone
 
 **Overview**
 - Cards for CPU, GPU, memory, network, storage, battery and system uptime
@@ -34,8 +39,8 @@ Current versions: desktop 0.2.0, Android 1.1.0. Added in these versions:
 - One-tap starter alerts; export and import as a file
 
 **Standby**
-- 24 always-on faces for a phone on a stand: 16 instrument faces and 8 art faces, portrait and landscape, picked from a gallery
-- Burn-in protection, optional dim after 30 seconds
+- 29 always-on faces for a phone on a stand: 16 instrument faces, 8 art faces and 5 music faces, portrait and landscape, picked from a gallery
+- Burn-in protection; dim when idle or stay bright; framed or full screen
 
 **Widget**
 - Four looks: rings, bars, numerals, trace
@@ -45,11 +50,17 @@ Current versions: desktop 0.2.0, Android 1.1.0. Added in these versions:
 - English, German, French, Spanish and Russian built in, picked on the first screen
 - New and corrected translations download by themselves; anyone can contribute one through the `translations` folder
 
+**Guide**
+- How SysWatch works and the pros and limits of each connection, in setup and in Settings
+
 **Updates**
 - Google Play in-app updates, and a one-time list of what changed after updating
 
-## Desktop app 0.2.0
+## Desktop app 0.3.0
 
+- Now playing card, read from Windows media controls; shared with the phone over the local connection only
+- English, German, French, Spanish and Russian, starting in the Windows language; new text arrives without an update
+- Lightweight mode; hidden in the tray it uses about 55 to 73 MB and under 0.5% of one core
 - Choose Cloud or Local on first run; change it in Settings without restarting
 - Pairing screen lists the PC's addresses and marks the Tailscale one
 - Tells you when a newer version is out
@@ -60,7 +71,7 @@ Current versions: desktop 0.2.0, Android 1.1.0. Added in these versions:
 
 The original 0.1.0 catalogue follows.
 
-# SysWatch v0.1.0 — Feature Catalogue
+# SysWatch v0.1.0 feature catalogue
 
 ## Desktop Agent (Windows)
 
@@ -68,7 +79,7 @@ The original 0.1.0 catalogue follows.
 - Tray-first design: main window hidden at launch
 - Left-click tray icon to toggle dashboard visibility
 - Right-click context menu: Show / Pair / Pause / Quit
-- Single-instance enforcement — no duplicate processes
+- Single-instance enforcement: no duplicate processes
 
 ### Hardware Telemetry
 | Metric | Details |
@@ -87,7 +98,7 @@ The original 0.1.0 catalogue follows.
 
 ### Pairing System
 - 6-character Crockford-alphabet code (no ambiguous chars: I, O, 0, 1)
-- No accounts, no cloud auth — just enter the code on your phone
+- No accounts, no cloud auth: just enter the code on your phone
 - Code persists in OS keychain via `keyring` crate
 - QR code generation for easy mobile scanning
 
@@ -129,7 +140,7 @@ The original 0.1.0 catalogue follows.
 - Bottom stat strip: Uptime, System Temp, Processes, Power
 
 ### Standby Mode (Landscape)
-- Full-screen immersive showcase — turns phone into a desk monitor
+- Full-screen immersive showcase: turns phone into a desk monitor
 - 3-panel layout: CPU, GPU, Memory with large circular meters
 - Waveform graphs per panel
 - Nav rail with close button

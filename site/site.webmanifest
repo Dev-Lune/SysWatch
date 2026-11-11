@@ -4,8 +4,8 @@
   "description": "SysWatch shows your Windows PC’s CPU, GPU, temperatures, memory and network live on your Android phone, with alerts. Free, no ads, no account.",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#0E0F11",
-  "theme_color": "#0E0F11",
+  "background_color": "#FFFFFF",
+  "theme_color": "#2B44D6",
   "icons": [
     {
       "src": "/assets/img/icon-192.png",

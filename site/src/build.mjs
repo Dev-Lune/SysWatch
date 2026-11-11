@@ -91,36 +91,19 @@ function versioned(html) {
 // rel="noopener" on every link that leaves the site.
 const external = (html) => html.replace(/<a ([^>]*href="https?:\/\/[^>]*)>/g, (m, inner) => (/\brel=/.test(inner) ? m : `<a ${inner} rel="noopener">`));
 
-function picture(name, widths, w, h, alt, sizes) {
+function picture(name, widths, w, h, alt, sizes, eager = false) {
   const set = (ext) => widths.map((x) => `/assets/img/${name}-${x}.${ext} ${x}w`).join(", ");
-  return `<picture><source type="image/avif" srcset="${set("avif")}" sizes="${sizes}"><source type="image/webp" srcset="${set("webp")}" sizes="${sizes}"><img src="/assets/img/${name}-${widths[0]}.webp" width="${w}" height="${h}" alt="${attr(alt)}" loading="lazy" decoding="async"></picture>`;
+  return `<picture><source type="image/avif" srcset="${set("avif")}" sizes="${sizes}"><source type="image/webp" srcset="${set("webp")}" sizes="${sizes}"><img src="/assets/img/${name}-${widths[0]}.webp" width="${w}" height="${h}" alt="${attr(alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture>`;
 }
 
-// The hero instrument: 24 CPU readings, one every 2 s. The same numbers are baked into
-// site.css (the figure strip and the bar, arc and hot keyframes). After changing them,
-// `node src/build.mjs --keyframes` prints the lines to paste there.
-const READINGS = [61, 58, 66, 73, 79, 84, 88, 93, 86, 78, 71, 64, 57, 52, 46, 41, 38, 44, 49, 45, 40, 42, 47, 55];
-const LIMIT = 90;
-const y = (v) => (150 - v * 1.4).toFixed(1).replace(/\.0$/, "");
-const tracePoints = [...READINGS, ...READINGS, READINGS[0]].map((v, i) => `${i * 20},${y(v)}`);
-const traceLine = `M${tracePoints.join("L")}`;
-const traceFill = `${traceLine}L960,160L0,160Z`;
-
-if (process.argv.includes("--keyframes")) {
-  const at = (i) => `${+((i * 100) / READINGS.length).toFixed(3)}%`;
-  const frames = (fn) => [...READINGS, READINGS[0]].map((v, i) => `${at(i)}{${fn(v)}}`).join("");
-  console.log(`.inst-num span::after{content:"${READINGS.join("\\" + "A ")}"}`);
-  console.log(`@keyframes bar{${frames((v) => `transform:scaleX(${v / 100})`)}}`);
-  console.log(`@keyframes arc{${frames((v) => `stroke-dasharray:${+(v * 1.225).toFixed(1)} 163.4`)}}`);
-  console.log(`@keyframes hot{${READINGS.map((v, i) => `${at(i)}{color:var(--${v > LIMIT ? "alert" : "ink"})}`).join("")}}`);
-  process.exit(0);
-}
-
-const ICON = {
-  win: '<svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M2 3.5 9 2.6v6.9H2zM10 2.4 18 1.3v8.2h-8zM2 10.5h7v6.9l-7-.9zM10 10.5h8v8.2l-8-1.1z"/></svg>',
-  play: '<svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M4.2 1.8c-.5-.3-1.2.1-1.2.7v15c0 .6.7 1 1.2.7l13-7.5c.5-.3.5-1.1 0-1.4z"/></svg>',
-};
-const wordmark = '<span translate="no">Sys<b>Watch</b></span>';
+// Phosphor icons (MIT, phosphoricons.com), regular weight, one file each in src/icons.
+const icon = (n) =>
+  readFileSync(join(SRC, "icons", `${n}.svg`), "utf8").trim().replace("<svg ", '<svg class="ico" aria-hidden="true" focusable="false" width="24" height="24" ');
+const ic = (n) => `<span class="ic">${icon(n)}</span>`;
+const logo = '<img src="/assets/img/icon-64.webp" srcset="/assets/img/icon-64.webp 2x, /assets/img/icon-96.webp 3x" width="32" height="32" alt="">';
+const wordmark = '<span translate="no">SysWatch</span>';
+// "Free. No ads. No account." becomes three chips.
+const chips = (s) => s.split(/(?<=\.)\s+/).map((x) => x.replace(/\.$/, ""));
 
 // ---- Structured data ------------------------------------------------------------------
 
@@ -172,6 +155,7 @@ function homeLd(t) {
       downloadUrl: LINKS.win,
       fileSize: `${RELEASE.sizeMb}MB`,
       releaseNotes: LINKS.releases,
+      featureList: t.features,
       isAccessibleForFree: true,
       offers: offer,
       publisher,
@@ -189,6 +173,7 @@ function homeLd(t) {
       installUrl: LINKS.play,
       downloadUrl: LINKS.play,
       inLanguage: LANGS,
+      featureList: t.features,
       isAccessibleForFree: true,
       offers: offer,
       publisher,
@@ -264,7 +249,8 @@ function guideLd(t, key) {
 // ---- Shared page parts ----------------------------------------------------------------
 
 function head(t, key, title, description, ld) {
-  const fonts = t.lang === "ru" ? ["onest-cyrillic", "onest-latin"] : ["bricolage-700-latin", "instrument-sans-latin"];
+  const script = t.lang === "ru" ? "cyrillic" : "latin";
+  const fonts = [`unbounded-${script}`, `rubik-${script}`];
   const image = abs(og(t.lang));
   const self = abs(pathOf(t.lang, key));
   return `<meta charset="utf-8">
@@ -275,8 +261,8 @@ function head(t, key, title, description, ld) {
 ${LANGS.map((l) => `<link rel="alternate" hreflang="${l}" href="${abs(pathOf(l, key))}">`).join("\n")}
 <link rel="alternate" hreflang="x-default" href="${abs(pathOf(LANGS[0], key))}">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-<meta name="theme-color" content="#0E0F11">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#2B44D6">
+<meta name="color-scheme" content="light">
 ${fonts.map((f) => `<link rel="preload" href="/assets/fonts/${f}.woff2" as="font" type="font/woff2" crossorigin>`).join("\n")}
 <link rel="stylesheet" href="/assets/css/site.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -316,26 +302,26 @@ function header(t, key, all) {
   return `<a class="skip" href="#main">${t.skip}</a>
 <header class="top">
 <div class="wrap top-in">
-<a class="mark" href="${home}" aria-label="SysWatch">${wordmark}</a>
-<nav class="top-nav" aria-label="${attr(t.nav.main)}">
+<a class="brand" href="${home}" aria-label="SysWatch">${logo}${wordmark}</a>
+<nav class="nav" aria-label="${attr(t.nav.main)}">
 <a href="${to("see")}">${t.nav.see}</a>
 <a href="${to("connect")}">${t.nav.connect}</a>
 <a href="${to("setup")}">${t.nav.setup}</a>
 <a href="${to("faq")}">${t.nav.faq}</a>
 </nav>
 <details class="drop guides">
-<summary>${t.g.nav.label}</summary>
+<summary>${t.g.nav.label}${icon("caret-down")}</summary>
 <ul>
 ${GUIDES.map((k) => `<li><a href="${pathOf(t.lang, k)}"${k === key ? ' aria-current="page"' : ""}>${t.g.nav[k]}</a></li>`).join("\n")}
 </ul>
 </details>
 <details class="drop lang">
-<summary aria-label="${t.lang.toUpperCase()}: ${attr(t.nav.language)}, ${attr(t.name)}">${t.lang.toUpperCase()}</summary>
+<summary aria-label="${t.lang.toUpperCase()}: ${attr(t.nav.language)}, ${attr(t.name)}">${t.lang.toUpperCase()}${icon("caret-down")}</summary>
 <ul>
 ${langLinks(key, t.lang, all)}
 </ul>
 </details>
-<a class="btn btn-primary btn-small" href="${to("setup")}">${t.nav.download}</a>
+<a class="btn btn-main btn-small" href="${to("setup")}">${t.nav.download}</a>
 </div>
 </header>`;
 }
@@ -344,7 +330,7 @@ function footer(t, key, all) {
   return `<footer class="bottom">
 <div class="wrap bottom-in">
 <div class="bottom-brand">
-<p class="mark">${wordmark}</p>
+<p class="brand">${wordmark}</p>
 <p>${t.footer.made}</p>
 <nav aria-label="${attr(t.nav.language)}">
 <ul class="langs">
@@ -401,147 +387,122 @@ ${footer(t, key, all)}
 `;
 
 const downloadButtons = (t) => `<div class="actions">
-<a class="btn btn-primary" href="${LINKS.win}">${ICON.win}${t.hero.win}</a>
-<a class="btn btn-ghost" href="${LINKS.play}">${ICON.play}${t.hero.play}</a>
+<a class="btn btn-main" href="${LINKS.win}">${icon("windows-logo-fill")}<span>${t.hero.win}</span></a>
+<a class="btn btn-alt" href="${LINKS.play}">${icon("google-play-logo-fill")}<span>${t.hero.play}</span></a>
 </div>`;
+const meta = (t) => `<p class="meta">${t.hero.meta}<br>${t.hero.meta2}</p>`;
+const secHead = (id, s, lead = s.lead) => `<div class="sec-head">
+<h2 id="${id}-h">${s.h2}</h2>
+${lead ? `<p class="lead">${lead}</p>\n` : ""}</div>`;
+const ticks = (list) => `<ul class="ticks">\n${list.map((p) => `<li>${p}</li>`).join("\n")}\n</ul>`;
+const tiles = (cells, icons, cls = "tiles") => `<div class="${cls}">\n${cells.map((c, i) => `<div class="tile">${ic(icons[i])}<h3>${c.t}</h3><p>${c.d}</p></div>`).join("\n")}\n</div>`;
+// Art face names are never translated; music face names are, as in the app.
+const phoneFaces = (faces, names, keep) => `<div class="faces">\n${faces.map((f, i) => `<figure><div class="phone">${picture(names[i], [360, 720], 360, 760, f.alt, "(min-width: 1000px) 220px, 30vw")}</div><figcaption${keep ? ' translate="no"' : ""}>${f.t}</figcaption></figure>`).join("\n")}\n</div>`;
 
 // ---- Home page ------------------------------------------------------------------------
 
 function homePage(t, all) {
   const shots = ["overview", "alerts", "settings", "gallery"];
-  const faces = ["face-ink", "face-bauhaus", "face-blocks"];
   const main = `<main id="main">
-<section class="hero">
+<section class="hero" aria-labelledby="hero-h">
 <div class="wrap hero-in">
 <div class="hero-copy">
 <p class="kicker">${t.hero.kicker}</p>
-<h1>${t.hero.h1}</h1>
+<h1 id="hero-h">${t.hero.h1}</h1>
 <p class="lead">${t.hero.lead}</p>
 ${downloadButtons(t)}
-<p class="meta">${t.hero.meta}<br>${t.hero.meta2}</p>
-<p class="reassure">${t.hero.reassure}</p>
+${meta(t)}
+<ul class="assure">
+${chips(t.hero.reassure).map((r) => `<li>${r}</li>`).join("\n")}
+</ul>
 </div>
 <div class="hero-art">
-<input class="pause-box" type="checkbox" id="pause">
-<div class="inst" aria-hidden="true">
-<div class="inst-top"><span class="inst-k">CPU</span><span class="inst-live"><i></i>${t.hero.live}</span></div>
-<div class="inst-read">
-<p class="inst-num"><span></span><small>%</small></p>
-<svg class="arc" viewBox="0 0 64 64" width="64" height="64"><circle class="arc-bg" cx="32" cy="32" r="26"/><circle class="arc-val" cx="32" cy="32" r="26"/></svg>
-</div>
-<div class="trace">
-<svg class="trace-run" viewBox="0 0 960 160" width="960" height="160" preserveAspectRatio="none">
-<defs><linearGradient id="trace-fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E0A458" stop-opacity=".2"/><stop offset="1" stop-color="#E0A458" stop-opacity="0"/></linearGradient></defs>
-<path d="${traceFill}" fill="url(#trace-fade)"/><path class="trace-line" d="${traceLine}"/>
-</svg>
-<i class="trace-limit"></i>
-</div>
-<p class="inst-limit">${t.hero.limit} ${LIMIT}%</p>
-<div class="inst-bar"><i class="inst-fill"></i><i class="inst-tick"></i></div>
-<dl class="inst-rows">
-<div><dt>GPU</dt><dd>58<small>%</small></dd></div>
-<div><dt>MEM</dt><dd>61<small>%</small></dd></div>
-<div><dt>NET</dt><dd>9.01<small>MB/s</small></dd></div>
-</dl>
-</div>
-<label class="pause" for="pause">${t.hero.pause}</label>
+<i class="blob blob-1" aria-hidden="true"></i><i class="blob blob-2" aria-hidden="true"></i>
+<div class="phone ph-1">${picture("overview", [360, 720], 360, 760, t.see.items[0].alt, "(min-width: 1000px) 260px, 46vw", true)}</div>
+<div class="phone ph-2">${picture("face-poster", [360, 720], 360, 760, t.playing.faces[0].alt, "(min-width: 1000px) 220px, 40vw")}</div>
 </div>
 </div>
+</section>
+
+<div class="stats-band">
 <div class="wrap">
 <ul class="stats">
 ${t.stats.map(([n, l]) => `<li><b>${n}</b><span>${l}</span></li>`).join("\n")}
 </ul>
 </div>
-</section>
+</div>
 
 <section class="sec" id="see" aria-labelledby="see-h">
 <div class="wrap">
-<div class="sec-head">
-<p class="kicker">${t.see.kicker}</p>
-<h2 id="see-h">${t.see.h2}</h2>
-<p class="lead">${t.see.lead}</p>
-</div>
-<div class="plates">
-${t.see.items.map((it, i) => `<figure class="plate">${picture(shots[i], [360, 720], 360, 760, it.alt, "(min-width: 1000px) 250px, (min-width: 600px) 42vw, 44vw")}<figcaption><b>${it.t}</b>${it.d}</figcaption></figure>`).join("\n")}
+${secHead("see", t.see)}
+<div class="row4">
+${t.see.items.map((it, i) => `<figure class="pop"><div class="phone">${picture(shots[i], [360, 720], 360, 760, it.alt, "(min-width: 1000px) 260px, 44vw")}</div><figcaption><b>${it.t}</b>${it.d}</figcaption></figure>`).join("\n")}
 </div>
 </div>
 </section>
 
 <section class="sec" id="alerts" aria-labelledby="alerts-h">
-<div class="wrap split">
-<div>
-<p class="kicker">${t.alerts.kicker}</p>
-<h2 id="alerts-h">${t.alerts.h2}</h2>
-<p class="lead">${t.alerts.lead}</p>
-<ul class="ticks">
-${t.alerts.points.map((p) => `<li>${p}</li>`).join("\n")}
-</ul>
+<div class="wrap">
+${secHead("alerts", t.alerts)}
+<div class="say" aria-hidden="true">
+<p>${t.alerts.rule1}</p>
+<p>${t.alerts.rule2}</p>
+<span>${icon("timer")}${t.alerts.quiet}</span>
 </div>
-<div class="rules" aria-hidden="true">
-<div class="rule">
-<p class="rule-s">${t.alerts.rule1}</p>
-<div class="rule-bar"><i class="fill-72"></i><b class="tick-90"></b></div>
-<p class="rule-m"><span>72%</span><span class="hot">${t.hero.limit} 90%</span></p>
-</div>
-<div class="rule">
-<p class="rule-s">${t.alerts.rule2}</p>
-<div class="rule-bar"><i class="fill-64"></i><b class="tick-20"></b></div>
-<p class="rule-m"><span>64%</span><span class="hot">${t.hero.limit} 20%</span></p>
-</div>
-<p class="rule-q">${t.alerts.quiet}</p>
-</div>
+${ticks(t.alerts.points)}
 </div>
 </section>
 
 <section class="sec" id="look" aria-labelledby="look-h">
 <div class="wrap">
-<div class="sec-head">
-<p class="kicker">${t.look.kicker}</p>
-<h2 id="look-h">${t.look.h2}</h2>
-<p class="lead">${t.look.lead}</p>
-</div>
+${secHead("look", t.look)}
 <div class="look">
-<figure class="plate plate-wide">${picture("landscape-light", [720, 1440], 720, 300, t.look.alt, "(min-width: 1000px) 640px, 92vw")}<figcaption>${t.look.cap}</figcaption></figure>
-<dl class="cells">
-${t.look.cells.map((c) => `<div><dt>${c.t}</dt><dd>${c.d}</dd></div>`).join("\n")}
-</dl>
+<figure class="look-fig"><div class="tablet">${picture("landscape-light", [720, 1440], 720, 300, t.look.alt, "(min-width: 1000px) 640px, 90vw")}</div><figcaption>${t.look.cap}</figcaption></figure>
+${tiles(t.look.cells, ["palette", "moon", "squares-four", "list-numbers"])}
 </div>
 </div>
 </section>
 
-<section class="sec" id="standby" aria-labelledby="standby-h">
+<section class="sec sec-blue" id="standby" aria-labelledby="standby-h">
 <div class="wrap">
-<div class="sec-head">
-<p class="kicker">${t.standby.kicker}</p>
-<h2 id="standby-h">${t.standby.h2}</h2>
-<p class="lead">${t.standby.lead}</p>
+${secHead("standby", t.standby)}
+${phoneFaces(t.standby.faces, ["face-ink", "face-bauhaus", "face-blocks"], true)}
+${ticks(t.standby.points)}
 </div>
-<div class="standby">
-<div class="faces">
-${t.standby.faces.map((f, i) => `<figure class="plate">${picture(faces[i], [360, 720], 360, 760, f.alt, "(min-width: 1000px) 210px, 29vw")}<figcaption><b translate="no">${f.t}</b></figcaption></figure>`).join("\n")}
+</section>
+
+<section class="sec" id="playing" aria-labelledby="playing-h">
+<div class="wrap">
+<div class="playing">
+<div>
+${secHead("playing", t.playing)}
+${ticks(t.playing.points)}
+<p class="only">${t.playing.only}</p>
 </div>
-<ul class="ticks">
-${t.standby.points.map((p) => `<li>${p}</li>`).join("\n")}
-</ul>
+${phoneFaces(t.playing.faces, ["face-poster", "face-vinyl", "face-glossy"], false)}
 </div>
+</div>
+</section>
+
+<section class="sec" id="pc" aria-labelledby="pc-h">
+<div class="wrap">
+${secHead("pc", t.pc)}
+${tiles(t.pc.cells, ["feather", "translate", "cloud"], "tiles tiles-3")}
 </div>
 </section>
 
 <section class="sec" id="connect" aria-labelledby="connect-h">
 <div class="wrap">
-<div class="sec-head">
-<p class="kicker">${t.connect.kicker}</p>
-<h2 id="connect-h">${t.connect.h2}</h2>
-<p class="lead">${t.connect.lead}</p>
-</div>
+${secHead("connect", t.connect)}
 <div class="modes">
 ${t.connect.modes.map((m, i) => `<article class="mode">
-<p class="mode-tag">${m.tag}</p>
+${ic(["wifi-high", "cloud", "lock-key"][i])}
+<p class="tag">${m.tag}</p>
 <h3>${m.name}</h3>
 <dl>
 ${m.vals.map((v, j) => `<div><dt>${t.connect.rows[j]}</dt><dd>${v}</dd></div>`).join("\n")}
 </dl>
-<p class="mode-note">${m.note}${i === 2 ? ` <a href="${pathOf(t.lang, "tailscale")}">${t.connect.guide}</a>` : ""}</p>
+<p class="note">${m.note}${i === 2 ? ` <a href="${pathOf(t.lang, "tailscale")}">${t.connect.guide}</a>` : ""}</p>
 </article>`).join("\n")}
 </div>
 <p class="foot">${t.connect.foot}</p>
@@ -550,39 +511,27 @@ ${m.vals.map((v, j) => `<div><dt>${t.connect.rows[j]}</dt><dd>${v}</dd></div>`).
 
 <section class="sec" id="setup" aria-labelledby="setup-h">
 <div class="wrap">
-<div class="sec-head">
-<p class="kicker">${t.setup.kicker}</p>
-<h2 id="setup-h">${t.setup.h2}</h2>
-<p class="lead">${t.setup.lead}</p>
-</div>
+${secHead("setup", t.setup)}
 <ol class="steps">
 ${t.setup.steps.map((s, i) => `<li id="step-${i + 1}"><span class="step-n" aria-hidden="true">${i + 1}</span><h3>${s.t}</h3><p>${s.d}</p></li>`).join("\n")}
 </ol>
 ${downloadButtons(t)}
-<p class="meta">${t.hero.meta}<br>${t.hero.meta2}</p>
+${meta(t)}
 <p class="more"><a href="${pathOf(t.lang, "install")}">${t.setup.guide}</a><a href="${LINKS.releases}">${t.setup.releases}</a></p>
 </div>
 </section>
 
 <section class="sec" id="privacy" aria-labelledby="privacy-h">
 <div class="wrap">
-<div class="sec-head">
-<p class="kicker">${t.privacy.kicker}</p>
-<h2 id="privacy-h">${t.privacy.h2}</h2>
-</div>
-<dl class="cells cells-3">
-${t.privacy.items.map((c) => `<div><dt>${c.t}</dt><dd>${c.d}</dd></div>`).join("\n")}
-</dl>
+${secHead("privacy", t.privacy, "")}
+${tiles(t.privacy.items, ["user-minus", "eye", "wifi-high", "cloud", "shield-check", "browser"])}
 <p class="more"><a href="${LINKS.privacy}">${t.privacy.policy}</a><a href="${LINKS.terms}">${t.privacy.terms}</a></p>
 </div>
 </section>
 
 <section class="sec" id="faq" aria-labelledby="faq-h">
-<div class="wrap split split-faq">
-<div class="sec-head">
-<p class="kicker">${t.faq.kicker}</p>
-<h2 id="faq-h">${t.faq.h2}</h2>
-</div>
+<div class="wrap">
+${secHead("faq", t.faq, "")}
 <div class="faq">
 ${t.faq.items.map((f) => `<details><summary>${f.q}</summary><p>${f.a}</p></details>`).join("\n")}
 </div>
@@ -590,14 +539,12 @@ ${t.faq.items.map((f) => `<details><summary>${f.q}</summary><p>${f.a}</p></detai
 </section>
 
 <section class="sec" id="translate" aria-labelledby="translate-h">
-<div class="wrap split">
-<div>
-<p class="kicker">${t.translate.kicker}</p>
+<div class="wrap">
+<div class="panel">
+${ic("translate")}
 <h2 id="translate-h">${t.translate.h2}</h2>
-</div>
-<div>
-<p class="lead">${t.translate.p}</p>
-<p class="more"><a href="${pathOf(t.lang, "translate")}">${t.translate.guide}</a><a href="${LINKS.translations}">${t.translate.cta}</a></p>
+<p>${t.translate.p}</p>
+<p class="actions"><a class="btn btn-white" href="${LINKS.translations}">${t.translate.cta}</a><a class="btn btn-ghost" href="${pathOf(t.lang, "translate")}">${t.translate.guide}</a></p>
 </div>
 </div>
 </section>
@@ -623,7 +570,7 @@ function block(b, t) {
   if (b.h3) return `<h3>${b.h3}</h3>`;
   if (b.p) return `<p>${b.p}</p>`;
   if (b.note) return `<p class="note">${b.note}</p>`;
-  if (b.list) return `<ul class="ticks">\n${b.list.map((x) => `<li>${x}</li>`).join("\n")}\n</ul>`;
+  if (b.list) return ticks(b.list);
   if (b.code) return pre(b.code);
   if (b.table) return table(b.table);
   if (b.actions) return downloadButtons(t);
@@ -640,21 +587,25 @@ function guidePage(t, key, all) {
   const g = t.g.pages[key];
   const sections = g.blocks.filter((b) => b.h2);
   const main = `<main id="main" class="guide">
+<div class="ghero">
 <div class="wrap">
 <nav class="crumbs" aria-label="${attr(t.g.crumbs)}">
 <ol><li><a href="${pathOf(t.lang, "home")}">SysWatch</a></li><li aria-current="page">${g.crumb}</li></ol>
 </nav>
-<div class="guide-in">
-<article class="prose">
 <header class="guide-head">
 <p class="kicker">${g.kicker}</p>
 <h1>${g.h1}</h1>
 <p class="lead">${g.lead}</p>
 </header>
+</div>
+</div>
+<div class="wrap">
+<div class="guide-in">
+<article class="prose">
 ${g.blocks.map((b) => block(b, t)).join("\n")}
 </article>
 <nav class="toc" aria-labelledby="toc-h">
-<p class="kicker" id="toc-h">${t.g.toc}</p>
+<p id="toc-h">${t.g.toc}</p>
 <ol>
 ${sections.map((b) => `<li><a href="#${b.id}">${b.h2}</a></li>`).join("\n")}
 </ol>
@@ -680,20 +631,25 @@ function notFound(all) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found | SysWatch</title>
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#0E0F11">
-<meta name="color-scheme" content="dark">
-<link rel="preload" href="/assets/fonts/bricolage-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#2B44D6">
+<meta name="color-scheme" content="light">
+<link rel="preload" href="/assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/site.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 </head>
 <body>
-<header class="top"><div class="wrap top-in"><a class="mark" href="/" aria-label="SysWatch">${wordmark}</a></div></header>
+<a class="skip" href="#main">${t.skip}</a>
+<header class="top"><div class="wrap top-in"><a class="brand" href="/" aria-label="SysWatch">${logo}${wordmark}</a></div></header>
 <main id="main" class="lost">
-<div class="wrap">
-<p class="lost-n" aria-hidden="true">404</p>
+<div class="ghero">
+<div class="wrap"><div class="guide-head">
+<p class="ghero-n" aria-hidden="true">404</p>
 <h1>This page is not here.</h1>
 <p class="lead">The address may be mistyped, or the page has moved. Try the home page, in any of five languages, or one of the guides.</p>
+</div></div>
+</div>
+<div class="wrap">
 <ul class="langs">
 ${all.map((o) => `<li><a href="${pathOf(o.lang, "home")}" hreflang="${o.lang}" lang="${o.lang}">SysWatch, ${o.name}</a></li>`).join("\n")}
 </ul>
@@ -743,8 +699,8 @@ out("site.webmanifest", JSON.stringify({
   description: plain(all[0].description),
   start_url: "/",
   display: "browser",
-  background_color: "#0E0F11",
-  theme_color: "#0E0F11",
+  background_color: "#FFFFFF",
+  theme_color: "#2B44D6",
   icons: [192, 512].map((s) => ({ src: `/assets/img/icon-${s}.png`, sizes: `${s}x${s}`, type: "image/png" })),
 }, null, 2) + "\n");
 
@@ -753,18 +709,19 @@ out("llms.txt", `# SysWatch
 
 > ${en.description}
 
-SysWatch is two free apps made by DevLune, a software studio in Hyderabad, India. A small desktop app runs on a Windows PC and reads its hardware. An Android app shows those readings live and sends a notification when one crosses a limit the user set. There are no ads and no account. It is read only: the phone cannot control the PC.
+SysWatch is two free apps made by DevLune, a software studio in Hyderabad, India. A small desktop app runs on a Windows PC and reads its hardware. An Android app shows those readings live and sends a notification when one crosses a limit the user set. There are no ads and no account. It is read only, except play, pause and skip for media in Local and Tailscale mode, when the user allows it on the PC.
 
 ## Key facts
 
 - Readings: CPU, GPU, memory, network, storage, battery and uptime, each with a history graph. Temperatures are shown when the PC reports them.
 - Alerts: rules written as sentences (for example "CPU load above 90%"), each limit drawn as a red line on its gauge.
-- Standby: 24 always-on faces for a phone on a desk stand (16 instrument faces, 8 art faces), and a home screen widget in four looks.
+- Standby: 29 always-on faces for a phone on a desk stand (16 instrument faces, 8 art faces, 5 music faces), dimmed when idle or always bright, framed or full screen, and a home screen widget in four looks.
+- Now playing: the phone shows what the PC is playing, with its cover, on Overview and in five music standby faces (Poster, Ambient, Glossy, Vinyl, Quiet). The phone can play, pause and skip media on the PC; this is on by default and is switched off in the PC app's Settings. Local and Tailscale mode only, never through the cloud.
 - Look: a chosen accent colour, light, dark or true black theme, five Overview layouts (Bridge, Gauges, Strip charts, Ledger, Focus).
-- Three ways to connect: Local (same Wi-Fi, instant, readings stay on the network), Cloud by DevLune (works from anywhere, nothing to set up, about 2 seconds per update), Tailscale (instant and private from anywhere).
-- Desktop app: Windows 10 and 11, 64-bit, version ${RELEASE.version}, about ${RELEASE.sizeMb} MB. The installer is not code signed, so Windows SmartScreen shows a warning (More info, then Run anyway).
+- Three ways to connect: Local (same Wi-Fi, instant, readings stay on the network), Cloud by DevLune (works from anywhere, nothing to set up, at most one update every 2 seconds), Tailscale (instant and private from anywhere).
+- Desktop app: Windows 10 and 11, 64-bit, version ${RELEASE.version}, about ${RELEASE.sizeMb} MB. Hidden to the tray it uses about 55 to 73 MB of memory and under 0.5% of one CPU core; Lightweight mode samples every 3 seconds and sends every 5 seconds in Cloud mode. The installer is not code signed, so Windows SmartScreen shows a warning (More info, then Run anyway).
 - Phone app: Android 7.0 and newer, on Google Play.
-- App languages: English, German, French, Spanish, Russian. Community translations are welcome: one text file per language, and a merged translation reaches the app without an app update.
+- App languages: both apps are in English, German, French, Spanish and Russian; the Windows app starts in the Windows language and can be changed in setup or Settings. Community translations are welcome: one text file per language covers both apps, and a merged translation reaches the apps without an update.
 - Price: free on both sides.
 
 ## Guides

@@ -20,7 +20,7 @@
         { "steps": [
           "Téléchargez <code>SysWatch_{version}_x64-setup.exe</code> et lancez-le.",
           "Windows SmartScreen peut afficher « Windows a protégé votre ordinateur ». Choisissez <b>Informations complémentaires</b>, puis <b>Exécuter quand même</b>. Le programme d'installation n'est pas encore signé numériquement.",
-          "Terminez l'installation et ouvrez SysWatch. L'application se loge dans la zone de notification.",
+          "Terminez l'installation et ouvrez SysWatch. L'application se loge dans la zone de notification. La configuration vous laisse choisir sa langue ; par défaut, c'est celle de Windows.",
           "Choisissez comment votre téléphone se connecte. Au premier lancement, trois cartes s'affichent : Local, Cloud by DevLune et Tailscale. Choisissez-en une, suivez les étapes affichées, et vous arrivez au code d'association."
         ], "id": "windows" },
         { "h2": "Choisir comment le téléphone se connecte", "id": "connect" },
@@ -30,11 +30,13 @@
           "rows": [
             ["Fonctionne", "Sur le même Wi-Fi", "Partout où il y a Internet", "Partout"],
             ["Demande", "Rien de plus", "Internet sur le PC et le téléphone", "Tailscale sur le PC et le téléphone, configuré une fois"],
-            ["Vitesse", "Instantané, directement depuis le PC", "Environ 2 secondes par mise à jour", "Instantané, directement depuis le PC"],
+            ["Vitesse", "Instantané, directement depuis le PC", "Au plus une mise à jour toutes les 2 secondes", "Instantané, directement depuis le PC"],
+            ["Lecture en cours et contrôle des médias", "Oui", "Non", "Oui"],
             ["Où passent les mesures", "Elles ne quittent jamais votre réseau", "Par le relais de DevLune", "Par votre propre liaison privée Tailscale"]
           ]
         } },
         { "p": "Vous hésitez ? Choisissez <b>Local</b> si le téléphone reste près du PC, et le <b>Cloud par DevLune</b> si vous consultez votre PC de l'extérieur sans vouloir configurer Tailscale. Local et Tailscale nécessitent la dernière version des deux applications." },
+        { "p": "La lecture en cours, ainsi que lecture, pause et changement de piste depuis le téléphone, fonctionnent uniquement en mode local et avec Tailscale. Le contrôle depuis le téléphone est activé par défaut ; désactivez-le dans les paramètres de l'application de bureau, rubrique Médias." },
         { "note": "Le mode local utilise un seul port, <b>47800</b>. La première fois, le pare-feu Windows demande s'il faut autoriser SysWatch sur les réseaux privés : choisissez <b>Autoriser</b>. Le mode local n'est pas chiffré, et le code d'association de 6 caractères est le seul verrou : utilisez-le donc sur des réseaux de confiance, comme le Wi-Fi de votre domicile, ou avec Tailscale, qui chiffre tout lui-même." },
         { "p": "Envie de la vitesse du mode local hors de chez vous ? Le <a href=\"{tailscale}\">guide Tailscale</a> prend environ cinq minutes." },
         { "h2": "Associer le téléphone", "id": "pair" },
@@ -83,6 +85,7 @@
           "Sur Android, Tailscale compte comme le VPN du téléphone. Un seul VPN peut fonctionner à la fois.",
           "Si vous avez associé le téléphone avant d'installer Tailscale, scannez à nouveau le code QR pour qu'il apprenne l'adresse Tailscale.",
           "Pas d'adresse Tailscale dans l'écran Pairing ? Tailscale n'est pas connecté sur le PC. Ouvrez-le depuis la zone de notification, connectez-vous, puis rouvrez Pairing.",
+          "La lecture en cours et le contrôle des médias fonctionnent avec Tailscale comme à la maison.",
           "Le PC doit être allumé et éveillé. Tailscale ne peut pas joindre un ordinateur en veille."
         ] },
         { "p": "Vous installez SysWatch pour la première fois ? Commencez par le <a href=\"{guide}\">guide d'installation</a>." }
@@ -94,7 +97,7 @@
       "crumb": "Guide de traduction",
       "kicker": "Guide de traduction",
       "h1": "Traduire SysWatch",
-      "lead": "SysWatch parle anglais, allemand, français, espagnol et russe. Vous pouvez ajouter votre langue, ou corriger une formulation dans une langue existante. Aucune programmation : chaque langue tient dans un fichier texte.",
+      "lead": "SysWatch parle anglais, allemand, français, espagnol et russe, sur le téléphone comme sous Windows. Vous pouvez ajouter votre langue, ou corriger une formulation dans une langue existante. Aucune programmation : chaque langue tient dans un fichier texte.",
       "blocks": [
         { "note": "Quand une traduction est acceptée, <b>chaque application SysWatch la récupère d'elle-même</b> dans la journée, ou tout de suite depuis Paramètres, Langue, Vérifier. Aucune mise à jour de l'application n'est nécessaire." },
         { "h2": "Ajouter votre langue", "id": "add" },
@@ -105,6 +108,7 @@
           "<b>Ouvrez une pull request.</b> Une vérification se lance d'elle-même et vous dit clairement s'il faut corriger quelque chose. Une fois qu'elle est au vert, la traduction est relue puis acceptée."
         ], "id": "add" },
         { "p": "Inutile de tout finir d'un coup. Les textes que vous laissez de côté s'affichent en anglais, et l'application indique le taux d'avancement d'une langue. En revanche, ne laissez aucun texte vide : supprimez plutôt la ligne entière." },
+        { "p": "Un seul fichier sert aux deux applications. Les textes dont le nom commence par <code>desktop_</code> sont ceux de l'application Windows, les autres ceux de l'application pour téléphone." },
         { "h2": "Corriger une traduction existante", "id": "fix" },
         { "p": "Modifiez le fichier de la langue (<code>de.xml</code>, <code>fr.xml</code>, <code>es.xml</code>, <code>ru.xml</code>), changez le texte et ouvrez une pull request. Expliquez en une phrase pourquoi la nouvelle formulation est meilleure." },
         { "h2": "Les règles, cinq en tout", "id": "rules" },

@@ -20,7 +20,7 @@
         { "steps": [
           "Descarga <code>SysWatch_{version}_x64-setup.exe</code> y ejecútalo.",
           "Windows SmartScreen puede mostrar «Windows protegió su PC». Elige <b>Más información</b> y después <b>Ejecutar de todas formas</b>. El instalador todavía no tiene firma de código.",
-          "Termina la instalación y abre SysWatch. La app se queda en la bandeja del sistema.",
+          "Termina la instalación y abre SysWatch. La app se queda en la bandeja del sistema. En la configuración inicial eliges su idioma; de entrada es el de Windows.",
           "Elige cómo se conecta tu móvil. La primera vez aparecen tres tarjetas: Local, Cloud by DevLune y Tailscale. Elige una, sigue los pasos que muestra y terminarás en el código de emparejamiento."
         ], "id": "windows" },
         { "h2": "Elige cómo se conecta el móvil", "id": "connect" },
@@ -30,11 +30,13 @@
           "rows": [
             ["Funciona", "En la misma Wi-Fi", "En cualquier lugar con internet", "En cualquier lugar"],
             ["Necesita", "Nada más", "Internet en el PC y en el móvil", "Tailscale en el PC y en el móvil, configurado una vez"],
-            ["Velocidad", "Al instante, directo desde el PC", "Unos 2 segundos por actualización", "Al instante, directo desde el PC"],
+            ["Velocidad", "Al instante, directo desde el PC", "Como mucho una actualización cada 2 segundos", "Al instante, directo desde el PC"],
+            ["Reproduciendo y control multimedia", "Sí", "No", "Sí"],
             ["Por dónde van las lecturas", "Nunca salen de tu red", "Por el servidor de retransmisión de DevLune", "Por tu propio enlace privado de Tailscale"]
           ]
         } },
         { "p": "¿No lo tienes claro? Elige <b>Local</b> si el móvil suele estar cerca del PC, y la <b>Nube de DevLune</b> si miras tu PC desde fuera y no quieres configurar Tailscale. Local y Tailscale necesitan la última versión de las dos apps." },
+        { "p": "Reproduciendo, y reproducir, pausar y saltar pistas desde el móvil, solo funcionan en modo local y con Tailscale. El control desde el móvil viene activado; desactívalo en los ajustes de la app de escritorio, en Multimedia." },
         { "note": "El modo local usa un solo puerto, el <b>47800</b>. La primera vez, el Firewall de Windows pregunta si permite a SysWatch comunicarse en redes privadas: elige <b>Permitir</b>. El modo local no va cifrado y el código de emparejamiento de 6 caracteres es la única cerradura, así que úsalo en redes de confianza: la Wi-Fi de tu casa, o Tailscale, que lo cifra todo por sí mismo." },
         { "p": "¿Quieres la velocidad del modo local fuera de casa? La <a href=\"{tailscale}\">guía de Tailscale</a> lleva unos cinco minutos." },
         { "h2": "Empareja el móvil", "id": "pair" },
@@ -83,6 +85,7 @@
           "En Android, Tailscale cuenta como la VPN del móvil. Solo puede funcionar una VPN a la vez.",
           "Si emparejaste antes de instalar Tailscale, vuelve a escanear el código QR para que el móvil aprenda la dirección de Tailscale.",
           "¿No aparece ninguna dirección de Tailscale en la pantalla Pairing? Tailscale no está conectado en el PC. Ábrelo desde la bandeja del sistema, inicia sesión y vuelve a abrir Pairing.",
+          "Reproduciendo y el control multimedia funcionan con Tailscale igual que en casa.",
           "El PC tiene que estar despierto. Tailscale no puede llegar a un ordenador en suspensión."
         ] },
         { "p": "¿Instalas SysWatch por primera vez? Empieza por la <a href=\"{guide}\">guía de instalación</a>." }
@@ -94,7 +97,7 @@
       "crumb": "Guía de traducción",
       "kicker": "Guía de traducción",
       "h1": "Traduce SysWatch",
-      "lead": "SysWatch habla inglés, alemán, francés, español y ruso. Puedes añadir tu idioma o mejorar una frase de uno que ya existe. No hace falta programar: cada idioma es un archivo de texto.",
+      "lead": "SysWatch habla inglés, alemán, francés, español y ruso, en el móvil y en Windows. Puedes añadir tu idioma o mejorar una frase de uno que ya existe. No hace falta programar: cada idioma es un archivo de texto.",
       "blocks": [
         { "note": "Cuando se acepta una traducción, <b>cada app de SysWatch la recibe por sí sola</b> en un día, o al momento desde Ajustes, Idioma, Comprobar. No hace falta actualizar la app." },
         { "h2": "Añade tu idioma", "id": "add" },
@@ -105,6 +108,7 @@
           "<b>Abre una pull request.</b> Se lanza una comprobación automática que te dice, con palabras claras, si hay algo que corregir. Cuando sale en verde, la traducción se revisa y se acepta."
         ], "id": "add" },
         { "p": "No tienes que terminarlo de una vez. Los textos que dejes sin traducir salen en inglés, y la app indica cuánto está completo cada idioma. Pero no dejes ningún texto vacío: en ese caso, borra la línea entera." },
+        { "p": "Un mismo archivo sirve para las dos apps. Los textos cuyo nombre empieza por <code>desktop_</code> son de la app de Windows; el resto, de la app del móvil." },
         { "h2": "Corrige una traducción existente", "id": "fix" },
         { "p": "Edita el archivo de ese idioma (<code>de.xml</code>, <code>fr.xml</code>, <code>es.xml</code>, <code>ru.xml</code>), cambia el texto y abre una pull request. Explica en una frase por qué la nueva redacción es mejor." },
         { "h2": "Las reglas, las cinco", "id": "rules" },

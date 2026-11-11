@@ -14,7 +14,11 @@ OUT = os.path.join(ROOT, "assets", "img")
 
 # name: (source file, crop box, output widths). Portrait crops drop the status bar (9:19).
 PORTRAIT = (0, 100, 1080, 2380)
+TALL = (0, 72, 1080, 2352)  # the 1080x2424 music face captures, same 9:19 crop
 JOBS = {
+    "face-poster": ("11-standby-poster.png", TALL, (360, 720)),
+    "face-vinyl": ("12-standby-vinyl.png", TALL, (360, 720)),
+    "face-glossy": ("13-standby-glossy.png", TALL, (360, 720)),
     "overview": ("01-overview.png", PORTRAIT, (360, 720)),
     "alerts": ("07-alert-editor.png", PORTRAIT, (360, 720)),
     "settings": ("02-settings.png", PORTRAIT, (360, 720)),
@@ -40,6 +44,9 @@ icon.resize((32, 32), Image.LANCZOS).save(os.path.join(ROOT, "favicon-32.png"), 
 icon.resize((48, 48), Image.LANCZOS).save(os.path.join(ROOT, "favicon.ico"), sizes=[(16, 16), (32, 32), (48, 48)])
 for size in (192, 512):
     icon.resize((size, size), Image.LANCZOS).save(os.path.join(ROOT, "assets", "img", f"icon-{size}.png"), optimize=True)
+# The header and footer mark: 32 css px, so 64 and 96 for sharp screens.
+for size in (64, 96):
+    icon.resize((size, size), Image.LANCZOS).save(os.path.join(OUT, f"icon-{size}.webp"), quality=90, method=6)
 # iOS paints transparent corners black, so the touch icon sits on the icon's own navy.
 touch = Image.new("RGB", (180, 180), icon.convert("RGB").getpixel((256, 60)))
 small = icon.resize((180, 180), Image.LANCZOS)

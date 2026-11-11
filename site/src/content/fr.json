@@ -17,13 +17,10 @@
     "play": "Disponible sur Google Play",
     "meta": "Version {version} · Windows 10 et 11, 64 bits · environ {size}",
     "meta2": "Android 7.0 et versions ultérieures",
-    "reassure": "Gratuit. Sans publicité. Sans compte.",
-    "pause": "Mettre l'animation en pause",
-    "live": "En direct",
-    "limit": "Seuil"
+    "reassure": "Gratuit. Sans publicité. Sans compte."
   },
   "stats": [
-    ["24", "cadrans de veille"],
+    ["29", "cadrans de veille"],
     ["5", "dispositions de la Vue d'ensemble"],
     ["3", "façons de se connecter"],
     ["0", "publicité ni compte"]
@@ -36,7 +33,7 @@
       { "t": "Mesures en direct", "d": "Un seul panneau sobre, de grands chiffres, une seule couleur d'accent.", "alt": "Vue d'ensemble de SysWatch sur un téléphone Android : charge CPU à 81 % avec son graphique d'historique, puis les cartes GPU, mémoire, réseau et stockage" },
       { "t": "Alertes", "d": "Fixez un seuil sur n'importe quelle jauge et choisissez la fréquence des rappels.", "alt": "Éditeur d'alerte de SysWatch : surveiller la charge CPU, prévenir quand elle dépasse 90 %, ne pas répéter pendant 5 minutes" },
       { "t": "Votre style", "d": "Couleur d'accent, thème, densité et ordre des cartes.", "alt": "Réglages de SysWatch avec sept couleurs d'accent, les thèmes clair, sombre et noir absolu, et un interrupteur pour chaque carte de la Vue d'ensemble" },
-      { "t": "Cadrans de veille", "d": "Une galerie de 24 cadrans toujours allumés, en aperçu avec vos propres mesures.", "alt": "Galerie des cadrans de veille avec les aperçus des cadrans artistiques Horizon, Blocks, Bauhaus, Ink, Weave et Bloom" }
+      { "t": "Cadrans de veille", "d": "Une galerie de 29 cadrans toujours allumés, en aperçu avec vos propres mesures.", "alt": "Galerie des cadrans de veille avec les aperçus des cadrans artistiques Horizon, Blocks, Bauhaus, Ink, Weave et Bloom" }
     ]
   },
   "alerts": {
@@ -70,7 +67,7 @@
   "standby": {
     "kicker": "Veille",
     "h2": "Un second écran pour votre bureau",
-    "lead": "Posez le téléphone à côté du clavier : il devient un second écran pour les stats de votre PC, avec 24 cadrans de veille toujours allumés, 16 cadrans d'instruments et 8 cadrans artistiques, en portrait comme en paysage.",
+    "lead": "Posez le téléphone à côté du clavier : il devient un second écran pour les stats de votre PC, avec 29 cadrans de veille toujours allumés, 16 cadrans d'instruments, 8 cadrans artistiques et 5 cadrans musicaux, en portrait comme en paysage.",
     "faces": [
       { "t": "Ink", "alt": "Cadran de veille Ink : la charge CPU en grand chiffre à empattements, 62 %, puis GPU, mémoire, réseau et stockage en liste" },
       { "t": "Bauhaus", "alt": "Cadran de veille Bauhaus : un disque rouge dans un anneau bleu, CPU à 10 % et des barres pour le GPU, la mémoire et le stockage" },
@@ -79,8 +76,32 @@
     "points": [
       "8 cadrans artistiques : Horizon, Blocks, Bauhaus, Ink, Weave, Bloom, Type et Pixel. Ink compose vos mesures comme une page imprimée, Bauhaus transforme CPU, GPU et mémoire en formes.",
       "16 cadrans d'instruments, à choisir dans une galerie qui présente chacun avec vos propres mesures.",
-      "Protection contre le marquage de l'écran et atténuation facultative après 30 secondes.",
+      "Protection contre le marquage de l'écran. Les cadrans peuvent s'atténuer au repos ou rester lumineux, encadrés ou en plein écran.",
       "Un widget d'écran d'accueil en quatre styles : anneaux, barres, chiffres, courbe."
+    ]
+  },
+  "playing": {
+    "h2": "Voyez ce que joue votre PC",
+    "lead": "La musique ou la vidéo en cours sur le PC s'affiche sur votre téléphone avec sa pochette : dans la Vue d'ensemble, et dans cinq cadrans de veille musicaux pour le bureau.",
+    "points": [
+      "Une carte Lecture en cours dans la Vue d'ensemble, avec le titre, l'artiste et la pochette.",
+      "Cinq cadrans musicaux : Affiche, Ambiance, Brillant, Vinyle et Calme.",
+      "Lecture, pause et changement de piste depuis le téléphone. C'est activé par défaut ; vous pouvez le désactiver dans les paramètres du PC."
+    ],
+    "only": "Uniquement en mode local et avec Tailscale. Ce que vous écoutez ne passe jamais par le cloud.",
+    "faces": [
+      { "t": "Affiche", "alt": "Cadran musical Affiche : une grande pochette au-dessus du titre en capitales grasses, une barre de progression et les boutons de lecture" },
+      { "t": "Vinyle", "alt": "Cadran musical Vinyle : la pochette en étiquette d'un disque noir, avec le titre, une barre de progression et les boutons de lecture" },
+      { "t": "Brillant", "alt": "Cadran musical Brillant : une pochette arrondie avec un léger reflet, le titre et les boutons de lecture dans une pastille" }
+    ]
+  },
+  "pc": {
+    "h2": "Une petite application sur votre PC",
+    "lead": "L'application Windows lit le matériel et se fait oublier dans la zone de notification.",
+    "cells": [
+      { "t": "Légère dans la zone de notification", "d": "Masquée dans la zone de notification, elle utilise environ 55 à 73 Mo de mémoire et moins de 0,5 % d'un cœur de processeur. Le mode léger prend une mesure toutes les 3 secondes et envoie toutes les 5 secondes en mode cloud." },
+      { "t": "Dans votre langue", "d": "Anglais, allemand, français, espagnol ou russe. Elle démarre dans la langue de Windows, et vous pouvez la changer lors de la configuration ou dans les paramètres." },
+      { "t": "Économe avec le cloud", "d": "En mode cloud, le PC envoie au plus une mise à jour toutes les 2 secondes." }
     ]
   },
   "connect": {
@@ -90,7 +111,7 @@
     "rows": ["Fonctionne", "Configuration", "Vitesse", "Où passent les mesures"],
     "modes": [
       { "name": "Local", "tag": "Les stats du PC en Wi-Fi", "vals": ["Sur le même Wi-Fi", "Aucune", "Instantané, directement depuis le PC", "Elles ne quittent jamais votre réseau"], "note": "Sans chiffrement sur le réseau local : utilisez un réseau de confiance." },
-      { "name": "Cloud par DevLune", "tag": "De partout", "vals": ["Partout où il y a Internet", "Aucune", "Environ 2 secondes par mise à jour", "Par le relais de DevLune"], "note": "Les mesures et le nom du téléphone transitent par le relais. Vous ne saisissez jamais d'adresse de serveur." },
+      { "name": "Cloud par DevLune", "tag": "De partout", "vals": ["Partout où il y a Internet", "Aucune", "Au plus une mise à jour toutes les 2 secondes", "Par le relais de DevLune"], "note": "Les mesures et le nom du téléphone transitent par le relais. Vous ne saisissez jamais d'adresse de serveur. La lecture en cours ne fonctionne qu'en mode local et avec Tailscale." },
       { "name": "Tailscale", "tag": "Privé, de partout", "vals": ["Partout", "Environ cinq minutes, une seule fois", "Instantané, directement depuis le PC", "Par votre propre liaison privée Tailscale"], "note": "Tailscale chiffre la liaison. C'est une application distincte, avec une offre personnelle gratuite." }
     ],
     "foot": "Vous hésitez ? Choisissez Local si le téléphone reste le plus souvent près du PC. Local et Tailscale nécessitent la dernière version des deux applications.",
@@ -114,10 +135,10 @@
     "h2": "La confidentialité, sans détour",
     "items": [
       { "t": "Aucun compte", "d": "Un code d'association de 6 caractères est le seul lien entre le téléphone et le PC." },
-      { "t": "Lecture seule", "d": "Le téléphone voit les mesures. Il ne peut rien contrôler, modifier ni exécuter sur votre PC." },
+      { "t": "Lecture seule, à une exception près", "d": "Le téléphone voit les mesures. Il ne peut rien modifier ni exécuter sur votre PC, sauf la lecture, la pause et le changement de piste des médias en mode local et avec Tailscale, si vous l'autorisez sur le PC." },
       { "t": "Le local reste local", "d": "En mode local, les mesures restent sur votre réseau. Elles n'y sont pas chiffrées : utilisez un réseau de confiance, ou Tailscale, qui chiffre la liaison." },
       { "t": "Le cloud, dit clairement", "d": "En mode cloud, les mesures et le nom du téléphone transitent par le relais de DevLune pour que le téléphone joigne le PC de partout." },
-      { "t": "Rien de plus", "d": "Les noms des programmes en cours ne sont envoyés que si vous l'activez. L'appareil photo sert uniquement à scanner le code QR d'association." },
+      { "t": "Rien de plus", "d": "Les noms des programmes en cours ne sont envoyés que si vous l'activez. L'appareil photo sert uniquement à scanner le code QR d'association. Ce qui est en cours de lecture ne passe jamais par le cloud." },
       { "t": "Ce site", "d": "Aucun cookie, aucun traceur, et rien n'est chargé depuis d'autres sites." }
     ],
     "policy": "Politique de confidentialité (en anglais)",
@@ -130,19 +151,20 @@
       { "q": "SysWatch est-il gratuit ?", "a": "Oui. SysWatch est gratuit sur le téléphone comme sur le PC, sans publicité et sans compte. S'il mérite sa place sur votre bureau, vous pouvez <a href=\"{sponsor}\">soutenir SysWatch sur GitHub</a>." },
       { "q": "Fonctionne-t-il hors de chez moi ?", "a": "Oui, avec deux des trois modes de connexion. Le cloud par DevLune fonctionne partout où il y a Internet, sans rien configurer. Tailscale est instantané et privé de partout, après environ cinq minutes de configuration avec le <a href=\"{tailscale}\">guide Tailscale</a>. Le mode local fonctionne sur le même Wi-Fi." },
       { "q": "Faut-il créer un compte ?", "a": "Non. Un code d'association de 6 caractères est le seul lien entre le téléphone et le PC. Vous scannez un code QR et il n'y a rien à saisir." },
-      { "q": "Que peut faire le téléphone sur mon PC ?", "a": "Rien. SysWatch fonctionne en lecture seule : le téléphone voit les mesures et ne peut rien contrôler, modifier ni exécuter sur votre PC." },
+      { "q": "Que peut faire le téléphone sur mon PC ?", "a": "Très peu, volontairement. SysWatch fonctionne en lecture seule, sauf la lecture, la pause et le changement de piste des médias en mode local et avec Tailscale, si vous l'autorisez sur le PC. Ce contrôle est activé par défaut et se désactive dans les paramètres du PC. Le téléphone ne peut rien modifier ni exécuter d'autre." },
+      { "q": "Le téléphone peut-il afficher ce que joue mon PC ?", "a": "Oui, en mode local et avec Tailscale. Le téléphone affiche le titre, l'artiste et la pochette dans la Vue d'ensemble et dans cinq cadrans musicaux, et peut lancer, mettre en pause et changer de piste. Rien de tout cela ne passe par le cloud." },
       { "q": "Quels PC sont pris en charge ?", "a": "SysWatch fonctionne aujourd'hui sous Windows : Windows 10 et Windows 11, 64 bits. L'application mobile demande Android 7.0 ou une version ultérieure." },
       { "q": "Pourquoi Windows affiche-t-il un avertissement à l'installation ?", "a": "Le programme d'installation n'est pas encore signé numériquement : Windows SmartScreen affiche donc « Windows a protégé votre ordinateur ». Choisissez « Informations complémentaires », puis « Exécuter quand même ». Le <a href=\"{guide}\">guide d'installation de SysWatch</a> détaille chaque étape." },
       { "q": "Affiche-t-il la température du CPU ?", "a": "Oui, lorsque votre PC la communique. SysWatch affiche la température du CPU et du GPU à côté de la charge, et les cartes graphiques NVIDIA sont lues directement. La température du CPU dépend de ce que le PC communique, et SysWatch n'affiche jamais une mesure que votre PC n'envoie pas." },
-      { "q": "Dans quelles langues est-il disponible ?", "a": "L'application Android est disponible en anglais, allemand, français, espagnol et russe." },
+      { "q": "Dans quelles langues est-il disponible ?", "a": "Les deux applications sont disponibles en anglais, allemand, français, espagnol et russe. L'application Windows démarre dans la langue de Windows, et vous pouvez la changer lors de la configuration ou dans les paramètres." },
       { "q": "Comment ajouter ma langue ?", "a": "Les traductions de la communauté sont les bienvenues, sans rien programmer : chaque langue tient dans un fichier texte. Dans le <a href=\"{translations}\">dossier translations du dépôt SysWatch sur GitHub</a>, copiez en.xml, traduisez-le et ouvrez une pull request. Une traduction acceptée arrive d'elle-même dans l'application, sans mise à jour. Le <a href=\"{translate}\">guide de traduction</a> détaille chaque étape et les cinq règles." },
-      { "q": "Mes données sont-elles envoyées quelque part ?", "a": "Cela dépend de la connexion choisie. En mode local, les mesures ne quittent jamais votre réseau. Avec Tailscale, elles passent par votre propre liaison privée et chiffrée. Avec le cloud par DevLune, les mesures et le nom du téléphone transitent par le relais de DevLune. Les noms des programmes en cours ne sont envoyés que si vous l'activez." }
+      { "q": "Mes données sont-elles envoyées quelque part ?", "a": "Cela dépend de la connexion choisie. En mode local, les mesures ne quittent jamais votre réseau. Avec Tailscale, elles passent par votre propre liaison privée et chiffrée. Avec le cloud par DevLune, les mesures et le nom du téléphone transitent par le relais de DevLune. Les noms des programmes en cours ne sont envoyés que si vous l'activez. Ce qui est en cours de lecture sur votre PC ne passe jamais par le cloud." }
     ]
   },
   "translate": {
     "kicker": "Traductions",
     "h2": "Aidez à traduire SysWatch",
-    "p": "L'application Android existe en anglais, allemand, français, espagnol et russe. Les traductions de la communauté sont les bienvenues : ajoutez votre langue, ou corrigez une ligne qui sonne faux dans la vôtre. Une traduction acceptée arrive d'elle-même dans l'application, sans mise à jour.",
+    "p": "Les deux applications, sur le téléphone et sous Windows, existent en anglais, allemand, français, espagnol et russe. Les traductions de la communauté sont les bienvenues : ajoutez votre langue, ou corrigez une ligne qui sonne faux dans la vôtre. Une traduction acceptée arrive d'elle-même dans les applications, sans mise à jour.",
     "cta": "Ouvrir le dossier translations sur GitHub",
     "guide": "Lire le guide de traduction"
   },
@@ -157,5 +179,13 @@
     "work": "Autres réalisations de DevLune",
     "sponsor": "Soutenir SysWatch",
     "legal": "Windows est une marque du groupe Microsoft. Android et Google Play sont des marques de Google LLC. Tailscale est une marque de Tailscale Inc."
-  }
+  },
+  "features": [
+    "Mesures en direct du CPU, du GPU, de la mémoire, du réseau, du stockage et de la batterie",
+    "Alertes quand une mesure dépasse une limite que vous fixez",
+    "29 cadrans de veille pour un téléphone posé sur le bureau",
+    "Lecture en cours avec pochette, plus lecture, pause et changement de piste en mode local et avec Tailscale",
+    "Trois façons de se connecter : Local, Cloud par DevLune, Tailscale",
+    "En anglais, allemand, français, espagnol et russe"
+  ]
 }

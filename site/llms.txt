@@ -2,18 +2,19 @@
 
 > SysWatch shows your Windows PC’s CPU, GPU, temperatures, memory and network live on your Android phone, with alerts. Free, no ads, no account.
 
-SysWatch is two free apps made by DevLune, a software studio in Hyderabad, India. A small desktop app runs on a Windows PC and reads its hardware. An Android app shows those readings live and sends a notification when one crosses a limit the user set. There are no ads and no account. It is read only: the phone cannot control the PC.
+SysWatch is two free apps made by DevLune, a software studio in Hyderabad, India. A small desktop app runs on a Windows PC and reads its hardware. An Android app shows those readings live and sends a notification when one crosses a limit the user set. There are no ads and no account. It is read only, except play, pause and skip for media in Local and Tailscale mode, when the user allows it on the PC.
 
 ## Key facts
 
 - Readings: CPU, GPU, memory, network, storage, battery and uptime, each with a history graph. Temperatures are shown when the PC reports them.
 - Alerts: rules written as sentences (for example "CPU load above 90%"), each limit drawn as a red line on its gauge.
-- Standby: 24 always-on faces for a phone on a desk stand (16 instrument faces, 8 art faces), and a home screen widget in four looks.
+- Standby: 29 always-on faces for a phone on a desk stand (16 instrument faces, 8 art faces, 5 music faces), dimmed when idle or always bright, framed or full screen, and a home screen widget in four looks.
+- Now playing: the phone shows what the PC is playing, with its cover, on Overview and in five music standby faces (Poster, Ambient, Glossy, Vinyl, Quiet). The phone can play, pause and skip media on the PC; this is on by default and is switched off in the PC app's Settings. Local and Tailscale mode only, never through the cloud.
 - Look: a chosen accent colour, light, dark or true black theme, five Overview layouts (Bridge, Gauges, Strip charts, Ledger, Focus).
-- Three ways to connect: Local (same Wi-Fi, instant, readings stay on the network), Cloud by DevLune (works from anywhere, nothing to set up, about 2 seconds per update), Tailscale (instant and private from anywhere).
-- Desktop app: Windows 10 and 11, 64-bit, version 0.2.1, about 3.5 MB. The installer is not code signed, so Windows SmartScreen shows a warning (More info, then Run anyway).
+- Three ways to connect: Local (same Wi-Fi, instant, readings stay on the network), Cloud by DevLune (works from anywhere, nothing to set up, at most one update every 2 seconds), Tailscale (instant and private from anywhere).
+- Desktop app: Windows 10 and 11, 64-bit, version 0.2.1, about 3.5 MB. Hidden to the tray it uses about 55 to 73 MB of memory and under 0.5% of one CPU core; Lightweight mode samples every 3 seconds and sends every 5 seconds in Cloud mode. The installer is not code signed, so Windows SmartScreen shows a warning (More info, then Run anyway).
 - Phone app: Android 7.0 and newer, on Google Play.
-- App languages: English, German, French, Spanish, Russian. Community translations are welcome: one text file per language, and a merged translation reaches the app without an app update.
+- App languages: both apps are in English, German, French, Spanish and Russian; the Windows app starts in the Windows language and can be changed in setup or Settings. Community translations are welcome: one text file per language covers both apps, and a merged translation reaches the apps without an update.
 - Price: free on both sides.
 
 ## Guides

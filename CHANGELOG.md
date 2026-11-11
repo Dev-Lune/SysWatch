@@ -7,6 +7,38 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.3.0] · 2026-11-11
+
+Desktop 0.3.0 and Android 1.2.0. The Android version reaches Google Play separately; Now playing needs it.
+
+### Added
+
+**Both apps**
+- Now playing: what the PC is playing (title, artist, cover, progress), read from Windows media controls and shared over the local connection only, never through the cloud.
+- Media control from the phone: play, pause and skip, in Local and Tailscale mode. On by default, switched off in the desktop's Settings. Protected by the pairing code and rate limited.
+
+**Android**
+- Now playing card on Overview and five music standby faces: Poster, Ambient, Glossy, Vinyl, Quiet. Their colours come from the cover.
+- Standby faces can dim when idle or stay bright, and can fill the whole screen. Both are chosen where you pick a face.
+- A short guide in setup and in Settings: how SysWatch works, and the pros and limits of each connection.
+
+**Desktop**
+- English, German, French, Spanish and Russian, using the same translation files as the phone app. Starts in the Windows language; a picker in setup and Settings; updates over the air.
+- Lightweight mode, and the window is closed rather than hidden when SysWatch goes to the tray: about 55 to 73 MB and under 0.5% of one core while hidden.
+- Now playing card on the dashboard.
+
+### Changed
+- Cloud mode publishes at most every 2 seconds.
+- Every setting applies at once, including the sample and publish intervals.
+- Reduce motion now stops the background animation.
+
+### Fixed
+- Android: a pairing link opened during setup was lost; it now pairs at once.
+- Android: low resolution covers (browsers send small thumbnails) are no longer stretched into a blur.
+- Android: pausing no longer shifts the title and controls.
+
+---
+
 ## [0.2.1] · 2026-11-11
 
 Desktop 0.2.1.
@@ -88,7 +120,7 @@ Desktop 0.2.0 and Android 1.1.0. The Android version reaches Google Play separat
 
 ---
 
-## [0.1.0] — 2026-05-12
+## [0.1.0] · 2026-05-12
 
 ### Added
 

@@ -20,7 +20,7 @@
         { "steps": [
           "Lade <code>SysWatch_{version}_x64-setup.exe</code> herunter und starte die Datei.",
           "Windows SmartScreen zeigt eventuell „Der Computer wurde durch Windows geschützt“. Wähle <b>Weitere Informationen</b> und dann <b>Trotzdem ausführen</b>. Das Installationsprogramm ist noch nicht code-signiert.",
-          "Schließ die Installation ab und öffne SysWatch. Die App sitzt im Infobereich der Taskleiste.",
+          "Schließ die Installation ab und öffne SysWatch. Die App sitzt im Infobereich der Taskleiste. Bei der Einrichtung wählst du ihre Sprache; voreingestellt ist die Sprache von Windows.",
           "Wähle, wie sich dein Handy verbindet. Beim ersten Start zeigt die App drei Karten: Local, Cloud by DevLune und Tailscale. Wähle eine, folge den angezeigten Schritten, und am Ende steht der Kopplungscode."
         ], "id": "windows" },
         { "h2": "Wählen, wie sich das Handy verbindet", "id": "connect" },
@@ -30,11 +30,13 @@
           "rows": [
             ["Funktioniert", "Im selben WLAN", "Überall mit Internet", "Überall"],
             ["Braucht", "Nichts weiter", "Internet auf PC und Handy", "Tailscale auf PC und Handy, einmal eingerichtet"],
-            ["Tempo", "Ohne Verzögerung, direkt vom PC", "Etwa 2 Sekunden pro Aktualisierung", "Ohne Verzögerung, direkt vom PC"],
+            ["Tempo", "Ohne Verzögerung, direkt vom PC", "Höchstens ein Update alle 2 Sekunden", "Ohne Verzögerung, direkt vom PC"],
+            ["„Läuft gerade“ und Mediensteuerung", "Ja", "Nein", "Ja"],
             ["Wohin die Werte gehen", "Sie verlassen dein Netzwerk nie", "Über den Relay-Server von DevLune", "Über deine eigene private Tailscale-Verbindung"]
           ]
         } },
         { "p": "Unsicher? Nimm <b>Lokal</b>, wenn das Handy in der Nähe des PCs liegt, und die <b>Cloud von DevLune</b>, wenn du deinen PC von unterwegs prüfst und Tailscale nicht einrichten willst. Lokal und Tailscale brauchen die neueste Version beider Apps." },
+        { "p": "„Läuft gerade“ sowie Abspielen, Pausieren und Überspringen vom Handy aus gibt es nur im lokalen Modus und mit Tailscale. Die Steuerung vom Handy ist von Anfang an eingeschaltet; ausschalten kannst du sie in den Einstellungen der Desktop-App unter Medien." },
         { "note": "Der lokale Modus nutzt einen einzigen Port, <b>47800</b>. Beim ersten Mal fragt die Windows-Firewall, ob SysWatch in privaten Netzwerken kommunizieren darf: Wähle <b>Zulassen</b>. Der lokale Modus ist nicht verschlüsselt, und der sechsstellige Kopplungscode ist das einzige Schloss. Nutze ihn also in Netzwerken, denen du vertraust: deinem WLAN zu Hause oder Tailscale, das alles selbst verschlüsselt." },
         { "p": "Lokales Tempo auch unterwegs? Mit der <a href=\"{tailscale}\">Tailscale-Anleitung</a> dauert das etwa fünf Minuten." },
         { "h2": "Das Handy koppeln", "id": "pair" },
@@ -83,6 +85,7 @@
           "Unter Android zählt Tailscale als VPN des Handys. Es kann immer nur ein VPN laufen.",
           "Hast du schon vor der Installation von Tailscale gekoppelt, scanne den QR-Code erneut, damit das Handy die Tailscale-Adresse kennt.",
           "Keine Tailscale-Adresse im Pairing-Fenster? Dann ist Tailscale auf dem PC nicht verbunden. Öffne es über den Infobereich, melde dich an und öffne Pairing erneut.",
+          "„Läuft gerade“ und die Mediensteuerung funktionieren über Tailscale genauso wie zu Hause.",
           "Der PC muss wach sein. Tailscale erreicht keinen Computer im Ruhezustand."
         ] },
         { "p": "Du installierst SysWatch zum ersten Mal? Fang mit der <a href=\"{guide}\">Installationsanleitung</a> an." }
@@ -94,7 +97,7 @@
       "crumb": "Übersetzungsanleitung",
       "kicker": "Übersetzungsanleitung",
       "h1": "SysWatch übersetzen",
-      "lead": "SysWatch spricht Englisch, Deutsch, Französisch, Spanisch und Russisch. Du kannst deine Sprache hinzufügen oder eine Formulierung in einer vorhandenen verbessern. Programmieren musst du nicht: Jede Sprache ist eine Textdatei.",
+      "lead": "SysWatch spricht Englisch, Deutsch, Französisch, Spanisch und Russisch, auf dem Handy und unter Windows. Du kannst deine Sprache hinzufügen oder eine Formulierung in einer vorhandenen verbessern. Programmieren musst du nicht: Jede Sprache ist eine Textdatei.",
       "blocks": [
         { "note": "Sobald eine Übersetzung angenommen ist, <b>holt sich jede SysWatch-App sie von selbst</b>, innerhalb eines Tages oder sofort über Einstellungen, Sprache, Jetzt prüfen. Ein App-Update ist nicht nötig." },
         { "h2": "Deine Sprache hinzufügen", "id": "add" },
@@ -105,6 +108,7 @@
           "<b>Öffne einen Pull Request.</b> Eine Prüfung läuft von selbst und sagt dir in klaren Worten, ob etwas zu korrigieren ist. Sobald sie grün ist, wird die Übersetzung geprüft und übernommen."
         ], "id": "add" },
         { "p": "Du musst nicht alles auf einmal fertig machen. Texte, die du weglässt, erscheinen auf Englisch, und die App zeigt, wie vollständig eine Sprache ist. Lass aber keinen Text leer: Lösche dann lieber die ganze Zeile." },
+        { "p": "Eine Datei gilt für beide Apps. Texte, deren Name mit <code>desktop_</code> beginnt, gehören zur Windows-App, alle anderen zur Handy-App." },
         { "h2": "Eine vorhandene Übersetzung verbessern", "id": "fix" },
         { "p": "Bearbeite die Datei der Sprache (<code>de.xml</code>, <code>fr.xml</code>, <code>es.xml</code>, <code>ru.xml</code>), ändere den Text und öffne einen Pull Request. Schreib in einem Satz, warum die neue Formulierung besser ist." },
         { "h2": "Die Regeln, alle fünf", "id": "rules" },

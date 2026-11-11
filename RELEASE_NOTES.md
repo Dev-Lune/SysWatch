@@ -1,3 +1,35 @@
+# SysWatch 0.3.0 release notes
+
+**Released:** 11 Nov 2026 · **Desktop:** Windows 10 / 11, 64-bit · **Android app:** 1.2.0 · **Website:** [syswatch.devlune.in](https://syswatch.devlune.in)
+
+## Download
+
+| File | For |
+|---|---|
+| `SysWatch_0.3.0_x64-setup.exe` | Most people. Run it and follow the installer. |
+| `SysWatch_0.3.0_x64_en-US.msi` | IT-managed PCs that need an MSI. |
+
+Windows SmartScreen will warn that the installer is unrecognised, because it is not code signed yet. Choose **More info**, then **Run anyway**.
+
+## What is new since 0.2.1
+
+- **Now playing.** The phone shows what your PC is playing, with its cover, on Overview and in five music standby faces. Local and Tailscale only: it never goes through the cloud.
+- **Play, pause and skip from the phone**, in Local and Tailscale mode. On by default; switch it off in Settings on the PC.
+- **Your language.** The Windows app is now in English, German, French, Spanish and Russian. It starts in your Windows language; change it in setup or Settings. New text arrives without an update.
+- **Lightweight mode.** Hidden in the tray, SysWatch now uses about 55 to 73 MB instead of about 500 MB, and under half a percent of one CPU core.
+- **Cloud sends at most every 2 seconds.**
+- **The tray menu** follows your language, even when the window has never been opened.
+
+The full list is in the [changelog](./CHANGELOG.md).
+
+## Updating
+
+Install 0.3.0 over the old version. Your pairing code and settings are kept.
+
+**Now playing needs Android app 1.2.0**, which reaches Google Play separately. Everything else works with the Android app you have.
+
+---
+
 # SysWatch 0.2.1 release notes
 
 **Released:** 11 Nov 2026 · **Desktop:** Windows 10 / 11, 64-bit · **Website:** [syswatch.devlune.in](https://syswatch.devlune.in)
@@ -67,7 +99,7 @@ Install 0.2.0 over the old version. Your pairing code and settings are kept, and
 
 ---
 
-# SysWatch v0.1.0 — Release Notes
+# SysWatch v0.1.0 release notes
 
 **Release Date:** 2026-05-12  
 **Platform:** Windows x64  
@@ -79,7 +111,7 @@ Install 0.2.0 over the old version. Your pairing code and settings are kept, and
 
 SysWatch v0.1.0 is the first public release of the low-footprint desktop agent that samples hardware telemetry and streams it to a paired mobile client via Supabase Realtime.
 
-Built on **Tauri v2 + Rust + React**, SysWatch runs silently in the system tray and broadcasts real-time metrics to the Android companion app over a secure, code-based pairing system — no accounts, no cloud auth.
+Built on **Tauri v2 + Rust + React**, SysWatch runs silently in the system tray and broadcasts real-time metrics to the Android companion app over a secure, code-based pairing system: no accounts, no cloud auth.
 
 ---
 
@@ -119,7 +151,7 @@ This is the initial release. All features listed in `FEATURES.md` are shipping f
 ## Installation
 
 1. Download the NSIS installer (`SysWatch_0.1.0_x64-setup.exe`) or MSI package.
-2. Run the installer — no admin required for per-user install.
+2. Run the installer. No admin required for per-user install.
 3. On first launch, enter your Supabase project URL and anon key in the onboarding screen.
 4. A 6-character pairing code is generated and saved.
 5. The tray icon appears and the main window hides.

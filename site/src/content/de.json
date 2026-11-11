@@ -17,13 +17,10 @@
     "play": "Jetzt bei Google Play",
     "meta": "Version {version} · Windows 10 und 11, 64 Bit · etwa {size}",
     "meta2": "Android 7.0 und neuer",
-    "reassure": "Kostenlos. Ohne Werbung. Ohne Konto.",
-    "pause": "Animation anhalten",
-    "live": "Live",
-    "limit": "Grenze"
+    "reassure": "Kostenlos. Ohne Werbung. Ohne Konto."
   },
   "stats": [
-    ["24", "Standby-Zifferblätter"],
+    ["29", "Standby-Zifferblätter"],
     ["5", "Layouts für die Übersicht"],
     ["3", "Wege zur Verbindung"],
     ["0", "Werbung oder Konten"]
@@ -36,7 +33,7 @@
       { "t": "Live-Werte", "d": "Eine ruhige Oberfläche, große Zahlen, eine Akzentfarbe.", "alt": "SysWatch-Übersicht auf einem Android-Handy: CPU-Auslastung bei 81 % mit Verlaufsdiagramm, darunter Karten für GPU, Arbeitsspeicher, Netzwerk und Speicherplatz" },
       { "t": "Warnungen", "d": "Setze einen Grenzwert für jede Anzeige und lege fest, wie oft sie sich melden darf.", "alt": "Warnungseditor in SysWatch: CPU-Last beobachten, melden, wenn sie über 90 % steigt, 5 Minuten lang nicht wiederholen" },
       { "t": "Dein Look", "d": "Akzentfarbe, Design, Dichte und Reihenfolge der Karten.", "alt": "SysWatch-Einstellungen mit sieben Akzentfarben, hellem, dunklem und rein schwarzem Design und einem Schalter für jede Karte der Übersicht" },
-      { "t": "Standby-Zifferblätter", "d": "Eine Galerie mit 24 Always-on-Zifferblättern, als Vorschau mit deinen eigenen Werten.", "alt": "Galerie der Standby-Zifferblätter mit Vorschauen der Kunst-Zifferblätter Horizon, Blocks, Bauhaus, Ink, Weave und Bloom" }
+      { "t": "Standby-Zifferblätter", "d": "Eine Galerie mit 29 Always-on-Zifferblättern, als Vorschau mit deinen eigenen Werten.", "alt": "Galerie der Standby-Zifferblätter mit Vorschauen der Kunst-Zifferblätter Horizon, Blocks, Bauhaus, Ink, Weave und Bloom" }
     ]
   },
   "alerts": {
@@ -70,7 +67,7 @@
   "standby": {
     "kicker": "Standby",
     "h2": "Ein zweiter Bildschirm für den Schreibtisch",
-    "lead": "Stell das Handy neben die Tastatur und es wird zum Zweitbildschirm für deine PC-Werte: 24 Standby-Zifferblätter für das Always-on-Display, 16 Instrumente und 8 Kunst-Zifferblätter, im Hoch- und Querformat.",
+    "lead": "Stell das Handy neben die Tastatur und es wird zum Zweitbildschirm für deine PC-Werte: 29 Standby-Zifferblätter für das Always-on-Display, 16 Instrumente, 8 Kunst- und 5 Musik-Zifferblätter, im Hoch- und Querformat.",
     "faces": [
       { "t": "Ink", "alt": "Standby-Zifferblatt Ink: CPU-Auslastung als große Serifenzahl 62 %, darunter GPU, Arbeitsspeicher, Netzwerk und Speicherplatz" },
       { "t": "Bauhaus", "alt": "Standby-Zifferblatt Bauhaus: eine rote Scheibe in einem blauen Ring, CPU bei 10 % und Balken für GPU, Arbeitsspeicher und Speicherplatz" },
@@ -79,8 +76,32 @@
     "points": [
       "8 Kunst-Zifferblätter: Horizon, Blocks, Bauhaus, Ink, Weave, Bloom, Type und Pixel. Ink setzt deine Werte wie eine gedruckte Seite, Bauhaus macht aus CPU, GPU und Arbeitsspeicher Formen.",
       "16 Instrumente, ausgewählt in einer Galerie, die jedes Zifferblatt mit deinen eigenen Werten zeigt.",
-      "Einbrennschutz und auf Wunsch Abdunkeln nach 30 Sekunden.",
+      "Einbrennschutz. Die Zifferblätter können sich im Leerlauf abdunkeln oder hell bleiben, gerahmt oder bildschirmfüllend.",
       "Ein Widget für den Startbildschirm in vier Varianten: Ringe, Balken, Ziffern, Kurve."
+    ]
+  },
+  "playing": {
+    "h2": "Sieh, was auf deinem PC läuft",
+    "lead": "Musik oder ein Video auf dem PC erscheint mit Cover auf deinem Handy: in der Übersicht und in fünf Musik-Zifferblättern für den Schreibtisch.",
+    "points": [
+      "Eine Karte „Läuft gerade“ in der Übersicht, mit Titel, Interpret und Cover.",
+      "Fünf Musik-Zifferblätter: Poster, Ambient, Glanz, Vinyl und Still.",
+      "Abspielen, Pausieren und Überspringen vom Handy aus. Das ist von Anfang an eingeschaltet; ausschalten kannst du es in den Einstellungen auf dem PC."
+    ],
+    "only": "Nur im lokalen Modus und mit Tailscale. Was du abspielst, läuft nie über die Cloud.",
+    "faces": [
+      { "t": "Poster", "alt": "Musik-Zifferblatt Poster: ein großes Cover über dem Titel in fetten Großbuchstaben, ein Fortschrittsbalken und Wiedergabetasten" },
+      { "t": "Vinyl", "alt": "Musik-Zifferblatt Vinyl: das Cover als Etikett einer schwarzen Schallplatte, mit Titel, Fortschrittsbalken und Wiedergabetasten" },
+      { "t": "Glanz", "alt": "Musik-Zifferblatt Glanz: ein abgerundetes Cover mit sanfter Spiegelung, darunter der Titel und die Wiedergabetasten in einer Pille" }
+    ]
+  },
+  "pc": {
+    "h2": "Eine kleine App auf deinem PC",
+    "lead": "Die Windows-App liest die Hardware aus und bleibt im Infobereich der Taskleiste aus dem Weg.",
+    "cells": [
+      { "t": "Leicht im Infobereich", "d": "Im Infobereich versteckt braucht sie etwa 55 bis 73 MB Arbeitsspeicher und weniger als 0,5 % eines CPU-Kerns. Der Sparmodus misst alle 3 Sekunden und sendet im Cloud-Modus alle 5 Sekunden." },
+      { "t": "In deiner Sprache", "d": "Englisch, Deutsch, Französisch, Spanisch oder Russisch. Sie startet in der Sprache von Windows, und du kannst sie bei der Einrichtung oder in den Einstellungen ändern." },
+      { "t": "Sparsam mit der Cloud", "d": "Im Cloud-Modus sendet der PC höchstens alle 2 Sekunden ein Update." }
     ]
   },
   "connect": {
@@ -90,7 +111,7 @@
     "rows": ["Funktioniert", "Einrichtung", "Tempo", "Wohin die Werte gehen"],
     "modes": [
       { "name": "Lokal", "tag": "PC-Werte über WLAN", "vals": ["Im selben WLAN", "Keine", "Ohne Verzögerung, direkt vom PC", "Sie verlassen dein Netzwerk nie"], "note": "Im lokalen Netzwerk unverschlüsselt. Nutze also ein Netzwerk, dem du vertraust." },
-      { "name": "Cloud von DevLune", "tag": "Von überall", "vals": ["Überall mit Internet", "Keine", "Etwa 2 Sekunden pro Aktualisierung", "Über den Relay-Server von DevLune"], "note": "Die Werte und der Name deines Handys laufen über den Relay-Server. Serverdaten musst du nie eingeben." },
+      { "name": "Cloud von DevLune", "tag": "Von überall", "vals": ["Überall mit Internet", "Keine", "Höchstens ein Update alle 2 Sekunden", "Über den Relay-Server von DevLune"], "note": "Die Werte und der Name deines Handys laufen über den Relay-Server. Serverdaten musst du nie eingeben. „Läuft gerade“ gibt es nur im lokalen Modus und mit Tailscale." },
       { "name": "Tailscale", "tag": "Privat, von überall", "vals": ["Überall", "Etwa fünf Minuten, einmalig", "Ohne Verzögerung, direkt vom PC", "Über deine eigene private Tailscale-Verbindung"], "note": "Tailscale verschlüsselt die Verbindung. Es ist eine eigene App mit kostenlosem Tarif für Privatnutzer." }
     ],
     "foot": "Unsicher? Nimm Lokal, wenn das Handy meist in der Nähe des PCs liegt. Lokal und Tailscale brauchen die neueste Version beider Apps.",
@@ -114,10 +135,10 @@
     "h2": "Datenschutz, klar gesagt",
     "items": [
       { "t": "Kein Konto", "d": "Ein sechsstelliger Kopplungscode ist das Einzige, was Handy und PC verbindet." },
-      { "t": "Nur lesend", "d": "Das Handy kann Werte sehen. Es kann auf deinem PC nichts steuern, verändern oder ausführen." },
+      { "t": "Nur lesend, mit einer Ausnahme", "d": "Das Handy kann Werte sehen. Es kann auf deinem PC nichts verändern oder ausführen, außer Abspielen, Pausieren und Überspringen von Medien im lokalen Modus und mit Tailscale, wenn du es auf dem PC erlaubst." },
       { "t": "Lokal bleibt lokal", "d": "Im lokalen Modus bleiben die Werte in deinem Netzwerk. Dort sind sie nicht verschlüsselt. Nutze also ein Netzwerk, dem du vertraust, oder Tailscale, das die Verbindung verschlüsselt." },
       { "t": "Cloud, offen gesagt", "d": "Im Cloud-Modus laufen die Werte und der Name deines Handys über den Relay-Server von DevLune, damit das Handy den PC von überall erreicht." },
-      { "t": "Nichts nebenbei", "d": "Die Namen laufender Programme werden nur gesendet, wenn du das einschaltest. Die Kamera wird nur zum Scannen des QR-Codes für die Kopplung verwendet." },
+      { "t": "Nichts nebenbei", "d": "Die Namen laufender Programme werden nur gesendet, wenn du das einschaltest. Die Kamera wird nur zum Scannen des QR-Codes für die Kopplung verwendet. Was gerade läuft, wird nie über die Cloud gesendet." },
       { "t": "Diese Website", "d": "Keine Cookies, keine Tracker, und nichts wird von anderen Websites geladen." }
     ],
     "policy": "Datenschutzerklärung (Englisch)",
@@ -130,19 +151,20 @@
       { "q": "Ist SysWatch kostenlos?", "a": "Ja. SysWatch ist auf dem Handy und auf dem PC kostenlos, ohne Werbung und ohne Konto. Wenn es sich einen Platz auf deinem Schreibtisch verdient hat, kannst du <a href=\"{sponsor}\">SysWatch auf GitHub unterstützen</a>." },
       { "q": "Funktioniert es auch unterwegs?", "a": "Ja, mit zwei der drei Verbindungsarten. Die Cloud von DevLune funktioniert überall mit Internet und braucht keine Einrichtung. Tailscale ist ohne Verzögerung und privat von überall nutzbar, nach etwa fünf Minuten Einrichtung mit der <a href=\"{tailscale}\">Tailscale-Anleitung</a>. Lokal funktioniert im selben WLAN." },
       { "q": "Brauche ich ein Konto?", "a": "Nein. Ein sechsstelliger Kopplungscode ist das Einzige, was Handy und PC verbindet. Du scannst einen QR-Code und musst nichts eintippen." },
-      { "q": "Was kann das Handy auf meinem PC tun?", "a": "Nichts. SysWatch liest nur: Das Handy kann Werte sehen, aber auf deinem PC nichts steuern, verändern oder ausführen." },
+      { "q": "Was kann das Handy auf meinem PC tun?", "a": "Sehr wenig, mit Absicht. SysWatch liest nur, außer Abspielen, Pausieren und Überspringen von Medien im lokalen Modus und mit Tailscale, wenn du es auf dem PC erlaubst. Diese Steuerung ist von Anfang an eingeschaltet und lässt sich in den Einstellungen auf dem PC ausschalten. Sonst kann das Handy auf deinem PC nichts verändern oder ausführen." },
+      { "q": "Zeigt das Handy, was auf meinem PC läuft?", "a": "Ja, im lokalen Modus und mit Tailscale. Das Handy zeigt Titel, Interpret und Cover in der Übersicht und in fünf Musik-Zifferblättern und kann abspielen, pausieren und überspringen. Nichts davon läuft über die Cloud." },
       { "q": "Welche PCs werden unterstützt?", "a": "SysWatch läuft derzeit unter Windows: Windows 10 und Windows 11, 64 Bit. Die Handy-App braucht Android 7.0 oder neuer." },
       { "q": "Warum warnt Windows vor dem Installationsprogramm?", "a": "Das Installationsprogramm ist noch nicht code-signiert, deshalb zeigt Windows SmartScreen „Der Computer wurde durch Windows geschützt“. Wähle „Weitere Informationen“ und dann „Trotzdem ausführen“. Die <a href=\"{guide}\">Installationsanleitung für SysWatch</a> führt durch jeden Schritt." },
       { "q": "Zeigt es die CPU-Temperatur an?", "a": "Ja, wenn dein PC sie meldet. SysWatch zeigt CPU- und GPU-Temperatur neben der Auslastung, NVIDIA-Grafikkarten werden direkt ausgelesen. Die CPU-Temperatur hängt davon ab, was dein PC meldet, und SysWatch zeigt nie einen Wert, den dein PC nicht sendet." },
-      { "q": "In welchen Sprachen gibt es die App?", "a": "Die Android-App gibt es auf Englisch, Deutsch, Französisch, Spanisch und Russisch." },
+      { "q": "In welchen Sprachen gibt es die App?", "a": "Beide Apps gibt es auf Englisch, Deutsch, Französisch, Spanisch und Russisch. Die Windows-App startet in der Sprache von Windows, und du kannst sie bei der Einrichtung oder in den Einstellungen ändern." },
       { "q": "Wie füge ich meine Sprache hinzu?", "a": "Übersetzungen aus der Community sind willkommen, und programmieren musst du dafür nicht: Jede Sprache ist eine Textdatei. Kopiere im <a href=\"{translations}\">Ordner translations des SysWatch-Repositorys auf GitHub</a> die Datei en.xml, übersetze sie und eröffne einen Pull Request. Eine angenommene Übersetzung kommt von selbst in der App an, ohne App-Update. Die <a href=\"{translate}\">Übersetzungsanleitung</a> erklärt jeden Schritt und die fünf Regeln." },
-      { "q": "Werden meine Daten irgendwohin gesendet?", "a": "Das hängt von der gewählten Verbindung ab. Im lokalen Modus verlassen die Werte dein Netzwerk nie. Über Tailscale laufen sie durch deine eigene private, verschlüsselte Verbindung. Mit der Cloud von DevLune laufen die Werte und der Name deines Handys über den Relay-Server von DevLune. Die Namen laufender Programme werden nur gesendet, wenn du das einschaltest." }
+      { "q": "Werden meine Daten irgendwohin gesendet?", "a": "Das hängt von der gewählten Verbindung ab. Im lokalen Modus verlassen die Werte dein Netzwerk nie. Über Tailscale laufen sie durch deine eigene private, verschlüsselte Verbindung. Mit der Cloud von DevLune laufen die Werte und der Name deines Handys über den Relay-Server von DevLune. Die Namen laufender Programme werden nur gesendet, wenn du das einschaltest. Was gerade auf deinem PC läuft, wird nie über die Cloud gesendet." }
     ]
   },
   "translate": {
     "kicker": "Übersetzungen",
     "h2": "Hilf mit, SysWatch zu übersetzen",
-    "p": "Die Android-App gibt es auf Englisch, Deutsch, Französisch, Spanisch und Russisch. Übersetzungen aus der Community sind willkommen: Ergänze deine Sprache oder verbessere eine Zeile, die in deiner Sprache schief klingt. Eine angenommene Übersetzung kommt von selbst in der App an, ohne App-Update.",
+    "p": "Beide Apps, auf dem Handy und unter Windows, gibt es auf Englisch, Deutsch, Französisch, Spanisch und Russisch. Übersetzungen aus der Community sind willkommen: Ergänze deine Sprache oder verbessere eine Zeile, die in deiner Sprache schief klingt. Eine angenommene Übersetzung kommt von selbst in den Apps an, ohne Update.",
     "cta": "Den Ordner translations auf GitHub öffnen",
     "guide": "Übersetzungsanleitung lesen"
   },
@@ -157,5 +179,13 @@
     "work": "Weitere Arbeiten von DevLune",
     "sponsor": "SysWatch unterstützen",
     "legal": "Windows ist eine Marke der Microsoft-Unternehmensgruppe. Android und Google Play sind Marken von Google LLC. Tailscale ist eine Marke von Tailscale Inc."
-  }
+  },
+  "features": [
+    "Live-Werte für CPU, GPU, Arbeitsspeicher, Netzwerk, Speicherplatz und Akku",
+    "Warnungen, wenn ein Wert deinen Grenzwert überschreitet",
+    "29 Standby-Zifferblätter für das Handy auf dem Schreibtisch",
+    "„Läuft gerade“ mit Cover, dazu Abspielen, Pausieren und Überspringen im lokalen Modus und mit Tailscale",
+    "Drei Verbindungswege: Lokal, Cloud von DevLune, Tailscale",
+    "Auf Englisch, Deutsch, Französisch, Spanisch und Russisch"
+  ]
 }

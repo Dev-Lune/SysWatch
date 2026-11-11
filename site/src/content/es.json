@@ -17,13 +17,10 @@
     "play": "Disponible en Google Play",
     "meta": "Versión {version} · Windows 10 y 11, 64 bits · unos {size}",
     "meta2": "Android 7.0 o posterior",
-    "reassure": "Gratis. Sin anuncios. Sin cuenta.",
-    "pause": "Pausar la animación",
-    "live": "En directo",
-    "limit": "Límite"
+    "reassure": "Gratis. Sin anuncios. Sin cuenta."
   },
   "stats": [
-    ["24", "esferas de reposo"],
+    ["29", "esferas de reposo"],
     ["5", "diseños para el Resumen"],
     ["3", "formas de conectar"],
     ["0", "anuncios ni cuentas"]
@@ -36,7 +33,7 @@
       { "t": "Lecturas en directo", "d": "Un solo panel sereno, números grandes, un único color de acento.", "alt": "Resumen de SysWatch en un móvil Android: carga de CPU al 81 % con su gráfica de historial y, debajo, tarjetas de GPU, memoria, red y almacenamiento" },
       { "t": "Alertas", "d": "Pon un límite en cualquier indicador y elige cada cuánto puede repetirse.", "alt": "Editor de alertas de SysWatch: vigilar la carga de CPU, avisar cuando supere el 90 %, no repetir durante 5 minutos" },
       { "t": "Tu estilo", "d": "Color de acento, tema, densidad y orden de las tarjetas.", "alt": "Ajustes de SysWatch con siete colores de acento, temas claro, oscuro y negro puro, y un interruptor para cada tarjeta del Resumen" },
-      { "t": "Esferas de reposo", "d": "Una galería de 24 esferas siempre encendidas, con vista previa de tus propias lecturas.", "alt": "Galería de esferas de reposo con vistas previas de las esferas artísticas Horizon, Blocks, Bauhaus, Ink, Weave y Bloom" }
+      { "t": "Esferas de reposo", "d": "Una galería de 29 esferas siempre encendidas, con vista previa de tus propias lecturas.", "alt": "Galería de esferas de reposo con vistas previas de las esferas artísticas Horizon, Blocks, Bauhaus, Ink, Weave y Bloom" }
     ]
   },
   "alerts": {
@@ -70,7 +67,7 @@
   "standby": {
     "kicker": "Reposo",
     "h2": "Una segunda pantalla para tu escritorio",
-    "lead": "Coloca el móvil junto al teclado y se convierte en una segunda pantalla con las estadísticas de tu PC: 24 esferas de reposo siempre encendidas, 16 de instrumentos y 8 artísticas, en vertical y en horizontal.",
+    "lead": "Coloca el móvil junto al teclado y se convierte en una segunda pantalla con las estadísticas de tu PC: 29 esferas de reposo siempre encendidas, 16 de instrumentos, 8 artísticas y 5 musicales, en vertical y en horizontal.",
     "faces": [
       { "t": "Ink", "alt": "Esfera de reposo Ink: la carga de CPU en un gran 62 % con serifas y, debajo, GPU, memoria, red y almacenamiento" },
       { "t": "Bauhaus", "alt": "Esfera de reposo Bauhaus: un disco rojo dentro de un anillo azul, CPU al 10 % y barras para GPU, memoria y almacenamiento" },
@@ -79,8 +76,32 @@
     "points": [
       "8 esferas artísticas: Horizon, Blocks, Bauhaus, Ink, Weave, Bloom, Type y Pixel. Ink compone tus lecturas como una página impresa y Bauhaus convierte CPU, GPU y memoria en formas.",
       "16 esferas de instrumentos, para elegir en una galería que muestra cada una con tus propias lecturas.",
-      "Protección contra quemado de pantalla y atenuación opcional a los 30 segundos.",
+      "Protección contra quemado de pantalla. Las esferas pueden atenuarse en reposo o seguir brillantes, con marco o a pantalla completa.",
       "Un widget para la pantalla de inicio en cuatro estilos: anillos, barras, cifras, trazo."
+    ]
+  },
+  "playing": {
+    "h2": "Mira lo que suena en tu PC",
+    "lead": "La música o el vídeo que suena en el PC aparece en tu móvil con su portada: en el Resumen y en cinco esferas de reposo musicales para el escritorio.",
+    "points": [
+      "Una tarjeta Reproduciendo en el Resumen, con título, artista y portada.",
+      "Cinco esferas musicales: Póster, Ambiente, Brillo, Vinilo y Calma.",
+      "Reproduce, pausa y salta pistas desde el móvil. Viene activado; puedes desactivarlo en los ajustes del PC."
+    ],
+    "only": "Solo en modo local y con Tailscale. Lo que reproduces nunca pasa por la nube.",
+    "faces": [
+      { "t": "Póster", "alt": "Esfera musical Póster: una portada grande sobre el título en mayúsculas gruesas, una barra de progreso y los botones de reproducción" },
+      { "t": "Vinilo", "alt": "Esfera musical Vinilo: la portada como etiqueta de un disco negro, con el título, una barra de progreso y los botones de reproducción" },
+      { "t": "Brillo", "alt": "Esfera musical Brillo: una portada redondeada con un reflejo suave, el título y los botones de reproducción en una cápsula" }
+    ]
+  },
+  "pc": {
+    "h2": "Una app pequeña en tu PC",
+    "lead": "La app de Windows lee el hardware y no estorba en la bandeja del sistema.",
+    "cells": [
+      { "t": "Ligera en la bandeja", "d": "Oculta en la bandeja usa unos 55 a 73 MB de memoria y menos del 0,5 % de un núcleo de CPU. El modo ligero toma lecturas cada 3 segundos y envía cada 5 segundos en modo nube." },
+      { "t": "En tu idioma", "d": "Inglés, alemán, francés, español o ruso. Empieza en el idioma de Windows y puedes cambiarlo en la configuración inicial o en los ajustes." },
+      { "t": "Ahorra en la nube", "d": "En modo nube, el PC envía como mucho una actualización cada 2 segundos." }
     ]
   },
   "connect": {
@@ -90,7 +111,7 @@
     "rows": ["Funciona", "Configuración", "Velocidad", "Por dónde van las lecturas"],
     "modes": [
       { "name": "Local", "tag": "El PC por Wi-Fi", "vals": ["En la misma Wi-Fi", "Ninguna", "Al instante, directo desde el PC", "Nunca salen de tu red"], "note": "Sin cifrar en la red local, así que úsalo en una red de confianza." },
-      { "name": "Nube de DevLune", "tag": "Desde cualquier lugar", "vals": ["En cualquier lugar con internet", "Ninguna", "Unos 2 segundos por actualización", "Por el servidor de retransmisión de DevLune"], "note": "Las lecturas y el nombre del móvil pasan por el servidor de retransmisión. Nunca tienes que introducir datos de un servidor." },
+      { "name": "Nube de DevLune", "tag": "Desde cualquier lugar", "vals": ["En cualquier lugar con internet", "Ninguna", "Como mucho una actualización cada 2 segundos", "Por el servidor de retransmisión de DevLune"], "note": "Las lecturas y el nombre del móvil pasan por el servidor de retransmisión. Nunca tienes que introducir datos de un servidor. Reproduciendo solo funciona en modo local y con Tailscale." },
       { "name": "Tailscale", "tag": "Privado, desde cualquier lugar", "vals": ["En cualquier lugar", "Unos cinco minutos, una sola vez", "Al instante, directo desde el PC", "Por tu propio enlace privado de Tailscale"], "note": "Tailscale cifra la conexión. Es una app aparte con un plan personal gratuito." }
     ],
     "foot": "¿No lo tienes claro? Elige Local si el móvil suele estar cerca del PC. Local y Tailscale necesitan la última versión de las dos apps.",
@@ -114,10 +135,10 @@
     "h2": "Privacidad, sin rodeos",
     "items": [
       { "t": "Sin cuenta", "d": "Un código de emparejamiento de 6 caracteres es lo único que une el móvil con el PC." },
-      { "t": "Solo lectura", "d": "El móvil puede ver las lecturas. No puede controlar, cambiar ni ejecutar nada en tu PC." },
+      { "t": "Solo lectura, con una excepción", "d": "El móvil puede ver las lecturas. No puede cambiar ni ejecutar nada en tu PC, salvo reproducir, pausar y saltar pistas multimedia en modo local y con Tailscale, si lo permites en el PC." },
       { "t": "Lo local se queda en local", "d": "En modo local, las lecturas se quedan en tu red. Allí no van cifradas, así que usa una red de confianza o Tailscale, que cifra la conexión." },
       { "t": "La nube, dicho claro", "d": "En modo nube, las lecturas y el nombre del móvil pasan por el servidor de retransmisión de DevLune para que el móvil llegue al PC desde cualquier lugar." },
-      { "t": "Nada más", "d": "Los nombres de los programas en ejecución no se envían salvo que lo actives. La cámara se usa solo para escanear el código QR de emparejamiento." },
+      { "t": "Nada más", "d": "Los nombres de los programas en ejecución no se envían salvo que lo actives. La cámara se usa solo para escanear el código QR de emparejamiento. Lo que suena nunca se envía por la nube." },
       { "t": "Este sitio web", "d": "Sin cookies, sin rastreadores y sin cargar nada de otros sitios." }
     ],
     "policy": "Política de privacidad (en inglés)",
@@ -130,19 +151,20 @@
       { "q": "¿SysWatch es gratis?", "a": "Sí. SysWatch es gratis en el móvil y en el PC, sin anuncios y sin cuenta. Si se gana un sitio en tu escritorio, puedes <a href=\"{sponsor}\">patrocinar SysWatch en GitHub</a>." },
       { "q": "¿Funciona fuera de casa?", "a": "Sí, con dos de los tres modos de conexión. La nube de DevLune funciona en cualquier lugar con internet y sin configurar nada. Tailscale funciona al instante y en privado desde cualquier lugar, tras unos cinco minutos de configuración con la <a href=\"{tailscale}\">guía de Tailscale</a>. El modo local funciona en la misma Wi-Fi." },
       { "q": "¿Necesita una cuenta?", "a": "No. Un código de emparejamiento de 6 caracteres es lo único que une el móvil con el PC. Escaneas un código QR y no hay nada que escribir." },
-      { "q": "¿Qué puede hacer el móvil en mi PC?", "a": "Nada. SysWatch es de solo lectura: el móvil puede ver las lecturas y no puede controlar, cambiar ni ejecutar nada en tu PC." },
+      { "q": "¿Qué puede hacer el móvil en mi PC?", "a": "Muy poco, a propósito. SysWatch es de solo lectura, salvo reproducir, pausar y saltar pistas multimedia en modo local y con Tailscale, si lo permites en el PC. Ese control viene activado y se desactiva en los ajustes del PC. El móvil no puede cambiar ni ejecutar nada más." },
+      { "q": "¿Puede el móvil mostrar lo que suena en mi PC?", "a": "Sí, en modo local y con Tailscale. El móvil muestra el título, el artista y la portada en el Resumen y en cinco esferas musicales, y puede reproducir, pausar y saltar pistas. Nada de eso pasa por la nube." },
       { "q": "¿Qué PC son compatibles?", "a": "SysWatch funciona hoy en Windows: Windows 10 y Windows 11, de 64 bits. La app del móvil necesita Android 7.0 o posterior." },
       { "q": "¿Por qué Windows muestra un aviso con el instalador?", "a": "El instalador todavía no tiene firma de código, así que Windows SmartScreen muestra «Windows protegió su PC». Elige «Más información» y después «Ejecutar de todas formas». La <a href=\"{guide}\">guía de instalación de SysWatch</a> explica cada paso." },
       { "q": "¿Muestra la temperatura de la CPU?", "a": "Sí, cuando tu PC la informa. SysWatch muestra la temperatura de la CPU y la GPU junto a la carga, y las tarjetas gráficas NVIDIA se leen directamente. La temperatura de la CPU depende de lo que informe el PC, y SysWatch nunca muestra una lectura que tu PC no envía." },
-      { "q": "¿En qué idiomas está?", "a": "La app de Android está en inglés, alemán, francés, español y ruso." },
+      { "q": "¿En qué idiomas está?", "a": "Las dos apps están en inglés, alemán, francés, español y ruso. La app de Windows empieza en el idioma de Windows y puedes cambiarlo en la configuración inicial o en los ajustes." },
       { "q": "¿Cómo añado mi idioma?", "a": "Las traducciones de la comunidad son bienvenidas y no hace falta programar: cada idioma es un archivo de texto. En la <a href=\"{translations}\">carpeta translations del repositorio de SysWatch en GitHub</a>, copia en.xml, tradúcelo y abre una pull request. Una traducción aceptada llega sola a la app, sin actualizarla. La <a href=\"{translate}\">guía de traducción</a> explica cada paso y las cinco reglas." },
-      { "q": "¿Se envían mis datos a algún sitio?", "a": "Depende de la conexión que elijas. En modo local, las lecturas nunca salen de tu red. Con Tailscale viajan por tu propio enlace privado y cifrado. Con la nube de DevLune, las lecturas y el nombre del móvil pasan por el servidor de retransmisión de DevLune. Los nombres de los programas en ejecución no se envían salvo que lo actives." }
+      { "q": "¿Se envían mis datos a algún sitio?", "a": "Depende de la conexión que elijas. En modo local, las lecturas nunca salen de tu red. Con Tailscale viajan por tu propio enlace privado y cifrado. Con la nube de DevLune, las lecturas y el nombre del móvil pasan por el servidor de retransmisión de DevLune. Los nombres de los programas en ejecución no se envían salvo que lo actives. Lo que suena en tu PC nunca se envía por la nube." }
     ]
   },
   "translate": {
     "kicker": "Traducciones",
     "h2": "Ayuda a traducir SysWatch",
-    "p": "La app de Android está en inglés, alemán, francés, español y ruso. Las traducciones de la comunidad son bienvenidas: añade tu idioma o corrige una línea que suene rara en el tuyo. Una traducción aceptada llega sola a la app, sin actualizarla.",
+    "p": "Las dos apps, la del móvil y la de Windows, están en inglés, alemán, francés, español y ruso. Las traducciones de la comunidad son bienvenidas: añade tu idioma o corrige una línea que suene rara en el tuyo. Una traducción aceptada llega sola a las apps, sin actualizarlas.",
     "cta": "Abrir la carpeta translations en GitHub",
     "guide": "Leer la guía de traducción"
   },
@@ -157,5 +179,13 @@
     "work": "Más trabajos de DevLune",
     "sponsor": "Patrocinar SysWatch",
     "legal": "Windows es una marca del grupo de empresas Microsoft. Android y Google Play son marcas de Google LLC. Tailscale es una marca de Tailscale Inc."
-  }
+  },
+  "features": [
+    "Lecturas en directo de CPU, GPU, memoria, red, almacenamiento y batería",
+    "Alertas cuando una lectura cruza un límite que fijas",
+    "29 esferas de reposo para un móvil en el escritorio",
+    "Reproduciendo con portada, y reproducir, pausar y saltar pistas en modo local y con Tailscale",
+    "Tres formas de conectar: Local, Nube de DevLune, Tailscale",
+    "En inglés, alemán, francés, español y ruso"
+  ]
 }

@@ -12,25 +12,24 @@ const SRC = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(SRC, "..");
 const { chromium } = createRequire(import.meta.url)(process.argv[2] ?? "playwright");
 
+// The card is the hero in small: cobalt, the headline with its white pill, two real screens.
 const card = (t) => `<!doctype html><html lang="${t.lang}"><meta charset="utf-8">
 <link rel="stylesheet" href="/assets/css/site.css">
 <style>
-body{width:1200px;height:630px;overflow:hidden;background:#0E0F11 radial-gradient(52rem 34rem at 6% -10%,rgba(224,164,88,.2),transparent 62%)}
-.c{display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:center;height:630px;padding:0 72px}
-.mark{margin:0;font-size:40px;line-height:1}
-h1{margin-top:28px;font-size:${t.lang === "en" ? 76 : 64}px}
-.kicker{margin:44px 0 0;font-size:19px}
-.inst *,.inst *::after{animation:none}
-.trace-run{width:100%}
-.inst{padding:30px}
-.inst-num{font-size:112px}
-.trace{height:150px}
+body{width:1200px;height:630px;overflow:hidden;background:var(--blue)}
+.c{position:relative;display:grid;grid-template-columns:640px 1fr;align-items:center;height:630px;padding:0 0 0 72px;color:var(--on-blue)}
+.brand{font-size:30px;margin:0}
+.brand img{width:44px;height:44px;border-radius:12px}
+h1{margin-top:34px;color:#fff;font-size:${t.lang === "en" ? 64 : 52}px;line-height:1.06;letter-spacing:-.02em;font-weight:800}
+.kicker{margin-top:34px;font-size:20px}
+.art{position:relative;height:630px}
+.blob{position:absolute;width:560px;height:560px;left:40px;top:60px}
+.phone{position:absolute;width:250px}
+.p1{left:70px;top:70px;transform:rotate(-7deg);z-index:2}
+.p2{left:290px;top:140px;width:220px;transform:rotate(6deg)}
 </style>
-<div class="c"><div><p class="mark">Sys<b>Watch</b></p><h1>${t.hero.h1}</h1><p class="kicker">${t.hero.kicker}</p></div>
-<div class="inst"><div class="inst-top"><span class="inst-k">CPU</span><span class="inst-live"><i></i>${t.hero.live}</span></div>
-<div class="inst-read"><p class="inst-num"><span></span><small>%</small></p></div>
-<div class="trace"><svg class="trace-run" viewBox="0 0 480 160" preserveAspectRatio="none"><path class="trace-line" d="M0,96L40,60L80,74L120,44L160,66L200,92L240,110L280,84L320,58L360,70L400,46L440,62L480,64.6"/></svg><i class="trace-limit"></i></div>
-<div class="inst-bar"><i class="inst-fill"></i><i class="inst-tick"></i></div></div></div>`;
+<div class="c"><div><p class="brand"><img src="/assets/img/icon-96.webp" alt=""><span>SysWatch</span></p><h1>${t.hero.h1}</h1><p class="kicker">${t.hero.kicker}</p></div>
+<div class="art"><i class="blob"></i><div class="phone p1"><img src="/assets/img/overview-720.webp" alt=""></div><div class="phone p2"><img src="/assets/img/face-poster-720.webp" alt=""></div></div></div>`;
 
 mkdirSync(join(ROOT, "assets", "og"), { recursive: true });
 const browser = await chromium.launch();
