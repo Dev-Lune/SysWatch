@@ -1,0 +1,9 @@
+# Not part of the website: the generator, notes and deploy configs.
+src
+README.md
+vercel.json
+.vercelignore
+wrangler.jsonc
+.wrangler
+node_modules
+.assetsignore

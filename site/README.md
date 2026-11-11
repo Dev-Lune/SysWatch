@@ -4,6 +4,21 @@ The site served at <https://syswatch.devlune.in>. Static files only: five langua
 one stylesheet, no JavaScript, no cookies, no trackers, nothing loaded from another host.
 What is in this folder is what gets served, so Vercel needs no build.
 
+## Deployed on Cloudflare (live)
+
+The site is live at https://syswatch.devlune.in on Cloudflare Workers static assets
+(Worker name `syswatch-site`, config `wrangler.jsonc`). To publish a change:
+
+```sh
+cd site
+node src/build.mjs      # only if content or the template changed
+npx wrangler deploy
+```
+
+`_headers` and `_redirects` are the Cloudflare versions of the rules in `vercel.json`;
+change both if you change one. `.assetsignore` keeps the generator and configs off the web.
+The Vercel notes below still work if the site is ever moved.
+
 ## Deploy on Vercel
 
 1. **Add New, Project**, import `Dev-Lune/SysWatch`.
