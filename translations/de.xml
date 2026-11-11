@@ -408,7 +408,7 @@
     <string name="settings_language">Sprache</string>
     <string name="settings_language_pack_current">Sprachpaket ist aktuell</string>
     <string name="settings_language_pack_updated_today">Heute aktualisiert</string>
-    <string name="settings_language_pack_failed">Prüfung nicht möglich, gespeicherte Texte bleiben aktiv</string>
+    <string name="settings_language_pack_failed">Prüfung nicht möglich, gespeicherter Text aktiv</string>
     <string name="settings_language_pack_checking">Wird geprüft…</string>
     <string name="settings_language_pack_check">Jetzt prüfen</string>
     <string name="onboarding_language_title">Wähle deine Sprache</string>
