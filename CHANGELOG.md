@@ -7,6 +7,27 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.2.1] · 2026-11-11
+
+Desktop 0.2.1.
+
+### Changed
+
+- First run is a guided choice: Local, Cloud by DevLune or Tailscale, then the steps for that choice, then the pairing code. The app never asks for server details.
+- Settings shows the same three choices as cards in place of a dropdown that did not respond.
+- Battery health, charge cycles, voltage, temperature and power are shown when the PC reports them.
+- Network ping, jitter and loss are measured instead of left blank.
+- Rows the PC cannot report are hidden instead of showing a dash. CPU power and storage health were estimates and are removed.
+- The app icon fills its space on the taskbar and desktop.
+- Links point to the new website, [syswatch.devlune.in](https://syswatch.devlune.in).
+
+### Fixed
+
+- A battery that was draining could be shown as charging.
+- The first 0.2.0 installer asked for cloud server details. It was withdrawn within the hour; 0.2.0 as published since, and 0.2.1, do not.
+
+---
+
 ## [0.2.0] · 2026-11-10
 
 Desktop 0.2.0 and Android 1.1.0. The Android version reaches Google Play separately; local mode needs it.

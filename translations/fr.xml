@@ -195,7 +195,7 @@
     <string name="settings_unpair_cancel">Annuler</string>
     <string name="settings_section_desktop">Application de bureau</string>
     <string name="settings_desktop_body">SysWatch a besoin de son application de bureau sur le PC à surveiller. Elle est gratuite, pour Windows.</string>
-    <string name="settings_desktop_step_1">Sur votre PC, ouvrez devlune.in/download/syswatch et téléchargez le programme d\'installation pour Windows.</string>
+    <string name="settings_desktop_step_1">Sur votre PC, ouvrez syswatch.devlune.in et téléchargez le programme d\'installation pour Windows.</string>
     <string name="settings_desktop_step_2">Installez l\'application et, quand elle le demande, choisissez comment votre téléphone se connecte.</string>
     <string name="settings_desktop_step_3">Ouvrez l\'écran Association sur le PC et scannez le code avec ce téléphone.</string>
     <string name="settings_desktop_get">Télécharger pour Windows</string>
@@ -464,7 +464,7 @@
     <string name="pair_heading_cloud">Connexion via le cloud</string>
     <string name="pair_heading_tailscale">Connexion via Tailscale</string>
     <string name="pair_step_number">%1$d</string>
-    <string name="pair_step_install">Installez SysWatch sur votre PC depuis devlune.in/download/syswatch.</string>
+    <string name="pair_step_install">Installez SysWatch sur votre PC depuis syswatch.devlune.in.</string>
     <string name="pair_local_step_choose">Quand l\'application demande comment votre téléphone se connecte, choisissez Local.</string>
     <string name="pair_local_step_wifi">Connectez ce téléphone au même Wi-Fi que le PC.</string>
     <string name="pair_step_scan">Ouvrez l\'écran Association sur le PC et scannez le code.</string>

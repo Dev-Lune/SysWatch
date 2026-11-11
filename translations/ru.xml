@@ -201,7 +201,7 @@
     <string name="settings_unpair_cancel">Отмена</string>
     <string name="settings_section_desktop">Приложение для ПК</string>
     <string name="settings_desktop_body">Для работы SysWatch нужно приложение на ПК, за которым вы хотите следить. Оно бесплатное, для Windows.</string>
-    <string name="settings_desktop_step_1">На ПК откройте devlune.in/download/syswatch и скачайте установщик для Windows.</string>
+    <string name="settings_desktop_step_1">На ПК откройте syswatch.devlune.in и скачайте установщик для Windows.</string>
     <string name="settings_desktop_step_2">Установите приложение и, когда оно спросит, выберите, как подключается телефон.</string>
     <string name="settings_desktop_step_3">Откройте раздел «Привязка» на ПК и отсканируйте код этим телефоном.</string>
     <string name="settings_desktop_get">Скачать приложение для ПК</string>
@@ -476,7 +476,7 @@
     <string name="pair_heading_cloud">Подключение через облако</string>
     <string name="pair_heading_tailscale">Подключение через Tailscale</string>
     <string name="pair_step_number">%1$d</string>
-    <string name="pair_step_install">Установите SysWatch на ПК с сайта devlune.in/download/syswatch.</string>
+    <string name="pair_step_install">Установите SysWatch на ПК с сайта syswatch.devlune.in.</string>
     <string name="pair_local_step_choose">Когда приложение спросит, как подключается телефон, выберите «Локально».</string>
     <string name="pair_local_step_wifi">Подключите этот телефон к той же сети Wi-Fi, что и ПК.</string>
     <string name="pair_step_scan">Откройте раздел «Привязка» на ПК и отсканируйте код.</string>

@@ -5,13 +5,13 @@
 <h1 align="center">SysWatch</h1>
 
 <p align="center">
-  <b>Your PC's gauges, on your phone.</b><br>
+  <b>Your PC's gauges, on your phone.</b> &nbsp;·&nbsp; <a href="https://syswatch.devlune.in"><b>syswatch.devlune.in</b></a><br>
   A small desktop app reads your CPU, GPU, memory, network, storage and battery.<br>
   Your phone shows them live, and tells you when one crosses a limit you set.
 </p>
 
 <p align="center">
-  <a href="https://devlune.in/download/syswatch"><img src="https://img.shields.io/badge/Download_for_Windows-E0A458?style=for-the-badge&logo=windows11&logoColor=111111" alt="Download for Windows"></a>
+  <a href="https://syswatch.devlune.in"><img src="https://img.shields.io/badge/Download_for_Windows-E0A458?style=for-the-badge&logo=windows11&logoColor=111111" alt="Download for Windows"></a>
   <a href="https://play.google.com/store/apps/details?id=in.devlune.syswatch"><img src="https://img.shields.io/badge/Get_it_on_Google_Play-16181B?style=for-the-badge&logo=googleplay&logoColor=E0A458" alt="Get it on Google Play"></a>
 </p>
 
@@ -48,7 +48,7 @@
   <tr>
     <td width="33%" valign="top">
       <h3>1 &nbsp; Install on your PC</h3>
-      Open the <a href="https://devlune.in/download/syswatch">download page</a>, get the Windows installer and run it. SysWatch sits in the system tray.
+      Open <a href="https://syswatch.devlune.in">syswatch.devlune.in</a>, get the Windows installer and run it. SysWatch sits in the system tray.
     </td>
     <td width="33%" valign="top">
       <h3>2 &nbsp; Install on your phone</h3>
@@ -68,7 +68,7 @@
 
 | Your PC | Status | Where |
 |---|---|---|
-| **Windows 10 / 11** (64-bit) | Available | [Download page](https://devlune.in/download/syswatch) · [GitHub release](https://github.com/Dev-Lune/SysWatch/releases/latest) |
+| **Windows 10 / 11** (64-bit) | Available | [syswatch.devlune.in](https://syswatch.devlune.in) · [GitHub release](https://github.com/Dev-Lune/SysWatch/releases/latest) |
 | **Linux** | Not available yet | Planned. No Linux build has been made or tested. |
 | **macOS** | Not available yet | Planned, same as Linux. |
 | **Android phone** | Available | [Google Play](https://play.google.com/store/apps/details?id=in.devlune.syswatch) |

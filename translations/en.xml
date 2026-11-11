@@ -301,8 +301,8 @@
     <!-- Section title. -->
     <string name="settings_section_desktop">Desktop app</string>
     <string name="settings_desktop_body">SysWatch needs its desktop app on the PC you want to watch. It is free, for Windows.</string>
-    <!-- Numbered steps. Keep the web address devlune.in/download/syswatch as it is. -->
-    <string name="settings_desktop_step_1">On your PC, open devlune.in/download/syswatch and download the Windows installer.</string>
+    <!-- Numbered steps. Keep the web address syswatch.devlune.in as it is. -->
+    <string name="settings_desktop_step_1">On your PC, open syswatch.devlune.in and download the Windows installer.</string>
     <!-- Cloud and Local are the two connection modes named in the desktop app. -->
     <string name="settings_desktop_step_2">Install it and pick how your phone connects when it asks.</string>
     <!-- Pairing is the name of a screen in the desktop app. -->
@@ -706,7 +706,7 @@
     <!-- The number in front of a setup step. %1$d is 1, 2, 3 or 4. -->
     <string name="pair_step_number">%1$d</string>
     <!-- Setup steps. Keep the web address as it is. Local, Cloud by DevLune and Tailscale are the choice names above. Pairing is a screen in the desktop app. -->
-    <string name="pair_step_install">Install SysWatch on your PC from devlune.in/download/syswatch.</string>
+    <string name="pair_step_install">Install SysWatch on your PC from syswatch.devlune.in.</string>
     <string name="pair_local_step_choose">When it asks how your phone connects, choose Local.</string>
     <string name="pair_local_step_wifi">Connect this phone to the same Wi-Fi as the PC.</string>
     <string name="pair_step_scan">Open Pairing on the PC and scan the code.</string>

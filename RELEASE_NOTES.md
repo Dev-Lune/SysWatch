@@ -1,3 +1,33 @@
+# SysWatch 0.2.1 release notes
+
+**Released:** 11 Nov 2026 · **Desktop:** Windows 10 / 11, 64-bit · **Website:** [syswatch.devlune.in](https://syswatch.devlune.in)
+
+## Download
+
+| File | For |
+|---|---|
+| `SysWatch_0.2.1_x64-setup.exe` | Most people. Run it and follow the installer. |
+| `SysWatch_0.2.1_x64_en-US.msi` | IT-managed PCs that need an MSI. |
+
+Windows SmartScreen will warn that the installer is unrecognised, because it is not code signed yet. Choose **More info**, then **Run anyway**.
+
+## What is new since 0.2.0
+
+- **Guided first run.** Choose Local, Cloud by DevLune or Tailscale, follow the steps, scan the code.
+- **More real readings.** Battery health, cycles, voltage and temperature; network ping, jitter and loss.
+- **No more blanks.** A reading your PC cannot give is hidden, not shown as a dash.
+- **A proper icon** on the taskbar and desktop.
+
+The full list is in the [changelog](./CHANGELOG.md).
+
+## Updating
+
+Install 0.2.1 over the old version. Your pairing code and settings are kept.
+
+**Local and Tailscale need the newest Android app** (1.1.0), which reaches Google Play separately. Until it does, Cloud by DevLune works with the Android app you already have.
+
+---
+
 # SysWatch 0.2.0 release notes
 
 **Released:** 10 Nov 2026 · **Desktop:** Windows 10 / 11, 64-bit · **Android app:** 1.1.0, not on Google Play yet at the time of this release

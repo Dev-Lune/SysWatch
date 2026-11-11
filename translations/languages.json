@@ -4,28 +4,28 @@
     {
       "code": "de",
       "name": "Deutsch",
-      "version": "bb92e3f0ec01",
+      "version": "2d0175d9b48b",
       "strings": 477,
       "total": 477
     },
     {
       "code": "es",
       "name": "Español",
-      "version": "129b2adb2870",
+      "version": "31b3eec707ba",
       "strings": 477,
       "total": 477
     },
     {
       "code": "fr",
       "name": "Français",
-      "version": "7057a85e838b",
+      "version": "463748d26a50",
       "strings": 477,
       "total": 477
     },
     {
       "code": "ru",
       "name": "Русский",
-      "version": "97238183f5b1",
+      "version": "def3f87a369e",
       "strings": 477,
       "total": 477
     }

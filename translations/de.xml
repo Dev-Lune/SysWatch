@@ -195,7 +195,7 @@
     <string name="settings_unpair_cancel">Abbrechen</string>
     <string name="settings_section_desktop">Desktop-App</string>
     <string name="settings_desktop_body">SysWatch braucht seine Desktop-App auf dem PC, den du überwachen möchtest. Sie ist kostenlos und läuft unter Windows.</string>
-    <string name="settings_desktop_step_1">Öffne auf deinem PC devlune.in/download/syswatch und lade den Windows-Installer herunter.</string>
+    <string name="settings_desktop_step_1">Öffne auf deinem PC syswatch.devlune.in und lade den Windows-Installer herunter.</string>
     <string name="settings_desktop_step_2">Installiere die App und wähle bei der Nachfrage, wie sich dein Handy verbindet.</string>
     <string name="settings_desktop_step_3">Öffne am PC die Kopplung und scanne den Code mit diesem Handy.</string>
     <string name="settings_desktop_get">Desktop-App herunterladen</string>
@@ -464,7 +464,7 @@
     <string name="pair_heading_cloud">Über die Cloud verbinden</string>
     <string name="pair_heading_tailscale">Über Tailscale verbinden</string>
     <string name="pair_step_number">%1$d</string>
-    <string name="pair_step_install">Installiere SysWatch auf deinem PC von devlune.in/download/syswatch.</string>
+    <string name="pair_step_install">Installiere SysWatch auf deinem PC von syswatch.devlune.in.</string>
     <string name="pair_local_step_choose">Wenn die App fragt, wie sich dein Handy verbindet, wähle Lokal.</string>
     <string name="pair_local_step_wifi">Verbinde dieses Handy mit dem WLAN, in dem auch der PC ist.</string>
     <string name="pair_step_scan">Öffne am PC die Kopplung und scanne den Code.</string>
