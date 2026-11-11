@@ -8,5 +8,10 @@
   Cross-Origin-Opener-Policy: same-origin
   Strict-Transport-Security: max-age=31536000
 
+# The sitemap is data, not a page. Browsers draw XML with their own built-in styles and
+# script, which the policy above blocks: the tree then shows as raw text with stray "..." lines.
+/sitemap.xml
+  ! Content-Security-Policy
+
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
