@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SysWatch, English. This is the source: do not edit it in a translation pull request.
+  To add your language, copy this file to <language code>.xml (for example hi.xml)
+  and translate the text between the tags. See README.md in this folder.
+-->
+<resources>
+    <string name="notif_status_channel">SysWatch status</string>
+    <string name="notif_alerts_channel">SysWatch alerts</string>
+    <string name="notif_status_text">CPU %1$d%% · RAM %2$d%% · GPU %3$d%%</string>
+    <string name="notif_status_idle">Waiting for desktop…</string>
+    <string name="widget_description">Live CPU, GPU, memory and more from your paired PC, as rings, bars, numerals or a trace.</string>
+    <string name="widget_pair_title">No PC paired</string>
+    <string name="widget_pair_body">Open SysWatch to pair your PC</string>
+    <string name="widget_wait_title">Waiting for your PC</string>
+    <string name="widget_wait_body">Open SysWatch if nothing shows up</string>
+    <string name="widget_offline">PC offline</string>
+    <string name="widget_offline_since">PC offline since %1$s</string>
+    <!-- The PC's working memory (RAM). -->
+    <string name="card_memory">Memory</string>
+    <string name="card_network">Network</string>
+    <!-- Disk drives. -->
+    <string name="card_storage">Storage</string>
+    <string name="card_battery">Battery</string>
+    <!-- The card with uptime, process count and fan speed. -->
+    <string name="card_system">System</string>
+    <!-- The CPU clock speed in GHz, not the time of day. -->
+    <string name="metric_clock">Clock</string>
+    <string name="metric_temperature">Temperature</string>
+    <!-- Number of CPU cores. -->
+    <string name="metric_cores">Cores</string>
+    <!-- Number of CPU threads. -->
+    <string name="metric_threads">Threads</string>
+    <!-- Electrical power drawn, in watts. -->
+    <string name="metric_power">Power</string>
+    <!-- Cooling fan speed. -->
+    <string name="metric_fan">Fan</string>
+    <!-- Memory in use. -->
+    <string name="metric_used">Used</string>
+    <!-- Memory still free. -->
+    <string name="metric_available">Available</string>
+    <!-- Swap space: disk used as extra memory. Often left as Swap. -->
+    <string name="metric_swap">Swap</string>
+    <!-- Network speed coming in. Also a small caption above the figure. -->
+    <string name="metric_download">Download</string>
+    <!-- Network speed going out. Also a small caption above the figure. -->
+    <string name="metric_upload">Upload</string>
+    <!-- Total data received since the PC started. -->
+    <string name="metric_received">Received</string>
+    <!-- Total data sent since the PC started. -->
+    <string name="metric_sent">Sent</string>
+    <!-- Name for a disk drive that has none of its own. -->
+    <string name="metric_drive">Drive</string>
+    <!-- Battery time remaining. -->
+    <string name="metric_time_left">Time left</string>
+    <!-- How long the PC has been running. -->
+    <string name="metric_uptime">Uptime</string>
+    <!-- Number of running programs. -->
+    <string name="metric_processes">Processes</string>
+    <!-- An amount out of a total. %1$s is the part, %2$s the whole, both with units: "6.2 GB of 16.0 GB". -->
+    <string name="metric_of">%1$s of %2$s</string>
+    <!-- Under the Memory card name. %1$s is the amount of memory fitted in the PC, for example 16.0 GB. -->
+    <string name="metric_installed">%1$s installed</string>
+    <!-- One disk drive. %1$s is the space used, %2$s its size, %3$d the percentage used: "120.5 GB of 500.0 GB (24%)". -->
+    <string name="metric_drive_usage">%1$s of %2$s (%3$d%%)</string>
+    <!-- A reading after its name. %1$s is the name (CPU, Fan), %2$s the value with its unit (47%, 58°C). Change only spacing and order. -->
+    <string name="metric_name_reading">%1$s %2$s</string>
+    <!-- Battery state, shown under the Battery card name. One word each. -->
+    <string name="metric_battery_charging">Charging</string>
+    <string name="metric_battery_discharging">Discharging</string>
+    <string name="metric_battery_full">Full</string>
+    <string name="metric_battery_empty">Empty</string>
+    <!-- The PC did not say what the battery is doing. -->
+    <string name="metric_battery_unknown">Unknown</string>
+    <!-- The state of the link to the PC, on a small chip and in capitals above a message. Two words at most. -->
+    <string name="conn_live">Live</string>
+    <string name="conn_connecting">Connecting</string>
+    <string name="conn_reconnecting">Reconnecting</string>
+    <!-- The PC is on but has stopped sending readings. -->
+    <string name="conn_paused">Paused</string>
+    <string name="conn_offline">PC offline</string>
+    <string name="conn_disconnected">Not connected</string>
+    <string name="conn_error">Connection error</string>
+    <!-- Read aloud for the connection chip. %1$s is one of the states above. -->
+    <string name="conn_description">Connection: %1$s</string>
+    <!-- Small caption under the heading, shown in capitals. %1$s is the first 8 characters of the PC's id. -->
+    <string name="dash_machine">PC %1$s</string>
+    <!-- Read aloud for the button that opens standby, the full-screen always-on display. -->
+    <string name="dash_open_standby">Open standby</string>
+    <!-- Messages shown under the heading when the connection is not live, one per state. -->
+    <string name="dash_banner_paused">Your PC has stopped sending. These are the last readings it sent.</string>
+    <string name="dash_banner_offline">No reading for over a minute. The PC may be asleep, shut down or off the network.</string>
+    <string name="dash_banner_error">The link to your PC dropped and has not come back.</string>
+    <string name="dash_banner_disconnected">This phone is not receiving from your PC right now.</string>
+    <!-- Button in those messages: keep short. -->
+    <string name="dash_reconnect">Reconnect</string>
+    <!-- Empty state when every card is switched off. A small caption in capitals: the bridge is the panel of instruments. -->
+    <string name="dash_empty_kicker">Nothing on the bridge</string>
+    <string name="dash_empty_title">No cards to show</string>
+    <!-- Settings is the name of a tab. -->
+    <string name="dash_empty_body">Every card is hidden. Turn on the ones you want in Settings.</string>
+    <!-- Shown on Overview and in standby until the PC sends its first reading. -->
+    <string name="dash_waiting">Waiting for the first reading from your PC</string>
+    <!-- Read aloud for an empty card. %1$s is a card name, for example Memory. -->
+    <string name="dash_card_waiting">%1$s, waiting for data</string>
+    <!-- A card name and what is under it, on one line in capitals. %1$s is the card (CPU), %2$s the hardware name or a note (Ryzen 7 5800X). -->
+    <string name="dash_label_title">%1$s · %2$s</string>
+    <!-- A percentage. %1$s is the card name, %2$d the number: "CPU 47 percent". -->
+    <plurals name="dash_spoken_percent">
+        <item quantity="one">%1$s %2$d percent</item>
+        <item quantity="other">%1$s %2$d percent</item>
+    </plurals>
+    <!-- A reading with a unit. %1$s is the card name, %2$s the number, %3$s the unit symbol. -->
+    <string name="dash_spoken_unit">%1$s %2$s %3$s</string>
+    <!-- The network card. %1$s is the number, %2$s the unit symbol: "Network download 4.20 MB/s". -->
+    <string name="dash_spoken_network">Network download %1$s %2$s</string>
+    <!-- The system card. %1$s is a duration such as 2d 3h 4m (days, hours, minutes). -->
+    <string name="dash_spoken_system">System uptime %1$s</string>
+    <!-- Added when the reading has crossed a limit the user set. %1$s is the reading sentence so far. -->
+    <string name="dash_spoken_over">%1$s, past your alert threshold</string>
+    <!-- Two spoken sentences one after the other. %1$s comes first, %2$s second. Change only the punctuation between them. -->
+    <string name="dash_spoken_join">%1$s. %2$s</string>
+    <!-- Button that opens the list of standby faces. One word. -->
+    <string name="standby_faces">Faces</string>
+    <!-- Read aloud for the close button. -->
+    <string name="standby_exit">Exit standby</string>
+    <!-- Bottom of the screen, in capitals. %1$s is the name of the face showing, for example Rings. -->
+    <string name="standby_swipe_hint">%1$s · swipe to change</string>
+    <!-- Shown for a moment when the rotate button cannot turn the screen. -->
+    <string name="standby_hint_landscape_only">This face is landscape only</string>
+    <string name="standby_hint_portrait_only">This face is portrait only</string>
+    <!-- Read aloud for the rotate button. Six cases: how standby is set to open (auto, portrait or
+        landscape), and which way a tap turns the screen now. -->
+    <string name="standby_rotate_auto_to_portrait">Orientation: auto. Tap to switch to portrait.</string>
+    <string name="standby_rotate_auto_to_landscape">Orientation: auto. Tap to switch to landscape.</string>
+    <string name="standby_rotate_portrait_to_portrait">Orientation: portrait. Tap to switch to portrait. Long press to follow the phone.</string>
+    <string name="standby_rotate_portrait_to_landscape">Orientation: portrait. Tap to switch to landscape. Long press to follow the phone.</string>
+    <string name="standby_rotate_landscape_to_portrait">Orientation: landscape. Tap to switch to portrait. Long press to follow the phone.</string>
+    <string name="standby_rotate_landscape_to_landscape">Orientation: landscape. Tap to switch to landscape. Long press to follow the phone.</string>
+    <!-- Names of the tap and long press actions of the rotate button. A screen reader says them after "double tap to". -->
+    <string name="standby_rotate_to_portrait">Switch to portrait</string>
+    <string name="standby_rotate_to_landscape">Switch to landscape</string>
+    <string name="standby_rotate_follow">Follow the phone</string>
+    <!-- A 12 hour time. %1$s is the time (9:41), %2$s the AM or PM marker in your language. -->
+    <string name="standby_time_12h">%1$s %2$s</string>
+    <!-- Read aloud for a clock. %1$s is the time, %2$s the date (Wed 11 Nov). -->
+    <string name="standby_spoken_time_date">%1$s, %2$s</string>
+    <!-- Time then date on one line, in capitals. %1$s is the time, %2$s the date. -->
+    <string name="standby_time_date">%1$s · %2$s</string>
+    <!-- Date then time on one line, in capitals. %1$s is the date, %2$s the time. -->
+    <string name="standby_date_time">%1$s · %2$s</string>
+    <!-- Under a 12 hour clock, in capitals. %1$s is the AM or PM marker, %2$s the date. -->
+    <string name="standby_meridiem_date">%1$s · %2$s</string>
+    <!-- Captions on the Thermals face, in capitals. %1$s is CPU, GPU or the System card name. -->
+    <string name="standby_thermal_temperature">%1$s temperature</string>
+    <string name="standby_thermal_fan">%1$s fan</string>
+    <string name="standby_thermal_power">%1$s power</string>
+    <!-- Names of the standby faces. One word each; they name a design, so a close word is fine. -->
+    <string name="face_rings">Rings</string>
+    <string name="face_numerals">Numerals</string>
+    <!-- Line graphs. -->
+    <string name="face_traces">Traces</string>
+    <string name="face_clock">Clock</string>
+    <string name="face_bars">Bars</string>
+    <string name="face_orbit">Orbit</string>
+    <string name="face_minimal">Minimal</string>
+    <!-- For a phone on a desk stand. -->
+    <string name="face_desk">Desk</string>
+    <!-- A split-flap clock, the kind with flipping cards. -->
+    <string name="face_flip">Flip</string>
+    <!-- A clock with hands. -->
+    <string name="face_analog">Analog</string>
+    <string name="face_tower">Tower</string>
+    <!-- An oscilloscope. -->
+    <string name="face_scope">Scope</string>
+    <string name="face_pulse">Pulse</string>
+    <string name="face_grid">Grid</string>
+    <!-- Temperatures. -->
+    <string name="face_thermals">Thermals</string>
+    <string name="face_network">Network</string>
+    <string name="face_horizon">Horizon</string>
+    <string name="face_blocks">Blocks</string>
+    <string name="face_ink">Ink</string>
+    <!-- Woven cloth. -->
+    <string name="face_weave">Weave</string>
+    <!-- A flower opening. -->
+    <string name="face_bloom">Bloom</string>
+    <!-- Typography: the letters are the gauge. -->
+    <string name="face_type">Type</string>
+    <!-- Pixel art. -->
+    <string name="face_pixel">Pixel</string>
+    <!-- Screen heading. -->
+    <string name="gallery_title">Standby faces</string>
+    <!-- Under the heading: what the small previews show. -->
+    <string name="gallery_note_live">Previews show your PC\'s readings. Tap a face to choose it.</string>
+    <string name="gallery_note_sample">Previews show sample readings until your PC sends its first. Tap a face to choose it.</string>
+    <!-- Under the orientation choice: what the chosen option does. -->
+    <string name="gallery_orientation_auto">Standby follows the way the phone is held.</string>
+    <string name="gallery_orientation_portrait">Standby opens upright. A landscape only face still turns the screen.</string>
+    <string name="gallery_orientation_landscape">Standby opens on its side. A portrait only face still turns the screen.</string>
+    <!-- Section titles, in capitals. Art is the shelf of picture faces, Instruments the gauges and graphs. -->
+    <string name="gallery_section_art">Art</string>
+    <string name="gallery_section_instruments">Instruments</string>
+    <!-- Main button. -->
+    <string name="gallery_start">Start standby</string>
+    <!-- Under a face name: what this PC lacks for the face to work. One line, keep short. -->
+    <string name="gallery_needs_temperature">Needs temperature sensors</string>
+    <string name="gallery_needs_network">Needs network data</string>
+    <!-- A level metric is a reading with a percentage, such as CPU or memory. -->
+    <string name="gallery_needs_level">Needs a level metric</string>
+    <!-- Under a face name when both apply. %1$s is Portrait or Landscape, %2$s one of the three lines above. -->
+    <string name="gallery_way_and_need">%1$s · %2$s</string>
+    <!-- Read aloud for a face. %1$s is the face name, for example Rings. -->
+    <string name="gallery_face_both">%1$s face, works in both orientations</string>
+    <string name="gallery_face_portrait">%1$s face, portrait only</string>
+    <string name="gallery_face_landscape">%1$s face, landscape only</string>
+    <!-- Read aloud, added to the sentence above when this PC lacks something. %1$s is the sentence so far. -->
+    <string name="gallery_spoken_needs_temperature">%1$s, needs temperature sensors on this PC</string>
+    <string name="gallery_spoken_needs_network">%1$s, needs network data on this PC</string>
+    <string name="gallery_spoken_needs_level">%1$s, needs a level metric on this PC</string>
+    <!-- Read aloud, added for the face in use. %1$s is the sentence so far. -->
+    <string name="gallery_spoken_selected">%1$s, selected</string>
+    <!-- Names of the four widget looks, choice chips in Settings. One word each. -->
+    <string name="widget_look_rings">Rings</string>
+    <string name="widget_look_bars">Bars</string>
+    <string name="widget_look_numerals">Numerals</string>
+    <!-- A line graph. -->
+    <string name="widget_look_trace">Trace</string>
+    <!-- Short card names for the small widget, shown in capitals in a very narrow column.
+        At most 4 letters each. The long names are the card_ names above: keep those to 9 letters
+        or fewer if you can, they share a 66dp column on the large widget. -->
+    <string name="widget_short_memory">Mem</string>
+    <string name="widget_short_storage">Disk</string>
+    <string name="widget_short_battery">Bat</string>
+    <string name="widget_short_network">Net</string>
+    <!-- Tab bar. One word each, shown under an icon: keep them short. -->
+    <string name="nav_overview">Overview</string>
+    <string name="nav_alerts">Alerts</string>
+    <string name="nav_settings">Settings</string>
+    <!-- Screen heading. -->
+    <string name="settings_heading">Settings</string>
+    <!-- Button that closes the message shown after an export or import. -->
+    <string name="settings_notice_dismiss">Dismiss</string>
+    <string name="settings_export_done">Alert rules exported.</string>
+    <string name="settings_export_failed">Could not write that file. Nothing was exported.</string>
+    <!-- %1$d is how many alert rules were read from the file. -->
+    <plurals name="settings_import_done">
+        <item quantity="one">Imported %1$d alert rule.</item>
+        <item quantity="other">Imported %1$d alert rules.</item>
+    </plurals>
+    <string name="settings_import_empty">That file has no SysWatch alert rules. Nothing changed.</string>
+    <!-- Section title. Standby is the full-screen always-on display mode. -->
+    <string name="settings_section_standby">Standby</string>
+    <!-- %1$s is the name of the standby face in use, for example Rings. -->
+    <string name="settings_standby_face">Face: %1$s</string>
+    <string name="settings_standby_face_hint">Swipe sideways in standby to change it there too.</string>
+    <!-- Button. -->
+    <string name="settings_standby_browse">Browse standby faces</string>
+    <string name="settings_standby_dim">Dim after 30 seconds</string>
+    <string name="settings_standby_dim_hint">Lowers brightness of the standby face until you tap.</string>
+    <!-- Section title. -->
+    <string name="settings_section_widget">Widget</string>
+    <!-- Label above the choice of widget style. -->
+    <string name="settings_widget_look">Look</string>
+    <string name="settings_widget_look_hint">Applies to every SysWatch widget on your home screen.</string>
+    <!-- Section title: units and graph options for the measured values. -->
+    <string name="settings_section_readings">Readings</string>
+    <string name="settings_units">Units</string>
+    <!-- Choice chip: temperatures in Celsius, speeds in MB/s. Do not translate MB/s. -->
+    <string name="settings_units_metric">Celsius, MB/s</string>
+    <!-- Choice chip: temperatures in Fahrenheit, speeds in Mbps. Do not translate Mbps. -->
+    <string name="settings_units_imperial">Fahrenheit, Mbps</string>
+    <string name="settings_graph_history">Graph history</string>
+    <!-- Choice chip: how many readings a graph keeps. %1$d is 30, 60 or 120. -->
+    <plurals name="settings_graph_samples">
+        <item quantity="one">%1$d sample</item>
+        <item quantity="other">%1$d samples</item>
+    </plurals>
+    <!-- Section title: battery and background options. -->
+    <string name="settings_section_power">Power and background</string>
+    <string name="settings_keep_screen_on">Keep screen on</string>
+    <string name="settings_keep_screen_on_hint">While SysWatch is open.</string>
+    <string name="settings_low_power">Low power mode</string>
+    <string name="settings_low_power_hint">Updates less often to save battery.</string>
+    <string name="settings_background">Run in the background</string>
+    <string name="settings_background_hint">Needed for alerts and the widget when the app is closed.</string>
+    <!-- Section title. -->
+    <string name="settings_section_pc">Connection and your PC</string>
+    <!-- %1$s is the 6-character pairing code, for example K7M2QX. -->
+    <string name="settings_paired_with">Paired with code %1$s</string>
+    <string name="settings_not_paired">No PC paired</string>
+    <!-- Button. -->
+    <string name="settings_unpair_button">Unpair this PC</string>
+    <!-- Confirmation dialog. -->
+    <string name="settings_unpair_title">Unpair this PC?</string>
+    <string name="settings_unpair_body">The phone stops receiving stats. Your alert rules and settings are kept. Scan the code on the PC to pair again.</string>
+    <!-- Dialog button, keep short. -->
+    <string name="settings_unpair_confirm">Unpair</string>
+    <!-- Dialog button, keep short. -->
+    <string name="settings_unpair_cancel">Cancel</string>
+    <!-- Section title. -->
+    <string name="settings_section_desktop">Desktop app</string>
+    <string name="settings_desktop_body">SysWatch needs its desktop app on the PC you want to watch. It is free, for Windows.</string>
+    <!-- Numbered steps. Keep the web address devlune.in/download/syswatch as it is. -->
+    <string name="settings_desktop_step_1">On your PC, open devlune.in/download/syswatch and download the Windows installer.</string>
+    <!-- Cloud and Local are the two connection modes named in the desktop app. -->
+    <string name="settings_desktop_step_2">Install it and pick how your phone connects when it asks.</string>
+    <!-- Pairing is the name of a screen in the desktop app. -->
+    <string name="settings_desktop_step_3">Open Pairing on the PC and scan the code with this phone.</string>
+    <!-- Button. -->
+    <string name="settings_desktop_get">Get the desktop app</string>
+    <!-- Link row. -->
+    <string name="settings_desktop_github">Download from GitHub instead</string>
+    <!-- Section title: using the app outside the home network. -->
+    <string name="settings_section_away">Away from home</string>
+    <string name="settings_away_body">Local mode works on your Wi-Fi. Add Tailscale and it works from anywhere, still instant and still private.</string>
+    <string name="settings_away_step_1">Install Tailscale on your PC and on this phone.</string>
+    <string name="settings_away_step_2">Sign in to both with the same account.</string>
+    <string name="settings_away_step_3">Open Pairing on the PC and scan the code again.</string>
+    <!-- Link row. -->
+    <string name="settings_away_get_tailscale">Get Tailscale for Android</string>
+    <!-- Link row. -->
+    <string name="settings_away_guide">Tailscale setup guide</string>
+    <!-- Section title. -->
+    <string name="settings_section_backup">Backup</string>
+    <!-- Section title. -->
+    <string name="settings_section_support">Support</string>
+    <string name="settings_support_body">SysWatch is free and has no ads. If it is useful to you, sponsoring keeps it maintained.</string>
+    <!-- Button. -->
+    <string name="settings_support_sponsor">Sponsor on GitHub</string>
+    <!-- Link row. -->
+    <string name="settings_support_star">Star the project on GitHub</string>
+    <!-- Section title. -->
+    <string name="settings_section_about">About</string>
+    <!-- Link row. -->
+    <string name="settings_about_discord">Community on Discord</string>
+    <!-- Link row. -->
+    <string name="settings_about_privacy">Privacy policy</string>
+    <!-- Link row. -->
+    <string name="settings_about_terms">Terms</string>
+    <!-- Read aloud for the icon on a link row: tapping it leaves the app. -->
+    <string name="settings_link_opens_browser">Opens in browser</string>
+    <!-- Section title: colours and layout. -->
+    <string name="settings_section_look">Look</string>
+    <!-- The accent is the one highlight colour of the app. Also a section title in onboarding. -->
+    <string name="settings_accent">Accent</string>
+    <string name="settings_accent_hint">The one colour every gauge and graph is drawn in.</string>
+    <!-- Accent colour names. Also used as choice chips in onboarding. -->
+    <string name="settings_accent_amber">Amber</string>
+    <string name="settings_accent_cyan">Cyan</string>
+    <string name="settings_accent_green">Green</string>
+    <string name="settings_accent_violet">Violet</string>
+    <string name="settings_accent_rose">Rose</string>
+    <!-- A greyscale accent, no colour. -->
+    <string name="settings_accent_mono">Mono</string>
+    <!-- The accent that follows the colours of the phone wallpaper. -->
+    <string name="settings_accent_match_wallpaper">Match wallpaper</string>
+    <!-- Read aloud for a colour swatch. %1$s is an accent name from the list above, for example Amber. -->
+    <string name="settings_accent_description">%1$s accent</string>
+    <!-- Label, and a section title in onboarding. -->
+    <string name="settings_theme">Theme</string>
+    <!-- Theme names, choice chips. System means follow the phone setting. Also used in onboarding. -->
+    <string name="settings_theme_system">System</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <!-- A dark theme with a pure black background. -->
+    <string name="settings_theme_true_black">True black</string>
+    <!-- Overview is the name of the main tab. Density is how tightly its cards are packed. -->
+    <string name="settings_density">Overview density</string>
+    <!-- Density names, choice chips. Also card titles in onboarding. -->
+    <string name="settings_density_comfortable">Comfortable</string>
+    <string name="settings_density_compact">Compact</string>
+    <!-- Section title. Overview is the name of the main tab. -->
+    <string name="settings_section_cards">Overview</string>
+    <!-- Row title above the choice of Overview layout. Overview is the name of the main tab. -->
+    <string name="settings_layout_title">Layout</string>
+    <!-- Names of the five Overview layouts. One or two words each. -->
+    <string name="settings_layout_bridge">Bridge</string>
+    <string name="settings_layout_gauges">Gauges</string>
+    <string name="settings_layout_strips">Strip charts</string>
+    <string name="settings_layout_ledger">Ledger</string>
+    <string name="settings_layout_focus">Focus</string>
+    <!-- One line under each layout name saying how it shows the readings. -->
+    <string name="settings_layout_bridge_about">One reading large, the rest as rows</string>
+    <string name="settings_layout_gauges_about">A dial for every reading</string>
+    <string name="settings_layout_strips_about">Every reading as a moving graph</string>
+    <string name="settings_layout_ledger_about">Everything on one screen, numbers first</string>
+    <string name="settings_layout_focus_about">One reading at a time, swipe for the rest</string>
+    <string name="settings_cards_body">Choose what shows on Overview and in what order. A card for hardware your PC does not have stays hidden.</string>
+    <!-- Read aloud for the up arrow on a card row. %1$s is the card name, for example Memory. -->
+    <string name="settings_card_move_up">Move %1$s up</string>
+    <!-- Read aloud for the down arrow on a card row. %1$s is the card name, for example Memory. -->
+    <string name="settings_card_move_down">Move %1$s down</string>
+    <!-- Small caption above the pairing code of the PC this phone watches. -->
+    <string name="settings_header_paired_kicker">Paired PC</string>
+    <!-- Labels on the left of the status card, each with a value on the right. Keep short. -->
+    <string name="settings_header_connection">Connection</string>
+    <string name="settings_header_version">App version</string>
+    <string name="settings_header_look">Your look</string>
+    <!-- The look in one line. %1$s is the accent name (Amber), %2$s the theme (Dark), %3$s the density (Comfortable). -->
+    <string name="settings_header_look_value">%1$s · %2$s · %3$s</string>
+    <!-- Shown as the connection type when the user has not picked Local, Cloud by DevLune or Tailscale yet. -->
+    <string name="settings_connection_unknown">Not chosen yet</string>
+    <!-- ===== Settings: one line under each group title saying what the group is for ===== -->
+    <string name="settings_group_look_about">Colour, theme and how tightly Overview is packed.</string>
+    <!-- Overview is the name of the main tab. -->
+    <string name="settings_group_cards_about">What the main tab shows, and in what order.</string>
+    <string name="settings_group_standby_about">The full-screen, always-on display.</string>
+    <string name="settings_group_widget_about">How SysWatch looks on your home screen.</string>
+    <string name="settings_group_readings_about">Units, and how much history a graph keeps.</string>
+    <string name="settings_group_power_about">Battery use, and what runs when the app is closed.</string>
+    <string name="settings_group_pc_about">The PC this phone watches, and how it reaches it.</string>
+    <string name="settings_group_desktop_about">The Windows app that sends the readings.</string>
+    <string name="settings_group_away_about">Reach your PC from outside your Wi-Fi.</string>
+    <string name="settings_group_backup_about">Keep a copy of your alert rules, or move them to another phone.</string>
+    <string name="settings_group_support_about">Free, with no ads. Here is how to help.</string>
+    <string name="settings_group_about_about">Version, updates and the small print.</string>
+    <!-- Under a card name in the Overview list: whether that card is on the main tab. One word each. -->
+    <string name="settings_cards_shown">Shown</string>
+    <string name="settings_cards_hidden">Hidden</string>
+    <!-- Under the name of the standby face in use: which way up that face works. -->
+    <string name="settings_standby_fit_both">Works in portrait and landscape.</string>
+    <string name="settings_standby_fit_portrait">A portrait face.</string>
+    <string name="settings_standby_fit_landscape">A landscape face.</string>
+    <!-- Row title: which way up standby holds the screen. -->
+    <string name="settings_standby_orientation">Orientation</string>
+    <!-- Choice chips, one word each. Auto means follow the phone. -->
+    <string name="settings_standby_orientation_auto">Auto</string>
+    <string name="settings_standby_orientation_portrait">Portrait</string>
+    <string name="settings_standby_orientation_landscape">Landscape</string>
+    <!-- Under the Orientation title: what the chosen option does. -->
+    <string name="settings_standby_orientation_auto_hint">Standby turns with the phone.</string>
+    <string name="settings_standby_orientation_portrait_hint">Standby stays in portrait.</string>
+    <string name="settings_standby_orientation_landscape_hint">Standby stays in landscape.</string>
+    <string name="settings_graph_history_hint">How many readings each graph keeps.</string>
+    <string name="settings_paired_hint">This phone shows readings from that PC.</string>
+    <!-- Row title. The value under it is Local, Cloud by DevLune or Tailscale. -->
+    <string name="settings_connection_type">Connection type</string>
+    <!-- Under the red Unpair row. -->
+    <string name="settings_unpair_hint">Stops readings on this phone. Alert rules and settings are kept.</string>
+    <string name="settings_desktop_github_hint">The same installer, from the releases page.</string>
+    <string name="settings_away_get_tailscale_hint">The Tailscale app on Google Play.</string>
+    <string name="settings_away_guide_hint">The full walkthrough on devlune.in.</string>
+    <!-- Row titles and what each does. Both open the file picker of the phone. -->
+    <string name="settings_backup_export_title">Export alert rules</string>
+    <string name="settings_backup_export_hint">Saves your alert rules to a file.</string>
+    <string name="settings_backup_import_title">Import alert rules</string>
+    <string name="settings_backup_import_hint">Loads rules from a file and replaces the ones here.</string>
+    <string name="settings_support_star_hint">Helps other people find SysWatch.</string>
+    <!-- %1$s is the app version, for example 1.1.0. -->
+    <string name="settings_about_version_line">Version %1$s</string>
+    <!-- Do not translate DevLune. -->
+    <string name="settings_about_by">by DevLune</string>
+    <!-- Row title above the update status and its button. -->
+    <string name="settings_about_updates">Updates</string>
+    <!-- Row that opens the release notes again. -->
+    <string name="settings_about_whatsnew">What is new</string>
+    <!-- %1$s is a version, for example 1.1.0. -->
+    <string name="settings_about_whatsnew_hint">Release notes for %1$s</string>
+    <string name="settings_about_discord_hint">Ask a question or suggest a feature.</string>
+    <string name="settings_about_homepage_hint">The studio that makes SysWatch.</string>
+    <string name="settings_about_privacy_hint">How your data is handled.</string>
+    <string name="settings_about_terms_hint">The terms for using SysWatch.</string>
+    <!-- What an alert rule watches. Used as a choice chip and as %1$s in the alerts_sentence_ strings. -->
+    <string name="alerts_metric_cpu">CPU load</string>
+    <string name="alerts_metric_gpu">GPU load</string>
+    <string name="alerts_metric_ram">Memory used</string>
+    <string name="alerts_metric_battery">Battery level</string>
+    <string name="alerts_metric_net_down">Download speed</string>
+    <string name="alerts_metric_net_up">Upload speed</string>
+    <string name="alerts_metric_disk_used">Storage used</string>
+    <string name="alerts_metric_temp_cpu">CPU temperature</string>
+    <string name="alerts_metric_temp_gpu">GPU temperature</string>
+    <!-- Unit symbols shown after the limit field. Do not translate. -->
+    <string name="alerts_unit_percent" formatted="false">%</string>
+    <string name="alerts_unit_mb">MB</string>
+    <string name="alerts_unit_mbps">Mbps</string>
+    <string name="alerts_unit_celsius">°C</string>
+    <!-- A limit with its unit. %1$s is the number, for example 90. Change only spacing and order. -->
+    <string name="alerts_value_percent">%1$s%%</string>
+    <string name="alerts_value_mb">%1$s MB</string>
+    <string name="alerts_value_mbps">%1$s Mbps</string>
+    <string name="alerts_value_celsius">%1$s°C</string>
+    <!-- A rule as a sentence, for example "CPU load above 90%".
+        %1$s is one of the alerts_metric_ names, %2$s is a limit with its unit (alerts_value_). -->
+    <string name="alerts_sentence_above">%1$s above %2$s</string>
+    <string name="alerts_sentence_at_or_above">%1$s at or above %2$s</string>
+    <string name="alerts_sentence_below">%1$s below %2$s</string>
+    <string name="alerts_sentence_at_or_below">%1$s at or below %2$s</string>
+    <!-- Names of the ready-made rules offered when there are none yet. At most 40 characters. -->
+    <string name="alerts_starter_cpu_hot">CPU running hot</string>
+    <string name="alerts_starter_memory_full">Memory nearly full</string>
+    <string name="alerts_starter_battery_low">Battery low</string>
+    <string name="alerts_starter_cpu_warm">CPU too warm</string>
+    <!-- Screen heading. -->
+    <string name="alerts_heading">Alerts</string>
+    <!-- Button beside the heading: keep short. -->
+    <string name="alerts_new">New alert</string>
+    <string name="alerts_empty_body">Get a notification when your PC crosses a limit you set. Each limit also shows as a red line on its gauge.</string>
+    <!-- Button. -->
+    <string name="alerts_create">Create an alert</string>
+    <!-- Small label above the ready-made rules. Shown in capitals. -->
+    <string name="alerts_starters_kicker">Or start with one of these</string>
+    <!-- Read aloud for the plus icon on a ready-made rule. -->
+    <string name="alerts_starter_add">Add this alert</string>
+    <!-- Second line of a rule card. %1$s is the rule sentence (alerts_sentence_), %2$s its urgency (alerts_severity_inline_). -->
+    <string name="alerts_rule_summary">%1$s · %2$s</string>
+    <!-- Urgency inside the rule summary line, lower case where the language has it. -->
+    <string name="alerts_severity_inline_info">info</string>
+    <string name="alerts_severity_inline_warn">warn</string>
+    <string name="alerts_severity_inline_critical">critical</string>
+    <!-- Read aloud for the switch on a rule card. %1$s is the rule name. -->
+    <string name="alerts_turn_off">Turn off %1$s</string>
+    <string name="alerts_turn_on">Turn on %1$s</string>
+    <!-- Rule editor headings. -->
+    <string name="alerts_editor_title_new">New alert</string>
+    <string name="alerts_editor_title_edit">Edit alert</string>
+    <!-- Label above the list of things to watch (alerts_metric_). An instruction: "Watch this". -->
+    <string name="alerts_editor_watch">Watch</string>
+    <!-- Label above the two choices that follow, read as "Tell me when it goes above" or "drops below". -->
+    <string name="alerts_editor_when">Tell me when it</string>
+    <string name="alerts_editor_goes_above">Goes above</string>
+    <string name="alerts_editor_drops_below">Drops below</string>
+    <!-- Label of the number field: the value the rule compares against. -->
+    <string name="alerts_editor_limit">Limit</string>
+    <!-- Errors under the limit field. -->
+    <string name="alerts_error_number">Enter a number.</string>
+    <string name="alerts_error_percentage">Enter a percentage from 0 to 100.</string>
+    <string name="alerts_error_above_zero">Enter a number above zero.</string>
+    <!-- Label above the durations below: the quiet time before the same alert may fire again. -->
+    <string name="alerts_editor_cooldown">Do not repeat for</string>
+    <!-- Durations, choice chips. They complete "Do not repeat for". -->
+    <plurals name="alerts_cooldown_seconds">
+        <item quantity="one">%1$d second</item>
+        <item quantity="other">%1$d seconds</item>
+    </plurals>
+    <plurals name="alerts_cooldown_minutes">
+        <item quantity="one">%1$d minute</item>
+        <item quantity="other">%1$d minutes</item>
+    </plurals>
+    <plurals name="alerts_cooldown_hours">
+        <item quantity="one">%1$d hour</item>
+        <item quantity="other">%1$d hours</item>
+    </plurals>
+    <!-- Label above the urgency choices. -->
+    <string name="alerts_editor_urgency">How urgent</string>
+    <!-- Urgency levels, choice chips: keep short. Warn is the middle level, a warning. -->
+    <string name="alerts_severity_info">Info</string>
+    <string name="alerts_severity_warn">Warn</string>
+    <string name="alerts_severity_critical">Critical</string>
+    <!-- Label of the name field. -->
+    <string name="alerts_editor_name">Name (optional)</string>
+    <!-- Buttons. -->
+    <string name="alerts_editor_save">Save alert</string>
+    <string name="alerts_editor_cancel">Cancel</string>
+    <string name="alerts_editor_delete">Delete alert</string>
+    <!-- Banner above every screen. One line beside a button: keep it short. -->
+    <string name="update_banner_available">A new version of SysWatch is ready.</string>
+    <!-- Banner button, one word. -->
+    <string name="update_banner_action">Update</string>
+    <!-- Banner button, one word: restarts the app to finish the update. -->
+    <string name="update_banner_restart">Restart</string>
+    <!-- %1$d is the download progress from 0 to 100, %% is the percent sign. -->
+    <string name="update_downloading">Downloading the update, %1$d%%</string>
+    <string name="update_ready">Update downloaded. Restart to finish.</string>
+    <!-- Status line in Settings, About. -->
+    <string name="update_status_idle">Updates come from Google Play.</string>
+    <string name="update_status_checking">Checking for updates</string>
+    <string name="update_status_up_to_date">You are on the latest version.</string>
+    <string name="update_status_available">A new version is ready to download.</string>
+    <string name="update_status_unavailable">Could not ask Google Play from this install. You can open the store page instead.</string>
+    <!-- Buttons under the status line. -->
+    <string name="update_action_now">Update now</string>
+    <string name="update_action_install">Restart and install</string>
+    <string name="update_action_open_play">Open Google Play</string>
+    <string name="update_action_check">Check for updates</string>
+    <!-- Dialog shown once after an update. %1$s is the version, for example 1.1.0. -->
+    <string name="whatsnew_title">What is new in %1$s</string>
+    <!-- Dialog button. -->
+    <string name="whatsnew_dismiss">Got it</string>
+    <!-- Release notes for version 1.1.0, one sentence per bullet. Overview is the name of the main tab. -->
+    <string-array name="whatsnew_1_1_0">
+        <item>A new look: one clean panel, big readable numbers, your alert limits drawn on every gauge.</item>
+        <item>Pick your own accent colour, a light, dark or true black theme, and one of five Overview layouts, roomy or compact.</item>
+        <item>Choose which cards show on Overview and in what order.</item>
+        <item>24 standby faces, 16 instruments and 8 art, and four home screen widget looks.</item>
+        <item>Local mode: connect straight to your PC over Wi-Fi or Tailscale, instant and private.</item>
+        <item>The app now tells you when an update is ready.</item>
+        <item>Now in English, German, French, Spanish and Russian. More languages arrive by themselves, with no app update.</item>
+    </string-array>
+    <!-- The name of this language, written in this language. German writes Deutsch, Russian writes Русский. -->
+    <string name="language_name">English</string>
+    <!-- The choice that follows the phone's own language. %1$s is the language that gives right now, under its own name: "System default (Deutsch)". -->
+    <string name="language_system">System default (%1$s)</string>
+    <!-- Button in the language dialog: closes it without changing anything. -->
+    <string name="language_cancel">Cancel</string>
+    <!-- Link in the language dialog, Android 13 and newer: opens the phone's own settings page for this app's language. -->
+    <string name="language_open_system_settings">Open system language settings</string>
+    <!-- Small line under a language that is not on the phone yet. Tapping the row downloads it, then switches to it. -->
+    <string name="language_download">Download</string>
+    <!-- Small line under a language whose translation is not finished. %1$d is a whole number from 1 to 99. -->
+    <string name="language_percent">%1$d%% translated</string>
+    <!-- Both of the two lines above at once. -->
+    <string name="language_download_partial">Download · %1$d%% translated</string>
+    <!-- Small line under a language while its file is being fetched. -->
+    <string name="language_downloading">Downloading…</string>
+    <!-- Shown when a language could not be fetched. %1$s is that language's own name. The app stays in the language it was in. -->
+    <string name="language_download_failed">Could not download %1$s. Check your connection and try again.</string>
+    <!-- Button beside the message above. -->
+    <string name="language_retry">Retry</string>
+    <!-- Row in Settings, title of the language dialog and a label on the status card. One word. -->
+    <string name="settings_language">Language</string>
+    <!-- One quiet line under the Language row in Settings. Translations can be updated over the internet without updating the app; this says where that stands. -->
+    <string name="settings_language_pack_current">Language pack up to date</string>
+    <string name="settings_language_pack_updated_today">Updated today</string>
+    <!-- The phone is offline or the check failed. The text already on the phone keeps being used. -->
+    <string name="settings_language_pack_failed">Could not check, using saved text</string>
+    <string name="settings_language_pack_checking">Checking…</string>
+    <!-- Button beside that line: looks for updated translations now. -->
+    <string name="settings_language_pack_check">Check now</string>
+    <!-- First onboarding step. The screen changes language as soon as one is tapped. Settings is the name of a tab. -->
+    <string name="onboarding_language_title">Choose your language</string>
+    <string name="onboarding_language_body">SysWatch switches as soon as you tap one. You can change it later in Settings.</string>
+    <!-- Progress label, shown in capitals. %1$d is the current step, %2$d the number of steps. -->
+    <string name="onboarding_step">Step %1$d of %2$d</string>
+    <!-- Buttons: keep short. -->
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_back">Back</string>
+    <string name="onboarding_continue">Continue</string>
+    <!-- Button on the last step: goes on to connect the phone to the PC. -->
+    <string name="onboarding_pair">Pair your PC</string>
+    <string name="onboarding_welcome_title">Your PC\'s gauges, on your phone</string>
+    <string name="onboarding_welcome_body">SysWatch shows your PC\'s live CPU, GPU, memory and network here, and tells you when one crosses a limit you set.</string>
+    <!-- Small label on the demo gauge, shown in capitals: the numbers are an example, not real. -->
+    <string name="onboarding_sample_kicker">CPU, sample reading</string>
+    <string name="onboarding_look_title">Make it yours</string>
+    <!-- Settings is the name of a tab. -->
+    <string name="onboarding_look_body">One accent, one theme. Both change as you tap, and both can be changed later in Settings.</string>
+    <!-- Choice chip: the accent that follows the phone wallpaper colours. -->
+    <string name="onboarding_accent_system">System</string>
+    <!-- Choice chip: the pure black theme. Do not translate. -->
+    <string name="onboarding_theme_amoled">AMOLED</string>
+    <string name="onboarding_density_title">How much on one screen</string>
+    <string name="onboarding_density_body">Roomy cards that are easy to read from across the desk, or a tighter grid that fits more.</string>
+    <!-- Heading and one line above the five Overview layouts, on the same step as density. Overview is the name of the main tab. -->
+    <string name="onboarding_layout_title">How Overview is laid out</string>
+    <string name="onboarding_layout_body">Five ways to show the same readings. You can change it later in Settings.</string>
+    <string name="onboarding_comfortable_note">One card per row, large figures.</string>
+    <string name="onboarding_compact_note">Two cards per row, smaller figures.</string>
+    <!-- Labels on the small preview cards. Do not translate. -->
+    <string name="onboarding_preview_cpu">CPU</string>
+    <string name="onboarding_preview_gpu">GPU</string>
+    <!-- Small label above the heading, shown in capitals. A verb: pair the phone with the PC. -->
+    <string name="pair_kicker">Pair</string>
+    <!-- Main button. -->
+    <string name="pair_scan">Scan the code on your PC</string>
+    <!-- Main button while the camera scanner is loading. -->
+    <string name="pair_scan_opening">Opening the scanner</string>
+    <!-- Small label above the two manual options, shown in capitals. -->
+    <string name="pair_manual_kicker">Or by hand</string>
+    <!-- Button that opens the code form. -->
+    <string name="pair_manual_code">Enter the 6-character code</string>
+    <!-- Button that opens the form for a network address. -->
+    <string name="pair_manual_address">Connect by address</string>
+    <!-- Link. -->
+    <string name="pair_get_desktop_app">Get the desktop app</string>
+    <!-- Button inside an error message. -->
+    <string name="pair_error_type_code">Type the code instead</string>
+    <!-- Status while a pairing is checked, then when it worked. -->
+    <string name="pair_status_checking">Checking</string>
+    <string name="pair_status_paired">Paired</string>
+    <!-- %1$s is the network address being tried, for example 192.168.1.5:47800. -->
+    <string name="pair_trying">Trying %1$s</string>
+    <string name="pair_looking_up">Looking up your code</string>
+    <!-- Cloud mode and local Wi-Fi mode are the two connection modes of the desktop app. -->
+    <string name="pair_code_hint">For a PC in cloud mode. In local Wi-Fi mode, scan the QR or connect by address.</string>
+    <!-- Pairing is the name of a screen in the desktop app. -->
+    <string name="pair_address_hint">For a PC in local Wi-Fi mode. The code, address and port are on its Pairing screen.</string>
+    <!-- Field labels. -->
+    <string name="pair_field_code">Code</string>
+    <string name="pair_field_address">PC address</string>
+    <!-- A network port number. -->
+    <string name="pair_field_port">Port</string>
+    <!-- Button that submits a form. -->
+    <string name="pair_action_connect">Connect</string>
+    <!-- The three ways the phone can reach the PC. The desktop app offers the same three under the
+        same names, so translate them the same way there. Also shown on the last onboarding step. -->
+    <string name="pair_choice_heading">How will this phone reach your PC?</string>
+    <!-- Local is the name of the first choice below. -->
+    <string name="pair_choice_help">Not sure? Pick Local if this phone is usually near your PC.</string>
+    <!-- Card title: straight over the home network. -->
+    <string name="pair_choice_local">Local</string>
+    <string name="pair_choice_local_note">Same Wi-Fi as your PC. Instant and private.</string>
+    <!-- Card title: through the DevLune online service. Do not translate DevLune. -->
+    <string name="pair_choice_cloud">Cloud by DevLune</string>
+    <string name="pair_choice_cloud_note">Works from anywhere. Needs internet on both.</string>
+    <!-- Card title. Tailscale is a product name. -->
+    <string name="pair_choice_tailscale">Tailscale</string>
+    <string name="pair_choice_tailscale_note">Instant and private from anywhere. About five minutes to set up, once.</string>
+    <!-- Under the three choices. QR is the square code shown on the PC. -->
+    <string name="pair_choice_same">SysWatch on your PC asks the same question. Pick the same answer in both. The QR code on the PC carries its choice anyway, so scanning it always works.</string>
+    <!-- Screen heading once a choice is made, one per choice. -->
+    <string name="pair_heading_local">Connect over your Wi-Fi</string>
+    <string name="pair_heading_cloud">Connect through the cloud</string>
+    <string name="pair_heading_tailscale">Connect over Tailscale</string>
+    <!-- The number in front of a setup step. %1$d is 1, 2, 3 or 4. -->
+    <string name="pair_step_number">%1$d</string>
+    <!-- Setup steps. Keep the web address as it is. Local, Cloud by DevLune and Tailscale are the choice names above. Pairing is a screen in the desktop app. -->
+    <string name="pair_step_install">Install SysWatch on your PC from devlune.in/download/syswatch.</string>
+    <string name="pair_local_step_choose">When it asks how your phone connects, choose Local.</string>
+    <string name="pair_local_step_wifi">Connect this phone to the same Wi-Fi as the PC.</string>
+    <string name="pair_step_scan">Open Pairing on the PC and scan the code.</string>
+    <string name="pair_cloud_step_choose">When it asks how your phone connects, choose Cloud by DevLune.</string>
+    <string name="pair_cloud_step_scan">Open Pairing on the PC and scan the code, or type its 6 characters.</string>
+    <string name="pair_tailscale_step_install">Install Tailscale on your PC and on this phone.</string>
+    <string name="pair_tailscale_step_sign_in">Sign in to both with the same account.</string>
+    <string name="pair_tailscale_step_choose">In SysWatch on your PC, choose Tailscale.</string>
+    <!-- Button: opens the Tailscale page on Google Play. -->
+    <string name="pair_get_tailscale">Get Tailscale for Android</string>
+    <!-- A hint, not an error. Tailscale counts as a VPN on Android. -->
+    <string name="pair_vpn_on">A VPN is on, which is what Tailscale needs.</string>
+    <string name="pair_vpn_off">No VPN is on yet. Open Tailscale and switch it on.</string>
+    <!-- Small button: go back to the three choices. -->
+    <string name="pair_change_choice">Change connection type</string>
+    <!-- Keep 100 as it is: every Tailscale address begins with it. -->
+    <string name="pair_address_hint_tailscale">The code, address and port are on the PC\'s Pairing screen. A Tailscale address starts with 100.</string>
+    <!-- What to do when the PC did not answer, for the Local and the Tailscale choice. Same title as pair_error_unreachable_title. -->
+    <string name="pair_error_unreachable_local_fix">Check that this phone and the PC are on the same Wi-Fi, and that you allowed SysWatch when Windows Firewall asked.</string>
+    <string name="pair_error_unreachable_tailscale_fix">Check that Tailscale is switched on, on this phone and on the PC, and signed in to the same account on both.</string>
+    <!-- Pairing errors: a short title, then what to do about it. -->
+    <string name="pair_error_bad_code_title">That code does not look right</string>
+    <!-- 0, 1, I and O are characters, keep them as they are. -->
+    <string name="pair_error_bad_code_fix">It is 6 letters and numbers, shown in SysWatch on your PC. It never contains 0, 1, I or O.</string>
+    <string name="pair_error_bad_address_title">That address does not look right</string>
+    <!-- Keep 192.168.1.5 and http as they are. -->
+    <string name="pair_error_bad_address_fix">Type it the way your PC shows it, for example 192.168.1.5. No http and no port.</string>
+    <string name="pair_error_bad_port_title">That port does not look right</string>
+    <!-- Keep the number 47800 as it is. -->
+    <string name="pair_error_bad_port_fix">Use the port shown on your PC. It is 47800 unless you changed it.</string>
+    <string name="pair_error_not_a_code_title">That is not a SysWatch code</string>
+    <string name="pair_error_not_a_code_fix">Scan the QR that SysWatch shows on your PC, under Pairing.</string>
+    <string name="pair_error_scanner_title">The scanner could not start</string>
+    <string name="pair_error_scanner_fix">Scan the QR with your phone\'s own camera app instead, or type the code.</string>
+    <string name="pair_error_camera_title">Camera permission was refused</string>
+    <string name="pair_error_camera_fix">You can type the code instead, or allow the camera for SysWatch in Android settings.</string>
+    <string name="pair_error_code_not_found_title">Code not found</string>
+    <string name="pair_error_code_not_found_fix">Check the code on your PC and try again. If a new code was made there, the old one stops working.</string>
+    <string name="pair_error_pc_offline_title">Your PC is not online</string>
+    <string name="pair_error_pc_offline_fix">Open SysWatch on your PC, check it has internet, then try again.</string>
+    <string name="pair_error_unreachable_title">PC not reachable on this network</string>
+    <!-- Windows Firewall is a Windows feature name. -->
+    <string name="pair_error_unreachable_fix">Check that both are on the same Wi-Fi, or that Tailscale is on, and that Windows Firewall allowed SysWatch.</string>
+    <string name="pair_error_cloud_not_set_up_title">Cloud pairing is not set up in this build</string>
+    <string name="pair_error_cloud_not_set_up_fix">Switch your PC to local Wi-Fi mode, then scan its code or connect by address.</string>
+    <string name="pair_error_service_title">Could not reach the pairing service</string>
+    <string name="pair_error_service_fix">Check this phone\'s internet connection and try again.</string>
+    <!-- Channel descriptions, shown in Android notification settings. -->
+    <string name="notif_status_channel_description">Shows the live desktop status while SysWatch is connected.</string>
+    <string name="notif_alerts_channel_description">Fires when one of your alert rules is triggered.</string>
+    <!-- Alert notification title. %1$s is the name the user gave the rule. -->
+    <string name="notif_alert_title">%1$s triggered</string>
+    <!-- Alert notification text, for example "CPU > 90.0 · observed 95".
+        %1$s is the metric code, %2$s a comparison symbol, %3$s the limit, %4$d the value seen. -->
+    <string name="notif_alert_text">%1$s %2$s %3$s · observed %4$d</string>
+</resources>

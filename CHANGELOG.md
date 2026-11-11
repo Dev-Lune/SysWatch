@@ -28,6 +28,9 @@ Desktop 0.2.0 and Android 1.1.0. The Android version reaches Google Play separat
 - 24 standby faces (16 instruments, 8 art) with a gallery to pick from, in portrait and landscape.
 - Home screen widget in four looks: rings, bars, numerals, trace.
 - Alerts written as plain sentences, with one-tap starter alerts.
+- Five languages: English, German, French, Spanish and Russian, chosen on the first screen or in Settings.
+- Language updates over the air: a translation merged in this repository reaches the app without an app update.
+- Five Overview layouts to choose from: Bridge, Gauges, Strip charts, Ledger, Focus.
 - Targets Android 16 (API 36).
 
 **Desktop**

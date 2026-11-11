@@ -41,6 +41,10 @@ Current versions: desktop 0.2.0, Android 1.1.0. Added in these versions:
 - Four looks: rings, bars, numerals, trace
 - Three sizes; shows "PC offline" when readings stop
 
+**Languages**
+- English, German, French, Spanish and Russian built in, picked on the first screen
+- New and corrected translations download by themselves; anyone can contribute one through the `translations` folder
+
 **Updates**
 - Google Play in-app updates, and a one-time list of what changed after updating
 

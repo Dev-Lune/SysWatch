@@ -169,6 +169,7 @@ At home the phone uses your Wi-Fi address. Away from home, with Tailscale on, it
       <h3>Stays up to date</h3>
       <ul>
         <li>The phone app updates through Google Play and tells you what changed</li>
+        <li>Five languages built in; new ones arrive without an app update</li>
         <li>The desktop app tells you when a new version is out</li>
       </ul>
     </td>
@@ -196,6 +197,31 @@ Full policy: [devlune.in/privacy](https://devlune.in/privacy) · [Terms](https:/
 
 Still stuck? [Open an issue](https://github.com/Dev-Lune/SysWatch/issues) or ask on [Discord](https://discord.gg/BXu9qxgaE8).
 
+## Languages
+
+SysWatch for Android speaks **English, Deutsch, Français, Español and Русский**. You pick the language on the first screen, and can change it any time in Settings.
+
+**Add your language, or fix a wording.** Each language is one text file in the [`translations`](./translations) folder. No programming needed:
+
+1. Fork this repository.
+2. Copy `translations/en.xml` to a file named after your language code, for example `hi.xml`.
+3. Translate the text between the tags.
+4. Open a pull request. A check runs by itself and tells you in plain words if anything needs fixing.
+
+When a translation is merged, **every SysWatch app picks it up by itself**, usually within a day. No app update is needed: the app downloads the new text, checks it on the phone, and saves it. A language that is not built in yet simply appears in the app's language list.
+
+The full guide, with the five rules that matter, is in [`translations/README.md`](./translations/README.md).
+
+| Language | File | Status |
+|---|---|---|
+| English | [`en.xml`](./translations/en.xml) | Source |
+| Deutsch | [`de.xml`](./translations/de.xml) | Complete |
+| Français | [`fr.xml`](./translations/fr.xml) | Complete |
+| Español | [`es.xml`](./translations/es.xml) | Complete |
+| Русский | [`ru.xml`](./translations/ru.xml) | Complete |
+
+These four were translated by us and have not yet been reviewed by native speakers. If something reads wrong in your language, a correction is very welcome.
+
 ## About this repository
 
 This repository is SysWatch's public home: releases, the changelog and these docs. Installers are attached to each [release](https://github.com/Dev-Lune/SysWatch/releases).
@@ -204,6 +230,7 @@ This repository is SysWatch's public home: releases, the changelog and these doc
 - [Release notes](./RELEASE_NOTES.md)
 - [Feature list](./FEATURES.md)
 - [Install guide](./docs/INSTALL.md) · [Tailscale guide](./docs/TAILSCALE.md)
+- [Translate SysWatch](./translations/README.md)
 
 ## Support SysWatch
 

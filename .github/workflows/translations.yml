@@ -1,0 +1,57 @@
+name: Translations
+
+on:
+  pull_request:
+    paths:
+      - 'translations/**'
+  push:
+    branches: [main]
+    paths:
+      - 'translations/**.xml'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    # Runs on every pull request that touches a translation. No secrets, read only.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check translation files
+        # The checker comes from the main branch, not from the pull request, so a
+        # pull request cannot change the rules it is checked against.
+        run: |
+          git show "origin/${{ github.base_ref }}:scripts/translations.py" > "$RUNNER_TEMP/translations.py"
+          python "$RUNNER_TEMP/translations.py" check translations
+
+  publish:
+    # After a merge: refresh the list the apps download.
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check, then rebuild languages.json
+        run: |
+          python scripts/translations.py check translations
+          python scripts/translations.py manifest translations
+      - name: Commit the list if it changed
+        run: |
+          if ! git diff --quiet -- translations/languages.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add translations/languages.json
+            git commit -m "translations: update language list"
+            git push
+          fi

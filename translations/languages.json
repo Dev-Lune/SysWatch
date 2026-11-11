@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "languages": [
+    {
+      "code": "de",
+      "name": "Deutsch",
+      "version": "50270ca97221",
+      "strings": 477,
+      "total": 477
+    },
+    {
+      "code": "es",
+      "name": "Español",
+      "version": "129b2adb2870",
+      "strings": 477,
+      "total": 477
+    },
+    {
+      "code": "fr",
+      "name": "Français",
+      "version": "7057a85e838b",
+      "strings": 477,
+      "total": 477
+    },
+    {
+      "code": "ru",
+      "name": "Русский",
+      "version": "97238183f5b1",
+      "strings": 477,
+      "total": 477
+    }
+  ]
+}
