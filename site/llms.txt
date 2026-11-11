@@ -12,7 +12,7 @@ SysWatch is two free apps made by DevLune, a software studio in Hyderabad, India
 - Now playing: the phone shows what the PC is playing, with its cover, on Overview and in five music standby faces (Poster, Ambient, Glossy, Vinyl, Quiet). The phone can play, pause and skip media on the PC; this is on by default and is switched off in the PC app's Settings. Local and Tailscale mode only, never through the cloud.
 - Look: a chosen accent colour, light, dark or true black theme, five Overview layouts (Bridge, Gauges, Strip charts, Ledger, Focus).
 - Three ways to connect: Local (same Wi-Fi, instant, readings stay on the network), Cloud by DevLune (works from anywhere, nothing to set up, at most one update every 2 seconds), Tailscale (instant and private from anywhere).
-- Desktop app: Windows 10 and 11, 64-bit, version 0.2.1, about 3.5 MB. Hidden to the tray it uses about 55 to 73 MB of memory and under 0.5% of one CPU core; Lightweight mode samples every 3 seconds and sends every 5 seconds in Cloud mode. The installer is not code signed, so Windows SmartScreen shows a warning (More info, then Run anyway).
+- Desktop app: Windows 10 and 11, 64-bit, version 0.3.0, about 3.7 MB. Hidden to the tray it uses about 55 to 73 MB of memory and under 0.5% of one CPU core; Lightweight mode samples every 3 seconds and sends every 5 seconds in Cloud mode. The installer is not code signed, so Windows SmartScreen shows a warning (More info, then Run anyway).
 - Phone app: Android 7.0 and newer, on Google Play.
 - App languages: both apps are in English, German, French, Spanish and Russian; the Windows app starts in the Windows language and can be changed in setup or Settings. Community translations are welcome: one text file per language covers both apps, and a merged translation reaches the apps without an update.
 - Price: free on both sides.
@@ -28,7 +28,7 @@ Each guide is also in German, French, Spanish and Russian, under /de, /fr, /es a
 ## Links
 
 - [Website](https://syswatch.devlune.in/): this site, also in [Deutsch](https://syswatch.devlune.in/de), [Français](https://syswatch.devlune.in/fr), [Español](https://syswatch.devlune.in/es), [Русский](https://syswatch.devlune.in/ru)
-- [Download for Windows](https://github.com/Dev-Lune/SysWatch/releases/download/v0.2.1/SysWatch_0.2.1_x64-setup.exe)
+- [Download for Windows](https://github.com/Dev-Lune/SysWatch/releases/download/v0.3.0/SysWatch_0.3.0_x64-setup.exe)
 - [SysWatch on Google Play](https://play.google.com/store/apps/details?id=in.devlune.syswatch)
 - [All releases and changelog](https://github.com/Dev-Lune/SysWatch/releases)
 - [Translations folder](https://github.com/Dev-Lune/SysWatch/tree/main/translations)

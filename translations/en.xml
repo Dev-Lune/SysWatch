@@ -233,6 +233,48 @@
     <string name="widget_short_storage">Disk</string>
     <string name="widget_short_battery">Bat</string>
     <string name="widget_short_network">Net</string>
+    <!-- Name of the Overview card that shows the song the PC is playing, and its label above the song. Short. -->
+    <string name="music_card">Now playing</string>
+    <!-- Heading of the gallery shelf with the music faces. One word. -->
+    <string name="music_gallery_section">Music</string>
+    <!-- The cover art huge, the title set like a concert poster. -->
+    <string name="music_face_poster">Poster</string>
+    <!-- The cover art blurred into a soft coloured background. -->
+    <string name="music_face_ambient">Ambient</string>
+    <!-- The cover art as a shiny square with a reflection. -->
+    <string name="music_face_glossy">Glossy</string>
+    <!-- A turning vinyl record with the cover art as its label. -->
+    <string name="music_face_vinyl">Vinyl</string>
+    <!-- Just the title and artist in large type, nothing else. -->
+    <string name="music_face_quiet">Quiet</string>
+    <!-- Shown on the music faces and in the gallery when the phone is connected through the cloud, which carries no music. Local and Tailscale are connection modes. -->
+    <string name="music_cloud_only">Music works in Local or Tailscale mode</string>
+    <!-- Shown on a music face, under the time, when the PC is not playing anything. -->
+    <string name="music_nothing_playing">Nothing playing on your PC</string>
+    <!-- Small label shown when the song on the PC is paused. -->
+    <string name="music_paused">Paused</string>
+    <!-- Buttons, read aloud: they are drawn as icons. -->
+    <string name="music_play">Play</string>
+    <string name="music_pause">Pause</string>
+    <string name="music_prev">Previous track</string>
+    <string name="music_next">Next track</string>
+    <!-- Read aloud for the bar you drag to move through the song. -->
+    <string name="music_seek">Position in the song</string>
+    <!-- Shown for a moment after a button was tapped and the PC refused. Control is a setting in the desktop app. -->
+    <string name="music_control_off">Control is turned off on your PC</string>
+    <string name="music_no_session">Nothing is playing on your PC now</string>
+    <string name="music_control_failed">Could not reach your PC</string>
+    <!-- Stand-in song shown in the gallery previews when nothing plays. -->
+    <string name="music_sample_title">Song title</string>
+    <string name="music_sample_artist">Artist</string>
+    <!-- Under the song title: the artist, then the app playing it, for example "Artist · Spotify". Keep the dot. -->
+    <string name="music_artist_source">%1$s · %2$s</string>
+    <!-- Read aloud. %1$s is the song title, %2$s the artist. -->
+    <string name="music_spoken_track">%1$s, by %2$s</string>
+    <!-- Read aloud. %1$s is the song (from music_spoken_track, or the title alone). -->
+    <string name="music_spoken_now_playing">Now playing: %1$s</string>
+    <!-- Read aloud. %1$s is the song (from music_spoken_track, or the title alone). -->
+    <string name="music_spoken_paused">Paused: %1$s</string>
     <!-- Tab bar. One word each, shown under an icon: keep them short. -->
     <string name="nav_overview">Overview</string>
     <string name="nav_alerts">Alerts</string>
@@ -258,6 +300,16 @@
     <string name="settings_standby_browse">Browse standby faces</string>
     <string name="settings_standby_dim">Dim after 30 seconds</string>
     <string name="settings_standby_dim_hint">Lowers brightness of the standby face until you tap.</string>
+    <string name="gallery_dim">Dimming</string>
+    <string name="gallery_dim_on">Dim when idle</string>
+    <string name="gallery_dim_off">Stay bright</string>
+    <string name="gallery_dim_on_note">Dims after 30 seconds without a touch. A tap wakes it.</string>
+    <string name="gallery_dim_off_note">Stays at full brightness the whole time.</string>
+    <string name="gallery_size">Size</string>
+    <string name="gallery_size_framed">Framed</string>
+    <string name="gallery_size_full">Full screen</string>
+    <string name="gallery_size_framed_note">Keeps a margin around the face, clear of the camera.</string>
+    <string name="gallery_size_full_note">Fills the whole screen, edge to edge.</string>
     <!-- Section title. -->
     <string name="settings_section_widget">Widget</string>
     <!-- Label above the choice of widget style. -->
@@ -346,6 +398,7 @@
     <string name="settings_accent">Accent</string>
     <string name="settings_accent_hint">The one colour every gauge and graph is drawn in.</string>
     <!-- Accent colour names. Also used as choice chips in onboarding. -->
+    <string name="settings_accent_cobalt">Cobalt</string>
     <string name="settings_accent_amber">Amber</string>
     <string name="settings_accent_cyan">Cyan</string>
     <string name="settings_accent_green">Green</string>
@@ -357,6 +410,22 @@
     <string name="settings_accent_match_wallpaper">Match wallpaper</string>
     <!-- Read aloud for a colour swatch. %1$s is an accent name from the list above, for example Amber. -->
     <string name="settings_accent_description">%1$s accent</string>
+    <!-- Row title above the choice of style, and a section title in onboarding. A style is how the whole app is drawn: its cards, labels and tab bar. -->
+    <string name="settings_style">Style</string>
+    <!-- Names of the six styles. One word each. Translate them; they are plain words, not brand names. -->
+    <string name="settings_style_solid">Solid</string>
+    <string name="settings_style_banner">Banner</string>
+    <string name="settings_style_tiles">Tiles</string>
+    <string name="settings_style_pills">Pills</string>
+    <string name="settings_style_stickers">Stickers</string>
+    <string name="settings_style_classic">Classic</string>
+    <!-- One line under each style name saying what it looks like. No full stop. A reading is a number the app shows, for example CPU 47%. -->
+    <string name="settings_style_solid_about">Readings on cards filled with your accent colour</string>
+    <string name="settings_style_banner_about">A coloured header over white cards</string>
+    <string name="settings_style_tiles_about">Tinted tiles with large numerals</string>
+    <string name="settings_style_pills_about">Outlined cards and a floating tab bar</string>
+    <string name="settings_style_stickers_about">Each reading in a tilted label</string>
+    <string name="settings_style_classic_about">The original look: graphite by night, paper by day</string>
     <!-- Label, and a section title in onboarding. -->
     <string name="settings_theme">Theme</string>
     <!-- Theme names, choice chips. System means follow the phone setting. Also used in onboarding. -->
@@ -439,8 +508,12 @@
     <!-- Under the red Unpair row. -->
     <string name="settings_unpair_hint">Stops readings on this phone. Alert rules and settings are kept.</string>
     <string name="settings_desktop_github_hint">The same installer, from the releases page.</string>
+    <!-- A link to the web page that walks through installing the desktop app. -->
+    <string name="settings_desktop_install_guide">Install guide</string>
+    <!-- Keep the web address as it is. -->
+    <string name="settings_desktop_install_guide_hint">Every step of the setup, on syswatch.devlune.in.</string>
     <string name="settings_away_get_tailscale_hint">The Tailscale app on Google Play.</string>
-    <string name="settings_away_guide_hint">The full walkthrough on devlune.in.</string>
+    <string name="settings_away_guide_hint">The full walkthrough on syswatch.devlune.in.</string>
     <!-- Row titles and what each does. Both open the file picker of the phone. -->
     <string name="settings_backup_export_title">Export alert rules</string>
     <string name="settings_backup_export_hint">Saves your alert rules to a file.</string>
@@ -578,6 +651,15 @@
     <string name="whatsnew_title">What is new in %1$s</string>
     <!-- Dialog button. -->
     <string name="whatsnew_dismiss">Got it</string>
+    <!-- Release notes for version 1.2.0, one sentence per bullet. Overview is the name of the main tab. -->
+    <string-array name="whatsnew_1_2_0">
+        <item>A new design in six styles: Stickers, Solid, Banner, Tiles, Pills and Classic, your old look. Pick yours in Settings, in light, dark or true black.</item>
+        <item>Now playing: see what your PC is playing, with its cover, on Overview and in five new music standby faces.</item>
+        <item>Play, pause and skip from your phone in Local and Tailscale mode, when you allow it on your PC.</item>
+        <item>Standby faces can dim when idle or stay bright, and fill the whole screen. Choose both where you pick a face.</item>
+        <item>A short guide in setup and in Settings explains how SysWatch works and which connection suits you.</item>
+        <item>Opening a pairing link during setup now pairs straight away.</item>
+    </string-array>
     <!-- Release notes for version 1.1.0, one sentence per bullet. Overview is the name of the main tab. -->
     <string-array name="whatsnew_1_1_0">
         <item>A new look: one clean panel, big readable numbers, your alert limits drawn on every gauge.</item>
@@ -635,7 +717,7 @@
     <string name="onboarding_sample_kicker">CPU, sample reading</string>
     <string name="onboarding_look_title">Make it yours</string>
     <!-- Settings is the name of a tab. -->
-    <string name="onboarding_look_body">One accent, one theme. Both change as you tap, and both can be changed later in Settings.</string>
+    <string name="onboarding_look_body">A style, an accent and a theme. Each changes as you tap, and all three can be changed later in Settings.</string>
     <!-- Choice chip: the accent that follows the phone wallpaper colours. -->
     <string name="onboarding_accent_system">System</string>
     <!-- Choice chip: the pure black theme. Do not translate. -->
@@ -650,6 +732,75 @@
     <!-- Labels on the small preview cards. Do not translate. -->
     <string name="onboarding_preview_cpu">CPU</string>
     <string name="onboarding_preview_gpu">GPU</string>
+    <!-- Title of the Guide screen and of its row in Settings. One word. -->
+    <string name="guide_title">Guide</string>
+    <!-- One line under the Guide row in Settings. -->
+    <string name="guide_settings_hint">How SysWatch works, the connection types and their limits.</string>
+    <!-- Heading of the onboarding step (and Guide section) that explains the two apps. -->
+    <string name="guide_how_title">How SysWatch works</string>
+    <string name="guide_how_body">Two apps work together, one on each device.</string>
+    <!-- Title of the panel about the desktop app. -->
+    <string name="guide_pc_title">On your PC</string>
+    <!-- Keep the web address as it is. The tray is the row of small icons by the Windows clock. -->
+    <string name="guide_pc_body">The free desktop app, from syswatch.devlune.in, reads the CPU, GPU, memory, network, storage and battery and sends them out. It sits in the tray and can start with Windows.</string>
+    <!-- Title of the panel about this Android app. -->
+    <string name="guide_phone_title">On this phone</string>
+    <!-- Standby faces are full-screen clock and gauge screens for a phone on a stand. -->
+    <string name="guide_phone_body">This app shows the readings live, draws graphs, raises alerts, and runs standby faces and a widget.</string>
+    <!-- On the line joining the two panels. QR is the square code shown on the PC. -->
+    <string name="guide_pairing">Paired once with a 6-character code, shown as a QR code on the PC. No account.</string>
+    <!-- Local and Tailscale are connection modes. The PC is where media control is allowed or not. -->
+    <string name="guide_read_only">Read only, except play, pause and skip for media in Local and Tailscale mode, when you allow it on your PC.</string>
+    <!-- Heading of the Guide section that compares the three ways to connect. -->
+    <string name="guide_compare_title">Connection types</string>
+    <string name="guide_compare_body">Three ways for the phone to reach the PC. Pick the one that fits where you use it.</string>
+    <!-- Button under each connection card that shows or hides the lists below. -->
+    <string name="guide_pros_limits">Pros and limits</string>
+    <!-- Spoken by the screen reader on that button: whether the lists are shown. -->
+    <string name="guide_state_expanded">Expanded</string>
+    <string name="guide_state_collapsed">Collapsed</string>
+    <!-- Small labels above the two lists, shown in capitals. -->
+    <string name="guide_pros">Pros</string>
+    <string name="guide_limits">Limits</string>
+    <!-- Local: the phone talks straight to the PC over the home network. -->
+    <string name="guide_local_pro_instant">Instant: every reading as it is taken.</string>
+    <string name="guide_local_pro_private">Readings never leave your network.</string>
+    <string name="guide_local_pro_offline">No internet needed, nothing to sign up for.</string>
+    <!-- Guest Wi-Fi: a separate network for visitors that many routers offer. -->
+    <string name="guide_local_limit_wifi">Phone and PC must be on the same Wi-Fi. Guest Wi-Fi often keeps devices apart.</string>
+    <!-- Windows Firewall is a product name. Private networks is the Windows term for home and work networks. -->
+    <string name="guide_local_limit_firewall">Windows Firewall asks once to allow SysWatch on private networks.</string>
+    <string name="guide_local_limit_encryption">Not encrypted on your network, and the code is the only lock. Use it on networks you trust.</string>
+    <string name="guide_local_limit_address">If the router gives the PC a new address, the phone finds it again by itself.</string>
+    <!-- Cloud by DevLune: readings pass through DevLune's online relay. Do not translate DevLune. -->
+    <string name="guide_cloud_pro_anywhere">Works from anywhere.</string>
+    <string name="guide_cloud_pro_setup">Nothing to set up.</string>
+    <string name="guide_cloud_limit_internet">Both need internet.</string>
+    <string name="guide_cloud_limit_speed">About 2 seconds per update.</string>
+    <!-- A relay is a server that passes the readings on. An install ID is a random number for this copy of the app. -->
+    <string name="guide_cloud_limit_relay">Readings, the phone\'s name and an install ID pass through DevLune\'s relay. Nothing is sold or used for ads.</string>
+    <!-- Tailscale is a product name: a free private network made by another company. -->
+    <string name="guide_tailscale_pro_instant">Instant and encrypted, from anywhere.</string>
+    <string name="guide_tailscale_pro_relay">No cloud relay in between.</string>
+    <string name="guide_tailscale_limit_setup">About five minutes of setup, once.</string>
+    <string name="guide_tailscale_limit_account">Needs a Tailscale account and the Tailscale app on both PC and phone, signed in to the same account.</string>
+    <!-- Android lets only one VPN run at a time. -->
+    <string name="guide_tailscale_limit_vpn">It uses the phone\'s only VPN slot, so it cannot run beside another VPN.</string>
+    <string name="guide_tailscale_limit_awake">The PC must be awake.</string>
+    <!-- Heading of the onboarding step (and Guide section) with the general limits. -->
+    <string name="guide_good_title">Good to know</string>
+    <string name="guide_good_body">What SysWatch can and cannot do today.</string>
+    <string name="guide_good_windows">The desktop app is Windows only for now: Windows 10 and 11, 64-bit.</string>
+    <string name="guide_good_temperature">CPU temperature shows only when the PC reports it. Many Windows PCs need extra drivers for that.</string>
+    <!-- NVIDIA is a brand name. -->
+    <string name="guide_good_gpu">Full GPU details come from NVIDIA cards. Other GPUs show what Windows exposes.</string>
+    <!-- Run in the background is the name of a switch in Settings. Use the same words as that switch. -->
+    <string name="guide_good_background">Alerts while the app is closed need Run in the background turned on in Settings.</string>
+    <string name="guide_good_battery">Some phone makers\' battery savers may still stop it. Allow SysWatch in battery settings.</string>
+    <string name="guide_good_standby">An always-on standby face keeps the screen on and uses battery. Best on a charger.</string>
+    <!-- A quiet card on the last onboarding step and at the end of the Guide. Sponsor is a GitHub Sponsors term. -->
+    <string name="guide_support_title">Support SysWatch</string>
+    <string name="guide_support_body">SysWatch is free, with no ads and no account. If it helps you, you can sponsor its development.</string>
     <!-- Small label above the heading, shown in capitals. A verb: pair the phone with the PC. -->
     <string name="pair_kicker">Pair</string>
     <!-- Main button. -->
@@ -762,4 +913,488 @@
     <!-- Alert notification text, for example "CPU > 90.0 · observed 95".
         %1$s is the metric code, %2$s a comparison symbol, %3$s the limit, %4$d the value seen. -->
     <string name="notif_alert_text">%1$s %2$s %3$s · observed %4$d</string>
+    <!-- Shared: shown whenever a web link could not be opened in the browser. %1$s is the system error, in English -->
+    <string name="desktop_common_open_link_failed">Couldn\'t open link: %1$s</string>
+    <!-- Shared: a setting could not be written to disk. %1$s is the system error, in English -->
+    <string name="desktop_common_save_failed">Save failed: %1$s</string>
+    <!-- Shared: something is still coming up (local server, connection) -->
+    <string name="desktop_common_starting">Starting…</string>
+    <!-- Shared: waiting for a pairing link or code to appear -->
+    <string name="desktop_common_preparing">Preparing…</string>
+    <!-- Shared: an update or translation check is running -->
+    <string name="desktop_common_checking">Checking…</string>
+    <string name="desktop_common_retry">Retry</string>
+    <!-- Shared: the warning about Local mode, on the setup, Pairing and Settings screens -->
+    <string name="desktop_local_unencrypted">Local mode is unencrypted on your local network and protected only by the pairing code.</string>
+    <!-- Shared: a length of time. %1$d days, %2$d hours, %3$d minutes. Keep it short: "3d 4h 12m" -->
+    <string name="desktop_duration_dhm">%1$dd %2$dh %3$dm</string>
+    <!-- Shared: %1$d hours, %2$d minutes, "4h 12m" -->
+    <string name="desktop_duration_hm">%1$dh %2$dm</string>
+    <!-- Shared: %1$d minutes, "12m" -->
+    <string name="desktop_duration_m">%1$dm</string>
+    <!-- Shared, read aloud by screen readers on a round gauge: %1$s is what it measures ("Utilization"), %2$s the value ("47%") -->
+    <string name="desktop_gauge_aria">%1$s: %2$s</string>
+    <!-- App opened in a normal web browser instead of the SysWatch window (developers only) -->
+    <string name="desktop_app_browser_title">SysWatch can\'t reach the backend</string>
+    <!-- %1$s is a command, npm run tauri:dev, shown as code -->
+    <string name="desktop_app_browser_body">This page is running in a regular browser. The dashboard only works inside the SysWatch desktop window that %1$s opens.</string>
+    <string name="desktop_app_browser_hint">Close this tab and use the SysWatch window (check your taskbar / tray).</string>
+    <!-- The window could not talk to the background process at start. The technical error is shown under it -->
+    <string name="desktop_app_boot_failed_title">SysWatch could not start its window</string>
+    <string name="desktop_app_boot_failed_body">The window could not read its settings from the SysWatch background process.</string>
+    <!-- Shown for a moment while the window loads -->
+    <string name="desktop_app_starting">Starting up…</string>
+    <!-- Crash screen: one view failed to draw. The technical error is shown under it -->
+    <string name="desktop_crash_title">Something went wrong</string>
+    <string name="desktop_crash_body">The SysWatch window hit an error and could not draw this screen. Sampling and streaming keep running in the background. Reloading usually fixes it.</string>
+    <string name="desktop_crash_reload">Reload</string>
+    <!-- Setup: progress above the title. %1$d is this step, %2$d the number of steps -->
+    <string name="desktop_onboarding_step">Step %1$d of %2$d</string>
+    <!-- Setup step 1 (first run): title -->
+    <string name="desktop_onboarding_title_welcome">Welcome to SysWatch</string>
+    <!-- Setup step 1 when reopened from Settings: title -->
+    <string name="desktop_onboarding_title_language">Language</string>
+    <string name="desktop_onboarding_language_body">Pick the language for SysWatch. You can change it later in Settings.</string>
+    <!-- Setup step 2: title above the three look cards -->
+    <string name="desktop_onboarding_title_look">Pick a look</string>
+    <string name="desktop_onboarding_look_body">Choose how SysWatch looks. It changes right away, and you can switch later in Settings.</string>
+    <!-- The look picker (setup and Settings): its name for screen readers, and the Settings heading -->
+    <string name="desktop_look_group">Look</string>
+    <!-- Look: the original dark look with translucent panels. A short name -->
+    <string name="desktop_look_glass">Glass</string>
+    <string name="desktop_look_glass_body">The original dark look, with glass panels.</string>
+    <!-- Look: bright and flat, in the website's cobalt blue style. A short name -->
+    <string name="desktop_look_bold_light">Bold light</string>
+    <string name="desktop_look_bold_light_body">Bright and flat, with cobalt blue headers.</string>
+    <!-- Look: the dark version of the bold look. A short name -->
+    <string name="desktop_look_bold_dark">Bold dark</string>
+    <string name="desktop_look_bold_dark_body">Deep navy, cobalt blue panels, white numbers.</string>
+    <!-- Setup step 3: choosing how the phone connects -->
+    <string name="desktop_onboarding_title_setup">Connection setup</string>
+    <!-- Setup: closes the setup when it was reopened from Settings -->
+    <string name="desktop_onboarding_close">Close</string>
+    <string name="desktop_onboarding_choose_body">How should your phone reach this PC? You can change this later in Settings.</string>
+    <string name="desktop_onboarding_choose_hint">Not sure? Pick Local: it is the right choice when your phone is usually near this PC, on the same Wi-Fi.</string>
+    <!-- Setup step 4: titles, one per connection choice -->
+    <string name="desktop_onboarding_title_local">Local: same Wi-Fi</string>
+    <string name="desktop_onboarding_title_tailscale">Set up Tailscale</string>
+    <!-- Setup step 4, Local: numbered steps -->
+    <string name="desktop_onboarding_local_step1">When Windows Firewall asks about SysWatch, choose Allow on private networks. It asks only once.</string>
+    <string name="desktop_onboarding_local_step2">Connect your phone to the same Wi-Fi as this PC.</string>
+    <string name="desktop_onboarding_scan_next">On the next screen, scan the code with the SysWatch app on your phone.</string>
+    <!-- Setup step 4, Cloud -->
+    <string name="desktop_onboarding_cloud_nothing">Nothing to set up.</string>
+    <string name="desktop_onboarding_cloud_step1">Keep this PC and your phone connected to the internet.</string>
+    <string name="desktop_onboarding_cloud_note">Readings pass through DevLune\'s relay on their way to your phone.</string>
+    <!-- Setup step 4, Tailscale: numbered steps. "Get Tailscale" is a link button after step 1 -->
+    <string name="desktop_onboarding_tailscale_step1">Install Tailscale on this PC and sign in.</string>
+    <string name="desktop_onboarding_tailscale_get">Get Tailscale</string>
+    <string name="desktop_onboarding_tailscale_step2">Install Tailscale on your phone and sign in with the same account.</string>
+    <string name="desktop_onboarding_tailscale_step3">When Windows Firewall asks about SysWatch, choose Allow on private networks.</string>
+    <!-- %1$s is this PC's Tailscale address, like 100.64.0.1 -->
+    <string name="desktop_onboarding_tailscale_detected">Tailscale detected: %1$s</string>
+    <string name="desktop_onboarding_tailscale_missing">Not detected yet. This is checked every few seconds.</string>
+    <!-- "Full guide" is a link button right after this text -->
+    <string name="desktop_onboarding_tailscale_note">You can continue either way. If Tailscale connects after you pair, scan the QR again so your phone learns the Tailscale address.</string>
+    <string name="desktop_onboarding_tailscale_guide">Full guide</string>
+    <!-- Setup step 5: pair the phone -->
+    <string name="desktop_onboarding_title_pair">Pair your phone</string>
+    <string name="desktop_onboarding_pair_body">Open SysWatch on your phone and scan this code.</string>
+    <string name="desktop_onboarding_get_app">Get the Android app</string>
+    <string name="desktop_onboarding_phone_connected">Phone connected</string>
+    <string name="desktop_onboarding_phone_waiting">Waiting for your phone. You can also pair later.</string>
+    <string name="desktop_onboarding_autostart">Launch SysWatch when I sign in</string>
+    <!-- Setup: buttons at the bottom -->
+    <string name="desktop_onboarding_back">Back</string>
+    <string name="desktop_onboarding_continue">Continue</string>
+    <string name="desktop_onboarding_continue_pair">Continue to pairing</string>
+    <string name="desktop_onboarding_done">Done</string>
+    <!-- Setup: toasts. %1$s is the system error, in English -->
+    <string name="desktop_onboarding_autostart_failed">Autostart could not be changed: %1$s</string>
+    <string name="desktop_onboarding_ready">SysWatch is ready</string>
+    <!-- Setup: footer. %1$s is the studio name, DevLune Studio -->
+    <string name="desktop_onboarding_footer">SysWatch is a product of %1$s</string>
+    <!-- Connection choice cards (setup and Settings). Read aloud as the group name -->
+    <string name="desktop_connection_group">Connection</string>
+    <string name="desktop_connection_local_title">Local</string>
+    <string name="desktop_connection_local_description">Your phone talks straight to this PC over your Wi-Fi.</string>
+    <string name="desktop_connection_local_feature1">Instant updates</string>
+    <string name="desktop_connection_local_feature2">Stays on your network</string>
+    <string name="desktop_connection_local_feature3">Same Wi-Fi only</string>
+    <!-- Badge on the Local card during setup -->
+    <string name="desktop_connection_recommended">Recommended for most people</string>
+    <string name="desktop_connection_cloud_title">Cloud by DevLune</string>
+    <string name="desktop_connection_cloud_description">Readings travel through DevLune\'s relay to your phone.</string>
+    <string name="desktop_connection_cloud_feature1">Works from anywhere</string>
+    <string name="desktop_connection_cloud_feature2">Nothing to set up</string>
+    <string name="desktop_connection_cloud_feature3">Needs internet</string>
+    <string name="desktop_connection_tailscale_description">A private link between your own devices, wherever they are.</string>
+    <string name="desktop_connection_tailscale_feature1">Instant from anywhere</string>
+    <string name="desktop_connection_tailscale_feature2">Private and encrypted</string>
+    <string name="desktop_connection_tailscale_feature3">Five minute setup, once</string>
+    <!-- On the Cloud card when this copy of the app was built without the cloud relay -->
+    <string name="desktop_connection_unavailable">Not available in this build</string>
+    <!-- Top bar: subtitle under the app name -->
+    <string name="desktop_topbar_tagline">Real-time performance overview</string>
+    <!-- Top bar: read aloud for the refresh rate menu (1s, 2s, 5s, 10s) -->
+    <string name="desktop_topbar_refresh">Refresh interval</string>
+    <!-- Top bar: toast after picking a refresh rate. %1$s is a number of seconds, "s" is the unit -->
+    <string name="desktop_topbar_refresh_set">Refresh rate · %1$ss (restart to apply)</string>
+    <string name="desktop_topbar_notifications">Notifications</string>
+    <string name="desktop_topbar_no_alerts">No new alerts</string>
+    <!-- Sidebar: navigation. Settings is also the gear button in the top bar -->
+    <string name="desktop_nav_primary">Primary</string>
+    <string name="desktop_nav_overview">Overview</string>
+    <string name="desktop_nav_pairing">Pairing</string>
+    <string name="desktop_nav_settings">Settings</string>
+    <!-- Sidebar: the small system card at the bottom -->
+    <string name="desktop_sidebar_system">System</string>
+    <string name="desktop_sidebar_uptime">Uptime</string>
+    <!-- Operating system -->
+    <string name="desktop_sidebar_os">OS</string>
+    <string name="desktop_sidebar_version">Version</string>
+    <!-- Short id of this PC -->
+    <string name="desktop_sidebar_host">Host</string>
+    <!-- Connection status pill in the top bar -->
+    <string name="desktop_status_waiting_phone">Waiting for phone</string>
+    <string name="desktop_status_not_listening">Not listening</string>
+    <string name="desktop_status_paused">Paused</string>
+    <string name="desktop_status_live">Live</string>
+    <string name="desktop_status_connecting">Connecting</string>
+    <string name="desktop_status_offline">Offline</string>
+    <string name="desktop_status_disconnected">Disconnected</string>
+    <!-- Update banner under the top bar. %1$s is a version number like 0.4.0 -->
+    <string name="desktop_update_available">SysWatch %1$s is available</string>
+    <string name="desktop_update_hide_notes">Hide notes</string>
+    <string name="desktop_update_whats_new">What\'s new</string>
+    <string name="desktop_update_download">Download</string>
+    <string name="desktop_update_dismiss">Dismiss update notice</string>
+    <!-- ============================================================ dashboard -->
+    <string name="desktop_dashboard_collecting">Collecting first sample…</string>
+    <!-- Small badge beside each graph title: the graph is updating -->
+    <string name="desktop_tile_live">Live</string>
+    <!-- Under a round gauge: how busy the chip is -->
+    <string name="desktop_tile_utilization">Utilization</string>
+    <string name="desktop_tile_temperature">Temperature</string>
+    <string name="desktop_tile_used">Used</string>
+    <string name="desktop_tile_total">Total</string>
+    <string name="desktop_tile_power">Power</string>
+    <!-- Processor speed -->
+    <string name="desktop_cpu_clock">Clock</string>
+    <string name="desktop_cpu_cores_threads">Cores / Threads</string>
+    <string name="desktop_cpu_logical_cores">Logical cores</string>
+    <!-- Mean CPU use over the last 10 readings -->
+    <string name="desktop_cpu_recent_average">Recent average</string>
+    <string name="desktop_cpu_busiest_core">Busiest core</string>
+    <!-- Graph title: the last 60 seconds -->
+    <string name="desktop_cpu_graph">CPU Usage (60s)</string>
+    <string name="desktop_cpu_graph_aria">CPU usage over the last 60 seconds</string>
+    <!-- Read aloud. %1$s is the percent, %2$d the number of cores -->
+    <string name="desktop_cpu_aria">CPU %1$s percent, %2$d cores</string>
+    <!-- GPU tile (graphics card) -->
+    <string name="desktop_gpu_none_subtitle">no adapter detected</string>
+    <string name="desktop_gpu_none">No GPU reported</string>
+    <!-- Share of graphics memory in use -->
+    <string name="desktop_gpu_vram_load">VRAM Load</string>
+    <string name="desktop_gpu_fan">Fan</string>
+    <!-- Where the readings come from: NVML (NVIDIA's library) or Fallback (a simpler Windows reading) -->
+    <string name="desktop_gpu_source">Source</string>
+    <string name="desktop_gpu_source_fallback">Fallback</string>
+    <string name="desktop_gpu_graph">GPU Usage (60s)</string>
+    <string name="desktop_gpu_graph_aria">GPU usage over the last 60 seconds</string>
+    <!-- Read aloud. %1$s is the graphics card's name, %2$s the percent -->
+    <string name="desktop_gpu_aria">GPU %1$s at %2$s percent</string>
+    <!-- Memory tile -->
+    <string name="desktop_ram_title">Memory</string>
+    <!-- %1$s and %2$s are amounts like "6.2 GB" -->
+    <string name="desktop_ram_subtitle">%1$s of %2$s in use</string>
+    <string name="desktop_ram_in_use">In use</string>
+    <string name="desktop_ram_available">Available</string>
+    <!-- Memory plus swap in use, out of the two together -->
+    <string name="desktop_ram_committed">Committed</string>
+    <string name="desktop_ram_swap">Swap</string>
+    <!-- Value of Swap when the PC has none -->
+    <string name="desktop_ram_swap_disabled">disabled</string>
+    <string name="desktop_ram_graph">RAM Usage (60s)</string>
+    <string name="desktop_ram_graph_aria">Memory usage over the last 60 seconds</string>
+    <!-- Read aloud. %1$s is the percent -->
+    <string name="desktop_ram_aria">Memory %1$s percent used</string>
+    <!-- Storage tile -->
+    <string name="desktop_disk_title">Storage</string>
+    <string name="desktop_disk_none_subtitle">no disks detected</string>
+    <string name="desktop_disk_none">No disks reported</string>
+    <string name="desktop_disk_free">Free</string>
+    <!-- Read and write speed -->
+    <string name="desktop_disk_rw">R / W</string>
+    <!-- Read aloud. %1$s is the drive, like C:\, %2$s the percent -->
+    <string name="desktop_disk_aria">Primary disk %1$s at %2$s percent used</string>
+    <!-- Network tile -->
+    <string name="desktop_net_title">Network</string>
+    <!-- Subtitle: data is moving, or not -->
+    <string name="desktop_net_active">Active</string>
+    <string name="desktop_net_idle">Idle</string>
+    <string name="desktop_net_download">Download</string>
+    <string name="desktop_net_upload">Upload</string>
+    <!-- Under the speed. %1$s is the highest speed in the graph, like "12.40 Mbps" -->
+    <string name="desktop_net_peak">peak %1$s</string>
+    <!-- Internet round trip time -->
+    <string name="desktop_net_ping">Ping</string>
+    <string name="desktop_net_jitter">Jitter</string>
+    <!-- Lost packets -->
+    <string name="desktop_net_loss">Loss</string>
+    <string name="desktop_net_latency_note">Internet latency · checked every 5 s</string>
+    <!-- Tooltip on the Ping / Jitter / Loss row -->
+    <string name="desktop_net_latency_tooltip">Ping, jitter and loss: internet latency, measured every 5 seconds</string>
+    <!-- Read aloud. %1$s download speed, %2$s upload speed -->
+    <string name="desktop_net_aria">Network: download %1$s, upload %2$s</string>
+    <!-- Read aloud for the graph. %1$s download speed, %2$s upload speed -->
+    <string name="desktop_net_graph_aria">Network throughput: %1$s down, %2$s up</string>
+    <!-- Battery tile -->
+    <string name="desktop_battery_title">Battery</string>
+    <string name="desktop_battery_none_subtitle">no battery detected</string>
+    <string name="desktop_battery_none">Desktop device, no battery</string>
+    <!-- Battery states -->
+    <string name="desktop_battery_state_charging">Charging</string>
+    <string name="desktop_battery_state_discharging">Discharging</string>
+    <string name="desktop_battery_state_full">Full</string>
+    <string name="desktop_battery_state_empty">Empty</string>
+    <string name="desktop_battery_state_unknown">Unknown</string>
+    <string name="desktop_battery_time_to_full">Time to full</string>
+    <string name="desktop_battery_time_remaining">Time remaining</string>
+    <string name="desktop_battery_status">Status</string>
+    <string name="desktop_battery_fully_charged">Fully charged</string>
+    <string name="desktop_battery_charging_at">Charging at</string>
+    <string name="desktop_battery_power_draw">Power draw</string>
+    <!-- Battery wear: 100% is new -->
+    <string name="desktop_battery_health">Health</string>
+    <string name="desktop_battery_cycles">Cycle count</string>
+    <string name="desktop_battery_voltage">Voltage</string>
+    <!-- Read aloud. %1$s is the percent, %2$s the state ("Charging") -->
+    <string name="desktop_battery_aria">Battery %1$s percent, %2$s</string>
+    <!-- Read aloud for the battery picture. %1$s is the percent -->
+    <string name="desktop_battery_glyph_aria">Battery %1$s percent</string>
+    <string name="desktop_battery_glyph_aria_charging">Battery %1$s percent, charging</string>
+    <!-- Now playing strip under the tiles: what Windows shows in its media controls -->
+    <string name="desktop_media_now_playing">Now playing</string>
+    <string name="desktop_media_paused">Paused</string>
+    <string name="desktop_media_stopped">Stopped</string>
+    <!-- A track with no title -->
+    <string name="desktop_media_untitled">Untitled</string>
+    <string name="desktop_media_previous">Previous</string>
+    <string name="desktop_media_play">Play</string>
+    <string name="desktop_media_pause">Pause</string>
+    <string name="desktop_media_next">Next</string>
+    <string name="desktop_media_position">Track position</string>
+    <!-- Read aloud for the progress bar. %1$s is the time played, %2$s the length, like 1:05 and 3:40 -->
+    <string name="desktop_media_position_value">%1$s of %2$s</string>
+    <!-- Read aloud. %1$s title, %2$s artist, %3$s state (playing, paused, stopped), %4$s the app (Spotify) -->
+    <string name="desktop_media_aria_artist">Now playing: %1$s by %2$s, %3$s, in %4$s</string>
+    <!-- Read aloud, no artist known. %1$s title, %2$s state, %3$s the app -->
+    <string name="desktop_media_aria">Now playing: %1$s, %2$s, in %3$s</string>
+    <!-- Read-aloud words for the state and a missing title, inside the sentences above -->
+    <string name="desktop_media_aria_untitled">untitled</string>
+    <string name="desktop_media_aria_playing">playing</string>
+    <string name="desktop_media_aria_paused">paused</string>
+    <string name="desktop_media_aria_stopped">stopped</string>
+    <!-- Toasts when a play / pause / skip did not work. %1$s is the app, like Spotify -->
+    <string name="desktop_media_nothing_playing">Nothing is playing any more</string>
+    <string name="desktop_media_refused">%1$s did not accept that</string>
+    <string name="desktop_media_refused_unknown">The app did not accept that</string>
+    <!-- Bar along the bottom of the dashboard: a label, a value, and a small line under it -->
+    <string name="desktop_overview_aria">System overview</string>
+    <string name="desktop_overview_cpu_temp">CPU Temp</string>
+    <string name="desktop_overview_cpu_package">CPU package</string>
+    <string name="desktop_overview_gpu_temp">GPU Temp</string>
+    <string name="desktop_overview_primary_gpu">primary GPU</string>
+    <string name="desktop_overview_gpu_power">GPU Power</string>
+    <string name="desktop_overview_current_draw">current draw</string>
+    <string name="desktop_overview_since_boot">since boot</string>
+    <string name="desktop_overview_processes">Processes</string>
+    <string name="desktop_overview_running">running</string>
+    <string name="desktop_overview_to_internet">to the internet</string>
+    <!-- Value of Network when nothing is downloading -->
+    <string name="desktop_overview_idle">idle</string>
+    <string name="desktop_overview_download">download</string>
+    <!-- Pairing: also on the last setup step -->
+    <string name="desktop_pair_code_label">Pairing code</string>
+    <!-- Read aloud. %1$s is the code spelled out with spaces, "A B C 2 3 4" -->
+    <string name="desktop_pair_code_aria">Pairing code %1$s</string>
+    <string name="desktop_pair_code_none">No pairing code yet</string>
+    <string name="desktop_pair_local_body">Scan the QR with the SysWatch Remote app on your phone: it carries this code and the address of this PC. Regenerating disconnects any phone paired with the old code.</string>
+    <string name="desktop_pair_cloud_body">Connected through Cloud by DevLune, which works from anywhere with internet. Scan the QR or enter this 6-character code in the SysWatch app on your phone. Regenerating invalidates any previously paired devices.</string>
+    <string name="desktop_pair_copy">Copy</string>
+    <string name="desktop_pair_copying">Copying…</string>
+    <!-- Makes a new pairing code -->
+    <string name="desktop_pair_regenerate">Regenerate</string>
+    <string name="desktop_pair_regenerating">Rolling…</string>
+    <string name="desktop_pair_copied">Pairing code copied</string>
+    <!-- Toasts. %1$s is the system error, in English -->
+    <string name="desktop_pair_copy_failed">Copy failed: %1$s</string>
+    <string name="desktop_pair_regenerate_failed">Regenerate failed: %1$s</string>
+    <!-- Toast. %1$s is the new code -->
+    <string name="desktop_pair_new_code">New code: %1$s</string>
+    <string name="desktop_pair_qr_aria">Pairing QR code</string>
+    <string name="desktop_pair_no_qr">Regenerate a code to show a QR.</string>
+    <!-- Pairing, Local mode panel -->
+    <string name="desktop_pair_local_title">Local connection</string>
+    <plurals name="desktop_pair_listening_phones">
+        <item quantity="one">Listening · %1$d phone connected</item>
+        <item quantity="other">Listening · %1$d phones connected</item>
+    </plurals>
+    <string name="desktop_pair_listening_waiting">Listening · waiting for a phone</string>
+    <string name="desktop_pair_no_address">No network address found. Connect this PC to Wi-Fi or Ethernet, then reopen this tab.</string>
+    <!-- Label beside this PC's home network address -->
+    <string name="desktop_pair_address_lan">Wi-Fi/LAN</string>
+    <string name="desktop_pair_port">Port (TCP + UDP)</string>
+    <string name="desktop_pair_firewall">Windows Firewall will ask once to allow SysWatch on private networks. Choose Allow.</string>
+    <!-- Bold lead-in; desktop_pair_tailscale_body follows it in the same paragraph -->
+    <string name="desktop_pair_tailscale_lead">Away from home? Use Tailscale.</string>
+    <string name="desktop_pair_tailscale_body">Install Tailscale on this PC and on your phone, sign in with the same account on both, then scan the QR again.</string>
+    <!-- %1$s is this PC's Tailscale address -->
+    <string name="desktop_pair_tailscale_address">Tailscale: %1$s</string>
+    <string name="desktop_tailscale_missing">Tailscale not detected on this PC</string>
+    <string name="desktop_pair_tailscale_guide">Tailscale guide</string>
+    <!-- ============================================================ settings -->
+    <string name="desktop_settings_loading">Loading settings…</string>
+    <!-- Settings, Language -->
+    <string name="desktop_settings_language">Language</string>
+    <!-- First choice in the language menu: follow the language Windows uses -->
+    <string name="desktop_language_system">Use Windows language</string>
+    <!-- A language that is not fully translated yet. %1$s is its name, %2$d how much is done, "Deutsch (80%)" -->
+    <string name="desktop_language_partial">%1$s (%2$d%%)</string>
+    <!-- A language that is downloaded when picked. %1$s is its name, maybe with the percent above -->
+    <string name="desktop_language_download">%1$s · download</string>
+    <string name="desktop_language_check">Check for new translations</string>
+    <!-- Settings, Language: result of "Check for new translations" -->
+    <string name="desktop_language_check_failed">Could not reach the translations. Check your connection and try again.</string>
+    <string name="desktop_language_updated">New text for this language is in.</string>
+    <string name="desktop_language_current">This language is up to date.</string>
+    <!-- "Help translate" is a link button after this line -->
+    <string name="desktop_language_help">Translations come from people who use SysWatch.</string>
+    <string name="desktop_language_help_link">Help translate</string>
+    <!-- Settings: section titles -->
+    <string name="desktop_settings_streaming">Streaming</string>
+    <string name="desktop_settings_media">Media</string>
+    <string name="desktop_settings_privacy">Privacy</string>
+    <string name="desktop_settings_system">System</string>
+    <string name="desktop_settings_metrics">Metrics</string>
+    <string name="desktop_settings_diagnostics">Diagnostics</string>
+    <!-- %1$d is the port, %2$d the number of phones -->
+    <plurals name="desktop_settings_listening">
+        <item quantity="one">Listening on port %1$d · %2$d phone connected</item>
+        <item quantity="other">Listening on port %1$d · %2$d phones connected</item>
+    </plurals>
+    <!-- Added after the line above when Tailscale is picked. %1$s is that line, %2$s the Tailscale address -->
+    <string name="desktop_settings_status_tailscale">%1$s · Tailscale %2$s</string>
+    <!-- Added after the line above when Tailscale is picked but missing. %1$s is that line -->
+    <string name="desktop_settings_status_tailscale_missing">%1$s · Tailscale not detected on this PC</string>
+    <string name="desktop_settings_cloud_unavailable">Cloud by DevLune is not available in this build. Choose Local.</string>
+    <string name="desktop_settings_paused">Paused. Nothing is being sent.</string>
+    <string name="desktop_settings_relay_connected">Connected to the relay</string>
+    <string name="desktop_settings_relay_error">Cannot reach the relay. Check the internet connection on this PC.</string>
+    <string name="desktop_settings_relay_connecting">Connecting to the relay…</string>
+    <string name="desktop_settings_local_port">Local port</string>
+    <string name="desktop_settings_run_setup">Run setup again</string>
+    <string name="desktop_settings_connection_note">Mode and port changes apply right away, no restart. After changing either, scan the QR on the Pairing tab again.</string>
+    <!-- Settings, Streaming -->
+    <string name="desktop_settings_pause">Pause streaming</string>
+    <string name="desktop_settings_pause_local">Stops sending stats to your phone but keeps the local sampler running.</string>
+    <string name="desktop_settings_pause_cloud">Stops sending stats through Cloud by DevLune but keeps the local sampler running.</string>
+    <string name="desktop_settings_publish_interval">Publish interval</string>
+    <string name="desktop_settings_sample_interval">Sample interval</string>
+    <string name="desktop_settings_sample_interval_body">How often the sampler reads hardware sensors.</string>
+    <plurals name="desktop_settings_seconds">
+        <item quantity="one">%1$d second</item>
+        <item quantity="other">%1$d seconds</item>
+    </plurals>
+    <string name="desktop_settings_lightweight">Lightweight mode</string>
+    <string name="desktop_settings_lightweight_body">Uses the least CPU and battery: samples every 3 seconds (or slower if set above), skips the top-process list and the ping test, publishes every 5 seconds in cloud mode, and stops the background animation.</string>
+    <string name="desktop_settings_cadence_note">Cadence changes apply right away, no restart.</string>
+    <!-- Toasts. %1$s is the system error, in English -->
+    <string name="desktop_settings_streaming_resumed">Streaming resumed</string>
+    <string name="desktop_settings_streaming_paused">Streaming paused</string>
+    <string name="desktop_settings_pause_failed">Pause failed: %1$s</string>
+    <!-- Settings, Media -->
+    <string name="desktop_settings_media_share">Show what is playing on the phone (Local and Tailscale)</string>
+    <string name="desktop_settings_media_share_body">Sends the title, artist, album, app name and cover of what Windows shows in its media controls. Never sent through the cloud.</string>
+    <string name="desktop_settings_media_control">Let the phone play, pause and skip (Local and Tailscale)</string>
+    <string name="desktop_settings_media_control_body">With this off, the phone can show what is playing but cannot change it.</string>
+    <string name="desktop_settings_media_note">The phone is read only, except play, pause and skip for media when you allow it.</string>
+    <!-- Settings, Privacy -->
+    <string name="desktop_settings_share_processes">Share top processes</string>
+    <string name="desktop_settings_share_processes_body">Include the top 5 CPU-heavy processes in the broadcast payload.</string>
+    <string name="desktop_settings_share_processes_body_light">Include the top 5 CPU-heavy processes in the broadcast payload. Not sent while Lightweight mode is on.</string>
+    <!-- Settings, System -->
+    <string name="desktop_settings_autostart">Launch at login</string>
+    <string name="desktop_settings_autostart_on">Enabled: SysWatch starts hidden when you sign in.</string>
+    <string name="desktop_settings_autostart_off">Disabled: start SysWatch manually.</string>
+    <string name="desktop_settings_autostart_enabled">Autostart enabled</string>
+    <string name="desktop_settings_autostart_disabled">Autostart disabled</string>
+    <!-- Toast. %1$s is the system error, in English -->
+    <string name="desktop_settings_autostart_failed">Autostart toggle failed: %1$s</string>
+    <string name="desktop_settings_reduce_motion">Reduce motion</string>
+    <string name="desktop_settings_reduce_motion_body">Disables gradient animation and sparkline easing.</string>
+    <string name="desktop_settings_close_action">When I close the window</string>
+    <string name="desktop_settings_close_action_body">What the close button does. Can be changed any time.</string>
+    <string name="desktop_settings_close_ask">Ask every time</string>
+    <!-- Also a button in the close dialog -->
+    <string name="desktop_close_tray">Move to tray</string>
+    <string name="desktop_settings_close_exit">Quit the app</string>
+    <!-- Settings, Metrics: one switch per dashboard tile, a name and a line under it -->
+    <string name="desktop_settings_metric_cpu">CPU</string>
+    <string name="desktop_settings_metric_cpu_body">Show the cpu tile.</string>
+    <string name="desktop_settings_metric_ram">RAM</string>
+    <string name="desktop_settings_metric_ram_body">Show the ram tile.</string>
+    <string name="desktop_settings_metric_gpu">GPU</string>
+    <string name="desktop_settings_metric_gpu_body">Show the gpu tile.</string>
+    <string name="desktop_settings_metric_net">NET</string>
+    <string name="desktop_settings_metric_net_body">Show the net tile.</string>
+    <string name="desktop_settings_metric_disk">DISK</string>
+    <string name="desktop_settings_metric_disk_body">Show the disk tile.</string>
+    <string name="desktop_settings_metric_battery">BATTERY</string>
+    <string name="desktop_settings_metric_battery_body">Show the battery tile.</string>
+    <!-- Settings, Diagnostics. Toasts: %1$s is the system error, in English -->
+    <string name="desktop_settings_open_logs">Open logs folder</string>
+    <string name="desktop_settings_open_logs_failed">Couldn\'t open the logs folder: %1$s</string>
+    <string name="desktop_settings_open_config">Open config folder</string>
+    <string name="desktop_settings_open_config_failed">Couldn\'t open the config folder: %1$s</string>
+    <string name="desktop_settings_check_updates">Check for updates</string>
+    <!-- %1$s is a version number like 0.4.0 -->
+    <string name="desktop_settings_update_available">SysWatch %1$s is available. See the banner at the top.</string>
+    <string name="desktop_settings_update_latest">You are on the latest version</string>
+    <string name="desktop_settings_update_failed">Could not check. Try again later.</string>
+    <string name="desktop_settings_quit">Quit SysWatch</string>
+    <string name="desktop_settings_quit_failed">Quit failed: %1$s</string>
+    <!-- Settings, About card. %1$s is the studio name, DevLune Studio -->
+    <string name="desktop_about_tagline">A product of %1$s: boutique software, built right. Hyderabad, IN · Est. 2025.</string>
+    <string name="desktop_about_sponsor">Sponsor</string>
+    <string name="desktop_about_sponsor_body">Back the studio on GitHub.</string>
+    <string name="desktop_about_star">Star on GitHub</string>
+    <string name="desktop_about_star_body">Show love · follow releases.</string>
+    <string name="desktop_about_setup_guide">Setup guide</string>
+    <string name="desktop_about_homepage">Studio homepage</string>
+    <string name="desktop_about_discord">Join Discord</string>
+    <string name="desktop_about_email">Email founders</string>
+    <string name="desktop_about_terms">Terms</string>
+    <string name="desktop_about_privacy">Privacy</string>
+    <!-- %1$s is a link, simpleicons.org -->
+    <string name="desktop_about_trademarks">Hardware vendor marks (NVIDIA, AMD, Intel, Apple, Samsung, etc.) are trademarks of their respective owners. SysWatch displays them solely to identify detected hardware and is not affiliated with nor endorsed by these vendors. Icon paths from %1$s (CC0).</string>
+    <!-- Asked when the window's close button is clicked -->
+    <string name="desktop_close_title">Close SysWatch?</string>
+    <string name="desktop_close_body">SysWatch can keep running in the tray so your phone stays paired, or you can quit the app entirely.</string>
+    <string name="desktop_close_remember">Remember my choice (change later in Settings)</string>
+    <string name="desktop_close_cancel">Cancel</string>
+    <string name="desktop_close_hiding">Hiding…</string>
+    <string name="desktop_close_exiting">Exiting…</string>
+    <string name="desktop_close_exit">Exit</string>
+    <!-- Menu on the tray icon (right click). Works even while the window is closed -->
+    <string name="desktop_tray_show">Show Dashboard</string>
+    <string name="desktop_tray_pair">Copy Pairing Code</string>
+    <string name="desktop_tray_pause">Pause Streaming</string>
+    <string name="desktop_tray_settings">Settings</string>
+    <string name="desktop_tray_quit">Quit</string>
+    <!-- Shown when the pointer rests on the tray icon -->
+    <string name="desktop_tray_tooltip">SysWatch</string>
+    <!-- Windows notification after "Copy Pairing Code" -->
+    <string name="desktop_tray_pair_copied">Pairing code copied to clipboard</string>
 </resources>

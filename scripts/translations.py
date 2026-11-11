@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """SysWatch translations: one file per language.
 
-The app keeps its English text in a few Android resource files. Translators
-never see that split: they get ONE file, translations/en.xml, and send back
-ONE file, translations/<code>.xml. This script moves text between the two.
+The phone app keeps its English text in a few Android resource files and the
+desktop app in src/i18n/en.xml (names starting desktop_). Translators never see
+that split: they get ONE file, translations/en.xml, and send back ONE file,
+translations/<code>.xml. This script moves text between the two.
 
   python scripts/translations.py export <dir>
       Write <dir>/en.xml (every translatable string, with its translator
@@ -14,8 +15,9 @@ ONE file, translations/<code>.xml. This script moves text between the two.
       This is what the pull request check runs. It needs nothing but Python.
 
   python scripts/translations.py import <file.xml> [code]
-      Check one translation file, then install it into the app as
-      android/app/src/main/res/values-<code>/strings.xml.
+      Check one translation file, then install it: phone strings into
+      android/app/src/main/res/values-<code>/strings.xml, desktop strings
+      into src/i18n/<code>.xml.
 
   python scripts/translations.py manifest <dir>
       Write <dir>/languages.json: the list the app downloads to learn which
@@ -33,6 +35,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "android" / "app" / "src" / "main" / "res"
+DESKTOP = ROOT / "src" / "i18n"
+DESKTOP_PREFIX = "desktop_"
 PLACEHOLDER = re.compile(r"%(?:(\d+)\$)?[-#+ 0,(]*\d*(?:\.\d+)?([sdfx])|%%")
 LONG_DASH = re.compile("[–—]")
 PLURAL_REQUIRED = {"ru": {"one", "few", "many", "other"}, "uk": {"one", "few", "many", "other"},
@@ -41,7 +45,7 @@ PLURAL_REQUIRED = {"ru": {"one", "few", "many", "other"}, "uk": {"one", "few", "
 
 
 def source_files():
-    return sorted((RES / "values").glob("strings*.xml"))
+    return sorted((RES / "values").glob("strings*.xml")) + [p for p in [DESKTOP / "en.xml"] if p.exists()]
 
 
 def parse(path):
@@ -126,12 +130,15 @@ def check_text(name, part, english, translated, problems):
                         if placeholders(translated) else f"{label} has a stray % that looks like a broken placeholder")
 
 
-def check(source, translation, code):
+def check(source, translation, code, complete=False):
+    """Problems in [translation]. A missing string is only a problem when [complete]
+    (building it into an app): in a pull request it just shows in English."""
     problems = []
     for name in sorted(set(translation) - set(source)):
         problems.append(f"'{name}' is not a string the app has (typo, or it was removed)")
-    for name in sorted(set(source) - set(translation)):
-        problems.append(f"'{name}' is missing")
+    if complete:
+        for name in sorted(set(source) - set(translation)):
+            problems.append(f"'{name}' is missing")
     for name, (kind, english, _) in source.items():
         if name not in translation:
             continue
@@ -183,8 +190,20 @@ def render(entries, header):
 
 
 def shipped_languages():
-    return sorted(p.name[len("values-"):] for p in RES.glob("values-*")
-                  if (p / "strings.xml").exists() and re.fullmatch(r"values-[a-z]{2,3}(-r[A-Z]{2})?", p.name))
+    android = {p.name[len("values-"):] for p in RES.glob("values-*")
+               if (p / "strings.xml").exists() and re.fullmatch(r"values-[a-z]{2,3}(-r[A-Z]{2})?", p.name)}
+    desktop = {p.stem for p in DESKTOP.glob("*.xml")
+               if p.name != "en.xml" and re.fullmatch(r"[a-z]{2,3}(-[A-Z]{2})?", p.stem)}
+    return sorted(android | desktop)
+
+
+def shipped_entries(code):
+    """One language as the apps have it: phone strings and desktop strings together."""
+    entries = {}
+    for path in [RES / f"values-{code}" / "strings.xml", DESKTOP / f"{code}.xml"]:
+        if path.exists():
+            entries.update(parse(path)[0])
+    return entries
 
 
 def export(target):
@@ -198,7 +217,7 @@ def export(target):
         "  and translate the text between the tags. See README.md in this folder.",
     ]), encoding="utf-8", newline="\n")
     for code in shipped_languages():
-        entries, _ = parse(RES / f"values-{code}" / "strings.xml")
+        entries = shipped_entries(code)
         ordered = {name: entries[name] for name in source if name in entries}
         (target / f"{code}.xml").write_text(
             render(ordered, [f"  SysWatch, language code: {code}. Fixes are welcome: see README.md in this folder."]),
@@ -221,7 +240,9 @@ def check_folder(folder):
             continue
         translation, found = parse(path)
         found += check(source, translation, path.stem)
-        print(("FAIL " if found else "ok   ") + f"{path.name}: {len(translation)} of {len(source)} strings"
+        left = len(set(source) - set(translation))
+        print(("FAIL " if found else "ok   ") + f"{path.name}: {len(source) - left} of {len(source)} strings"
+              + (f" ({left} still show in English)" if left else "")
               + "".join(f"\n       - {p}" for p in found))
         failed = failed or bool(found)
     sys.exit(1 if failed else 0)
@@ -230,16 +251,19 @@ def check_folder(folder):
 def install(path, code):
     source, problems = load_source()
     translation, found = parse(path)
-    problems += found + check(source, translation, code)
+    problems += found + check(source, translation, code, complete=True)
     if problems:
         sys.exit(f"{path.name} is not ready:\n  - " + "\n  - ".join(problems))
     folder = RES / ("values-" + (code if "-" not in code else code.replace("-", "-r")))
     folder.mkdir(exist_ok=True)
-    ordered = {name: translation[name] for name in source}
-    (folder / "strings.xml").write_text(
-        render(ordered, [f"  Generated by scripts/translations.py from {path.name}. Edit the translation file, not this."]),
-        encoding="utf-8", newline="\n")
-    print(f"installed {len(ordered)} strings into {folder.relative_to(ROOT)}")
+    header = [f"  Generated by scripts/translations.py from {path.name}. Edit the translation file, not this."]
+    phone = {name: translation[name] for name in source if not name.startswith(DESKTOP_PREFIX)}
+    desktop = {name: translation[name] for name in source if name.startswith(DESKTOP_PREFIX)}
+    (folder / "strings.xml").write_text(render(phone, header), encoding="utf-8", newline="\n")
+    print(f"installed {len(phone)} phone strings into {folder.relative_to(ROOT)}")
+    if desktop:
+        (DESKTOP / f"{code}.xml").write_text(render(desktop, header), encoding="utf-8", newline="\n")
+        print(f"installed {len(desktop)} desktop strings into {(DESKTOP / f'{code}.xml').relative_to(ROOT)}")
     print("A NEW language also needs: AppLanguage enum entry, res/xml/locales_config.xml, localeFilters in build.gradle.kts.")
 
 
@@ -282,6 +306,10 @@ def write_bundled_versions(languages):
              "val BUNDLED_VERSIONS: Map<String, String> = mapOf(", *rows, ")", ""]
     target.write_text("\n".join(lines), encoding="utf-8", newline="\n")
     print(f"BundledVersions.kt: {len(rows)} languages")
+    if DESKTOP.exists():
+        held = {l["code"]: l["version"] for l in languages if (DESKTOP / f"{l['code']}.xml").exists()}
+        (DESKTOP / "bundled.json").write_text(json.dumps(held, indent=2) + "\n", encoding="utf-8", newline="\n")
+        print(f"src/i18n/bundled.json: {len(held)} languages")
 
 
 def selftest():
@@ -303,7 +331,9 @@ def selftest():
         "plural without other": {**good, "rules": ("plurals", {"one": "%1$d Regel"}, "")},
     }
     for label, broken in cases.items():
-        assert check(source, broken, "de"), f"checker missed: {label}"
+        assert check(source, broken, "de", complete=True), f"checker missed: {label}"
+    partial = {k: v for k, v in good.items() if k != "notes"}
+    assert check(source, partial, "de") == [], "a partial translation must pass a pull request check"
     assert any("few" in p for p in check(source, good, "ru")), "checker missed: Russian plural forms"
     assert placeholders("%2$s of %1$s") == placeholders("%1$s von %2$s")
     unit = {"pct": ("string", "%", "")}

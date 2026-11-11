@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 // The one thing to change when a new desktop version ships.
-const RELEASE = { version: "0.2.1", sizeMb: 3.5, date: "2026-11-11" };
+const RELEASE = { version: "0.3.0", sizeMb: 3.7, date: "2026-11-11" };
 
 const ORIGIN = "https://syswatch.devlune.in";
 const LANGS = ["en", "de", "fr", "es", "ru"]; // first one is the default, served at /

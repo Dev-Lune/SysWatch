@@ -4,8 +4,8 @@ SysWatch speaks English, German, French, Spanish and Russian. You can add your
 language, or fix a wording in one that exists. No programming needed: it is one text
 file per language.
 
-When a translation is merged here, **every SysWatch app picks it up by itself** within
-a day (or at once from Settings, Language, Check now). No app update needed.
+When a translation is merged here, **every SysWatch app, on the phone and on Windows, picks
+it up by itself** within a day (or at once from Settings, Language). No app update needed.
 
 ## Add your language
 
@@ -73,6 +73,9 @@ a colon or a full stop.
 
 The lines that start with `<!--` in `en.xml` are notes for you: what a slot holds, or
 where the text appears. You do not need to keep them in your file.
+
+Names that start with `desktop_` belong to the Windows app; all the others belong to the
+Android app. They live in the same file, so one pull request translates both apps.
 
 One string is special: `language_name` is the name of your language, written in your
 language (Deutsch, Español, Русский, हिन्दी). That is what people see in the app's
