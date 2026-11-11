@@ -1,13 +1,14 @@
 #!/usr/bin/env node
-// Generates the language pages, 404, sitemap, robots, llms.txt and the web manifest
-// from one template and src/content/<lang>.json. No dependencies. Run: node src/build.mjs
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+// Generates the home page and the guides in every language, the 404, sitemap, robots,
+// llms.txt and the web manifest. Words live in src/content/<lang>.json (home page) and
+// src/guides/<lang>.json (guides). No dependencies. Run: node src/build.mjs
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 // The one thing to change when a new desktop version ships.
-const RELEASE = { version: "0.2.0", sizeMb: 3.5, date: "2026-11-10" };
+const RELEASE = { version: "0.2.1", sizeMb: 3.5, date: "2026-11-11" };
 
 const ORIGIN = "https://syswatch.devlune.in";
 const LANGS = ["en", "de", "fr", "es", "ru"]; // first one is the default, served at /
@@ -17,45 +18,64 @@ const LINKS = {
   win: `${REPO}/releases/download/v${RELEASE.version}/SysWatch_${RELEASE.version}_x64-setup.exe`,
   play: "https://play.google.com/store/apps/details?id=in.devlune.syswatch",
   releases: `${REPO}/releases`,
+  repo: REPO,
   translations: `${REPO}/tree/main/translations`,
-  tailscale: `${REPO}/blob/main/docs/TAILSCALE.md`,
   issues: `${REPO}/issues`,
   sponsor: "https://github.com/sponsors/Dev-Lune",
   discord: "https://discord.gg/BXu9qxgaE8",
   devlune: DEVLUNE,
   work: `${DEVLUNE}/work`,
-  guide: `${DEVLUNE}/download/syswatch`,
   privacy: `${DEVLUNE}/privacy`,
   terms: `${DEVLUNE}/terms`,
 };
 
+// One URL per page and language: / and /de for the home page, /install and /de/install
+// for a guide. Each is one .html file (de.html, de/install.html), which Cloudflare's
+// auto-trailing-slash and Vercel's cleanUrls both serve without the extension.
+const GUIDES = ["install", "tailscale", "translate"];
+const HOWTO = new Set(["install", "tailscale"]); // guides whose steps are also HowTo markup
+const KEYS = ["home", ...GUIDES];
+const prefix = (lang) => (lang === LANGS[0] ? "" : `/${lang}`);
+const pathOf = (lang, key) => (key === "home" ? prefix(lang) || "/" : `${prefix(lang)}/${key}`);
+const abs = (path) => ORIGIN + path;
+const fileOf = (path) => (path === "/" ? "index.html" : `${path.slice(1)}.html`);
+const url = (t) => abs(pathOf(t.lang, "home"));
+
 const SRC = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(SRC, "..");
 const today = new Date().toISOString().slice(0, 10);
-const content = Object.fromEntries(LANGS.map((l) => [l, JSON.parse(readFileSync(join(SRC, "content", `${l}.json`), "utf8"))]));
+const read = (dir, l) => JSON.parse(readFileSync(join(SRC, dir, `${l}.json`), "utf8"));
+const content = Object.fromEntries(LANGS.map((l) => [l, read("content", l)]));
+const guides = Object.fromEntries(LANGS.map((l) => [l, read("guides", l)]));
 
 const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const plain = (s) => String(s).replace(/<[^>]+>/g, "");
-const url = (t) => ORIGIN + (t.path === "/" ? "/" : t.path);
-const file = (t) => (t.path === "/" ? "index.html" : `${t.path.slice(1)}.html`);
-const og = (t) => `/assets/og/og-${existsSync(join(ROOT, "assets", "og", `og-${t.lang}.jpg`)) ? t.lang : LANGS[0]}.jpg`;
+const decode = (s) => s.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&amp;/g, "&");
+const text = (s) => decode(plain(s));
+const og = (lang) => `/assets/og/og-${existsSync(join(ROOT, "assets", "og", `og-${lang}.jpg`)) ? lang : LANGS[0]}.jpg`;
 
 // Typographic apostrophes, and non-breaking spaces where a line must not break:
-// before a unit, and around French punctuation.
-function typo(s, lang) {
+// before a unit, and around French punctuation. Text inside <code> is left exactly as written.
+function typo(str, lang) {
+  return str.split(/(<code>[\s\S]*?<\/code>)/).map((s, i) => (i % 2 ? s : typoText(s, lang))).join("");
+}
+function typoText(s, lang) {
   s = s.replace(/(\p{L})'(?=\p{L})/gu, "$1\u2019");
   s = s.replace(/(\d) (%|MB|GB|Mo|МБ)/g, "$1\u00a0$2");
   return lang === "fr" ? s.replace(/ ([:;?!»])/g, "\u00a0$1").replace(/« /g, "«\u00a0") : s;
 }
 
-// {win}, {version}, {size}... in any content string, at any depth.
+// {win}, {version}, {size}... in any content string, at any depth. {guide}, {tailscale} and
+// {translate} are this language's guide pages. Code samples (key "code") stay untouched.
 function fill(node, lang) {
   if (typeof node === "string") {
     const size = `${new Intl.NumberFormat(lang).format(RELEASE.sizeMb)}\u00a0${content[lang].unit}`;
-    return typo(node.replace(/\{(\w+)\}/g, (m, k) => (k === "version" ? RELEASE.version : k === "size" ? size : LINKS[k] ?? m)), lang);
+    const links = { ...LINKS, guide: pathOf(lang, "install"), tailscale: pathOf(lang, "tailscale"), translate: pathOf(lang, "translate") };
+    return typo(node.replace(/\{(\w+)\}/g, (m, k) => (k === "version" ? RELEASE.version : k === "size" ? size : links[k] ?? m)), lang);
   }
   if (Array.isArray(node)) return node.map((n) => fill(n, lang));
-  if (node && typeof node === "object") return Object.fromEntries(Object.entries(node).map(([k, v]) => [k, fill(v, lang)]));
+  if (node && typeof node === "object") return Object.fromEntries(Object.entries(node).map(([k, v]) => [k, k === "code" ? v : fill(v, lang)]));
   return node;
 }
 
@@ -99,26 +119,32 @@ if (process.argv.includes("--keyframes")) {
 const ICON = {
   win: '<svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M2 3.5 9 2.6v6.9H2zM10 2.4 18 1.3v8.2h-8zM2 10.5h7v6.9l-7-.9zM10 10.5h8v8.2l-8-1.1z"/></svg>',
   play: '<svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M4.2 1.8c-.5-.3-1.2.1-1.2.7v15c0 .6.7 1 1.2.7l13-7.5c.5-.3.5-1.1 0-1.4z"/></svg>',
-  out: '<svg class="ico ico-out" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M5 3h8v8M13 3 3.5 12.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 };
 const wordmark = '<span translate="no">Sys<b>Watch</b></span>';
 
-function jsonLd(t) {
+// ---- Structured data ------------------------------------------------------------------
+
+const ORG = {
+  "@type": "Organization",
+  "@id": "https://devlune.in/#studio",
+  name: "DevLune",
+  url: DEVLUNE,
+  logo: `${DEVLUNE}/app/icon-512.png`,
+  address: { "@type": "PostalAddress", addressLocality: "Hyderabad", addressCountry: "IN" },
+  sameAs: ["https://github.com/Dev-Lune", LINKS.discord],
+};
+const publisher = { "@id": ORG["@id"] };
+const WEBSITE = { "@type": "WebSite", "@id": `${ORIGIN}/#website`, url: `${ORIGIN}/`, name: "SysWatch", inLanguage: LANGS, publisher };
+// "<" is escaped so no text can close the script element early.
+const ldScript = (graph) => `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c")}</script>`;
+
+function homeLd(t) {
   const page = url(t);
   const offer = { "@type": "Offer", price: "0", priceCurrency: "USD", availability: "https://schema.org/InStock" };
-  const publisher = { "@id": "https://devlune.in/#studio" };
-  const image = ORIGIN + og(t);
-  const graph = [
-    {
-      "@type": "Organization",
-      "@id": "https://devlune.in/#studio",
-      name: "DevLune",
-      url: DEVLUNE,
-      logo: `${DEVLUNE}/app/icon-512.png`,
-      address: { "@type": "PostalAddress", addressLocality: "Hyderabad", addressCountry: "IN" },
-      sameAs: ["https://github.com/Dev-Lune", LINKS.discord],
-    },
-    { "@type": "WebSite", "@id": `${ORIGIN}/#website`, url: `${ORIGIN}/`, name: "SysWatch", inLanguage: LANGS, publisher },
+  const image = abs(og(t.lang));
+  return ldScript([
+    ORG,
+    WEBSITE,
     {
       "@type": "WebPage",
       "@id": `${page}#webpage`,
@@ -126,7 +152,7 @@ function jsonLd(t) {
       name: t.title,
       description: t.description,
       inLanguage: t.lang,
-      isPartOf: { "@id": `${ORIGIN}/#website` },
+      isPartOf: { "@id": WEBSITE["@id"] },
       about: { "@id": `${ORIGIN}/#windows-app` },
       primaryImageOfPage: image,
       dateModified: today,
@@ -182,21 +208,72 @@ function jsonLd(t) {
       inLanguage: t.lang,
       mainEntity: t.faq.items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: external(f.a) } })),
     },
-  ];
-  // "<" is escaped so no answer can close the script element early.
-  return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c");
+  ]);
 }
 
-function head(t, all) {
+const stepOf = (s) => (typeof s === "string" ? { d: s } : s);
+
+function guideLd(t, key) {
+  const g = t.g.pages[key];
+  const page = abs(pathOf(t.lang, key));
+  const graph = [
+    ORG,
+    WEBSITE,
+    {
+      "@type": "WebPage",
+      "@id": `${page}#webpage`,
+      url: page,
+      name: g.title,
+      description: g.description,
+      inLanguage: t.lang,
+      isPartOf: { "@id": WEBSITE["@id"] },
+      about: { "@id": `${ORIGIN}/#windows-app` },
+      breadcrumb: { "@id": `${page}#breadcrumb` },
+      primaryImageOfPage: abs(og(t.lang)),
+      dateModified: today,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${page}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "SysWatch", item: url(t) },
+        { "@type": "ListItem", position: 2, name: text(g.crumb), item: page },
+      ],
+    },
+  ];
+  if (HOWTO.has(key)) {
+    // One HowToSection per visible list of steps, named after the heading above it.
+    const sections = [];
+    let heading = "";
+    for (const b of g.blocks) {
+      if (b.h2) heading = text(b.h2);
+      if (b.steps) sections.push({ name: heading, steps: b.steps.map((s, i) => ({ "@type": "HowToStep", position: i + 1, text: text(stepOf(s).d), url: `${page}#${b.id}-${i + 1}` })) });
+    }
+    graph.push({
+      "@type": "HowTo",
+      "@id": `${page}#howto`,
+      name: text(g.h1),
+      description: text(g.lead),
+      inLanguage: t.lang,
+      step: sections.length === 1 ? sections[0].steps : sections.map((s, i) => ({ "@type": "HowToSection", position: i + 1, name: s.name, itemListElement: s.steps })),
+    });
+  }
+  return ldScript(graph);
+}
+
+// ---- Shared page parts ----------------------------------------------------------------
+
+function head(t, key, title, description, ld) {
   const fonts = t.lang === "ru" ? ["onest-cyrillic", "onest-latin"] : ["bricolage-700-latin", "instrument-sans-latin"];
-  const image = ORIGIN + og(t);
+  const image = abs(og(t.lang));
+  const self = abs(pathOf(t.lang, key));
   return `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${attr(t.title)}</title>
-<meta name="description" content="${attr(t.description)}">
-<link rel="canonical" href="${url(t)}">
-${all.map((o) => `<link rel="alternate" hreflang="${o.lang}" href="${url(o)}">`).join("\n")}
-<link rel="alternate" hreflang="x-default" href="${ORIGIN}/">
+<title>${attr(title)}</title>
+<meta name="description" content="${attr(description)}">
+<link rel="canonical" href="${self}">
+${LANGS.map((l) => `<link rel="alternate" hreflang="${l}" href="${abs(pathOf(l, key))}">`).join("\n")}
+<link rel="alternate" hreflang="x-default" href="${abs(pathOf(LANGS[0], key))}">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#0E0F11">
 <meta name="color-scheme" content="dark">
@@ -211,69 +288,136 @@ ${fonts.map((f) => `<link rel="preload" href="/assets/fonts/${f}.woff2" as="font
 <meta name="author" content="DevLune">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SysWatch">
-<meta property="og:title" content="${attr(t.title)}">
-<meta property="og:description" content="${attr(t.description)}">
-<meta property="og:url" content="${url(t)}">
+<meta property="og:title" content="${attr(title)}">
+<meta property="og:description" content="${attr(description)}">
+<meta property="og:url" content="${self}">
 <meta property="og:image" content="${image}">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="${attr(t.ogAlt)}">
 <meta property="og:locale" content="${t.locale}">
-${all.filter((o) => o !== t).map((o) => `<meta property="og:locale:alternate" content="${o.locale}">`).join("\n")}
+${LANGS.filter((l) => l !== t.lang).map((l) => `<meta property="og:locale:alternate" content="${content[l].locale}">`).join("\n")}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="${attr(t.title)}">
-<meta name="twitter:description" content="${attr(t.description)}">
+<meta name="twitter:title" content="${attr(title)}">
+<meta name="twitter:description" content="${attr(description)}">
 <meta name="twitter:image" content="${image}">
 <meta name="twitter:image:alt" content="${attr(t.ogAlt)}">
-<script type="application/ld+json">${jsonLd(t)}</script>`;
+${ld}`;
 }
 
-function langMenu(t, all) {
-  return `<details class="lang">
+// Links to the same page in every language.
+const langLinks = (key, current, all) =>
+  all.map((o) => `<li><a href="${pathOf(o.lang, key)}" hreflang="${o.lang}" lang="${o.lang}"${o.lang === current ? ' aria-current="page"' : ""}>${o.name}</a></li>`).join("\n");
+
+function header(t, key, all) {
+  const home = pathOf(t.lang, "home");
+  const to = (id) => (key === "home" ? `#${id}` : `${home}#${id}`);
+  return `<a class="skip" href="#main">${t.skip}</a>
+<header class="top">
+<div class="wrap top-in">
+<a class="mark" href="${home}" aria-label="SysWatch">${wordmark}</a>
+<nav class="top-nav" aria-label="${attr(t.nav.main)}">
+<a href="${to("see")}">${t.nav.see}</a>
+<a href="${to("connect")}">${t.nav.connect}</a>
+<a href="${to("setup")}">${t.nav.setup}</a>
+<a href="${to("faq")}">${t.nav.faq}</a>
+</nav>
+<details class="drop guides">
+<summary>${t.g.nav.label}</summary>
+<ul>
+${GUIDES.map((k) => `<li><a href="${pathOf(t.lang, k)}"${k === key ? ' aria-current="page"' : ""}>${t.g.nav[k]}</a></li>`).join("\n")}
+</ul>
+</details>
+<details class="drop lang">
 <summary aria-label="${t.lang.toUpperCase()}: ${attr(t.nav.language)}, ${attr(t.name)}">${t.lang.toUpperCase()}</summary>
 <ul>
-${all.map((o) => `<li><a href="${o.path}" hreflang="${o.lang}" lang="${o.lang}"${o === t ? ' aria-current="page"' : ""}>${o.name}</a></li>`).join("\n")}
+${langLinks(key, t.lang, all)}
 </ul>
-</details>`;
+</details>
+<a class="btn btn-primary btn-small" href="${to("setup")}">${t.nav.download}</a>
+</div>
+</header>`;
 }
 
-function page(t, all) {
-  const buttons = `<div class="actions">
+function footer(t, key, all) {
+  return `<footer class="bottom">
+<div class="wrap bottom-in">
+<div class="bottom-brand">
+<p class="mark">${wordmark}</p>
+<p>${t.footer.made}</p>
+<nav aria-label="${attr(t.nav.language)}">
+<ul class="langs">
+${langLinks(key, t.lang, all)}
+</ul>
+</nav>
+</div>
+<nav class="bottom-col" aria-labelledby="f-get">
+<h2 id="f-get">${t.footer.get}</h2>
+<ul>
+<li><a href="${LINKS.win}">${t.hero.win}</a></li>
+<li><a href="${LINKS.play}">${t.hero.play}</a></li>
+<li><a href="${LINKS.releases}">${t.setup.releases}</a></li>
+<li><a href="${LINKS.sponsor}">${t.footer.sponsor}</a></li>
+</ul>
+</nav>
+<nav class="bottom-col" aria-labelledby="f-help">
+<h2 id="f-help">${t.footer.help}</h2>
+<ul>
+${GUIDES.map((k) => `<li><a href="${pathOf(t.lang, k)}"${k === key ? ' aria-current="page"' : ""}>${t.g.nav[k]}</a></li>`).join("\n")}
+<li><a href="${LINKS.issues}">${t.footer.issues}</a></li>
+<li><a href="${LINKS.discord}">${t.footer.discord}</a></li>
+</ul>
+</nav>
+<nav class="bottom-col" aria-labelledby="f-studio">
+<h2 id="f-studio">${t.footer.studio}</h2>
+<ul>
+<li><a href="${LINKS.devlune}">${t.footer.site}</a></li>
+<li><a href="${LINKS.work}">${t.footer.work}</a></li>
+<li><a href="${LINKS.privacy}">${t.privacy.policy}</a></li>
+<li><a href="${LINKS.terms}">${t.privacy.terms}</a></li>
+</ul>
+</nav>
+</div>
+<div class="wrap">
+<p class="legal">© ${today.slice(0, 4)} DevLune. ${t.footer.legal}</p>
+</div>
+</footer>`;
+}
+
+const shell = (t, key, all, headHtml, main) => `<!doctype html>
+<html lang="${t.lang}" dir="ltr">
+<head>
+${headHtml}
+</head>
+<body>
+${header(t, key, all)}
+
+${main}
+
+${footer(t, key, all)}
+</body>
+</html>
+`;
+
+const downloadButtons = (t) => `<div class="actions">
 <a class="btn btn-primary" href="${LINKS.win}">${ICON.win}${t.hero.win}</a>
 <a class="btn btn-ghost" href="${LINKS.play}">${ICON.play}${t.hero.play}</a>
 </div>`;
+
+// ---- Home page ------------------------------------------------------------------------
+
+function homePage(t, all) {
   const shots = ["overview", "alerts", "settings", "gallery"];
   const faces = ["face-ink", "face-bauhaus", "face-blocks"];
-  return `<!doctype html>
-<html lang="${t.lang}" dir="ltr">
-<head>
-${head(t, all)}
-</head>
-<body>
-<a class="skip" href="#main">${t.skip}</a>
-<header class="top">
-<div class="wrap top-in">
-<a class="mark" href="${t.path}" aria-label="SysWatch">${wordmark}</a>
-<nav class="top-nav" aria-label="${attr(t.nav.main)}">
-<a href="#see">${t.nav.see}</a>
-<a href="#connect">${t.nav.connect}</a>
-<a href="#setup">${t.nav.setup}</a>
-<a href="#faq">${t.nav.faq}</a>
-</nav>
-${langMenu(t, all)}
-<a class="btn btn-primary btn-small" href="#setup">${t.nav.download}</a>
-</div>
-</header>
-
-<main id="main">
+  const main = `<main id="main">
 <section class="hero">
 <div class="wrap hero-in">
 <div class="hero-copy">
 <p class="kicker">${t.hero.kicker}</p>
 <h1>${t.hero.h1}</h1>
 <p class="lead">${t.hero.lead}</p>
-${buttons}
+${downloadButtons(t)}
 <p class="meta">${t.hero.meta}<br>${t.hero.meta2}</p>
 <p class="reassure">${t.hero.reassure}</p>
 </div>
@@ -391,16 +535,16 @@ ${t.standby.points.map((p) => `<li>${p}</li>`).join("\n")}
 <p class="lead">${t.connect.lead}</p>
 </div>
 <div class="modes">
-${t.connect.modes.map((m) => `<article class="mode">
+${t.connect.modes.map((m, i) => `<article class="mode">
 <p class="mode-tag">${m.tag}</p>
 <h3>${m.name}</h3>
 <dl>
-${m.vals.map((v, i) => `<div><dt>${t.connect.rows[i]}</dt><dd>${v}</dd></div>`).join("\n")}
+${m.vals.map((v, j) => `<div><dt>${t.connect.rows[j]}</dt><dd>${v}</dd></div>`).join("\n")}
 </dl>
-<p class="mode-note">${m.note}</p>
+<p class="mode-note">${m.note}${i === 2 ? ` <a href="${pathOf(t.lang, "tailscale")}">${t.connect.guide}</a>` : ""}</p>
 </article>`).join("\n")}
 </div>
-<p class="foot">${t.connect.foot} <a href="${LINKS.tailscale}">${t.connect.guide}</a></p>
+<p class="foot">${t.connect.foot}</p>
 </div>
 </section>
 
@@ -414,9 +558,9 @@ ${m.vals.map((v, i) => `<div><dt>${t.connect.rows[i]}</dt><dd>${v}</dd></div>`).
 <ol class="steps">
 ${t.setup.steps.map((s, i) => `<li id="step-${i + 1}"><span class="step-n" aria-hidden="true">${i + 1}</span><h3>${s.t}</h3><p>${s.d}</p></li>`).join("\n")}
 </ol>
-${buttons}
+${downloadButtons(t)}
 <p class="meta">${t.hero.meta}<br>${t.hero.meta2}</p>
-<p class="more"><a href="${LINKS.guide}">${t.setup.guide}</a><a href="${LINKS.releases}">${t.setup.releases}</a></p>
+<p class="more"><a href="${pathOf(t.lang, "install")}">${t.setup.guide}</a><a href="${LINKS.releases}">${t.setup.releases}</a></p>
 </div>
 </section>
 
@@ -453,58 +597,78 @@ ${t.faq.items.map((f) => `<details><summary>${f.q}</summary><p>${f.a}</p></detai
 </div>
 <div>
 <p class="lead">${t.translate.p}</p>
-<p class="more"><a href="${LINKS.translations}">${t.translate.cta}</a></p>
+<p class="more"><a href="${pathOf(t.lang, "translate")}">${t.translate.guide}</a><a href="${LINKS.translations}">${t.translate.cta}</a></p>
 </div>
 </div>
 </section>
-</main>
+</main>`;
+  return shell(t, "home", all, head(t, "home", t.title, t.description, homeLd(t)), main);
+}
 
-<footer class="bottom">
-<div class="wrap bottom-in">
-<div class="bottom-brand">
-<p class="mark">${wordmark}</p>
-<p>${t.footer.made}</p>
-<nav aria-label="${attr(t.nav.language)}">
-<ul class="langs">
-${all.map((o) => `<li><a href="${o.path}" hreflang="${o.lang}" lang="${o.lang}"${o === t ? ' aria-current="page"' : ""}>${o.name}</a></li>`).join("\n")}
-</ul>
-</nav>
-</div>
-<nav class="bottom-col" aria-labelledby="f-get">
-<h2 id="f-get">${t.footer.get}</h2>
-<ul>
-<li><a href="${LINKS.win}">${t.hero.win}</a></li>
-<li><a href="${LINKS.play}">${t.hero.play}</a></li>
-<li><a href="${LINKS.releases}">${t.setup.releases}</a></li>
-<li><a href="${LINKS.sponsor}">${t.footer.sponsor}</a></li>
-</ul>
-</nav>
-<nav class="bottom-col" aria-labelledby="f-help">
-<h2 id="f-help">${t.footer.help}</h2>
-<ul>
-<li><a href="${LINKS.guide}">${t.footer.guide}</a></li>
-<li><a href="${LINKS.tailscale}">${t.footer.tailscale}</a></li>
-<li><a href="${LINKS.issues}">${t.footer.issues}</a></li>
-<li><a href="${LINKS.discord}">${t.footer.discord}</a></li>
-</ul>
-</nav>
-<nav class="bottom-col" aria-labelledby="f-studio">
-<h2 id="f-studio">${t.footer.studio}</h2>
-<ul>
-<li><a href="${LINKS.devlune}">${t.footer.site}</a></li>
-<li><a href="${LINKS.work}">${t.footer.work}</a></li>
-<li><a href="${LINKS.privacy}">${t.privacy.policy}</a></li>
-<li><a href="${LINKS.terms}">${t.privacy.terms}</a></li>
-</ul>
-</nav>
-</div>
+// ---- Guide pages ----------------------------------------------------------------------
+
+const pre = (code) => `<pre tabindex="0"><code>${esc(code)}</code></pre>`;
+
+function table(T) {
+  return `<div class="table"><table>
+<thead><tr>${T.head.map((h) => `<th scope="col">${h}</th>`).join("")}</tr></thead>
+<tbody>
+${T.rows.map((r) => `<tr>${r.map((c, i) => (i === 0 ? `<th scope="row">${c}</th>` : `<td data-label="${attr(text(T.head[i]))}">${c}</td>`)).join("")}</tr>`).join("\n")}
+</tbody>
+</table></div>`;
+}
+
+function block(b, t) {
+  if (b.h2) return `<h2 id="${b.id}">${b.h2}</h2>`;
+  if (b.h3) return `<h3>${b.h3}</h3>`;
+  if (b.p) return `<p>${b.p}</p>`;
+  if (b.note) return `<p class="note">${b.note}</p>`;
+  if (b.list) return `<ul class="ticks">\n${b.list.map((x) => `<li>${x}</li>`).join("\n")}\n</ul>`;
+  if (b.code) return pre(b.code);
+  if (b.table) return table(b.table);
+  if (b.actions) return downloadButtons(t);
+  if (b.steps) {
+    return `<ol class="gsteps">\n${b.steps.map((s, i) => {
+      const x = stepOf(s);
+      return `<li id="${b.id}-${i + 1}"><p>${x.d}</p>${x.code ? pre(x.code) : ""}</li>`;
+    }).join("\n")}\n</ol>`;
+  }
+  throw new Error(`unknown block ${JSON.stringify(b).slice(0, 80)}`);
+}
+
+function guidePage(t, key, all) {
+  const g = t.g.pages[key];
+  const sections = g.blocks.filter((b) => b.h2);
+  const main = `<main id="main" class="guide">
 <div class="wrap">
-<p class="legal">© ${today.slice(0, 4)} DevLune. ${t.footer.legal}</p>
+<nav class="crumbs" aria-label="${attr(t.g.crumbs)}">
+<ol><li><a href="${pathOf(t.lang, "home")}">SysWatch</a></li><li aria-current="page">${g.crumb}</li></ol>
+</nav>
+<div class="guide-in">
+<article class="prose">
+<header class="guide-head">
+<p class="kicker">${g.kicker}</p>
+<h1>${g.h1}</h1>
+<p class="lead">${g.lead}</p>
+</header>
+${g.blocks.map((b) => block(b, t)).join("\n")}
+</article>
+<nav class="toc" aria-labelledby="toc-h">
+<p class="kicker" id="toc-h">${t.g.toc}</p>
+<ol>
+${sections.map((b) => `<li><a href="#${b.id}">${b.h2}</a></li>`).join("\n")}
+</ol>
+</nav>
 </div>
-</footer>
-</body>
-</html>
-`;
+<nav class="guide-more" aria-labelledby="more-h">
+<h2 id="more-h">${t.g.more}</h2>
+<ul>
+${GUIDES.filter((k) => k !== key).map((k) => `<li><a href="${pathOf(t.lang, k)}"><b>${t.g.pages[k].h1}</b><span>${t.g.pages[k].description}</span></a></li>`).join("\n")}
+</ul>
+</nav>
+</div>
+</main>`;
+  return shell(t, key, all, head(t, key, g.title, g.description, guideLd(t, key)), main);
 }
 
 function notFound(all) {
@@ -529,11 +693,13 @@ function notFound(all) {
 <div class="wrap">
 <p class="lost-n" aria-hidden="true">404</p>
 <h1>This page is not here.</h1>
-<p class="lead">The address may be mistyped, or the page has moved. SysWatch itself is one page, in five languages.</p>
+<p class="lead">The address may be mistyped, or the page has moved. Try the home page, in any of five languages, or one of the guides.</p>
 <ul class="langs">
-${all.map((o) => `<li><a href="${o.path}" hreflang="${o.lang}" lang="${o.lang}">SysWatch, ${o.name}</a></li>`).join("\n")}
+${all.map((o) => `<li><a href="${pathOf(o.lang, "home")}" hreflang="${o.lang}" lang="${o.lang}">SysWatch, ${o.name}</a></li>`).join("\n")}
 </ul>
-<p class="more"><a href="${LINKS.guide}">${t.footer.guide}</a></p>
+<ul class="langs">
+${GUIDES.map((k) => `<li><a href="${pathOf(t.lang, k)}">${t.g.nav[k]}</a></li>`).join("\n")}
+</ul>
 </div>
 </main>
 </body>
@@ -541,19 +707,27 @@ ${all.map((o) => `<li><a href="${o.path}" hreflang="${o.lang}" lang="${o.lang}">
 `;
 }
 
-const all = LANGS.map((l) => fill(content[l], l));
-const out = (name, text) => writeFileSync(join(ROOT, name), text);
-for (const t of all) out(file(t), versioned(external(page(t, all))));
+// ---- Write everything -----------------------------------------------------------------
+
+const all = LANGS.map((l) => ({ ...fill(content[l], l), g: fill(guides[l], l) }));
+const out = (name, body) => {
+  mkdirSync(dirname(join(ROOT, name)), { recursive: true });
+  writeFileSync(join(ROOT, name), body);
+};
+for (const t of all) {
+  out(fileOf(pathOf(t.lang, "home")), versioned(external(homePage(t, all))));
+  for (const key of GUIDES) out(fileOf(pathOf(t.lang, key)), versioned(external(guidePage(t, key, all))));
+}
 out("404.html", versioned(external(notFound(all))));
 
 out("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${all.map((t) => `<url>
-<loc>${url(t)}</loc>
+${KEYS.flatMap((key) => LANGS.map((lang) => `<url>
+<loc>${abs(pathOf(lang, key))}</loc>
 <lastmod>${today}</lastmod>
-${all.map((o) => `<xhtml:link rel="alternate" hreflang="${o.lang}" href="${url(o)}"/>`).join("\n")}
-<xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}/"/>
-</url>`).join("\n")}
+${LANGS.map((l) => `<xhtml:link rel="alternate" hreflang="${l}" href="${abs(pathOf(l, key))}"/>`).join("\n")}
+<xhtml:link rel="alternate" hreflang="x-default" href="${abs(pathOf(LANGS[0], key))}"/>
+</url>`)).join("\n")}
 </urlset>
 `);
 
@@ -593,17 +767,21 @@ SysWatch is two free apps made by DevLune, a software studio in Hyderabad, India
 - App languages: English, German, French, Spanish, Russian. Community translations are welcome: one text file per language, and a merged translation reaches the app without an app update.
 - Price: free on both sides.
 
+## Guides
+
+Each guide is also in German, French, Spanish and Russian, under /de, /fr, /es and /ru.
+
+${GUIDES.map((k) => `- [${text(en.g.pages[k].h1)}](${abs(pathOf("en", k))}): ${text(en.g.pages[k].description)}`).join("\n")}
+
 ## Links
 
 - [Website](${ORIGIN}/): this site, also in ${all.slice(1).map((t) => `[${t.name}](${url(t)})`).join(", ")}
 - [Download for Windows](${LINKS.win})
 - [SysWatch on Google Play](${LINKS.play})
-- [Download and setup guide](${LINKS.guide})
 - [All releases and changelog](${LINKS.releases})
-- [Tailscale guide](${LINKS.tailscale})
-- [Translations](${LINKS.translations})
+- [Translations folder](${LINKS.translations})
 - [Privacy policy](${LINKS.privacy}) and [terms](${LINKS.terms})
 - [DevLune](${LINKS.devlune})
 `);
 
-console.log(`built ${all.length} pages, 404, sitemap, robots, llms.txt, manifest (${hashes.size} versioned assets)`);
+console.log(`built ${all.length * KEYS.length} pages (${KEYS.join(", ")} in ${LANGS.join(", ")}), 404, sitemap, robots, llms.txt, manifest (${hashes.size} versioned assets)`);

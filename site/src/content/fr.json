@@ -94,7 +94,7 @@
       { "name": "Tailscale", "tag": "Privé, de partout", "vals": ["Partout", "Environ cinq minutes, une seule fois", "Instantané, directement depuis le PC", "Par votre propre liaison privée Tailscale"], "note": "Tailscale chiffre la liaison. C'est une application distincte, avec une offre personnelle gratuite." }
     ],
     "foot": "Vous hésitez ? Choisissez Local si le téléphone reste le plus souvent près du PC. Local et Tailscale nécessitent la dernière version des deux applications.",
-    "guide": "Guide Tailscale (en anglais)"
+    "guide": "Guide Tailscale"
   },
   "setup": {
     "kicker": "Installation",
@@ -106,7 +106,7 @@
       { "t": "Installez sur votre téléphone", "d": "Téléchargez SysWatch sur Google Play et ouvrez-le." },
       { "t": "Scannez le code", "d": "Ouvrez l'association (Pairing) sur le PC et scannez le code QR avec le téléphone." }
     ],
-    "guide": "Lire le guide d'installation complet (en anglais)",
+    "guide": "Lire le guide d'installation",
     "releases": "Toutes les versions sur GitHub"
   },
   "privacy": {
@@ -128,14 +128,14 @@
     "h2": "Questions fréquentes",
     "items": [
       { "q": "SysWatch est-il gratuit ?", "a": "Oui. SysWatch est gratuit sur le téléphone comme sur le PC, sans publicité et sans compte. S'il mérite sa place sur votre bureau, vous pouvez <a href=\"{sponsor}\">soutenir SysWatch sur GitHub</a>." },
-      { "q": "Fonctionne-t-il hors de chez moi ?", "a": "Oui, avec deux des trois modes de connexion. Le cloud par DevLune fonctionne partout où il y a Internet, sans rien configurer. Tailscale est instantané et privé de partout, après environ cinq minutes de configuration. Le mode local fonctionne sur le même Wi-Fi." },
+      { "q": "Fonctionne-t-il hors de chez moi ?", "a": "Oui, avec deux des trois modes de connexion. Le cloud par DevLune fonctionne partout où il y a Internet, sans rien configurer. Tailscale est instantané et privé de partout, après environ cinq minutes de configuration avec le <a href=\"{tailscale}\">guide Tailscale</a>. Le mode local fonctionne sur le même Wi-Fi." },
       { "q": "Faut-il créer un compte ?", "a": "Non. Un code d'association de 6 caractères est le seul lien entre le téléphone et le PC. Vous scannez un code QR et il n'y a rien à saisir." },
       { "q": "Que peut faire le téléphone sur mon PC ?", "a": "Rien. SysWatch fonctionne en lecture seule : le téléphone voit les mesures et ne peut rien contrôler, modifier ni exécuter sur votre PC." },
       { "q": "Quels PC sont pris en charge ?", "a": "SysWatch fonctionne aujourd'hui sous Windows : Windows 10 et Windows 11, 64 bits. L'application mobile demande Android 7.0 ou une version ultérieure." },
-      { "q": "Pourquoi Windows affiche-t-il un avertissement à l'installation ?", "a": "Le programme d'installation n'est pas encore signé numériquement : Windows SmartScreen affiche donc « Windows a protégé votre ordinateur ». Choisissez « Informations complémentaires », puis « Exécuter quand même ». Le <a href=\"{guide}\">guide de téléchargement et d'installation de SysWatch</a> (en anglais) montre chaque écran." },
+      { "q": "Pourquoi Windows affiche-t-il un avertissement à l'installation ?", "a": "Le programme d'installation n'est pas encore signé numériquement : Windows SmartScreen affiche donc « Windows a protégé votre ordinateur ». Choisissez « Informations complémentaires », puis « Exécuter quand même ». Le <a href=\"{guide}\">guide d'installation de SysWatch</a> détaille chaque étape." },
       { "q": "Affiche-t-il la température du CPU ?", "a": "Oui, lorsque votre PC la communique. SysWatch affiche la température du CPU et du GPU à côté de la charge, et les cartes graphiques NVIDIA sont lues directement. La température du CPU dépend de ce que le PC communique, et SysWatch n'affiche jamais une mesure que votre PC n'envoie pas." },
       { "q": "Dans quelles langues est-il disponible ?", "a": "L'application Android est disponible en anglais, allemand, français, espagnol et russe." },
-      { "q": "Comment ajouter ma langue ?", "a": "Les traductions de la communauté sont les bienvenues, sans rien programmer : chaque langue tient dans un fichier texte. Dans le <a href=\"{translations}\">dossier translations du dépôt SysWatch sur GitHub</a>, copiez en.xml, traduisez-le et ouvrez une pull request. Une traduction acceptée arrive d'elle-même dans l'application, sans mise à jour." },
+      { "q": "Comment ajouter ma langue ?", "a": "Les traductions de la communauté sont les bienvenues, sans rien programmer : chaque langue tient dans un fichier texte. Dans le <a href=\"{translations}\">dossier translations du dépôt SysWatch sur GitHub</a>, copiez en.xml, traduisez-le et ouvrez une pull request. Une traduction acceptée arrive d'elle-même dans l'application, sans mise à jour. Le <a href=\"{translate}\">guide de traduction</a> détaille chaque étape et les cinq règles." },
       { "q": "Mes données sont-elles envoyées quelque part ?", "a": "Cela dépend de la connexion choisie. En mode local, les mesures ne quittent jamais votre réseau. Avec Tailscale, elles passent par votre propre liaison privée et chiffrée. Avec le cloud par DevLune, les mesures et le nom du téléphone transitent par le relais de DevLune. Les noms des programmes en cours ne sont envoyés que si vous l'activez." }
     ]
   },
@@ -143,15 +143,14 @@
     "kicker": "Traductions",
     "h2": "Aidez à traduire SysWatch",
     "p": "L'application Android existe en anglais, allemand, français, espagnol et russe. Les traductions de la communauté sont les bienvenues : ajoutez votre langue, ou corrigez une ligne qui sonne faux dans la vôtre. Une traduction acceptée arrive d'elle-même dans l'application, sans mise à jour.",
-    "cta": "Ouvrir le dossier translations sur GitHub"
+    "cta": "Ouvrir le dossier translations sur GitHub",
+    "guide": "Lire le guide de traduction"
   },
   "footer": {
     "made": "Conçu par <a href=\"{devlune}\">DevLune</a>, un studio de développement à Hyderabad.",
     "get": "Obtenir SysWatch",
     "help": "Aide",
     "studio": "DevLune",
-    "guide": "Guide de téléchargement et d'installation (en anglais)",
-    "tailscale": "Guide Tailscale (en anglais)",
     "issues": "Signaler un problème sur GitHub",
     "discord": "Poser une question sur Discord",
     "site": "Site du studio DevLune",

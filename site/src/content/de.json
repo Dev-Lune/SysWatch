@@ -94,7 +94,7 @@
       { "name": "Tailscale", "tag": "Privat, von überall", "vals": ["Überall", "Etwa fünf Minuten, einmalig", "Ohne Verzögerung, direkt vom PC", "Über deine eigene private Tailscale-Verbindung"], "note": "Tailscale verschlüsselt die Verbindung. Es ist eine eigene App mit kostenlosem Tarif für Privatnutzer." }
     ],
     "foot": "Unsicher? Nimm Lokal, wenn das Handy meist in der Nähe des PCs liegt. Lokal und Tailscale brauchen die neueste Version beider Apps.",
-    "guide": "Tailscale-Anleitung (Englisch)"
+    "guide": "Tailscale-Anleitung"
   },
   "setup": {
     "kicker": "Einrichtung",
@@ -106,7 +106,7 @@
       { "t": "Auf dem Handy installieren", "d": "Hol dir SysWatch bei Google Play und öffne die App." },
       { "t": "Code scannen", "d": "Öffne auf dem PC die Kopplung (Pairing) und scanne den QR-Code mit dem Handy." }
     ],
-    "guide": "Die ganze Anleitung lesen (Englisch)",
+    "guide": "Installationsanleitung lesen",
     "releases": "Alle Versionen auf GitHub"
   },
   "privacy": {
@@ -128,14 +128,14 @@
     "h2": "Häufige Fragen",
     "items": [
       { "q": "Ist SysWatch kostenlos?", "a": "Ja. SysWatch ist auf dem Handy und auf dem PC kostenlos, ohne Werbung und ohne Konto. Wenn es sich einen Platz auf deinem Schreibtisch verdient hat, kannst du <a href=\"{sponsor}\">SysWatch auf GitHub unterstützen</a>." },
-      { "q": "Funktioniert es auch unterwegs?", "a": "Ja, mit zwei der drei Verbindungsarten. Die Cloud von DevLune funktioniert überall mit Internet und braucht keine Einrichtung. Tailscale ist ohne Verzögerung und privat von überall nutzbar, nach etwa fünf Minuten Einrichtung. Lokal funktioniert im selben WLAN." },
+      { "q": "Funktioniert es auch unterwegs?", "a": "Ja, mit zwei der drei Verbindungsarten. Die Cloud von DevLune funktioniert überall mit Internet und braucht keine Einrichtung. Tailscale ist ohne Verzögerung und privat von überall nutzbar, nach etwa fünf Minuten Einrichtung mit der <a href=\"{tailscale}\">Tailscale-Anleitung</a>. Lokal funktioniert im selben WLAN." },
       { "q": "Brauche ich ein Konto?", "a": "Nein. Ein sechsstelliger Kopplungscode ist das Einzige, was Handy und PC verbindet. Du scannst einen QR-Code und musst nichts eintippen." },
       { "q": "Was kann das Handy auf meinem PC tun?", "a": "Nichts. SysWatch liest nur: Das Handy kann Werte sehen, aber auf deinem PC nichts steuern, verändern oder ausführen." },
       { "q": "Welche PCs werden unterstützt?", "a": "SysWatch läuft derzeit unter Windows: Windows 10 und Windows 11, 64 Bit. Die Handy-App braucht Android 7.0 oder neuer." },
-      { "q": "Warum warnt Windows vor dem Installationsprogramm?", "a": "Das Installationsprogramm ist noch nicht code-signiert, deshalb zeigt Windows SmartScreen „Der Computer wurde durch Windows geschützt“. Wähle „Weitere Informationen“ und dann „Trotzdem ausführen“. Die <a href=\"{guide}\">Download- und Einrichtungsanleitung für SysWatch</a> (auf Englisch) zeigt jeden Bildschirm." },
+      { "q": "Warum warnt Windows vor dem Installationsprogramm?", "a": "Das Installationsprogramm ist noch nicht code-signiert, deshalb zeigt Windows SmartScreen „Der Computer wurde durch Windows geschützt“. Wähle „Weitere Informationen“ und dann „Trotzdem ausführen“. Die <a href=\"{guide}\">Installationsanleitung für SysWatch</a> führt durch jeden Schritt." },
       { "q": "Zeigt es die CPU-Temperatur an?", "a": "Ja, wenn dein PC sie meldet. SysWatch zeigt CPU- und GPU-Temperatur neben der Auslastung, NVIDIA-Grafikkarten werden direkt ausgelesen. Die CPU-Temperatur hängt davon ab, was dein PC meldet, und SysWatch zeigt nie einen Wert, den dein PC nicht sendet." },
       { "q": "In welchen Sprachen gibt es die App?", "a": "Die Android-App gibt es auf Englisch, Deutsch, Französisch, Spanisch und Russisch." },
-      { "q": "Wie füge ich meine Sprache hinzu?", "a": "Übersetzungen aus der Community sind willkommen, und programmieren musst du dafür nicht: Jede Sprache ist eine Textdatei. Kopiere im <a href=\"{translations}\">Ordner translations des SysWatch-Repositorys auf GitHub</a> die Datei en.xml, übersetze sie und eröffne einen Pull Request. Eine angenommene Übersetzung kommt von selbst in der App an, ohne App-Update." },
+      { "q": "Wie füge ich meine Sprache hinzu?", "a": "Übersetzungen aus der Community sind willkommen, und programmieren musst du dafür nicht: Jede Sprache ist eine Textdatei. Kopiere im <a href=\"{translations}\">Ordner translations des SysWatch-Repositorys auf GitHub</a> die Datei en.xml, übersetze sie und eröffne einen Pull Request. Eine angenommene Übersetzung kommt von selbst in der App an, ohne App-Update. Die <a href=\"{translate}\">Übersetzungsanleitung</a> erklärt jeden Schritt und die fünf Regeln." },
       { "q": "Werden meine Daten irgendwohin gesendet?", "a": "Das hängt von der gewählten Verbindung ab. Im lokalen Modus verlassen die Werte dein Netzwerk nie. Über Tailscale laufen sie durch deine eigene private, verschlüsselte Verbindung. Mit der Cloud von DevLune laufen die Werte und der Name deines Handys über den Relay-Server von DevLune. Die Namen laufender Programme werden nur gesendet, wenn du das einschaltest." }
     ]
   },
@@ -143,15 +143,14 @@
     "kicker": "Übersetzungen",
     "h2": "Hilf mit, SysWatch zu übersetzen",
     "p": "Die Android-App gibt es auf Englisch, Deutsch, Französisch, Spanisch und Russisch. Übersetzungen aus der Community sind willkommen: Ergänze deine Sprache oder verbessere eine Zeile, die in deiner Sprache schief klingt. Eine angenommene Übersetzung kommt von selbst in der App an, ohne App-Update.",
-    "cta": "Den Ordner translations auf GitHub öffnen"
+    "cta": "Den Ordner translations auf GitHub öffnen",
+    "guide": "Übersetzungsanleitung lesen"
   },
   "footer": {
     "made": "Entwickelt von <a href=\"{devlune}\">DevLune</a>, einem Softwarestudio in Hyderabad.",
     "get": "SysWatch holen",
     "help": "Hilfe",
     "studio": "DevLune",
-    "guide": "Download- und Einrichtungsanleitung (Englisch)",
-    "tailscale": "Tailscale-Anleitung (Englisch)",
     "issues": "Problem auf GitHub melden",
     "discord": "Auf Discord fragen",
     "site": "Website des Studios DevLune",

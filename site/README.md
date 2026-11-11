@@ -1,7 +1,7 @@
 # SysWatch website
 
-The site served at <https://syswatch.devlune.in>. Static files only: five language pages,
-one stylesheet, no JavaScript, no cookies, no trackers, nothing loaded from another host.
+The site served at <https://syswatch.devlune.in>. Static files only: a home page and three
+guides (install, Tailscale, translation) in five languages, one stylesheet, no JavaScript, no cookies, no trackers, nothing loaded from another host.
 What is in this folder is what gets served, so Vercel needs no build.
 
 ## Deployed on Cloudflare (live)
@@ -39,13 +39,15 @@ Console and Bing Webmaster Tools.
 
 | Path | What it is |
 |---|---|
-| `index.html`, `de.html`, `fr.html`, `es.html`, `ru.html`, `404.html` | Generated pages. Do not edit by hand. |
+| `index.html`, `de.html`, `fr.html`, `es.html`, `ru.html`, `404.html` | Generated home pages and the 404. Do not edit by hand. |
+| `install.html`, `tailscale.html`, `translate.html`, `de/`, `fr/`, `es/`, `ru/` | Generated guides: `/install` is `install.html`, `/de/install` is `de/install.html`. |
 | `sitemap.xml`, `robots.txt`, `llms.txt`, `site.webmanifest` | Generated too. |
 | `assets/css/site.css` | The one stylesheet, written by hand. |
 | `assets/fonts`, `assets/img`, `assets/og` | Self-hosted fonts (OFL, see `assets/fonts/OFL.txt`), screenshots as AVIF and WebP, social cards. |
 | `vercel.json` | Clean URLs, redirects, cache and security headers. |
 | `src/build.mjs` | The generator: one template, all pages. |
-| `src/content/<lang>.json` | Every word on the site, one file per language. |
+| `src/content/<lang>.json` | Every word on the home page, one file per language. |
+| `src/guides/<lang>.json` | Every word in the three guides, one file per language. |
 | `src/check.mjs` | Checks the generated output. |
 | `src/images.py`, `src/og.mjs` | Re-encode screenshots and icons; render the social cards. |
 
@@ -65,11 +67,17 @@ Commit the generated files together with the change. To look at the result local
 
 Things worth knowing before editing:
 
-- Text may contain `<a href="{guide}">`, `<em>` and `<b>`, nothing else. The link names
-  (`{win}`, `{play}`, `{guide}`, `{translations}` and so on) are the `LINKS` table at the
-  top of `src/build.mjs`.
-- The questions and the three setup steps are also written into the page's structured
-  data, word for word. That happens by itself; the checker fails if they ever differ.
+- Text may contain `<a href="{...}">`, `<em>`, `<b>` and `<code>`, nothing else. The link
+  names (`{win}`, `{play}`, `{translations}` and so on) are the `LINKS` table at the top of
+  `src/build.mjs`; `{guide}`, `{tailscale}` and `{translate}` become the guide pages in the
+  same language.
+- A guide is a list of blocks: `h2` (with an `id`), `h3`, `p`, `note`, `list`, `steps`
+  (with an `id`; a step can carry a `code` sample), `table`, `code`, `actions` (the two
+  download buttons). `code` samples are printed exactly as written, in every language.
+- The home page questions and setup steps, and the steps of the install and Tailscale
+  guides, are also written into the structured data (FAQPage, HowTo), word for word. That
+  happens by itself; the checker fails if they ever differ. Guides also carry a
+  BreadcrumbList (SysWatch, then the guide).
 - Titles stay under 60 characters and descriptions between 140 and 160. The checker
   enforces both.
 - No inline `style` attributes and no scripts. The Content-Security-Policy refuses them,
@@ -83,7 +91,7 @@ Things worth knowing before editing:
 Edit one constant at the top of `src/build.mjs`:
 
 ```js
-const RELEASE = { version: "0.2.0", sizeMb: 3.5, date: "2026-11-10" };
+const RELEASE = { version: "0.2.1", sizeMb: 3.5, date: "2026-11-11" };
 ```
 
 The download link, the version line, the structured data and `llms.txt` all follow from
@@ -96,12 +104,12 @@ goes live.
 
 ## Add a language
 
-1. Copy `src/content/en.json` to `src/content/<code>.json` and translate the values. Set
-   `lang`, `locale`, `path` (`/<code>`) and `name` (the language's own name). `unit` is the
-   megabyte abbreviation used in that language.
-2. Add the code to `LANGS` in `src/build.mjs` and to `PAGES` in `src/check.mjs`.
-3. Run the build and the check. The new page, its hreflang links on every other page and
-   its sitemap entry are generated.
+1. Copy `src/content/en.json` to `src/content/<code>.json` and `src/guides/en.json` to
+   `src/guides/<code>.json`, and translate the values. Set `lang`, `locale` and `name`
+   (the language's own name). `unit` is the megabyte abbreviation used in that language.
+2. Add the code to `LANGS` in `src/build.mjs` and in `src/check.mjs`.
+3. Run the build and the check. The new pages, their hreflang links on every other page
+   and their sitemap entries are generated.
 4. Optional: render a social card with `node src/og.mjs <path to node_modules/playwright>`.
    Without one, the page uses the English card.
 
@@ -109,8 +117,8 @@ The fonts cover Latin, Latin Extended and Cyrillic. Bricolage Grotesque and Inst
 Sans have no Cyrillic, so the Russian page is set in Onest (see the `:lang(ru)` rule in
 `site.css`). A language in another script needs a font added the same way.
 
-The German, French, Spanish and Russian pages were machine written from the store
-listing's wording and have not been read by a native speaker. Corrections are welcome.
+The German, French, Spanish and Russian pages and guides were machine written from the
+store listing's and the repository docs' wording and have not been read by a native speaker. Corrections are welcome.
 
 ## Replace a screenshot
 

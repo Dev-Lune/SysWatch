@@ -106,7 +106,7 @@
       { "t": "Install on your phone", "d": "Get SysWatch on Google Play and open it." },
       { "t": "Scan the code", "d": "Open Pairing on the PC and scan the QR code with the phone." }
     ],
-    "guide": "Read the full setup guide",
+    "guide": "Read the install guide",
     "releases": "All releases on GitHub"
   },
   "privacy": {
@@ -128,14 +128,14 @@
     "h2": "Questions people ask",
     "items": [
       { "q": "Is SysWatch free?", "a": "Yes. SysWatch is free on the phone and on the PC, with no ads and no account. If it earns a place on your desk, you can <a href=\"{sponsor}\">sponsor SysWatch on GitHub</a>." },
-      { "q": "Does it work away from home?", "a": "Yes, in two of the three connection modes. Cloud by DevLune works from anywhere with internet and needs no setup. Tailscale is instant and private from anywhere, after about five minutes of setup. Local works on the same Wi-Fi." },
+      { "q": "Does it work away from home?", "a": "Yes, in two of the three connection modes. Cloud by DevLune works from anywhere with internet and needs no setup. Tailscale is instant and private from anywhere, after about five minutes of setup with the <a href=\"{tailscale}\">Tailscale guide</a>. Local works on the same Wi-Fi." },
       { "q": "Does it need an account?", "a": "No. A 6-character pairing code is the only thing linking phone and PC. You scan one QR code and there is nothing to type." },
       { "q": "What can the phone do to my PC?", "a": "Nothing. SysWatch is read only: the phone can see readings, and it cannot control, change or run anything on your PC." },
       { "q": "Which PCs are supported?", "a": "SysWatch runs on Windows today: Windows 10 and Windows 11, 64-bit. The phone app needs Android 7.0 or newer." },
-      { "q": "Why does Windows warn about the installer?", "a": "The installer is not code signed yet, so Windows SmartScreen shows “Windows protected your PC”. Choose More info, then Run anyway. The <a href=\"{guide}\">SysWatch download and setup guide</a> shows every screen." },
+      { "q": "Why does Windows warn about the installer?", "a": "The installer is not code signed yet, so Windows SmartScreen shows “Windows protected your PC”. Choose More info, then Run anyway. The <a href=\"{guide}\">SysWatch install guide</a> walks through every step." },
       { "q": "Does it show CPU temperature?", "a": "Yes, when your PC reports it. SysWatch shows CPU and GPU temperature next to load, and NVIDIA graphics cards are read directly. CPU temperature depends on what your PC reports, and SysWatch never shows a reading your PC does not send." },
       { "q": "Which languages is it in?", "a": "The Android app is in English, German, French, Spanish and Russian." },
-      { "q": "How do I add my language?", "a": "Community translations are welcome, and no programming is needed: it is one text file per language. In the <a href=\"{translations}\">translations folder of the SysWatch repository on GitHub</a>, copy en.xml, translate it and open a pull request. A merged translation reaches the app by itself, with no app update." },
+      { "q": "How do I add my language?", "a": "Community translations are welcome, and no programming is needed: it is one text file per language. In the <a href=\"{translations}\">translations folder of the SysWatch repository on GitHub</a>, copy en.xml, translate it and open a pull request. A merged translation reaches the app by itself, with no app update. The <a href=\"{translate}\">translation guide</a> walks through each step and the five rules." },
       { "q": "Is my data sent anywhere?", "a": "That depends on the connection you pick. In Local mode readings never leave your network. Over Tailscale they travel through your own private, encrypted link. With Cloud by DevLune, readings and your phone's name pass through DevLune's relay. Running program names are not sent unless you switch that on." }
     ]
   },
@@ -143,15 +143,14 @@
     "kicker": "Translations",
     "h2": "Help translate SysWatch",
     "p": "The Android app ships in English, German, French, Spanish and Russian. Community translations are welcome: add your language, or fix a line that reads wrong in yours. A merged translation reaches the app by itself, with no app update.",
-    "cta": "Open the translations folder on GitHub"
+    "cta": "Open the translations folder on GitHub",
+    "guide": "Read the translation guide"
   },
   "footer": {
     "made": "Made by <a href=\"{devlune}\">DevLune</a>, a software studio in Hyderabad.",
     "get": "Get SysWatch",
     "help": "Help",
     "studio": "DevLune",
-    "guide": "Download and setup guide",
-    "tailscale": "Tailscale guide",
     "issues": "Report a problem on GitHub",
     "discord": "Ask on Discord",
     "site": "DevLune studio website",

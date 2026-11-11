@@ -13,7 +13,7 @@ it and does not need your Tailscale password.
 2. **Phone:** install Tailscale from Google Play and sign in with the **same account**.
 3. Check both show **Connected** in Tailscale. Each device now has an address that
    starts with `100.`.
-4. **SysWatch on the PC:** open Settings, set the connection to **Local**.
+4. **SysWatch on the PC:** choose **Tailscale** on the first run, or in Settings (Local works too: Tailscale uses the same direct connection).
 5. Open **Pairing**. Under addresses you should see one labelled **Tailscale**.
 6. **SysWatch on the phone:** scan the QR code.
 

@@ -229,8 +229,8 @@ This repository is SysWatch's public home: releases, the changelog and these doc
 - [Changelog](./CHANGELOG.md)
 - [Release notes](./RELEASE_NOTES.md)
 - [Feature list](./FEATURES.md)
-- [Install guide](./docs/INSTALL.md) · [Tailscale guide](./docs/TAILSCALE.md)
-- [Translate SysWatch](./translations/README.md)
+- [Install guide](https://syswatch.devlune.in/install) · [Tailscale guide](https://syswatch.devlune.in/tailscale)
+- [Translate SysWatch](https://syswatch.devlune.in/translate)
 
 ## Support SysWatch
 

@@ -1,0 +1,141 @@
+{
+  "nav": { "label": "Anleitungen", "install": "Installationsanleitung", "tailscale": "Tailscale-Anleitung", "translate": "Übersetzungsanleitung" },
+  "crumbs": "Pfadnavigation",
+  "toc": "Auf dieser Seite",
+  "more": "Weitere Anleitungen",
+  "pages": {
+    "install": {
+      "title": "SysWatch installieren und mit dem Handy koppeln | SysWatch",
+      "description": "Installiere SysWatch unter Windows 10 oder 11, komm an der SmartScreen-Warnung vorbei, wähle Lokal, Cloud oder Tailscale und kopple dein Handy per QR-Code.",
+      "crumb": "Installationsanleitung",
+      "kicker": "Installationsanleitung",
+      "h1": "SysWatch installieren und das Handy koppeln",
+      "lead": "SysWatch besteht aus zwei Teilen: der Desktop-App auf dem PC, den du im Blick behalten willst, und der Android-App auf deinem Handy. Installiere zuerst die Desktop-App, danach koppelst du das Handy.",
+      "blocks": [
+        { "h2": "Die Desktop-App herunterladen", "id": "download" },
+        { "p": "SysWatch läuft unter Windows 10 und Windows 11, 64 Bit. Das Installationsprogramm heißt <code>SysWatch_{version}_x64-setup.exe</code> und ist etwa {size} groß. Die Handy-App braucht Android 7.0 oder neuer." },
+        { "actions": true },
+        { "p": "Alle Versionen mit ihren Versionshinweisen findest du auf der <a href=\"{releases}\">Release-Seite von SysWatch auf GitHub</a>. Für ein Update installierst du die neue Version einfach über die alte: Kopplungscode und Einstellungen bleiben erhalten." },
+        { "h2": "Unter Windows installieren", "id": "windows" },
+        { "steps": [
+          "Lade <code>SysWatch_{version}_x64-setup.exe</code> herunter und starte die Datei.",
+          "Windows SmartScreen zeigt eventuell „Der Computer wurde durch Windows geschützt“. Wähle <b>Weitere Informationen</b> und dann <b>Trotzdem ausführen</b>. Das Installationsprogramm ist noch nicht code-signiert.",
+          "Schließ die Installation ab und öffne SysWatch. Die App sitzt im Infobereich der Taskleiste.",
+          "Wähle, wie sich dein Handy verbindet. Beim ersten Start zeigt die App drei Karten: Local, Cloud by DevLune und Tailscale. Wähle eine, folge den angezeigten Schritten, und am Ende steht der Kopplungscode."
+        ], "id": "windows" },
+        { "h2": "Wählen, wie sich das Handy verbindet", "id": "connect" },
+        { "p": "SysWatch fragt das beim ersten Start und fragt nie nach Serverdaten. Du kannst die Antwort später in den Einstellungen (Settings) ändern, wo dieselben drei Möglichkeiten als Karten erscheinen. Die Desktop-App ist auf Englisch, deshalb stehen ihre Bezeichnungen hier so, wie du sie dort siehst." },
+        { "table": {
+          "head": ["Vergleich", "Lokal (Local)", "Cloud von DevLune", "Tailscale"],
+          "rows": [
+            ["Funktioniert", "Im selben WLAN", "Überall mit Internet", "Überall"],
+            ["Braucht", "Nichts weiter", "Internet auf PC und Handy", "Tailscale auf PC und Handy, einmal eingerichtet"],
+            ["Tempo", "Ohne Verzögerung, direkt vom PC", "Etwa 2 Sekunden pro Aktualisierung", "Ohne Verzögerung, direkt vom PC"],
+            ["Wohin die Werte gehen", "Sie verlassen dein Netzwerk nie", "Über den Relay-Server von DevLune", "Über deine eigene private Tailscale-Verbindung"]
+          ]
+        } },
+        { "p": "Unsicher? Nimm <b>Lokal</b>, wenn das Handy in der Nähe des PCs liegt, und die <b>Cloud von DevLune</b>, wenn du deinen PC von unterwegs prüfst und Tailscale nicht einrichten willst. Lokal und Tailscale brauchen die neueste Version beider Apps." },
+        { "note": "Der lokale Modus nutzt einen einzigen Port, <b>47800</b>. Beim ersten Mal fragt die Windows-Firewall, ob SysWatch in privaten Netzwerken kommunizieren darf: Wähle <b>Zulassen</b>. Der lokale Modus ist nicht verschlüsselt, und der sechsstellige Kopplungscode ist das einzige Schloss. Nutze ihn also in Netzwerken, denen du vertraust: deinem WLAN zu Hause oder Tailscale, das alles selbst verschlüsselt." },
+        { "p": "Lokales Tempo auch unterwegs? Mit der <a href=\"{tailscale}\">Tailscale-Anleitung</a> dauert das etwa fünf Minuten." },
+        { "h2": "Das Handy koppeln", "id": "pair" },
+        { "steps": [
+          "Installiere <a href=\"{play}\">SysWatch aus Google Play</a> und öffne die App.",
+          "Öffne auf dem PC <b>Pairing</b>. Der erste Start endet dort von selbst. Ein QR-Code und ein sechsstelliger Code erscheinen.",
+          "Tippe auf dem Handy auf <b>Code auf deinem PC scannen</b> und richte die Kamera auf den QR-Code."
+        ], "id": "pair" },
+        { "p": "Das war’s. Der QR-Code enthält Modus, Adresse und Port, du musst also nichts eintippen." },
+        { "h2": "Wenn keine Verbindung zustande kommt", "id": "trouble" },
+        { "table": {
+          "head": ["Was du siehst", "Was du prüfen solltest"],
+          "rows": [
+            ["„PC in diesem Netzwerk nicht erreichbar“ im lokalen Modus", "Handy und PC sind im selben WLAN (nicht im Gast-WLAN, das Geräte voneinander trennt). Die Windows-Firewall hat SysWatch zugelassen. Die Desktop-App läuft."],
+            ["Verbindung zu Hause, aber nicht unterwegs", "Der lokale Modus braucht unterwegs Tailscale. Siehe die <a href=\"{tailscale}\">Tailscale-Anleitung</a>."],
+            ["„Code nicht gefunden“", "Der PC hat einen neuen Code erstellt. Öffne auf dem PC Pairing und scanne erneut."],
+            ["Hängt bei „Pausiert“", "Die Desktop-App ist pausiert. Öffne sie und drücke Resume."],
+            ["Port bereits belegt", "Ändere den Port in den Einstellungen (Settings) der Desktop-App und scanne dann den neuen QR-Code."]
+          ]
+        } },
+        { "p": "Kommst du nicht weiter? <a href=\"{issues}\">Melde ein Problem auf GitHub</a> oder <a href=\"{discord}\">frag auf Discord</a>." }
+      ]
+    },
+    "tailscale": {
+      "title": "Tailscale-Anleitung: den PC von überall sehen | SysWatch",
+      "description": "Richte Tailscale für SysWatch in etwa fünf Minuten ein: eine private, verschlüsselte Verbindung zwischen Handy und Windows-PC, damit Lokal auch unterwegs geht.",
+      "crumb": "Tailscale-Anleitung",
+      "kicker": "Tailscale-Anleitung",
+      "h1": "Den PC mit Tailscale von überall im Blick",
+      "lead": "Tailscale gibt deinem PC und deinem Handy eine private, verschlüsselte Verbindung, die von überall funktioniert, als wären beide im selben WLAN. Damit funktioniert der lokale Modus von SysWatch auch unterwegs: Werte ohne Verzögerung, nichts läuft über die SysWatch-Cloud.",
+      "blocks": [
+        { "p": "Tailscale ist ein eigenes Produkt mit einem kostenlosen Tarif für Privatnutzer. SysWatch enthält es nicht und braucht dein Tailscale-Passwort nicht." },
+        { "h2": "Einrichten, etwa fünf Minuten", "id": "setup" },
+        { "steps": [
+          "<b>PC:</b> Installiere Tailscale von <a href=\"https://tailscale.com/download\">tailscale.com/download</a> und melde dich an.",
+          "<b>Handy:</b> Installiere <a href=\"https://play.google.com/store/apps/details?id=com.tailscale.ipn\">Tailscale aus Google Play</a> und melde dich mit <b>demselben Konto</b> an.",
+          "Prüfe, dass beide in Tailscale <b>Connected</b> anzeigen. Jedes Gerät hat jetzt eine Adresse, die mit <code>100.</code> beginnt.",
+          "<b>SysWatch auf dem PC:</b> Wähle <b>Tailscale</b> als Verbindung, beim ersten Start oder später in den Einstellungen (Settings). Tailscale läuft über den lokalen Modus, ein PC, der schon auf Local steht, funktioniert also auch.",
+          "Öffne <b>Pairing</b>. Unter den Adressen sollte eine mit der Bezeichnung <b>Tailscale</b> stehen.",
+          "<b>SysWatch auf dem Handy:</b> Scanne den QR-Code."
+        ], "id": "setup" },
+        { "p": "Fertig. Zu Hause nutzt das Handy deine WLAN-Adresse. Unterwegs, mit eingeschaltetem Tailscale, wechselt es von selbst zur Tailscale-Adresse." },
+        { "h2": "Gut zu wissen", "id": "know" },
+        { "list": [
+          "Lass Tailscale auf dem Handy eingeschaltet, wenn du unterwegs bist. Ist es aus, zeigt SysWatch „PC in diesem Netzwerk nicht erreichbar“, bis du es wieder einschaltest.",
+          "Unter Android zählt Tailscale als VPN des Handys. Es kann immer nur ein VPN laufen.",
+          "Hast du schon vor der Installation von Tailscale gekoppelt, scanne den QR-Code erneut, damit das Handy die Tailscale-Adresse kennt.",
+          "Keine Tailscale-Adresse im Pairing-Fenster? Dann ist Tailscale auf dem PC nicht verbunden. Öffne es über den Infobereich, melde dich an und öffne Pairing erneut.",
+          "Der PC muss wach sein. Tailscale erreicht keinen Computer im Ruhezustand."
+        ] },
+        { "p": "Du installierst SysWatch zum ersten Mal? Fang mit der <a href=\"{guide}\">Installationsanleitung</a> an." }
+      ]
+    },
+    "translate": {
+      "title": "SysWatch in deine Sprache übersetzen | SysWatch",
+      "description": "Füge SysWatch deine Sprache hinzu oder verbessere eine Übersetzung: en.xml kopieren, übersetzen, Pull Request öffnen. Die App lädt sie danach von selbst.",
+      "crumb": "Übersetzungsanleitung",
+      "kicker": "Übersetzungsanleitung",
+      "h1": "SysWatch übersetzen",
+      "lead": "SysWatch spricht Englisch, Deutsch, Französisch, Spanisch und Russisch. Du kannst deine Sprache hinzufügen oder eine Formulierung in einer vorhandenen verbessern. Programmieren musst du nicht: Jede Sprache ist eine Textdatei.",
+      "blocks": [
+        { "note": "Sobald eine Übersetzung angenommen ist, <b>holt sich jede SysWatch-App sie von selbst</b>, innerhalb eines Tages oder sofort über Einstellungen, Sprache, Jetzt prüfen. Ein App-Update ist nicht nötig." },
+        { "h2": "Deine Sprache hinzufügen", "id": "add" },
+        { "steps": [
+          "<b>Forke</b> das <a href=\"{repo}\">SysWatch-Repository auf GitHub</a> (die Schaltfläche Fork oben rechts auf der GitHub-Seite).",
+          "Kopiere im <a href=\"{translations}\">Ordner translations</a> die Datei <b><code>en.xml</code></b> und benenne die Kopie nach deinem Sprachcode: <code>hi.xml</code> für Hindi, <code>pt-BR.xml</code> für brasilianisches Portugiesisch, <code>ja.xml</code> für Japanisch. Die <a href=\"https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes\">Liste der Sprachcodes</a> führt sie in der ersten Spalte.",
+          { "d": "<b>Übersetze den Text zwischen den Tags.</b> Alles innerhalb der Klammern <code>&lt; &gt;</code> bleibt, wie es ist.", "code": "<!-- English -->\n<string name=\"pair_scan\">Scan the code on your PC</string>\n\n<!-- Your file -->\n<string name=\"pair_scan\">अपने पीसी पर कोड स्कैन करें</string>" },
+          "<b>Öffne einen Pull Request.</b> Eine Prüfung läuft von selbst und sagt dir in klaren Worten, ob etwas zu korrigieren ist. Sobald sie grün ist, wird die Übersetzung geprüft und übernommen."
+        ], "id": "add" },
+        { "p": "Du musst nicht alles auf einmal fertig machen. Texte, die du weglässt, erscheinen auf Englisch, und die App zeigt, wie vollständig eine Sprache ist. Lass aber keinen Text leer: Lösche dann lieber die ganze Zeile." },
+        { "h2": "Eine vorhandene Übersetzung verbessern", "id": "fix" },
+        { "p": "Bearbeite die Datei der Sprache (<code>de.xml</code>, <code>fr.xml</code>, <code>es.xml</code>, <code>ru.xml</code>), ändere den Text und öffne einen Pull Request. Schreib in einem Satz, warum die neue Formulierung besser ist." },
+        { "h2": "Die Regeln, alle fünf", "id": "rules" },
+        { "h3": "1. Platzhalter behalten" },
+        { "p": "Dinge wie <code>%1$s</code> und <code>%2$d</code> sind Lücken, die die App füllt (ein Name, eine Zahl). Jeder Platzhalter aus dem Englischen muss in deinem Text vorkommen. Du darfst ihn dorthin verschieben, wo deine Grammatik ihn braucht: Dafür sind sie nummeriert." },
+        { "code": "<string name=\"settings_paired_with\">Paired with code %1$s</string>\n<string name=\"settings_paired_with\">Gekoppelt mit Code %1$s</string>" },
+        { "p": "Ein echtes Prozentzeichen neben Platzhaltern wird doppelt geschrieben: <code>%1$d%%</code> erscheint als <code>47%</code>." },
+        { "h3": "2. Vor einen Apostroph gehört ein Backslash" },
+        { "p": "<code>l\\'application</code>, nicht <code>l'application</code>. Schreib <code>&amp;amp;</code> für &amp; und <code>&amp;lt;</code> für &lt;." },
+        { "h3": "3. Namen und Einheiten nicht übersetzen" },
+        { "p": "SysWatch, DevLune, CPU, GPU, RAM, Wi-Fi, Tailscale, Google Play, Windows, Android und Einheiten wie MB, GB, GHz, °C bleiben, wie sie sind. Auch die Kunst-Zifferblätter (Horizon, Blocks, Bauhaus, Ink, Weave, Bloom, Type, Pixel) behalten ihre Namen." },
+        { "h3": "4. Pluralformen folgen deiner Sprache" },
+        { "p": "Englisch hat zwei Formen, <code>one</code> und <code>other</code>. Hat deine Sprache mehr (Russisch, Polnisch, Arabisch…), füge die Formen hinzu, die sie braucht:" },
+        { "code": "<plurals name=\"settings_import_done\">\n    <item quantity=\"one\">Импортировано %1$d правило.</item>\n    <item quantity=\"few\">Импортировано %1$d правила.</item>\n    <item quantity=\"many\">Импортировано %1$d правил.</item>\n    <item quantity=\"other\">Импортировано %1$d правила.</item>\n</plurals>" },
+        { "h3": "5. Kurz und schlicht bleiben" },
+        { "p": "Dieser Text steht auf Schaltflächen und kleinen Karten auf einem Handy. Nimm das Wort, das die Leute wirklich benutzen, statt des förmlichen. Keine langen Gedankenstriche: Nimm ein Komma, einen Doppelpunkt oder einen Punkt." },
+        { "p": "Die Zeilen, die in <code>en.xml</code> mit <code>&lt;!--</code> beginnen, sind Hinweise für dich: was eine Lücke enthält oder wo der Text erscheint. In deiner Datei musst du sie nicht behalten." },
+        { "p": "Ein Text ist besonders: <code>language_name</code> ist der Name deiner Sprache, in deiner Sprache geschrieben (Deutsch, Español, Русский, हिन्दी). So erscheint sie in der Sprachliste der App." },
+        { "h2": "Die Datei vor dem Senden prüfen", "id": "check" },
+        { "p": "Dieser Schritt ist freiwillig. Wenn du Python hast, führe im Ordner des Repositorys aus:" },
+        { "code": "python scripts/translations.py check translations" },
+        { "p": "Das gibt <code>ok</code> aus oder genau die Texte, die du korrigieren musst. Dieselbe Prüfung läuft bei deinem Pull Request." },
+        { "h2": "Was nach der Übernahme passiert", "id": "after" },
+        { "list": [
+          "<code>languages.json</code> im Ordner translations wird automatisch aktualisiert. Diese Liste liest die App.",
+          "Die Apps sehen einmal am Tag nach. Ein Handy, das deine Sprache nutzt, lädt die neue Datei, prüft jeden Text auf dem Gerät noch einmal (ein fehlerhafter Text wird übersprungen und auf Englisch gezeigt, ein Fehler kann die App also nie kaputt machen), speichert sie und zeigt sie an.",
+          "Sprachen, die nicht in die App eingebaut sind, erscheinen in der Sprachliste mit einem Download-Zeichen. Beliebte Sprachen werden mit der nächsten App-Version eingebaut."
+        ] },
+        { "h2": "Fragen", "id": "questions" },
+        { "p": "<a href=\"{issues}\">Eröffne ein Issue auf GitHub</a> oder <a href=\"{discord}\">frag auf Discord</a>. Danke, dass du hilfst, SysWatch in die Sprache der Leute zu bringen." }
+      ]
+    }
+  }
+}
