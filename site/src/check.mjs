@@ -146,17 +146,15 @@ for (const key of KEYS) for (const lang of LANGS) {
   for (const s of howto.step) if (s["@type"] === "HowToSection" && !html.includes(`>${s.name}</h2>`)) fail(f, `HowToSection "${s.name}" has no visible heading`);
 }
 
-// Sitemap: exactly the expected pages, each with the full alternate set.
+// Sitemap: exactly the expected pages, each with its date.
 const sitemap = read("sitemap.xml");
 const expected = KEYS.flatMap((key) => LANGS.map((lang) => urlOf(lang, key)));
 const locs = all(sitemap, /<loc>([^<]*)<\/loc>/g);
 if (JSON.stringify([...locs].sort()) !== JSON.stringify([...expected].sort())) fail("sitemap.xml", `lists ${locs.length} URLs, expected ${expected.length}`);
-if ((sitemap.match(/<xhtml:link /g) ?? []).length !== locs.length * (LANGS.length + 1)) fail("sitemap.xml", "alternate count");
-for (const [, block] of sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
-  const loc = one(block, /<loc>([^<]*)<\/loc>/);
-  const key = KEYS.find((k) => LANGS.some((l) => urlOf(l, k) === loc));
-  for (const l of LANGS) if (!block.includes(`hreflang="${l}" href="${urlOf(l, key)}"`)) fail("sitemap.xml", `${loc} lacks the ${l} alternate`);
-}
+// No XHTML-namespaced elements: they make browsers draw the sitemap as a page of run-on text.
+// The alternates are checked in each page's <head> above.
+if (/xhtml/.test(sitemap)) fail("sitemap.xml", "carries xhtml elements; keep it a plain urlset");
+if ((sitemap.match(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g) ?? []).length !== locs.length) fail("sitemap.xml", "every URL needs a lastmod date");
 if (!/^<\?xml[^>]*\?>\s*<urlset[^>]*>[\s\S]*<\/urlset>\s*$/.test(sitemap) || (sitemap.match(/<url>/g) ?? []).length !== (sitemap.match(/<\/url>/g) ?? []).length) fail("sitemap.xml", "not well formed");
 if (!read("robots.txt").includes(`Sitemap: ${ORIGIN}/sitemap.xml`)) fail("robots.txt", "sitemap line");
 for (const k of GUIDES) if (!read("llms.txt").includes(urlOf("en", k))) fail("llms.txt", `does not list ${urlOf("en", k)}`);

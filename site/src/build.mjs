@@ -676,14 +676,15 @@ for (const t of all) {
 }
 out("404.html", versioned(external(notFound(all))));
 
+// Plain sitemap: the language alternates are in every page's <head>, which is where search
+// engines read them. Putting xhtml:link elements here made browsers render the file as a web
+// page, a run-on wall of addresses and dates, in place of the XML tree.
 out("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${KEYS.flatMap((key) => LANGS.map((lang) => `<url>
-<loc>${abs(pathOf(lang, key))}</loc>
-<lastmod>${today}</lastmod>
-${LANGS.map((l) => `<xhtml:link rel="alternate" hreflang="${l}" href="${abs(pathOf(l, key))}"/>`).join("\n")}
-<xhtml:link rel="alternate" hreflang="x-default" href="${abs(pathOf(LANGS[0], key))}"/>
-</url>`)).join("\n")}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${KEYS.flatMap((key) => LANGS.map((lang) => `  <url>
+    <loc>${abs(pathOf(lang, key))}</loc>
+    <lastmod>${today}</lastmod>
+  </url>`)).join("\n")}
 </urlset>
 `);
 
