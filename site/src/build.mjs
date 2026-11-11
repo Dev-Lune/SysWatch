@@ -680,6 +680,7 @@ out("404.html", versioned(external(notFound(all))));
 // engines read them. Putting xhtml:link elements here made browsers render the file as a web
 // page, a run-on wall of addresses and dates, in place of the XML tree.
 out("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
+<!-- SysWatch: ${KEYS.length * LANGS.length} pages, ${LANGS.length} languages. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${KEYS.flatMap((key) => LANGS.map((lang) => `  <url>
     <loc>${abs(pathOf(lang, key))}</loc>

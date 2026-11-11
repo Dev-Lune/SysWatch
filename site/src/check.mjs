@@ -155,7 +155,7 @@ if (JSON.stringify([...locs].sort()) !== JSON.stringify([...expected].sort())) f
 // The alternates are checked in each page's <head> above.
 if (/xhtml/.test(sitemap)) fail("sitemap.xml", "carries xhtml elements; keep it a plain urlset");
 if ((sitemap.match(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g) ?? []).length !== locs.length) fail("sitemap.xml", "every URL needs a lastmod date");
-if (!/^<\?xml[^>]*\?>\s*<urlset[^>]*>[\s\S]*<\/urlset>\s*$/.test(sitemap) || (sitemap.match(/<url>/g) ?? []).length !== (sitemap.match(/<\/url>/g) ?? []).length) fail("sitemap.xml", "not well formed");
+if (!/^<\?xml[^>]*\?>\s*(?:<!--[\s\S]*?-->\s*)?<urlset[^>]*>[\s\S]*<\/urlset>\s*$/.test(sitemap) || (sitemap.match(/<url>/g) ?? []).length !== (sitemap.match(/<\/url>/g) ?? []).length) fail("sitemap.xml", "not well formed");
 if (!read("robots.txt").includes(`Sitemap: ${ORIGIN}/sitemap.xml`)) fail("robots.txt", "sitemap line");
 for (const k of GUIDES) if (!read("llms.txt").includes(urlOf("en", k))) fail("llms.txt", `does not list ${urlOf("en", k)}`);
 JSON.parse(read("site.webmanifest"));
