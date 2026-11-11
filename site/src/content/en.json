@@ -1,0 +1,162 @@
+{
+  "lang": "en",
+  "locale": "en_US",
+  "path": "/",
+  "name": "English",
+  "unit": "MB",
+  "title": "PC monitor on your phone: CPU, GPU, RAM live | SysWatch",
+  "description": "SysWatch shows your Windows PC's CPU, GPU, temperatures, memory and network live on your Android phone, with alerts. Free, no ads, no account.",
+  "ogAlt": "SysWatch: monitor your PC from your phone",
+  "skip": "Skip to content",
+  "nav": { "main": "Main", "see": "Features", "connect": "Connect", "setup": "Set up", "faq": "Questions", "language": "Language", "download": "Download" },
+  "hero": {
+    "kicker": "PC hardware monitor for Android",
+    "h1": "Monitor your PC from your <em>phone</em>.",
+    "lead": "SysWatch is a PC monitor for your phone. A small Windows app reads your CPU and GPU load and temperature, memory, network, storage and battery. Your Android phone shows them live, like a system monitor you can carry around, and tells you when one crosses a limit you set.",
+    "win": "Download for Windows",
+    "play": "Get it on Google Play",
+    "meta": "Version {version} · Windows 10 and 11, 64-bit · about {size}",
+    "meta2": "Android 7.0 and newer",
+    "reassure": "Free. No ads. No account.",
+    "pause": "Pause the animation",
+    "live": "Live",
+    "limit": "Limit"
+  },
+  "stats": [
+    ["24", "standby faces"],
+    ["5", "Overview layouts"],
+    ["3", "ways to connect"],
+    ["0", "ads or accounts"]
+  ],
+  "see": {
+    "kicker": "What you see",
+    "h2": "Your PC stats on your phone, as they move",
+    "lead": "Cards for CPU, GPU, memory, network, storage, battery and uptime, each with its own history graph. SysWatch only shows real readings: if your PC does not report something, it is left out.",
+    "items": [
+      { "t": "Live readings", "d": "One calm panel, big numbers, one accent colour.", "alt": "SysWatch Overview on an Android phone: CPU load at 81% with its history graph, then GPU, memory, network and storage cards" },
+      { "t": "Alerts", "d": "Set a limit on any gauge and choose how often it may repeat.", "alt": "Alert editor in SysWatch: watch CPU load, tell me when it goes above 90%, do not repeat for 5 minutes" },
+      { "t": "Your look", "d": "Accent, theme, density and the order of the cards.", "alt": "SysWatch settings with seven accent colours, light, dark and true black themes, and a switch for each Overview card" },
+      { "t": "Standby faces", "d": "A gallery of 24 always-on faces, previewed with your own readings.", "alt": "Standby face gallery with previews of the art faces Horizon, Blocks, Bauhaus, Ink, Weave and Bloom" }
+    ]
+  },
+  "alerts": {
+    "kicker": "Alerts",
+    "h2": "Know when your PC runs hot",
+    "lead": "Set a limit on any gauge. Your phone tells you when it is crossed, so you can watch CPU and GPU temperature on your phone without staring at it.",
+    "points": [
+      "Rules read as sentences, such as “CPU load above 90%” or “Battery level below 20%”.",
+      "Each limit is drawn as a red line on its gauge, bar and graph.",
+      "Limits on load, memory, battery, network speed, storage and temperatures.",
+      "A quiet period per alert, from 1 minute to 1 hour, so one spike is one notification.",
+      "One-tap starter alerts, and export and import as a file."
+    ],
+    "rule1": "CPU load above 90%",
+    "rule2": "Battery level below 20%",
+    "quiet": "Do not repeat for 5 minutes"
+  },
+  "look": {
+    "kicker": "Look and layout",
+    "h2": "Make it yours",
+    "lead": "Pick an accent and a theme, then put the cards in your order. It stays one calm panel either way.",
+    "cells": [
+      { "t": "Your accent colour", "d": "Amber, cyan, green, violet, rose or mono, or matched to your wallpaper on Android 12 and newer." },
+      { "t": "Three themes", "d": "Light, dark or true black." },
+      { "t": "Five Overview layouts", "d": "Bridge, Gauges, Strip charts, Ledger and Focus." },
+      { "t": "Your cards, your order", "d": "Choose which cards show and in what order, roomy or compact." }
+    ],
+    "alt": "SysWatch Overview in landscape with the light theme: a wide CPU graph above GPU, memory and network cards",
+    "cap": "A wide layout for landscape and tablets, in light or dark."
+  },
+  "standby": {
+    "kicker": "Standby",
+    "h2": "A second screen for your desk",
+    "lead": "Stand the phone next to your keyboard and it becomes a second screen for your PC stats: 24 always-on standby faces, 16 instruments and 8 art faces, in portrait and landscape.",
+    "faces": [
+      { "t": "Ink", "alt": "Ink standby face: CPU load as a large serif 62% with GPU, memory, network and storage listed below" },
+      { "t": "Bauhaus", "alt": "Bauhaus standby face: a red disc inside a blue ring, CPU at 10% and bars for GPU, memory and storage" },
+      { "t": "Blocks", "alt": "Blocks standby face: red, cream, blue and yellow blocks sized by CPU, GPU, memory and storage" }
+    ],
+    "points": [
+      "8 art faces: Horizon, Blocks, Bauhaus, Ink, Weave, Bloom, Type and Pixel. Ink sets your readings like a printed page; Bauhaus turns CPU, GPU and memory into shapes.",
+      "16 instrument faces, picked from a gallery that previews each one with your own readings.",
+      "Burn-in protection, and an optional dim after 30 seconds.",
+      "A home screen widget in four looks: rings, bars, numerals, trace."
+    ]
+  },
+  "connect": {
+    "kicker": "Connection",
+    "h2": "Three ways to connect",
+    "lead": "Both apps ask the same question the first time they open. Pick the same answer on each. You can change it later in Settings.",
+    "rows": ["Works from", "Set up", "Speed", "Where the readings go"],
+    "modes": [
+      { "name": "Local", "tag": "PC stats over Wi-Fi", "vals": ["The same Wi-Fi", "Nothing", "Instant, straight from the PC", "They never leave your network"], "note": "Not encrypted on the local network, so use it on a network you trust." },
+      { "name": "Cloud by DevLune", "tag": "From anywhere", "vals": ["Anywhere with internet", "Nothing", "About 2 seconds per update", "Through DevLune's relay"], "note": "Readings and your phone's name pass through the relay. You never enter any server details." },
+      { "name": "Tailscale", "tag": "Private, from anywhere", "vals": ["Anywhere", "About five minutes, once", "Instant, straight from the PC", "Through your own private Tailscale link"], "note": "Tailscale encrypts the link. It is a separate app with a free personal plan." }
+    ],
+    "foot": "Not sure? Pick Local if the phone usually sits near the PC. Local and Tailscale need the latest version of both apps.",
+    "guide": "Tailscale setup guide"
+  },
+  "setup": {
+    "kicker": "Set up",
+    "h2": "Set up in three steps",
+    "lead": "No account and nothing to type: the QR code carries everything the phone needs.",
+    "howto": "How to monitor your PC from your phone with SysWatch",
+    "steps": [
+      { "t": "Install on your PC", "d": "Download the Windows installer and run it. The installer is not code signed yet, so Windows SmartScreen shows a warning: choose More info, then Run anyway. SysWatch then sits in the system tray." },
+      { "t": "Install on your phone", "d": "Get SysWatch on Google Play and open it." },
+      { "t": "Scan the code", "d": "Open Pairing on the PC and scan the QR code with the phone." }
+    ],
+    "guide": "Read the full setup guide",
+    "releases": "All releases on GitHub"
+  },
+  "privacy": {
+    "kicker": "Privacy",
+    "h2": "Privacy, plainly",
+    "items": [
+      { "t": "No account", "d": "A 6-character pairing code is the only thing linking phone and PC." },
+      { "t": "Read only", "d": "The phone can see readings. It cannot control, change or run anything on your PC." },
+      { "t": "Local stays local", "d": "Local mode keeps readings on your own network. It is not encrypted there, so use a network you trust, or Tailscale, which encrypts the link." },
+      { "t": "Cloud, said straight", "d": "Cloud by DevLune passes readings, and your phone's name, through DevLune's relay so the phone can reach the PC from anywhere." },
+      { "t": "Nothing extra", "d": "Running program names are not sent unless you switch that on. The camera is used only to scan the pairing QR code." },
+      { "t": "This website", "d": "No cookies, no trackers, and nothing loaded from other sites." }
+    ],
+    "policy": "Privacy policy",
+    "terms": "Terms"
+  },
+  "faq": {
+    "kicker": "Questions",
+    "h2": "Questions people ask",
+    "items": [
+      { "q": "Is SysWatch free?", "a": "Yes. SysWatch is free on the phone and on the PC, with no ads and no account. If it earns a place on your desk, you can <a href=\"{sponsor}\">sponsor SysWatch on GitHub</a>." },
+      { "q": "Does it work away from home?", "a": "Yes, in two of the three connection modes. Cloud by DevLune works from anywhere with internet and needs no setup. Tailscale is instant and private from anywhere, after about five minutes of setup. Local works on the same Wi-Fi." },
+      { "q": "Does it need an account?", "a": "No. A 6-character pairing code is the only thing linking phone and PC. You scan one QR code and there is nothing to type." },
+      { "q": "What can the phone do to my PC?", "a": "Nothing. SysWatch is read only: the phone can see readings, and it cannot control, change or run anything on your PC." },
+      { "q": "Which PCs are supported?", "a": "SysWatch runs on Windows today: Windows 10 and Windows 11, 64-bit. The phone app needs Android 7.0 or newer." },
+      { "q": "Why does Windows warn about the installer?", "a": "The installer is not code signed yet, so Windows SmartScreen shows “Windows protected your PC”. Choose More info, then Run anyway. The <a href=\"{guide}\">SysWatch download and setup guide</a> shows every screen." },
+      { "q": "Does it show CPU temperature?", "a": "Yes, when your PC reports it. SysWatch shows CPU and GPU temperature next to load, and NVIDIA graphics cards are read directly. CPU temperature depends on what your PC reports, and SysWatch never shows a reading your PC does not send." },
+      { "q": "Which languages is it in?", "a": "The Android app is in English, German, French, Spanish and Russian." },
+      { "q": "How do I add my language?", "a": "Community translations are welcome, and no programming is needed: it is one text file per language. In the <a href=\"{translations}\">translations folder of the SysWatch repository on GitHub</a>, copy en.xml, translate it and open a pull request. A merged translation reaches the app by itself, with no app update." },
+      { "q": "Is my data sent anywhere?", "a": "That depends on the connection you pick. In Local mode readings never leave your network. Over Tailscale they travel through your own private, encrypted link. With Cloud by DevLune, readings and your phone's name pass through DevLune's relay. Running program names are not sent unless you switch that on." }
+    ]
+  },
+  "translate": {
+    "kicker": "Translations",
+    "h2": "Help translate SysWatch",
+    "p": "The Android app ships in English, German, French, Spanish and Russian. Community translations are welcome: add your language, or fix a line that reads wrong in yours. A merged translation reaches the app by itself, with no app update.",
+    "cta": "Open the translations folder on GitHub"
+  },
+  "footer": {
+    "made": "Made by <a href=\"{devlune}\">DevLune</a>, a software studio in Hyderabad.",
+    "get": "Get SysWatch",
+    "help": "Help",
+    "studio": "DevLune",
+    "guide": "Download and setup guide",
+    "tailscale": "Tailscale guide",
+    "issues": "Report a problem on GitHub",
+    "discord": "Ask on Discord",
+    "site": "DevLune studio website",
+    "work": "More work by DevLune",
+    "sponsor": "Sponsor SysWatch",
+    "legal": "Windows is a trademark of the Microsoft group of companies. Android and Google Play are trademarks of Google LLC. Tailscale is a trademark of Tailscale Inc."
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "lang": "es",
+  "locale": "es_ES",
+  "path": "/es",
+  "name": "Español",
+  "unit": "MB",
+  "title": "Monitor de PC en el móvil: CPU y GPU en directo | SysWatch",
+  "description": "SysWatch muestra en directo la CPU, la GPU, las temperaturas, la memoria y la red de tu PC con Windows en tu móvil Android. Gratis, sin anuncios ni cuenta.",
+  "ogAlt": "SysWatch: monitoriza tu PC desde el móvil",
+  "skip": "Saltar al contenido",
+  "nav": { "main": "Navegación principal", "see": "Funciones", "connect": "Conexión", "setup": "Instalación", "faq": "Preguntas", "language": "Idioma", "download": "Descargar" },
+  "hero": {
+    "kicker": "Monitor de hardware del PC para Android",
+    "h1": "Monitoriza tu PC desde el <em>móvil</em>.",
+    "lead": "SysWatch es un monitor de PC para tu móvil. Una pequeña app de Windows lee la carga y la temperatura de la CPU y la GPU, la memoria, la red, el almacenamiento y la batería. Tu móvil Android lo muestra en directo, como un monitor del sistema que llevas en el bolsillo, y te avisa cuando una lectura supera el límite que has fijado.",
+    "win": "Descargar para Windows",
+    "play": "Disponible en Google Play",
+    "meta": "Versión {version} · Windows 10 y 11, 64 bits · unos {size}",
+    "meta2": "Android 7.0 o posterior",
+    "reassure": "Gratis. Sin anuncios. Sin cuenta.",
+    "pause": "Pausar la animación",
+    "live": "En directo",
+    "limit": "Límite"
+  },
+  "stats": [
+    ["24", "esferas de reposo"],
+    ["5", "diseños para el Resumen"],
+    ["3", "formas de conectar"],
+    ["0", "anuncios ni cuentas"]
+  ],
+  "see": {
+    "kicker": "Lo que ves",
+    "h2": "Las estadísticas de tu PC en el móvil, en tiempo real",
+    "lead": "Tarjetas para CPU, GPU, memoria, red, almacenamiento, batería y tiempo de actividad, cada una con su gráfica de historial. SysWatch solo muestra lecturas reales: lo que tu PC no informa, no aparece.",
+    "items": [
+      { "t": "Lecturas en directo", "d": "Un solo panel sereno, números grandes, un único color de acento.", "alt": "Resumen de SysWatch en un móvil Android: carga de CPU al 81 % con su gráfica de historial y, debajo, tarjetas de GPU, memoria, red y almacenamiento" },
+      { "t": "Alertas", "d": "Pon un límite en cualquier indicador y elige cada cuánto puede repetirse.", "alt": "Editor de alertas de SysWatch: vigilar la carga de CPU, avisar cuando supere el 90 %, no repetir durante 5 minutos" },
+      { "t": "Tu estilo", "d": "Color de acento, tema, densidad y orden de las tarjetas.", "alt": "Ajustes de SysWatch con siete colores de acento, temas claro, oscuro y negro puro, y un interruptor para cada tarjeta del Resumen" },
+      { "t": "Esferas de reposo", "d": "Una galería de 24 esferas siempre encendidas, con vista previa de tus propias lecturas.", "alt": "Galería de esferas de reposo con vistas previas de las esferas artísticas Horizon, Blocks, Bauhaus, Ink, Weave y Bloom" }
+    ]
+  },
+  "alerts": {
+    "kicker": "Alertas",
+    "h2": "Entérate cuando tu PC se calienta",
+    "lead": "Pon un límite en cualquier indicador. El móvil te avisa cuando se supera, así puedes ver la temperatura de la CPU y la GPU en el móvil sin estar pendiente de la pantalla.",
+    "points": [
+      "Reglas escritas como frases, por ejemplo «Carga de CPU por encima del 90 %» o «Nivel de batería por debajo del 20 %».",
+      "Cada límite se dibuja como una línea roja en su indicador, su barra y su gráfica.",
+      "Límites de carga, memoria, batería, velocidad de red, almacenamiento y temperaturas.",
+      "Un periodo de silencio por alerta, de 1 minuto a 1 hora: un pico, una sola notificación.",
+      "Alertas de inicio que se activan con un toque, y exportación e importación en un archivo."
+    ],
+    "rule1": "Carga de CPU por encima del 90 %",
+    "rule2": "Nivel de batería por debajo del 20 %",
+    "quiet": "No repetir durante 5 minutos"
+  },
+  "look": {
+    "kicker": "Estilo y diseño",
+    "h2": "Hazlo tuyo",
+    "lead": "Elige un color de acento y un tema, y coloca las tarjetas en tu orden. El panel sigue siendo sereno en cualquier caso.",
+    "cells": [
+      { "t": "Tu color de acento", "d": "Ámbar, cian, verde, violeta, rosa o mono, o a juego con tu fondo de pantalla en Android 12 y posteriores." },
+      { "t": "Tres temas", "d": "Claro, oscuro o negro puro." },
+      { "t": "Cinco diseños para el Resumen", "d": "Puente (Bridge), Indicadores (Gauges), Gráficas (Strip charts), Registro (Ledger) y Enfoque (Focus)." },
+      { "t": "Tus tarjetas, tu orden", "d": "Elige qué tarjetas se muestran y en qué orden, en modo amplio o compacto." }
+    ],
+    "alt": "Resumen de SysWatch en horizontal con el tema claro: una gráfica ancha de CPU sobre las tarjetas de GPU, memoria y red",
+    "cap": "Un diseño ancho para horizontal y tabletas, en claro u oscuro."
+  },
+  "standby": {
+    "kicker": "Reposo",
+    "h2": "Una segunda pantalla para tu escritorio",
+    "lead": "Coloca el móvil junto al teclado y se convierte en una segunda pantalla con las estadísticas de tu PC: 24 esferas de reposo siempre encendidas, 16 de instrumentos y 8 artísticas, en vertical y en horizontal.",
+    "faces": [
+      { "t": "Ink", "alt": "Esfera de reposo Ink: la carga de CPU en un gran 62 % con serifas y, debajo, GPU, memoria, red y almacenamiento" },
+      { "t": "Bauhaus", "alt": "Esfera de reposo Bauhaus: un disco rojo dentro de un anillo azul, CPU al 10 % y barras para GPU, memoria y almacenamiento" },
+      { "t": "Blocks", "alt": "Esfera de reposo Blocks: bloques rojo, crema, azul y amarillo con el tamaño de CPU, GPU, memoria y almacenamiento" }
+    ],
+    "points": [
+      "8 esferas artísticas: Horizon, Blocks, Bauhaus, Ink, Weave, Bloom, Type y Pixel. Ink compone tus lecturas como una página impresa y Bauhaus convierte CPU, GPU y memoria en formas.",
+      "16 esferas de instrumentos, para elegir en una galería que muestra cada una con tus propias lecturas.",
+      "Protección contra quemado de pantalla y atenuación opcional a los 30 segundos.",
+      "Un widget para la pantalla de inicio en cuatro estilos: anillos, barras, cifras, trazo."
+    ]
+  },
+  "connect": {
+    "kicker": "Conexión",
+    "h2": "Tres formas de conectar",
+    "lead": "Las dos apps hacen la misma pregunta la primera vez que se abren. Elige la misma respuesta en ambas. Puedes cambiarla después en Ajustes.",
+    "rows": ["Funciona", "Configuración", "Velocidad", "Por dónde van las lecturas"],
+    "modes": [
+      { "name": "Local", "tag": "El PC por Wi-Fi", "vals": ["En la misma Wi-Fi", "Ninguna", "Al instante, directo desde el PC", "Nunca salen de tu red"], "note": "Sin cifrar en la red local, así que úsalo en una red de confianza." },
+      { "name": "Nube de DevLune", "tag": "Desde cualquier lugar", "vals": ["En cualquier lugar con internet", "Ninguna", "Unos 2 segundos por actualización", "Por el servidor de retransmisión de DevLune"], "note": "Las lecturas y el nombre del móvil pasan por el servidor de retransmisión. Nunca tienes que introducir datos de un servidor." },
+      { "name": "Tailscale", "tag": "Privado, desde cualquier lugar", "vals": ["En cualquier lugar", "Unos cinco minutos, una sola vez", "Al instante, directo desde el PC", "Por tu propio enlace privado de Tailscale"], "note": "Tailscale cifra la conexión. Es una app aparte con un plan personal gratuito." }
+    ],
+    "foot": "¿No lo tienes claro? Elige Local si el móvil suele estar cerca del PC. Local y Tailscale necesitan la última versión de las dos apps.",
+    "guide": "Guía de Tailscale (en inglés)"
+  },
+  "setup": {
+    "kicker": "Instalación",
+    "h2": "Listo en tres pasos",
+    "lead": "Sin cuenta y sin escribir nada: el código QR lleva todo lo que el móvil necesita.",
+    "howto": "Cómo monitorizar tu PC desde el móvil con SysWatch",
+    "steps": [
+      { "t": "Instálalo en tu PC", "d": "Descarga el instalador para Windows y ejecútalo. Todavía no tiene firma de código, así que Windows SmartScreen muestra un aviso: elige «Más información» y después «Ejecutar de todas formas». SysWatch se queda en la bandeja del sistema." },
+      { "t": "Instálalo en tu móvil", "d": "Descarga SysWatch en Google Play y ábrelo." },
+      { "t": "Escanea el código", "d": "Abre el emparejamiento (Pairing) en el PC y escanea el código QR con el móvil." }
+    ],
+    "guide": "Leer la guía de instalación completa (en inglés)",
+    "releases": "Todas las versiones en GitHub"
+  },
+  "privacy": {
+    "kicker": "Privacidad",
+    "h2": "Privacidad, sin rodeos",
+    "items": [
+      { "t": "Sin cuenta", "d": "Un código de emparejamiento de 6 caracteres es lo único que une el móvil con el PC." },
+      { "t": "Solo lectura", "d": "El móvil puede ver las lecturas. No puede controlar, cambiar ni ejecutar nada en tu PC." },
+      { "t": "Lo local se queda en local", "d": "En modo local, las lecturas se quedan en tu red. Allí no van cifradas, así que usa una red de confianza o Tailscale, que cifra la conexión." },
+      { "t": "La nube, dicho claro", "d": "En modo nube, las lecturas y el nombre del móvil pasan por el servidor de retransmisión de DevLune para que el móvil llegue al PC desde cualquier lugar." },
+      { "t": "Nada más", "d": "Los nombres de los programas en ejecución no se envían salvo que lo actives. La cámara se usa solo para escanear el código QR de emparejamiento." },
+      { "t": "Este sitio web", "d": "Sin cookies, sin rastreadores y sin cargar nada de otros sitios." }
+    ],
+    "policy": "Política de privacidad (en inglés)",
+    "terms": "Condiciones (en inglés)"
+  },
+  "faq": {
+    "kicker": "Preguntas",
+    "h2": "Preguntas frecuentes",
+    "items": [
+      { "q": "¿SysWatch es gratis?", "a": "Sí. SysWatch es gratis en el móvil y en el PC, sin anuncios y sin cuenta. Si se gana un sitio en tu escritorio, puedes <a href=\"{sponsor}\">patrocinar SysWatch en GitHub</a>." },
+      { "q": "¿Funciona fuera de casa?", "a": "Sí, con dos de los tres modos de conexión. La nube de DevLune funciona en cualquier lugar con internet y sin configurar nada. Tailscale funciona al instante y en privado desde cualquier lugar, tras unos cinco minutos de configuración. El modo local funciona en la misma Wi-Fi." },
+      { "q": "¿Necesita una cuenta?", "a": "No. Un código de emparejamiento de 6 caracteres es lo único que une el móvil con el PC. Escaneas un código QR y no hay nada que escribir." },
+      { "q": "¿Qué puede hacer el móvil en mi PC?", "a": "Nada. SysWatch es de solo lectura: el móvil puede ver las lecturas y no puede controlar, cambiar ni ejecutar nada en tu PC." },
+      { "q": "¿Qué PC son compatibles?", "a": "SysWatch funciona hoy en Windows: Windows 10 y Windows 11, de 64 bits. La app del móvil necesita Android 7.0 o posterior." },
+      { "q": "¿Por qué Windows muestra un aviso con el instalador?", "a": "El instalador todavía no tiene firma de código, así que Windows SmartScreen muestra «Windows protegió su PC». Elige «Más información» y después «Ejecutar de todas formas». La <a href=\"{guide}\">guía de descarga e instalación de SysWatch</a> (en inglés) enseña cada pantalla." },
+      { "q": "¿Muestra la temperatura de la CPU?", "a": "Sí, cuando tu PC la informa. SysWatch muestra la temperatura de la CPU y la GPU junto a la carga, y las tarjetas gráficas NVIDIA se leen directamente. La temperatura de la CPU depende de lo que informe el PC, y SysWatch nunca muestra una lectura que tu PC no envía." },
+      { "q": "¿En qué idiomas está?", "a": "La app de Android está en inglés, alemán, francés, español y ruso." },
+      { "q": "¿Cómo añado mi idioma?", "a": "Las traducciones de la comunidad son bienvenidas y no hace falta programar: cada idioma es un archivo de texto. En la <a href=\"{translations}\">carpeta translations del repositorio de SysWatch en GitHub</a>, copia en.xml, tradúcelo y abre una pull request. Una traducción aceptada llega sola a la app, sin actualizarla." },
+      { "q": "¿Se envían mis datos a algún sitio?", "a": "Depende de la conexión que elijas. En modo local, las lecturas nunca salen de tu red. Con Tailscale viajan por tu propio enlace privado y cifrado. Con la nube de DevLune, las lecturas y el nombre del móvil pasan por el servidor de retransmisión de DevLune. Los nombres de los programas en ejecución no se envían salvo que lo actives." }
+    ]
+  },
+  "translate": {
+    "kicker": "Traducciones",
+    "h2": "Ayuda a traducir SysWatch",
+    "p": "La app de Android está en inglés, alemán, francés, español y ruso. Las traducciones de la comunidad son bienvenidas: añade tu idioma o corrige una línea que suene rara en el tuyo. Una traducción aceptada llega sola a la app, sin actualizarla.",
+    "cta": "Abrir la carpeta translations en GitHub"
+  },
+  "footer": {
+    "made": "Hecho por <a href=\"{devlune}\">DevLune</a>, un estudio de software en Hyderabad.",
+    "get": "Consigue SysWatch",
+    "help": "Ayuda",
+    "studio": "DevLune",
+    "guide": "Guía de descarga e instalación (en inglés)",
+    "tailscale": "Guía de Tailscale (en inglés)",
+    "issues": "Informar de un problema en GitHub",
+    "discord": "Preguntar en Discord",
+    "site": "Web del estudio DevLune",
+    "work": "Más trabajos de DevLune",
+    "sponsor": "Patrocinar SysWatch",
+    "legal": "Windows es una marca del grupo de empresas Microsoft. Android y Google Play son marcas de Google LLC. Tailscale es una marca de Tailscale Inc."
+  }
+}

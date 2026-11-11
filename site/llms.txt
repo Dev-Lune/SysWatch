@@ -1,0 +1,29 @@
+# SysWatch
+
+> SysWatch shows your Windows PC’s CPU, GPU, temperatures, memory and network live on your Android phone, with alerts. Free, no ads, no account.
+
+SysWatch is two free apps made by DevLune, a software studio in Hyderabad, India. A small desktop app runs on a Windows PC and reads its hardware. An Android app shows those readings live and sends a notification when one crosses a limit the user set. There are no ads and no account. It is read only: the phone cannot control the PC.
+
+## Key facts
+
+- Readings: CPU, GPU, memory, network, storage, battery and uptime, each with a history graph. Temperatures are shown when the PC reports them.
+- Alerts: rules written as sentences (for example "CPU load above 90%"), each limit drawn as a red line on its gauge.
+- Standby: 24 always-on faces for a phone on a desk stand (16 instrument faces, 8 art faces), and a home screen widget in four looks.
+- Look: a chosen accent colour, light, dark or true black theme, five Overview layouts (Bridge, Gauges, Strip charts, Ledger, Focus).
+- Three ways to connect: Local (same Wi-Fi, instant, readings stay on the network), Cloud by DevLune (works from anywhere, nothing to set up, about 2 seconds per update), Tailscale (instant and private from anywhere).
+- Desktop app: Windows 10 and 11, 64-bit, version 0.2.0, about 3.5 MB. The installer is not code signed, so Windows SmartScreen shows a warning (More info, then Run anyway).
+- Phone app: Android 7.0 and newer, on Google Play.
+- App languages: English, German, French, Spanish, Russian. Community translations are welcome: one text file per language, and a merged translation reaches the app without an app update.
+- Price: free on both sides.
+
+## Links
+
+- [Website](https://syswatch.devlune.in/): this site, also in [Deutsch](https://syswatch.devlune.in/de), [Français](https://syswatch.devlune.in/fr), [Español](https://syswatch.devlune.in/es), [Русский](https://syswatch.devlune.in/ru)
+- [Download for Windows](https://github.com/Dev-Lune/SysWatch/releases/download/v0.2.0/SysWatch_0.2.0_x64-setup.exe)
+- [SysWatch on Google Play](https://play.google.com/store/apps/details?id=in.devlune.syswatch)
+- [Download and setup guide](https://www.devlune.in/download/syswatch)
+- [All releases and changelog](https://github.com/Dev-Lune/SysWatch/releases)
+- [Tailscale guide](https://github.com/Dev-Lune/SysWatch/blob/main/docs/TAILSCALE.md)
+- [Translations](https://github.com/Dev-Lune/SysWatch/tree/main/translations)
+- [Privacy policy](https://www.devlune.in/privacy) and [terms](https://www.devlune.in/terms)
+- [DevLune](https://www.devlune.in)
