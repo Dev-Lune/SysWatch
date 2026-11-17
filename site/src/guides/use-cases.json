@@ -1,0 +1,267 @@
+{
+  "en": {
+    "nav": { "pc-temperature-on-phone": "PC temperature on your phone", "phone-as-pc-monitor": "Phone as a PC stats display" },
+    "pages": {
+      "pc-temperature-on-phone": {
+        "title": "PC temperature on your phone: CPU and GPU, live | SysWatch",
+        "description": "See your Windows PC's CPU and GPU temperature live on your Android phone and get told when it runs hot. Free, no ads, no account, set up in minutes.",
+        "crumb": "PC temperature on your phone",
+        "kicker": "PC temperature guide",
+        "h1": "Check your PC's CPU and GPU temperature from your phone",
+        "lead": "A game, a render or a long export heats a PC up, and the screen you would check is the one that is busy. SysWatch puts your PC's CPU and GPU temperature on your Android phone, live, and tells you when one crosses a limit you set.",
+        "blocks": [
+          { "h2": "What you need", "id": "need" },
+          { "list": ["A PC with Windows 10 or 11, 64-bit.", "A phone with Android 7.0 or newer.", "The same Wi-Fi for both to begin with. Cloud and Tailscale work from anywhere."] },
+          { "h2": "Set it up", "id": "setup" },
+          { "steps": ["Install SysWatch on the PC. The <a href=\"{guide}\">install guide</a> has the download and walks you past the Windows warning.", "Install <a href=\"{play}\">SysWatch on your phone</a> from Google Play.", "Open SysWatch on the PC, go to <b>Pairing</b> and scan the QR code with the phone app.", "Open <b>Overview</b> on the phone. CPU and GPU temperature sit beside load, each with a graph of the last minutes."] },
+          { "h2": "Get told when it runs hot", "id": "alerts" },
+          { "p": "You do not have to watch it. Open <b>Alerts</b>, pick CPU temperature or GPU temperature and set a limit, for example above 85°C. The limit is drawn as a red line on the gauge, and your phone notifies you when it is crossed." },
+          { "list": ["A quiet period per alert, from 1 minute to 1 hour, so one spike is one notification.", "Alerts also work on load, memory, battery, network speed and storage.", "Starter alerts set the common ones in one tap."] },
+          { "shots": ["overview", "alerts"] },
+          { "h2": "Keep it in view", "id": "view" },
+          { "p": "For a long session, stand the phone by the keyboard and open standby: an always-on screen that shows temperature and load in large type. See <a href=\"{display}\">how to use a phone as a PC stats display</a>." },
+          { "h2": "If no temperature shows", "id": "missing" },
+          { "p": "SysWatch shows the temperatures your PC reports and never invents one. NVIDIA graphics cards are read directly. CPU temperature depends on the PC: on some machines Windows does not expose it, and the reading stays empty instead of showing a guess." },
+          { "h2": "Away from home", "id": "away" },
+          { "p": "Local mode works on the same Wi-Fi. To check temperatures from anywhere else, choose Cloud by DevLune, which needs no setup, or <a href=\"{tailscale}\">Tailscale</a>, which keeps the link private and instant." },
+          { "actions": true }
+        ]
+      },
+      "phone-as-pc-monitor": {
+        "title": "Use an old Android phone as a PC stats display | SysWatch",
+        "description": "Turn a spare Android phone into an always-on display for your PC's CPU, GPU, memory and temperatures. 29 faces, free, no ads, set up over Wi-Fi in minutes.",
+        "crumb": "Phone as a PC stats display",
+        "kicker": "PC stats display guide",
+        "h1": "Turn an old Android phone into a PC stats display",
+        "lead": "A spare phone in a drawer makes a good second screen for your desk. With SysWatch it shows your PC's CPU, GPU, memory, temperatures and network, always on, in a face you choose. It is free and works over Wi-Fi, with nothing to buy and nothing to plug into the PC.",
+        "blocks": [
+          { "h2": "What you need", "id": "need" },
+          { "list": ["An Android phone or tablet with Android 7.0 or newer. Most phones from 2016 on will do.", "A PC with Windows 10 or 11, 64-bit.", "A charger and a stand, because the screen stays on.", "Wi-Fi for the phone. The PC can be on a cable, as long as both are on the same network."] },
+          { "h2": "Set it up", "id": "setup" },
+          { "steps": ["Install SysWatch on the PC with the <a href=\"{guide}\">install guide</a>.", "Install <a href=\"{play}\">SysWatch on the phone</a> and scan the QR code the PC shows under <b>Pairing</b>.", "On <b>Overview</b>, tap the full-screen button at the top right to open standby.", "Swipe sideways to change the face, or pick one from the gallery in <b>Settings</b>, where each face is previewed with your own readings.", "Put the phone on its stand and plug it in."] },
+          { "h2": "Pick a face", "id": "faces" },
+          { "p": "There are 29 standby faces, in portrait and landscape:" },
+          { "list": ["16 instrument faces: rings, bars, big numerals and traces for CPU, GPU, memory, temperatures and network.", "8 art faces that turn the readings into shapes and colour: Horizon, Blocks, Bauhaus, Ink, Weave, Bloom, Type and Pixel.", "5 music faces that show what the PC is playing, with its cover and play controls."] },
+          { "shots": ["face-ink", "face-bauhaus", "face-blocks"] },
+          { "h2": "Settings worth knowing", "id": "settings" },
+          { "list": ["<b>Dim after 30 seconds</b> lowers the brightness until you tap. Switch it off to stay bright.", "Full screen fills the display edge to edge; framed leaves a margin.", "The rotate button locks portrait or landscape, or follows the phone.", "A home screen widget shows the same readings when you do not want the screen on all day."] },
+          { "h2": "Good to know", "id": "limits" },
+          { "list": ["It works over Wi-Fi. There is no USB mode, so the phone needs your network, not a cable to the PC.", "An always-on screen uses power. Keep the phone on its charger.", "For alerts on heat, see <a href=\"{temps}\">PC temperature on your phone</a>.", "Away from home, Cloud by DevLune or <a href=\"{tailscale}\">Tailscale</a> keeps the readings coming."] },
+          { "actions": true }
+        ]
+      }
+    }
+  },
+  "de": {
+    "nav": { "pc-temperature-on-phone": "PC-Temperatur auf dem Handy", "phone-as-pc-monitor": "Handy als PC-Anzeige" },
+    "pages": {
+      "pc-temperature-on-phone": {
+        "title": "PC-Temperatur auf dem Handy: CPU und GPU live | SysWatch",
+        "description": "Sieh die CPU- und GPU-Temperatur deines Windows-PCs live auf dem Android-Handy und lass dich warnen, wenn er heiß wird. Kostenlos, ohne Werbung, ohne Konto.",
+        "crumb": "PC-Temperatur auf dem Handy",
+        "kicker": "Anleitung PC-Temperatur",
+        "h1": "CPU- und GPU-Temperatur deines PCs vom Handy aus prüfen",
+        "lead": "Ein Spiel, ein Rendering oder ein langer Export heizt den PC auf, und der Bildschirm, auf dem du nachsehen würdest, ist gerade belegt. SysWatch zeigt die CPU- und GPU-Temperatur deines PCs live auf dem Android-Handy und meldet sich, wenn ein Wert deine Grenze überschreitet.",
+        "blocks": [
+          { "h2": "Was du brauchst", "id": "need" },
+          { "list": ["Einen PC mit Windows 10 oder 11, 64 Bit.", "Ein Handy mit Android 7.0 oder neuer.", "Für den Anfang dasselbe WLAN für beide. Cloud und Tailscale funktionieren von überall."] },
+          { "h2": "Einrichten", "id": "setup" },
+          { "steps": ["Installiere SysWatch auf dem PC. Die <a href=\"{guide}\">Installationsanleitung</a> enthält den Download und führt dich an der Windows-Warnung vorbei.", "Installiere <a href=\"{play}\">SysWatch auf dem Handy</a> aus Google Play.", "Öffne SysWatch auf dem PC, gehe zu <b>Kopplung</b> und scanne den QR-Code mit der Handy-App.", "Öffne auf dem Handy die <b>Übersicht</b>. CPU- und GPU-Temperatur stehen neben der Auslastung, jeweils mit einem Verlauf der letzten Minuten."] },
+          { "h2": "Bescheid bekommen, wenn er heiß wird", "id": "alerts" },
+          { "p": "Du musst nicht hinsehen. Öffne <b>Warnungen</b>, wähle CPU-Temperatur oder GPU-Temperatur und lege eine Grenze fest, zum Beispiel über 85 °C. Die Grenze erscheint als rote Linie auf der Anzeige, und dein Handy benachrichtigt dich, wenn sie überschritten wird." },
+          { "list": ["Eine Ruhezeit pro Warnung, von 1 Minute bis 1 Stunde, damit eine Spitze nur eine Benachrichtigung auslöst.", "Warnungen gibt es auch für Auslastung, Arbeitsspeicher, Akku, Netzwerktempo und Speicherplatz.", "Startwarnungen richten die üblichen mit einem Tippen ein."] },
+          { "shots": ["overview", "alerts"] },
+          { "h2": "Im Blick behalten", "id": "view" },
+          { "p": "Für eine lange Sitzung stellst du das Handy neben die Tastatur und öffnest Standby: einen dauerhaft eingeschalteten Bildschirm, der Temperatur und Auslastung groß zeigt. Mehr dazu unter <a href=\"{display}\">Handy als PC-Anzeige nutzen</a>." },
+          { "h2": "Wenn keine Temperatur erscheint", "id": "missing" },
+          { "p": "SysWatch zeigt die Temperaturen, die dein PC meldet, und erfindet keine. NVIDIA-Grafikkarten werden direkt ausgelesen. Die CPU-Temperatur hängt vom PC ab: Auf manchen Geräten gibt Windows sie nicht heraus, dann bleibt der Wert leer, statt geraten zu werden." },
+          { "h2": "Unterwegs", "id": "away" },
+          { "p": "Der lokale Modus funktioniert im selben WLAN. Um Temperaturen von anderswo zu prüfen, wähle Cloud by DevLune, das keine Einrichtung braucht, oder <a href=\"{tailscale}\">Tailscale</a>, das die Verbindung privat und verzögerungsfrei hält." },
+          { "actions": true }
+        ]
+      },
+      "phone-as-pc-monitor": {
+        "title": "Altes Android-Handy als PC-Anzeige nutzen | SysWatch",
+        "description": "Mach aus einem alten Android-Handy eine Daueranzeige für CPU, GPU, Arbeitsspeicher und Temperaturen deines PCs. 29 Designs, kostenlos, per WLAN eingerichtet.",
+        "crumb": "Handy als PC-Anzeige",
+        "kicker": "Anleitung PC-Anzeige",
+        "h1": "Aus einem alten Android-Handy eine PC-Anzeige machen",
+        "lead": "Ein Handy aus der Schublade ist ein guter zweiter Bildschirm für den Schreibtisch. Mit SysWatch zeigt es CPU, GPU, Arbeitsspeicher, Temperaturen und Netzwerk deines PCs, dauerhaft eingeschaltet, in einem Design deiner Wahl. Es ist kostenlos und läuft über WLAN: nichts zu kaufen und nichts, was am PC angeschlossen wird.",
+        "blocks": [
+          { "h2": "Was du brauchst", "id": "need" },
+          { "list": ["Ein Android-Handy oder -Tablet mit Android 7.0 oder neuer. Die meisten Geräte ab 2016 reichen.", "Einen PC mit Windows 10 oder 11, 64 Bit.", "Ein Ladegerät und einen Ständer, weil der Bildschirm an bleibt.", "WLAN für das Handy. Der PC darf am Kabel hängen, solange beide im selben Netzwerk sind."] },
+          { "h2": "Einrichten", "id": "setup" },
+          { "steps": ["Installiere SysWatch auf dem PC mit der <a href=\"{guide}\">Installationsanleitung</a>.", "Installiere <a href=\"{play}\">SysWatch auf dem Handy</a> und scanne den QR-Code, den der PC unter <b>Kopplung</b> zeigt.", "Tippe in der <b>Übersicht</b> oben rechts auf die Vollbild-Schaltfläche, um Standby zu öffnen.", "Wische seitwärts, um das Design zu wechseln, oder wähle eines aus der Galerie in den <b>Einstellungen</b>. Dort siehst du jedes Design mit deinen eigenen Werten.", "Stell das Handy auf den Ständer und schließ es ans Ladegerät an."] },
+          { "h2": "Ein Design wählen", "id": "faces" },
+          { "p": "Es gibt 29 Standby-Designs, im Hoch- und Querformat:" },
+          { "list": ["16 Instrumenten-Designs: Ringe, Balken, große Ziffern und Kurven für CPU, GPU, Arbeitsspeicher, Temperaturen und Netzwerk.", "8 Kunst-Designs, die die Werte in Formen und Farbe verwandeln: Horizon, Blocks, Bauhaus, Ink, Weave, Bloom, Type und Pixel.", "5 Musik-Designs, die zeigen, was der PC abspielt, mit Cover und Wiedergabetasten."] },
+          { "shots": ["face-ink", "face-bauhaus", "face-blocks"] },
+          { "h2": "Nützliche Einstellungen", "id": "settings" },
+          { "list": ["<b>Nach 30 Sekunden abdunkeln</b> senkt die Helligkeit, bis du tippst. Schalte es aus, damit die Anzeige hell bleibt.", "Vollbild füllt das Display bis zum Rand, mit Rahmen bleibt ein Abstand.", "Die Drehen-Schaltfläche hält Hoch- oder Querformat fest oder folgt dem Handy.", "Ein Widget auf dem Startbildschirm zeigt dieselben Werte, wenn der Bildschirm nicht den ganzen Tag an sein soll."] },
+          { "h2": "Gut zu wissen", "id": "limits" },
+          { "list": ["Es läuft über WLAN. Einen USB-Modus gibt es nicht: Das Handy braucht dein Netzwerk, kein Kabel zum PC.", "Ein dauerhaft eingeschalteter Bildschirm braucht Strom. Lass das Handy am Ladegerät.", "Für Warnungen bei Hitze siehe <a href=\"{temps}\">PC-Temperatur auf dem Handy</a>.", "Unterwegs liefern Cloud by DevLune oder <a href=\"{tailscale}\">Tailscale</a> die Werte weiter."] },
+          { "actions": true }
+        ]
+      }
+    }
+  },
+  "fr": {
+    "nav": { "pc-temperature-on-phone": "Température du PC sur le téléphone", "phone-as-pc-monitor": "Téléphone en écran de stats PC" },
+    "pages": {
+      "pc-temperature-on-phone": {
+        "title": "Température du PC sur le téléphone : CPU et GPU | SysWatch",
+        "description": "Voyez en direct la température du CPU et du GPU de votre PC Windows sur votre téléphone Android, avec une alerte quand il chauffe. Gratuit, sans pub ni compte.",
+        "crumb": "Température du PC sur le téléphone",
+        "kicker": "Guide température du PC",
+        "h1": "Vérifier la température du CPU et du GPU de votre PC depuis le téléphone",
+        "lead": "Un jeu, un rendu ou un long export font chauffer un PC, et l'écran que vous iriez consulter est justement occupé. SysWatch affiche en direct la température du CPU et du GPU de votre PC sur votre téléphone Android et vous prévient quand l'une dépasse la limite que vous fixez.",
+        "blocks": [
+          { "h2": "Ce qu'il vous faut", "id": "need" },
+          { "list": ["Un PC sous Windows 10 ou 11, 64 bits.", "Un téléphone sous Android 7.0 ou plus récent.", "Le même Wi-Fi pour les deux au départ. Le cloud et Tailscale fonctionnent de partout."] },
+          { "h2": "Installation", "id": "setup" },
+          { "steps": ["Installez SysWatch sur le PC. Le <a href=\"{guide}\">guide d'installation</a> donne le téléchargement et explique l'avertissement de Windows.", "Installez <a href=\"{play}\">SysWatch sur votre téléphone</a> depuis Google Play.", "Ouvrez SysWatch sur le PC, allez dans <b>Association</b> et scannez le code QR avec l'application du téléphone.", "Ouvrez la <b>Vue d'ensemble</b> sur le téléphone. La température du CPU et du GPU figure à côté de la charge, avec un graphique des dernières minutes."] },
+          { "h2": "Être prévenu quand il chauffe", "id": "alerts" },
+          { "p": "Inutile de surveiller. Ouvrez <b>Alertes</b>, choisissez la température du CPU ou du GPU et fixez une limite, par exemple au-dessus de 85 °C. La limite apparaît en ligne rouge sur la jauge, et votre téléphone vous envoie une notification quand elle est franchie." },
+          { "list": ["Une période de silence par alerte, de 1 minute à 1 heure : un pic, une seule notification.", "Les alertes portent aussi sur la charge, la mémoire, la batterie, le débit réseau et le stockage.", "Les alertes de départ règlent les plus courantes d'un seul geste."] },
+          { "shots": ["overview", "alerts"] },
+          { "h2": "Le garder sous les yeux", "id": "view" },
+          { "p": "Pour une longue session, posez le téléphone près du clavier et ouvrez la veille : un écran toujours allumé qui affiche la température et la charge en grand. Voir <a href=\"{display}\">comment utiliser un téléphone comme écran de stats PC</a>." },
+          { "h2": "Si aucune température ne s'affiche", "id": "missing" },
+          { "p": "SysWatch affiche les températures que votre PC transmet et n'en invente jamais. Les cartes graphiques NVIDIA sont lues directement. La température du CPU dépend du PC : sur certaines machines, Windows ne la fournit pas, et la mesure reste vide plutôt que d'afficher une estimation." },
+          { "h2": "Loin de chez vous", "id": "away" },
+          { "p": "Le mode local fonctionne sur le même Wi-Fi. Pour consulter les températures d'ailleurs, choisissez Cloud by DevLune, sans aucune configuration, ou <a href=\"{tailscale}\">Tailscale</a>, qui garde la liaison privée et instantanée." },
+          { "actions": true }
+        ]
+      },
+      "phone-as-pc-monitor": {
+        "title": "Un vieux téléphone Android en écran de stats PC | SysWatch",
+        "description": "Transformez un téléphone Android inutilisé en écran toujours allumé pour le CPU, le GPU, la mémoire et les températures de votre PC. 29 cadrans, gratuit.",
+        "crumb": "Téléphone en écran de stats PC",
+        "kicker": "Guide écran de stats PC",
+        "h1": "Transformer un vieux téléphone Android en écran de stats PC",
+        "lead": "Un téléphone oublié dans un tiroir fait un bon second écran pour le bureau. Avec SysWatch, il affiche le CPU, le GPU, la mémoire, les températures et le réseau de votre PC, toujours allumé, dans le cadran de votre choix. C'est gratuit et cela passe par le Wi-Fi : rien à acheter, rien à brancher sur le PC.",
+        "blocks": [
+          { "h2": "Ce qu'il vous faut", "id": "need" },
+          { "list": ["Un téléphone ou une tablette sous Android 7.0 ou plus récent. La plupart des appareils depuis 2016 conviennent.", "Un PC sous Windows 10 ou 11, 64 bits.", "Un chargeur et un support, car l'écran reste allumé.", "Le Wi-Fi pour le téléphone. Le PC peut être câblé, tant que les deux sont sur le même réseau."] },
+          { "h2": "Installation", "id": "setup" },
+          { "steps": ["Installez SysWatch sur le PC avec le <a href=\"{guide}\">guide d'installation</a>.", "Installez <a href=\"{play}\">SysWatch sur le téléphone</a> et scannez le code QR que le PC affiche dans <b>Association</b>.", "Dans la <b>Vue d'ensemble</b>, touchez le bouton plein écran en haut à droite pour ouvrir la veille.", "Balayez sur le côté pour changer de cadran, ou choisissez-en un dans la galerie des <b>Réglages</b>, où chaque cadran est présenté avec vos propres mesures.", "Posez le téléphone sur son support et branchez-le."] },
+          { "h2": "Choisir un cadran", "id": "faces" },
+          { "p": "Il y a 29 cadrans de veille, en portrait et en paysage :" },
+          { "list": ["16 cadrans instruments : anneaux, barres, grands chiffres et courbes pour le CPU, le GPU, la mémoire, les températures et le réseau.", "8 cadrans artistiques qui changent les mesures en formes et en couleurs : Horizon, Blocks, Bauhaus, Ink, Weave, Bloom, Type et Pixel.", "5 cadrans musique qui montrent ce que joue le PC, avec la pochette et les commandes de lecture."] },
+          { "shots": ["face-ink", "face-bauhaus", "face-blocks"] },
+          { "h2": "Réglages utiles", "id": "settings" },
+          { "list": ["<b>Atténuer après 30 secondes</b> baisse la luminosité jusqu'à ce que vous touchiez l'écran. Désactivez-le pour rester lumineux.", "Le plein écran remplit l'affichage bord à bord ; le mode encadré laisse une marge.", "Le bouton de rotation verrouille le portrait ou le paysage, ou suit le téléphone.", "Un widget d'écran d'accueil affiche les mêmes mesures quand vous ne voulez pas garder l'écran allumé toute la journée."] },
+          { "h2": "Bon à savoir", "id": "limits" },
+          { "list": ["Tout passe par le Wi-Fi. Il n'y a pas de mode USB : le téléphone a besoin de votre réseau, pas d'un câble vers le PC.", "Un écran toujours allumé consomme. Laissez le téléphone sur son chargeur.", "Pour les alertes de chauffe, voir <a href=\"{temps}\">la température du PC sur le téléphone</a>.", "Loin de chez vous, Cloud by DevLune ou <a href=\"{tailscale}\">Tailscale</a> continuent de transmettre les mesures."] },
+          { "actions": true }
+        ]
+      }
+    }
+  },
+  "es": {
+    "nav": { "pc-temperature-on-phone": "Temperatura del PC en el móvil", "phone-as-pc-monitor": "El móvil como pantalla del PC" },
+    "pages": {
+      "pc-temperature-on-phone": {
+        "title": "Temperatura del PC en el móvil: CPU y GPU | SysWatch",
+        "description": "Mira en directo la temperatura de la CPU y la GPU de tu PC con Windows en tu móvil Android y recibe un aviso cuando se caliente. Gratis, sin anuncios ni cuenta.",
+        "crumb": "Temperatura del PC en el móvil",
+        "kicker": "Guía de temperatura del PC",
+        "h1": "Comprueba la temperatura de la CPU y la GPU de tu PC desde el móvil",
+        "lead": "Un juego, un render o una exportación larga calientan el PC, y la pantalla donde lo mirarías es justo la que está ocupada. SysWatch muestra en directo la temperatura de la CPU y la GPU de tu PC en tu móvil Android y te avisa cuando una supera el límite que tú pones.",
+        "blocks": [
+          { "h2": "Qué necesitas", "id": "need" },
+          { "list": ["Un PC con Windows 10 u 11, de 64 bits.", "Un móvil con Android 7.0 o posterior.", "La misma wifi para los dos al empezar. La nube y Tailscale funcionan desde cualquier lugar."] },
+          { "h2": "Cómo configurarlo", "id": "setup" },
+          { "steps": ["Instala SysWatch en el PC. La <a href=\"{guide}\">guía de instalación</a> tiene la descarga y explica el aviso de Windows.", "Instala <a href=\"{play}\">SysWatch en tu móvil</a> desde Google Play.", "Abre SysWatch en el PC, entra en <b>Vinculación</b> y escanea el código QR con la app del móvil.", "Abre <b>Resumen</b> en el móvil. La temperatura de la CPU y la GPU aparece junto a la carga, cada una con una gráfica de los últimos minutos."] },
+          { "h2": "Recibe un aviso cuando se caliente", "id": "alerts" },
+          { "p": "No hace falta estar mirando. Abre <b>Alertas</b>, elige temperatura de la CPU o de la GPU y pon un límite, por ejemplo por encima de 85 °C. El límite se dibuja como una línea roja en el indicador, y el móvil te avisa cuando se supera." },
+          { "list": ["Un periodo de silencio por alerta, de 1 minuto a 1 hora, para que un pico sea un solo aviso.", "Las alertas también sirven para carga, memoria, batería, velocidad de red y almacenamiento.", "Las alertas iniciales configuran las más comunes con un toque."] },
+          { "shots": ["overview", "alerts"] },
+          { "h2": "Tenlo a la vista", "id": "view" },
+          { "p": "Para una sesión larga, apoya el móvil junto al teclado y abre el modo reposo: una pantalla siempre encendida que muestra la temperatura y la carga en grande. Mira <a href=\"{display}\">cómo usar un móvil como pantalla de estadísticas del PC</a>." },
+          { "h2": "Si no aparece ninguna temperatura", "id": "missing" },
+          { "p": "SysWatch muestra las temperaturas que informa tu PC y nunca se inventa ninguna. Las gráficas NVIDIA se leen directamente. La temperatura de la CPU depende del PC: en algunos equipos Windows no la ofrece, y la lectura se queda vacía en lugar de mostrar una estimación." },
+          { "h2": "Fuera de casa", "id": "away" },
+          { "p": "El modo local funciona en la misma wifi. Para ver las temperaturas desde otro sitio, elige Cloud by DevLune, que no necesita configuración, o <a href=\"{tailscale}\">Tailscale</a>, que mantiene la conexión privada e instantánea." },
+          { "actions": true }
+        ]
+      },
+      "phone-as-pc-monitor": {
+        "title": "Usa un móvil Android viejo como pantalla del PC | SysWatch",
+        "description": "Convierte un móvil Android que no usas en una pantalla siempre encendida con la CPU, la GPU, la memoria y las temperaturas de tu PC. 29 esferas, gratis.",
+        "crumb": "El móvil como pantalla del PC",
+        "kicker": "Guía de pantalla del PC",
+        "h1": "Convierte un móvil Android viejo en una pantalla de estadísticas del PC",
+        "lead": "Un móvil olvidado en un cajón es una buena segunda pantalla para el escritorio. Con SysWatch muestra la CPU, la GPU, la memoria, las temperaturas y la red de tu PC, siempre encendido, con la esfera que elijas. Es gratis y funciona por wifi: nada que comprar y nada que enchufar al PC.",
+        "blocks": [
+          { "h2": "Qué necesitas", "id": "need" },
+          { "list": ["Un móvil o una tableta con Android 7.0 o posterior. Casi cualquiera desde 2016 sirve.", "Un PC con Windows 10 u 11, de 64 bits.", "Un cargador y un soporte, porque la pantalla se queda encendida.", "Wifi para el móvil. El PC puede ir por cable, siempre que los dos estén en la misma red."] },
+          { "h2": "Cómo configurarlo", "id": "setup" },
+          { "steps": ["Instala SysWatch en el PC con la <a href=\"{guide}\">guía de instalación</a>.", "Instala <a href=\"{play}\">SysWatch en el móvil</a> y escanea el código QR que el PC muestra en <b>Vinculación</b>.", "En <b>Resumen</b>, toca el botón de pantalla completa de arriba a la derecha para abrir el modo reposo.", "Desliza hacia un lado para cambiar de esfera, o elige una en la galería de <b>Ajustes</b>, donde cada esfera se muestra con tus propias lecturas.", "Coloca el móvil en su soporte y enchúfalo."] },
+          { "h2": "Elige una esfera", "id": "faces" },
+          { "p": "Hay 29 esferas de reposo, en vertical y en horizontal:" },
+          { "list": ["16 esferas de instrumentos: anillos, barras, números grandes y trazos para CPU, GPU, memoria, temperaturas y red.", "8 esferas artísticas que convierten las lecturas en formas y color: Horizon, Blocks, Bauhaus, Ink, Weave, Bloom, Type y Pixel.", "5 esferas de música que muestran lo que suena en el PC, con su portada y los controles de reproducción."] },
+          { "shots": ["face-ink", "face-bauhaus", "face-blocks"] },
+          { "h2": "Ajustes que conviene conocer", "id": "settings" },
+          { "list": ["<b>Atenuar tras 30 segundos</b> baja el brillo hasta que tocas la pantalla. Desactívalo para que siga brillante.", "La pantalla completa ocupa todo de borde a borde; con marco queda un margen.", "El botón de girar fija la posición vertical u horizontal, o sigue al móvil.", "Un widget en la pantalla de inicio muestra las mismas lecturas cuando no quieres la pantalla encendida todo el día."] },
+          { "h2": "Conviene saber", "id": "limits" },
+          { "list": ["Funciona por wifi. No hay modo USB: el móvil necesita tu red, no un cable al PC.", "Una pantalla siempre encendida gasta energía. Deja el móvil en el cargador.", "Para alertas de calor, mira <a href=\"{temps}\">la temperatura del PC en el móvil</a>.", "Fuera de casa, Cloud by DevLune o <a href=\"{tailscale}\">Tailscale</a> siguen enviando las lecturas."] },
+          { "actions": true }
+        ]
+      }
+    }
+  },
+  "ru": {
+    "nav": { "pc-temperature-on-phone": "Температура ПК на телефоне", "phone-as-pc-monitor": "Телефон как экран статистики ПК" },
+    "pages": {
+      "pc-temperature-on-phone": {
+        "title": "Температура ПК на телефоне: процессор и GPU | SysWatch",
+        "description": "Температура процессора и видеокарты вашего ПК с Windows на телефоне Android в реальном времени, с оповещением о перегреве. Бесплатно, без рекламы, без аккаунта.",
+        "crumb": "Температура ПК на телефоне",
+        "kicker": "Руководство: температура ПК",
+        "h1": "Как проверить температуру процессора и видеокарты ПК с телефона",
+        "lead": "Игра, рендер или долгий экспорт нагревают компьютер, а экран, на который вы бы посмотрели, как раз занят. SysWatch показывает температуру процессора и видеокарты вашего ПК на телефоне Android в реальном времени и сообщает, когда значение выходит за заданный вами предел.",
+        "blocks": [
+          { "h2": "Что понадобится", "id": "need" },
+          { "list": ["ПК с Windows 10 или 11, 64-разрядной.", "Телефон с Android 7.0 или новее.", "Для начала одна сеть Wi-Fi для обоих. Облако и Tailscale работают откуда угодно."] },
+          { "h2": "Настройка", "id": "setup" },
+          { "steps": ["Установите SysWatch на ПК. В <a href=\"{guide}\">руководстве по установке</a> есть ссылка на загрузку и объяснение предупреждения Windows.", "Установите <a href=\"{play}\">SysWatch на телефон</a> из Google Play.", "Откройте SysWatch на ПК, перейдите в раздел <b>Привязка</b> и отсканируйте QR-код приложением на телефоне.", "Откройте на телефоне <b>Обзор</b>. Температура процессора и видеокарты показана рядом с нагрузкой, с графиком за последние минуты."] },
+          { "h2": "Оповещение о перегреве", "id": "alerts" },
+          { "p": "Следить самому не нужно. Откройте <b>Оповещения</b>, выберите температуру процессора или видеокарты и задайте предел, например выше 85 °C. Предел отображается красной линией на шкале, а телефон пришлёт уведомление, когда он будет превышен." },
+          { "list": ["Период тишины для каждого оповещения, от 1 минуты до 1 часа: один скачок, одно уведомление.", "Оповещения работают также для нагрузки, памяти, батареи, скорости сети и накопителей.", "Готовые оповещения включают самые нужные одним касанием."] },
+          { "shots": ["overview", "alerts"] },
+          { "h2": "Держите на виду", "id": "view" },
+          { "p": "Для долгой сессии поставьте телефон рядом с клавиатурой и откройте режим ожидания: всегда включённый экран, где температура и нагрузка показаны крупно. Смотрите, <a href=\"{display}\">как использовать телефон как экран статистики ПК</a>." },
+          { "h2": "Если температура не отображается", "id": "missing" },
+          { "p": "SysWatch показывает температуры, которые сообщает ваш ПК, и никогда их не выдумывает. Видеокарты NVIDIA читаются напрямую. Температура процессора зависит от ПК: на некоторых машинах Windows её не отдаёт, и тогда значение остаётся пустым, а не подменяется догадкой." },
+          { "h2": "Вне дома", "id": "away" },
+          { "p": "Локальный режим работает в одной сети Wi-Fi. Чтобы смотреть температуры из другого места, выберите Cloud by DevLune, которому не нужна настройка, или <a href=\"{tailscale}\">Tailscale</a>: связь остаётся приватной и мгновенной." },
+          { "actions": true }
+        ]
+      },
+      "phone-as-pc-monitor": {
+        "title": "Старый телефон Android как экран статистики ПК | SysWatch",
+        "description": "Превратите ненужный телефон Android во всегда включённый экран с нагрузкой процессора, видеокарты, памятью и температурами ПК. 29 циферблатов, бесплатно.",
+        "crumb": "Телефон как экран статистики ПК",
+        "kicker": "Руководство: экран статистики",
+        "h1": "Как превратить старый телефон Android в экран статистики ПК",
+        "lead": "Телефон, забытый в ящике, станет хорошим вторым экраном на столе. С SysWatch он показывает процессор, видеокарту, память, температуры и сеть вашего ПК, всегда включён и выглядит так, как вы выберете. Это бесплатно и работает по Wi-Fi: ничего не нужно покупать и подключать к компьютеру.",
+        "blocks": [
+          { "h2": "Что понадобится", "id": "need" },
+          { "list": ["Телефон или планшет с Android 7.0 или новее. Подойдёт почти любое устройство с 2016 года.", "ПК с Windows 10 или 11, 64-разрядной.", "Зарядка и подставка, потому что экран не выключается.", "Wi-Fi для телефона. ПК может быть подключён кабелем, если оба в одной сети."] },
+          { "h2": "Настройка", "id": "setup" },
+          { "steps": ["Установите SysWatch на ПК по <a href=\"{guide}\">руководству по установке</a>.", "Установите <a href=\"{play}\">SysWatch на телефон</a> и отсканируйте QR-код, который ПК показывает в разделе <b>Привязка</b>.", "На экране <b>Обзор</b> нажмите кнопку полноэкранного режима справа вверху, чтобы открыть режим ожидания.", "Смахните в сторону, чтобы сменить циферблат, или выберите его в галерее в <b>Настройках</b>: там каждый показан с вашими показаниями.", "Поставьте телефон на подставку и подключите к зарядке."] },
+          { "h2": "Выберите циферблат", "id": "faces" },
+          { "p": "Доступно 29 циферблатов режима ожидания, в книжной и альбомной ориентации:" },
+          { "list": ["16 приборных: кольца, шкалы, крупные цифры и графики для процессора, видеокарты, памяти, температур и сети.", "8 художественных, которые превращают показания в формы и цвет: Horizon, Blocks, Bauhaus, Ink, Weave, Bloom, Type и Pixel.", "5 музыкальных: что играет на ПК, с обложкой и кнопками управления."] },
+          { "shots": ["face-ink", "face-bauhaus", "face-blocks"] },
+          { "h2": "Полезные настройки", "id": "settings" },
+          { "list": ["<b>Затемнять через 30 секунд</b> снижает яркость, пока вы не коснётесь экрана. Отключите, чтобы экран оставался ярким.", "Полноэкранный режим занимает экран от края до края, с рамкой остаётся отступ.", "Кнопка поворота фиксирует книжную или альбомную ориентацию либо следует за телефоном.", "Виджет на главном экране показывает те же данные, когда держать экран включённым весь день не хочется."] },
+          { "h2": "Полезно знать", "id": "limits" },
+          { "list": ["Всё работает по Wi-Fi. Режима USB нет: телефону нужна ваша сеть, а не кабель к ПК.", "Всегда включённый экран расходует энергию. Держите телефон на зарядке.", "Об оповещениях о перегреве читайте в разделе <a href=\"{temps}\">Температура ПК на телефоне</a>.", "Вне дома показания продолжают приходить через Cloud by DevLune или <a href=\"{tailscale}\">Tailscale</a>."] },
+          { "actions": true }
+        ]
+      }
+    }
+  }
+}

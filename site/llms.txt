@@ -23,6 +23,8 @@ Each guide is also in German, French, Spanish and Russian, under /de, /fr, /es a
 
 - [Install SysWatch and pair your phone](https://syswatch.devlune.in/install): Install SysWatch on Windows 10 or 11, get past the SmartScreen warning, choose Local, Cloud by DevLune or Tailscale, and pair your phone with one QR code.
 - [Watch your PC from anywhere with Tailscale](https://syswatch.devlune.in/tailscale): Set up Tailscale for SysWatch in about five minutes: a private, encrypted link between your phone and your Windows PC, so local mode works away from home.
+- [Check your PC’s CPU and GPU temperature from your phone](https://syswatch.devlune.in/pc-temperature-on-phone): See your Windows PC’s CPU and GPU temperature live on your Android phone and get told when it runs hot. Free, no ads, no account, set up in minutes.
+- [Turn an old Android phone into a PC stats display](https://syswatch.devlune.in/phone-as-pc-monitor): Turn a spare Android phone into an always-on display for your PC’s CPU, GPU, memory and temperatures. 29 faces, free, no ads, set up over Wi-Fi in minutes.
 - [Translate SysWatch](https://syswatch.devlune.in/translate): Add your language to SysWatch or fix a translation: copy en.xml, translate the text and open a pull request. A merged translation reaches the app by itself.
 
 ## Links

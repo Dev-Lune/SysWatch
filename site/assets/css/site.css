@@ -297,3 +297,5 @@ h1 em{font-style:normal;display:inline-block;padding:0 .18em .04em;margin-left:-
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.gshots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:620px;margin-top:22px}
+.gshots .phone{width:auto}

@@ -32,8 +32,8 @@ const LINKS = {
 // One URL per page and language: / and /de for the home page, /install and /de/install
 // for a guide. Each is one .html file (de.html, de/install.html), which Cloudflare's
 // auto-trailing-slash and Vercel's cleanUrls both serve without the extension.
-const GUIDES = ["install", "tailscale", "translate"];
-const HOWTO = new Set(["install", "tailscale"]); // guides whose steps are also HowTo markup
+const GUIDES = ["install", "tailscale", "pc-temperature-on-phone", "phone-as-pc-monitor", "translate"];
+const HOWTO = new Set(["install", "tailscale", "pc-temperature-on-phone", "phone-as-pc-monitor"]); // guides whose steps are also HowTo markup
 const KEYS = ["home", ...GUIDES];
 const prefix = (lang) => (lang === LANGS[0] ? "" : `/${lang}`);
 const pathOf = (lang, key) => (key === "home" ? prefix(lang) || "/" : `${prefix(lang)}/${key}`);
@@ -46,7 +46,12 @@ const ROOT = join(SRC, "..");
 const today = new Date().toISOString().slice(0, 10);
 const read = (dir, l) => JSON.parse(readFileSync(join(SRC, dir, `${l}.json`), "utf8"));
 const content = Object.fromEntries(LANGS.map((l) => [l, read("content", l)]));
-const guides = Object.fromEntries(LANGS.map((l) => [l, read("guides", l)]));
+// The use-case guides (what people search for) live in one file for all languages.
+const useCases = read("guides", "use-cases");
+const guides = Object.fromEntries(LANGS.map((l) => {
+  const g = read("guides", l);
+  return [l, { ...g, nav: { ...g.nav, ...useCases[l].nav }, pages: { ...g.pages, ...useCases[l].pages } }];
+}));
 
 const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -71,7 +76,7 @@ function typoText(s, lang) {
 function fill(node, lang) {
   if (typeof node === "string") {
     const size = `${new Intl.NumberFormat(lang).format(RELEASE.sizeMb)}\u00a0${content[lang].unit}`;
-    const links = { ...LINKS, guide: pathOf(lang, "install"), tailscale: pathOf(lang, "tailscale"), translate: pathOf(lang, "translate") };
+    const links = { ...LINKS, guide: pathOf(lang, "install"), tailscale: pathOf(lang, "tailscale"), translate: pathOf(lang, "translate"), temps: pathOf(lang, "pc-temperature-on-phone"), display: pathOf(lang, "phone-as-pc-monitor") };
     return typo(node.replace(/\{(\w+)\}/g, (m, k) => (k === "version" ? RELEASE.version : k === "size" ? size : links[k] ?? m)), lang);
   }
   if (Array.isArray(node)) return node.map((n) => fill(n, lang));
@@ -574,6 +579,11 @@ function block(b, t) {
   if (b.code) return pre(b.code);
   if (b.table) return table(b.table);
   if (b.actions) return downloadButtons(t);
+  if (b.shots) {
+    // App screenshots already on the home page, with the alt text written for them there.
+    const alt = { overview: t.see.items[0].alt, alerts: t.see.items[1].alt, gallery: t.see.items[3].alt, "face-ink": t.standby.faces[0].alt, "face-bauhaus": t.standby.faces[1].alt, "face-blocks": t.standby.faces[2].alt };
+    return `<div class="gshots">${b.shots.map((n) => `<div class="phone">${picture(n, [360, 720], 360, 760, alt[n], "(min-width: 700px) 190px, 30vw")}</div>`).join("")}</div>`;
+  }
   if (b.steps) {
     return `<ol class="gsteps">\n${b.steps.map((s, i) => {
       const x = stepOf(s);
