@@ -19,6 +19,8 @@
     <string name="card_storage">Speicher</string>
     <string name="card_battery">Akku</string>
     <string name="card_system">System</string>
+    <string name="card_processes">Prozesse</string>
+    <string name="card_controls">Steuerung</string>
     <string name="metric_clock">Takt</string>
     <string name="metric_temperature">Temperatur</string>
     <string name="metric_cores">Kerne</string>
@@ -56,7 +58,6 @@
     <string name="dash_machine">PC %1$s</string>
     <string name="dash_open_standby">Standby öffnen</string>
     <string name="dash_banner_paused">Dein PC sendet gerade nichts. Du siehst die zuletzt gesendeten Messwerte.</string>
-    <string name="dash_banner_offline">Seit über einer Minute kein Messwert. Der PC ist vielleicht im Ruhezustand, ausgeschaltet oder nicht im Netzwerk.</string>
     <string name="dash_banner_error">Die Verbindung zu deinem PC ist abgebrochen und wurde nicht wiederhergestellt.</string>
     <string name="dash_banner_disconnected">Dieses Handy empfängt gerade nichts von deinem PC.</string>
     <string name="dash_reconnect">Neu verbinden</string>
@@ -66,6 +67,43 @@
     <string name="dash_waiting">Warte auf den ersten Messwert von deinem PC</string>
     <string name="dash_card_waiting">%1$s, warte auf Daten</string>
     <string name="dash_label_title">%1$s · %2$s</string>
+    <string name="offline_title">Dein PC antwortet nicht</string>
+    <string name="offline_title_asleep">Dein PC ist im Standby</string>
+    <string name="offline_last_seen">Zuletzt gesehen %1$s</string>
+    <string name="offline_last_seen_now">Zuletzt gesehen vor weniger als einer Minute</string>
+    <string name="offline_never_seen">Kein Messwert, seit du die App geöffnet hast</string>
+    <string name="offline_slept">Du hast diesen PC %1$s in den Standby geschickt</string>
+    <string name="offline_slept_now">Du hast diesen PC gerade in den Standby geschickt</string>
+    <string name="offline_slept_hint">Wecke ihn mit der Tastatur oder dem Ein/Aus-Schalter. Die Messwerte kommen von selbst zurück.</string>
+    <string name="offline_checks_title">Das kannst du prüfen</string>
+    <string name="offline_check_wifi">Dieses Handy und der PC sind im selben WLAN</string>
+    <string name="offline_check_awake">Der PC ist an und wach, nicht im Standby</string>
+    <string name="offline_check_tray">SysWatch läuft im Infobereich der Taskleiste am PC</string>
+    <string name="offline_check_tailscale">Tailscale ist auf diesem Handy und auf dem PC eingeschaltet</string>
+    <string name="offline_check_pc_online">Der PC ist an und mit dem Internet verbunden</string>
+    <string name="offline_check_phone_online">Dieses Handy ist mit dem Internet verbunden</string>
+    <string name="offline_retry">Jetzt erneut versuchen</string>
+    <string name="offline_retrying">Suche deinen PC</string>
+    <string name="offline_guide">Anleitung öffnen</string>
+    <string name="proc_off">Dein PC teilt sie nicht. Schalte in den SysWatch-Einstellungen am PC „Top-Prozesse teilen“ ein.</string>
+    <string name="proc_spoken">%1$s, CPU %2$s, RAM %3$s</string>
+    <string name="ctl_off">Lautstärke, Sperren und Standby funktionieren im Modus Lokal oder Tailscale, sobald du sie in den SysWatch-Einstellungen auf deinem PC erlaubst.</string>
+    <string name="ctl_volume">Lautstärke</string>
+    <string name="ctl_mute">Stumm</string>
+    <string name="ctl_no_sound">Auf deinem PC wurde kein Audiogerät gefunden</string>
+    <string name="ctl_lock">Sperren</string>
+    <string name="ctl_sleep">Standby</string>
+    <string name="ctl_sleep_title">PC in den Standby schicken?</string>
+    <string name="ctl_sleep_body">Dein PC geht in den Standby und sendet keine Messwerte mehr. Aufwecken kannst du ihn nur am PC, nicht von diesem Handy aus.</string>
+    <string name="ctl_sleep_confirm">Standby</string>
+    <string name="ctl_done_lock">Dein PC ist gesperrt</string>
+    <string name="ctl_done_sleep">Dein PC geht in den Standby</string>
+    <string name="ctl_err_off">Die Steuerung ist auf deinem PC aus. Erlaube sie dort in den SysWatch-Einstellungen.</string>
+    <string name="ctl_err_rate">Zu viele Eingaben auf einmal. Warte kurz.</string>
+    <string name="ctl_err_not_ready">SysWatch startet auf deinem PC noch. Versuch es gleich noch einmal.</string>
+    <string name="ctl_err_unavailable">Das kann dein PC gerade nicht</string>
+    <string name="ctl_err_code">Dein PC nimmt diese Kopplung nicht mehr an. Kopple ihn neu.</string>
+    <string name="ctl_err_old">SysWatch auf deinem PC ist dafür zu alt. Aktualisiere es dort.</string>
     <plurals name="dash_spoken_percent">
         <item quantity="one">%1$s %2$d Prozent</item>
         <item quantity="other">%1$s %2$d Prozent</item>
@@ -319,6 +357,8 @@
     <string name="settings_group_about_about">Version, Updates und das Kleingedruckte.</string>
     <string name="settings_cards_shown">Sichtbar</string>
     <string name="settings_cards_hidden">Ausgeblendet</string>
+    <string name="settings_cards_processes_note">Sichtbar, wenn dein PC sie teilt</string>
+    <string name="settings_cards_controls_note">Sichtbar im Modus Lokal oder Tailscale</string>
     <string name="settings_standby_fit_both">Funktioniert im Hoch- und Querformat.</string>
     <string name="settings_standby_fit_portrait">Ein Hochformat-Design.</string>
     <string name="settings_standby_fit_landscape">Ein Querformat-Design.</string>
@@ -436,6 +476,12 @@
     <string name="update_action_check">Nach Updates suchen</string>
     <string name="whatsnew_title">Neu in %1$s</string>
     <string name="whatsnew_dismiss">Alles klar</string>
+    <string-array name="whatsnew_1_3_0">
+        <item>Wenn dein PC nicht mehr antwortet, sagt die Übersicht das klar: ein Offline-Bildschirm mit dem, was du prüfen kannst, statt alter Zahlen.</item>
+        <item>Karte Prozesse: die Programme, die auf deinem PC am meisten CPU oder Arbeitsspeicher belegen.</item>
+        <item>Karte Steuerung: Lautstärke, Stummschalten, Sperren und Standby vom Handy aus im Modus Lokal oder Tailscale, wenn du das auf deinem PC erlaubst.</item>
+        <item>Behoben: Sprachwechsel, der Tab Übersicht, der sich nicht öffnete, und die erneute Aufforderung zum Koppeln.</item>
+    </string-array>
     <string-array name="whatsnew_1_2_0">
         <item>Ein neues Design in sechs Stilen: Sticker, Vollfarbe, Banner, Kacheln, Kapseln und Klassisch, dein bisheriges Aussehen. Wähle deinen Stil in den Einstellungen, hell, dunkel oder rein schwarz.</item>
         <item>Läuft gerade: Sieh, was dein PC abspielt, mit Cover, in der Übersicht und in fünf neuen Musik-Standby-Designs.</item>
@@ -500,7 +546,7 @@
     <string name="guide_phone_title">Auf diesem Handy</string>
     <string name="guide_phone_body">Diese App zeigt die Messwerte live, zeichnet Graphen, löst Alarme aus und bietet Standby-Designs und ein Widget.</string>
     <string name="guide_pairing">Einmal gekoppelt mit einem 6-stelligen Code, den der PC als QR-Code anzeigt. Kein Konto.</string>
-    <string name="guide_read_only">Nur Lesezugriff, außer Abspielen, Pausieren und Überspringen von Medien im Modus Lokal oder Tailscale, wenn du das auf deinem PC erlaubst.</string>
+    <string name="guide_read_only">Nur Lesezugriff, außer dem, was du auf deinem PC im Modus Lokal oder Tailscale erlaubst: Abspielen, Pausieren und Überspringen von Medien, Lautstärke, Sperren und Standby.</string>
     <string name="guide_compare_title">Verbindungsarten</string>
     <string name="guide_compare_body">Drei Wege, wie das Handy den PC erreicht. Wähle den, der zu deinem Einsatzort passt.</string>
     <string name="guide_pros_limits">Vorteile und Grenzen</string>
@@ -904,7 +950,9 @@
     <string name="desktop_settings_media_share_body">Sendet Titel, Interpret, Album, App-Name und Cover dessen, was Windows in seiner Mediensteuerung zeigt. Wird nie über die Cloud gesendet.</string>
     <string name="desktop_settings_media_control">Dem Handy Abspielen, Pausieren und Überspringen erlauben (Lokal und Tailscale)</string>
     <string name="desktop_settings_media_control_body">Ist das aus, kann das Handy anzeigen, was läuft, es aber nicht ändern.</string>
-    <string name="desktop_settings_media_note">Das Handy hat nur Lesezugriff, außer Abspielen, Pausieren und Überspringen von Medien, wenn du es erlaubst.</string>
+    <string name="desktop_settings_media_note">Das Handy hat nur Lesezugriff, außer auf das, was du hier erlaubst.</string>
+    <string name="desktop_settings_remote_control">Dem Handy erlauben, die Lautstärke zu ändern, diesen PC zu sperren und in den Energiesparmodus zu versetzen (Lokal und Tailscale)</string>
+    <string name="desktop_settings_remote_control_body">Aus, solange du es nicht einschaltest. Dann kann ein gekoppeltes Handy in deinem Netzwerk die Lautstärke einstellen, den Ton stummschalten, den Bildschirm sperren und diesen PC in den Energiesparmodus versetzen. Nie über die Cloud verfügbar.</string>
     <string name="desktop_settings_share_processes">Top-Prozesse teilen</string>
     <string name="desktop_settings_share_processes_body">Die 5 Prozesse mit der höchsten CPU-Last in die gesendeten Daten aufnehmen.</string>
     <string name="desktop_settings_share_processes_body_light">Die 5 Prozesse mit der höchsten CPU-Last in die gesendeten Daten aufnehmen. Im Sparmodus nicht gesendet.</string>

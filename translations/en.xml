@@ -24,6 +24,10 @@
     <string name="card_battery">Battery</string>
     <!-- The card with uptime, process count and fan speed. -->
     <string name="card_system">System</string>
+    <!-- The card that lists the five heaviest programs running on the PC. One word. -->
+    <string name="card_processes">Processes</string>
+    <!-- The card with the volume slider and the Lock and Sleep buttons. One word. -->
+    <string name="card_controls">Controls</string>
     <!-- The CPU clock speed in GHz, not the time of day. -->
     <string name="metric_clock">Clock</string>
     <string name="metric_temperature">Temperature</string>
@@ -89,7 +93,6 @@
     <string name="dash_open_standby">Open standby</string>
     <!-- Messages shown under the heading when the connection is not live, one per state. -->
     <string name="dash_banner_paused">Your PC has stopped sending. These are the last readings it sent.</string>
-    <string name="dash_banner_offline">No reading for over a minute. The PC may be asleep, shut down or off the network.</string>
     <string name="dash_banner_error">The link to your PC dropped and has not come back.</string>
     <string name="dash_banner_disconnected">This phone is not receiving from your PC right now.</string>
     <!-- Button in those messages: keep short. -->
@@ -105,6 +108,65 @@
     <string name="dash_card_waiting">%1$s, waiting for data</string>
     <!-- A card name and what is under it, on one line in capitals. %1$s is the card (CPU), %2$s the hardware name or a note (Ryzen 7 5800X). -->
     <string name="dash_label_title">%1$s · %2$s</string>
+    <!-- Heading of the screen that takes the place of the cards after a minute without readings. -->
+    <string name="offline_title">Your PC is not answering</string>
+    <!-- The same heading when this phone put the PC to sleep with the Sleep button. -->
+    <string name="offline_title_asleep">Your PC is asleep</string>
+    <!-- Under the heading. %1$s is a time span that Android writes in the phone's language, for example: 4 minutes ago. -->
+    <string name="offline_last_seen">Last seen %1$s</string>
+    <string name="offline_last_seen_now">Last seen less than a minute ago</string>
+    <!-- Under the heading when no reading has arrived since the app was opened. -->
+    <string name="offline_never_seen">No reading since you opened the app</string>
+    <!-- Under the heading after the Sleep button was used. %1$s is a time span that Android writes, for example: 2 minutes ago. -->
+    <string name="offline_slept">You put this PC to sleep %1$s</string>
+    <string name="offline_slept_now">You put this PC to sleep just now</string>
+    <!-- Under that line. The phone cannot wake the PC. -->
+    <string name="offline_slept_hint">Wake it with its keyboard or power button. The readings come back by themselves.</string>
+    <!-- Small caption above a short list of things to check. -->
+    <string name="offline_checks_title">Things to check</string>
+    <!-- The checks. Each is one short line that is true when all is well. Which three are shown depends on how the phone connects. -->
+    <string name="offline_check_wifi">This phone and the PC are on the same Wi-Fi</string>
+    <string name="offline_check_awake">The PC is on and awake, not asleep</string>
+    <!-- The tray is the row of small icons by the Windows clock. -->
+    <string name="offline_check_tray">SysWatch is running in the tray on the PC</string>
+    <string name="offline_check_tailscale">Tailscale is switched on, on this phone and on the PC</string>
+    <string name="offline_check_pc_online">The PC is on and connected to the internet</string>
+    <string name="offline_check_phone_online">This phone is connected to the internet</string>
+    <!-- The one filled button on that screen: look for the PC again at once. -->
+    <string name="offline_retry">Try again now</string>
+    <!-- The same button for a few seconds after it was tapped. -->
+    <string name="offline_retrying">Looking for your PC</string>
+    <!-- A text link under the button. The guide is the short explanation of how SysWatch works. -->
+    <string name="offline_guide">Open the guide</string>
+    <!-- In the card when the PC has stopped sending its processes. Share top processes is a switch in the desktop app: use its name from the desktop translation. -->
+    <string name="proc_off">Your PC is not sharing them. Switch on Share top processes in SysWatch Settings on the PC.</string>
+    <!-- Read aloud for one row. %1$s is the program (chrome.exe), %2$s its share of the CPU (12%), %3$s its memory (1.2 GB). -->
+    <string name="proc_spoken">%1$s, CPU %2$s, memory %3$s</string>
+    <!-- In the card when the controls are switched off on the PC. Local and Tailscale are connection modes. -->
+    <string name="ctl_off">Volume, lock and sleep work in Local and Tailscale mode, once you allow them in SysWatch Settings on your PC.</string>
+    <!-- Read aloud for the slider. -->
+    <string name="ctl_volume">Volume</string>
+    <!-- Read aloud for the speaker button, which is on while the PC is muted. -->
+    <string name="ctl_mute">Mute</string>
+    <!-- Under the volume slider when it is switched off because the PC has no speaker or headphone output. -->
+    <string name="ctl_no_sound">No sound device found on your PC</string>
+    <!-- Two buttons side by side: keep each to one short word. Lock shows the Windows lock screen. Sleep is the Windows power state. -->
+    <string name="ctl_lock">Lock</string>
+    <string name="ctl_sleep">Sleep</string>
+    <!-- Dialog shown before the PC is put to sleep: title, text and the button that does it. -->
+    <string name="ctl_sleep_title">Put your PC to sleep?</string>
+    <string name="ctl_sleep_body">Your PC will go to sleep and stop sending readings. You wake it at the PC, not from this phone.</string>
+    <string name="ctl_sleep_confirm">Sleep</string>
+    <!-- Shown for a moment under the buttons after a tap that worked. -->
+    <string name="ctl_done_lock">Your PC is locked</string>
+    <string name="ctl_done_sleep">Your PC is going to sleep</string>
+    <!-- Shown for a moment when the PC refused. Each says why, and what to do, briefly. -->
+    <string name="ctl_err_off">Controls are off on your PC. Allow them in SysWatch Settings there.</string>
+    <string name="ctl_err_rate">Too many taps at once. Wait a moment.</string>
+    <string name="ctl_err_not_ready">SysWatch on your PC is still starting. Try again in a moment.</string>
+    <string name="ctl_err_unavailable">Your PC cannot do that right now</string>
+    <string name="ctl_err_code">Your PC no longer accepts this pairing. Pair again.</string>
+    <string name="ctl_err_old">SysWatch on your PC is too old for this. Update it there.</string>
     <!-- A percentage. %1$s is the card name, %2$d the number: "CPU 47 percent". -->
     <plurals name="dash_spoken_percent">
         <item quantity="one">%1$s %2$d percent</item>
@@ -487,6 +549,10 @@
     <!-- Under a card name in the Overview list: whether that card is on the main tab. One word each. -->
     <string name="settings_cards_shown">Shown</string>
     <string name="settings_cards_hidden">Hidden</string>
+    <!-- The same place, for the Processes card while it is switched on: it is only drawn for a PC that shares its processes. -->
+    <string name="settings_cards_processes_note">Shown when your PC shares them</string>
+    <!-- The same place, for the Controls card while it is switched on: it is not drawn in Cloud mode. Local and Tailscale are connection modes. -->
+    <string name="settings_cards_controls_note">Shown in Local and Tailscale mode</string>
     <!-- Under the name of the standby face in use: which way up that face works. -->
     <string name="settings_standby_fit_both">Works in portrait and landscape.</string>
     <string name="settings_standby_fit_portrait">A portrait face.</string>
@@ -652,6 +718,13 @@
     <!-- Dialog button. -->
     <string name="whatsnew_dismiss">Got it</string>
     <!-- Release notes for version 1.2.0, one sentence per bullet. Overview is the name of the main tab. -->
+    <string-array name="whatsnew_1_3_0">
+        <item>When your PC stops answering, Overview says so: a clear PC offline screen with what to check, instead of old numbers.</item>
+        <item>Processes card: the apps using the most CPU or memory on your PC.</item>
+        <item>Controls card: volume, mute, lock and sleep from your phone in Local and Tailscale mode, when you allow it on your PC.</item>
+        <item>Fixed: switching language, the Overview tab not opening, and the app asking you to pair again.</item>
+    </string-array>
+    <!-- Release notes for version 1.2.0, one sentence per bullet. -->
     <string-array name="whatsnew_1_2_0">
         <item>A new design in six styles: Stickers, Solid, Banner, Tiles, Pills and Classic, your old look. Pick yours in Settings, in light, dark or true black.</item>
         <item>Now playing: see what your PC is playing, with its cover, on Overview and in five new music standby faces.</item>
@@ -749,8 +822,8 @@
     <string name="guide_phone_body">This app shows the readings live, draws graphs, raises alerts, and runs standby faces and a widget.</string>
     <!-- On the line joining the two panels. QR is the square code shown on the PC. -->
     <string name="guide_pairing">Paired once with a 6-character code, shown as a QR code on the PC. No account.</string>
-    <!-- Local and Tailscale are connection modes. The PC is where media control is allowed or not. -->
-    <string name="guide_read_only">Read only, except play, pause and skip for media in Local and Tailscale mode, when you allow it on your PC.</string>
+    <!-- Local and Tailscale are connection modes. The PC is where each of these is allowed or not. Lock and sleep are what the phone can ask Windows to do. -->
+    <string name="guide_read_only">Read only, except what you allow on your PC in Local and Tailscale mode: play, pause and skip for media, volume, lock and sleep.</string>
     <!-- Heading of the Guide section that compares the three ways to connect. -->
     <string name="guide_compare_title">Connection types</string>
     <string name="guide_compare_body">Three ways for the phone to reach the PC. Pick the one that fits where you use it.</string>
@@ -1160,7 +1233,7 @@
     <string name="desktop_battery_state_empty">Empty</string>
     <string name="desktop_battery_state_unknown">Unknown</string>
     <string name="desktop_battery_time_to_full">Time to full</string>
-    <string name="desktop_battery_time_remaining">Time remaining</string>
+    <string name="desktop_battery_time_remaining">Time left</string>
     <string name="desktop_battery_status">Status</string>
     <string name="desktop_battery_fully_charged">Fully charged</string>
     <string name="desktop_battery_charging_at">Charging at</string>
@@ -1319,7 +1392,9 @@
     <string name="desktop_settings_media_share_body">Sends the title, artist, album, app name and cover of what Windows shows in its media controls. Never sent through the cloud.</string>
     <string name="desktop_settings_media_control">Let the phone play, pause and skip (Local and Tailscale)</string>
     <string name="desktop_settings_media_control_body">With this off, the phone can show what is playing but cannot change it.</string>
-    <string name="desktop_settings_media_note">The phone is read only, except play, pause and skip for media when you allow it.</string>
+    <string name="desktop_settings_media_note">The phone is read only, except for what you allow here.</string>
+    <string name="desktop_settings_remote_control">Let the phone change volume, lock and sleep this PC (Local and Tailscale)</string>
+    <string name="desktop_settings_remote_control_body">Off unless you turn it on. A paired phone on your network can then set the volume, mute, lock the screen and put this PC to sleep. Never available through the cloud.</string>
     <!-- Settings, Privacy -->
     <string name="desktop_settings_share_processes">Share top processes</string>
     <string name="desktop_settings_share_processes_body">Include the top 5 CPU-heavy processes in the broadcast payload.</string>

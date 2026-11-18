@@ -19,6 +19,8 @@
     <string name="card_storage">Диски</string>
     <string name="card_battery">Батарея</string>
     <string name="card_system">Система</string>
+    <string name="card_processes">Процессы</string>
+    <string name="card_controls">Пульт</string>
     <string name="metric_clock">Частота</string>
     <string name="metric_temperature">Температура</string>
     <string name="metric_cores">Ядра</string>
@@ -56,7 +58,6 @@
     <string name="dash_machine">ПК %1$s</string>
     <string name="dash_open_standby">Открыть режим ожидания</string>
     <string name="dash_banner_paused">Ваш ПК перестал отправлять данные. Это последние показания, которые он прислал.</string>
-    <string name="dash_banner_offline">Показаний нет больше минуты. Возможно, ПК в спящем режиме, выключен или не в сети.</string>
     <string name="dash_banner_error">Связь с вашим ПК оборвалась и не восстановилась.</string>
     <string name="dash_banner_disconnected">Сейчас этот телефон не получает данные от вашего ПК.</string>
     <string name="dash_reconnect">Переподключить</string>
@@ -66,6 +67,43 @@
     <string name="dash_waiting">Ожидание первых показаний от вашего ПК</string>
     <string name="dash_card_waiting">%1$s, ожидание данных</string>
     <string name="dash_label_title">%1$s · %2$s</string>
+    <string name="offline_title">Ваш ПК не отвечает</string>
+    <string name="offline_title_asleep">Ваш ПК в спящем режиме</string>
+    <string name="offline_last_seen">Последние данные: %1$s</string>
+    <string name="offline_last_seen_now">Последние данные: меньше минуты назад</string>
+    <string name="offline_never_seen">С момента запуска приложения показаний не было</string>
+    <string name="offline_slept">Вы перевели этот ПК в спящий режим %1$s</string>
+    <string name="offline_slept_now">Вы только что перевели этот ПК в спящий режим</string>
+    <string name="offline_slept_hint">Разбудите его клавиатурой или кнопкой питания. Показания вернутся сами.</string>
+    <string name="offline_checks_title">Что проверить</string>
+    <string name="offline_check_wifi">Этот телефон и ПК в одной сети Wi-Fi</string>
+    <string name="offline_check_awake">ПК включён и не спит</string>
+    <string name="offline_check_tray">SysWatch запущен в области уведомлений на ПК</string>
+    <string name="offline_check_tailscale">Tailscale включён на этом телефоне и на ПК</string>
+    <string name="offline_check_pc_online">ПК включён и подключён к интернету</string>
+    <string name="offline_check_phone_online">Этот телефон подключён к интернету</string>
+    <string name="offline_retry">Повторить сейчас</string>
+    <string name="offline_retrying">Ищем ваш ПК</string>
+    <string name="offline_guide">Открыть справку</string>
+    <string name="proc_off">Ваш ПК их не отправляет. Включите «Отправлять список процессов» в настройках SysWatch на ПК.</string>
+    <string name="proc_spoken">%1$s, CPU %2$s, память %3$s</string>
+    <string name="ctl_off">Громкость, блокировка и спящий режим работают в локальном режиме и через Tailscale, когда вы разрешите их в настройках SysWatch на ПК.</string>
+    <string name="ctl_volume">Громкость</string>
+    <string name="ctl_mute">Без звука</string>
+    <string name="ctl_no_sound">На ПК не найдено звуковое устройство</string>
+    <string name="ctl_lock">Блокировка</string>
+    <string name="ctl_sleep">Сон</string>
+    <string name="ctl_sleep_title">Перевести ПК в спящий режим?</string>
+    <string name="ctl_sleep_body">ПК уснёт и перестанет отправлять показания. Разбудить его можно только на самом ПК, не с этого телефона.</string>
+    <string name="ctl_sleep_confirm">Перевести</string>
+    <string name="ctl_done_lock">ПК заблокирован</string>
+    <string name="ctl_done_sleep">ПК переходит в спящий режим</string>
+    <string name="ctl_err_off">Управление отключено на ПК. Разрешите его там в настройках SysWatch.</string>
+    <string name="ctl_err_rate">Слишком много нажатий подряд. Подождите немного.</string>
+    <string name="ctl_err_not_ready">SysWatch на ПК ещё запускается. Повторите чуть позже.</string>
+    <string name="ctl_err_unavailable">Сейчас ПК не может этого сделать</string>
+    <string name="ctl_err_code">ПК больше не принимает эту привязку. Привяжите его заново.</string>
+    <string name="ctl_err_old">SysWatch на ПК слишком старый для этого. Обновите его там.</string>
     <plurals name="dash_spoken_percent">
         <item quantity="one">%1$s %2$d процент</item>
         <item quantity="few">%1$s %2$d процента</item>
@@ -325,6 +363,8 @@
     <string name="settings_group_about_about">Версия, обновления и юридическая информация.</string>
     <string name="settings_cards_shown">Показана</string>
     <string name="settings_cards_hidden">Скрыта</string>
+    <string name="settings_cards_processes_note">Показана, когда ПК их отправляет</string>
+    <string name="settings_cards_controls_note">Показана в локальном режиме и через Tailscale</string>
     <string name="settings_standby_fit_both">Работает в книжной и альбомной ориентации.</string>
     <string name="settings_standby_fit_portrait">Книжный циферблат.</string>
     <string name="settings_standby_fit_landscape">Альбомный циферблат.</string>
@@ -448,6 +488,12 @@
     <string name="update_action_check">Проверить обновления</string>
     <string name="whatsnew_title">Что нового в версии %1$s</string>
     <string name="whatsnew_dismiss">Понятно</string>
+    <string-array name="whatsnew_1_3_0">
+        <item>Когда ПК перестаёт отвечать, «Обзор» прямо говорит об этом: понятный экран «ПК не в сети» с тем, что стоит проверить, вместо старых цифр.</item>
+        <item>Карточка «Процессы»: приложения, которые больше всего нагружают процессор или память ПК.</item>
+        <item>Карточка «Пульт»: громкость, отключение звука, блокировка и сон с телефона в локальном режиме и в режиме Tailscale, если вы разрешили это на ПК.</item>
+        <item>Исправлено: смена языка, вкладка «Обзор», которая не открывалась, и повторный запрос на сопряжение.</item>
+    </string-array>
     <string-array name="whatsnew_1_2_0">
         <item>Новый дизайн в шести стилях: Наклейки, Заливка, Шапка, Плитки, Капсулы и Классика, ваш прежний вид. Выберите свой в настройках: светлая, тёмная или чисто чёрная тема.</item>
         <item>Сейчас играет: что звучит на ПК, с обложкой, на экране «Обзор» и в пяти новых музыкальных циферблатах.</item>
@@ -512,7 +558,7 @@
     <string name="guide_phone_title">На этом телефоне</string>
     <string name="guide_phone_body">Это приложение выводит показания в реальном времени, строит графики, присылает оповещения, а также предлагает циферблаты режима ожидания и виджет.</string>
     <string name="guide_pairing">Привязка один раз по коду из 6 символов, который ПК показывает в виде QR-кода. Без аккаунта.</string>
-    <string name="guide_read_only">Только чтение. Исключение: воспроизведение, пауза и переключение треков в локальном режиме и в режиме Tailscale, если вы разрешили это на ПК.</string>
+    <string name="guide_read_only">Только чтение. Исключение: то, что вы разрешили на ПК в локальном режиме и в режиме Tailscale: воспроизведение, пауза и переключение треков, громкость, блокировка и спящий режим.</string>
     <string name="guide_compare_title">Типы подключения</string>
     <string name="guide_compare_body">Три способа связать телефон с ПК. Выберите тот, что подходит для места, где вы им пользуетесь.</string>
     <string name="guide_pros_limits">Плюсы и ограничения</string>
@@ -922,7 +968,9 @@
     <string name="desktop_settings_media_share_body">Отправляет название, исполнителя, альбом, имя приложения и обложку того, что Windows показывает в элементах управления мультимедиа. Никогда не отправляется через облако.</string>
     <string name="desktop_settings_media_control">Разрешить телефону воспроизведение, паузу и переключение треков (локально и Tailscale)</string>
     <string name="desktop_settings_media_control_body">Если выключено, телефон показывает, что играет, но не может это изменить.</string>
-    <string name="desktop_settings_media_note">Телефон только читает данные. Исключение: воспроизведение, пауза и переключение треков, если вы это разрешите.</string>
+    <string name="desktop_settings_media_note">Телефон только читает данные. Исключение: то, что вы разрешите здесь.</string>
+    <string name="desktop_settings_remote_control">Разрешить телефону менять громкость, блокировать этот ПК и переводить его в спящий режим (локально и Tailscale)</string>
+    <string name="desktop_settings_remote_control_body">Выключено, пока вы не включите. После этого привязанный телефон в вашей сети может менять громкость, отключать звук, блокировать экран и переводить этот ПК в спящий режим. Через облако недоступно.</string>
     <string name="desktop_settings_share_processes">Отправлять список процессов</string>
     <string name="desktop_settings_share_processes_body">Добавлять в отправляемые данные 5 процессов, сильнее всего нагружающих CPU.</string>
     <string name="desktop_settings_share_processes_body_light">Добавлять в отправляемые данные 5 процессов, сильнее всего нагружающих CPU. Не отправляется, пока включён облегчённый режим.</string>

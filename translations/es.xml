@@ -19,6 +19,8 @@
     <string name="card_storage">Discos</string>
     <string name="card_battery">Batería</string>
     <string name="card_system">Sistema</string>
+    <string name="card_processes">Procesos</string>
+    <string name="card_controls">Controles</string>
     <string name="metric_clock">Frecuencia</string>
     <string name="metric_temperature">Temperatura</string>
     <string name="metric_cores">Núcleos</string>
@@ -56,7 +58,6 @@
     <string name="dash_machine">PC %1$s</string>
     <string name="dash_open_standby">Abrir modo reposo</string>
     <string name="dash_banner_paused">Tu PC ha dejado de enviar datos. Estas son sus últimas lecturas.</string>
-    <string name="dash_banner_offline">Sin lecturas desde hace más de un minuto. Puede que el PC esté suspendido, apagado o fuera de la red.</string>
     <string name="dash_banner_error">La conexión con tu PC se cortó y no ha vuelto.</string>
     <string name="dash_banner_disconnected">Este teléfono no está recibiendo datos de tu PC ahora mismo.</string>
     <string name="dash_reconnect">Reconectar</string>
@@ -66,6 +67,43 @@
     <string name="dash_waiting">Esperando la primera lectura de tu PC</string>
     <string name="dash_card_waiting">%1$s, esperando datos</string>
     <string name="dash_label_title">%1$s · %2$s</string>
+    <string name="offline_title">Tu PC no responde</string>
+    <string name="offline_title_asleep">Tu PC está suspendido</string>
+    <string name="offline_last_seen">Visto por última vez %1$s</string>
+    <string name="offline_last_seen_now">Visto hace menos de un minuto</string>
+    <string name="offline_never_seen">Sin lecturas desde que abriste la app</string>
+    <string name="offline_slept">Suspendiste este PC %1$s</string>
+    <string name="offline_slept_now">Acabas de suspender este PC</string>
+    <string name="offline_slept_hint">Despiértalo con su teclado o su botón de encendido. Las lecturas vuelven solas.</string>
+    <string name="offline_checks_title">Qué comprobar</string>
+    <string name="offline_check_wifi">Este teléfono y el PC están en el mismo Wi-Fi</string>
+    <string name="offline_check_awake">El PC está encendido y activo, no suspendido</string>
+    <string name="offline_check_tray">SysWatch está abierto en la bandeja del sistema del PC</string>
+    <string name="offline_check_tailscale">Tailscale está activado en este teléfono y en el PC</string>
+    <string name="offline_check_pc_online">El PC está encendido y conectado a internet</string>
+    <string name="offline_check_phone_online">Este teléfono está conectado a internet</string>
+    <string name="offline_retry">Reintentar ahora</string>
+    <string name="offline_retrying">Buscando tu PC</string>
+    <string name="offline_guide">Abrir la guía</string>
+    <string name="proc_off">Tu PC no los comparte. Activa «Compartir procesos principales» en los ajustes de SysWatch en el PC.</string>
+    <string name="proc_spoken">%1$s, CPU %2$s, memoria %3$s</string>
+    <string name="ctl_off">El volumen, el bloqueo y la suspensión funcionan en modo Local o Tailscale, cuando los permites en los ajustes de SysWatch en tu PC.</string>
+    <string name="ctl_volume">Volumen</string>
+    <string name="ctl_mute">Silenciar</string>
+    <string name="ctl_no_sound">No se encontró ningún dispositivo de audio en tu PC</string>
+    <string name="ctl_lock">Bloquear</string>
+    <string name="ctl_sleep">Suspender</string>
+    <string name="ctl_sleep_title">¿Suspender tu PC?</string>
+    <string name="ctl_sleep_body">Tu PC se suspenderá y dejará de enviar lecturas. Se despierta desde el propio PC, no desde este teléfono.</string>
+    <string name="ctl_sleep_confirm">Suspender</string>
+    <string name="ctl_done_lock">Tu PC está bloqueado</string>
+    <string name="ctl_done_sleep">Tu PC se está suspendiendo</string>
+    <string name="ctl_err_off">Los controles están desactivados en tu PC. Permítelos allí, en los ajustes de SysWatch.</string>
+    <string name="ctl_err_rate">Demasiados toques a la vez. Espera un momento.</string>
+    <string name="ctl_err_not_ready">SysWatch aún se está iniciando en tu PC. Prueba de nuevo en un momento.</string>
+    <string name="ctl_err_unavailable">Tu PC no puede hacer eso ahora</string>
+    <string name="ctl_err_code">Tu PC ya no acepta esta vinculación. Vincúlalo de nuevo.</string>
+    <string name="ctl_err_old">SysWatch en tu PC es demasiado antiguo para esto. Actualízalo allí.</string>
     <plurals name="dash_spoken_percent">
         <item quantity="one">%1$s %2$d por ciento</item>
         <item quantity="other">%1$s %2$d por ciento</item>
@@ -319,6 +357,8 @@
     <string name="settings_group_about_about">Versión, actualizaciones y letra pequeña.</string>
     <string name="settings_cards_shown">Visible</string>
     <string name="settings_cards_hidden">Oculta</string>
+    <string name="settings_cards_processes_note">Visible cuando tu PC los comparte</string>
+    <string name="settings_cards_controls_note">Visible en modo Local o Tailscale</string>
     <string name="settings_standby_fit_both">Funciona en vertical y en horizontal.</string>
     <string name="settings_standby_fit_portrait">Una esfera vertical.</string>
     <string name="settings_standby_fit_landscape">Una esfera horizontal.</string>
@@ -436,6 +476,12 @@
     <string name="update_action_check">Buscar actualizaciones</string>
     <string name="whatsnew_title">Novedades de la versión %1$s</string>
     <string name="whatsnew_dismiss">Entendido</string>
+    <string-array name="whatsnew_1_3_0">
+        <item>Cuando tu PC deja de responder, Resumen lo dice: una pantalla clara de PC sin conexión con lo que conviene revisar, en vez de cifras antiguas.</item>
+        <item>Tarjeta Procesos: las aplicaciones que más CPU o memoria usan en tu PC.</item>
+        <item>Tarjeta Controles: volumen, silencio, bloquear y suspender desde el móvil en los modos Local y Tailscale, si lo permites en tu PC.</item>
+        <item>Corregido: el cambio de idioma, la pestaña Resumen que no se abría y la app pidiendo vincular de nuevo.</item>
+    </string-array>
     <string-array name="whatsnew_1_2_0">
         <item>Un diseño nuevo en seis estilos: Pegatinas, Sólido, Cabecera, Mosaico, Cápsulas y Clásico, tu aspecto de antes. Elige el tuyo en Ajustes, en claro, oscuro o negro puro.</item>
         <item>Sonando ahora: mira lo que reproduce tu PC, con su portada, en Resumen y en cinco nuevas esferas de música.</item>
@@ -500,7 +546,7 @@
     <string name="guide_phone_title">En este teléfono</string>
     <string name="guide_phone_body">Esta app muestra las lecturas en vivo, dibuja gráficos, lanza alertas y ofrece esferas de reposo y un widget.</string>
     <string name="guide_pairing">Se vincula una sola vez con un código de 6 caracteres, que el PC muestra como código QR. Sin cuenta.</string>
-    <string name="guide_read_only">Solo lectura, salvo reproducir, pausar y saltar pistas multimedia en los modos Local y Tailscale, si lo permites en tu PC.</string>
+    <string name="guide_read_only">Solo lectura, salvo lo que permitas en tu PC en los modos Local y Tailscale: reproducir, pausar y saltar pistas multimedia, volumen, bloqueo y suspensión.</string>
     <string name="guide_compare_title">Tipos de conexión</string>
     <string name="guide_compare_body">Tres formas de conectar el teléfono con el PC. Elige la que mejor encaje con dónde lo usas.</string>
     <string name="guide_pros_limits">Ventajas y limitaciones</string>
@@ -907,7 +953,9 @@
     <string name="desktop_settings_media_share_body">Envía el título, el artista, el álbum, el nombre de la app y la portada de lo que Windows muestra en sus controles multimedia. Nunca se envía por la nube.</string>
     <string name="desktop_settings_media_control">Permitir que el teléfono reproduzca, pause y salte pistas (Local y Tailscale)</string>
     <string name="desktop_settings_media_control_body">Si está desactivado, el teléfono puede mostrar lo que suena, pero no cambiarlo.</string>
-    <string name="desktop_settings_media_note">El teléfono es de solo lectura, salvo reproducir, pausar y saltar pistas multimedia si lo permites.</string>
+    <string name="desktop_settings_media_note">El teléfono es de solo lectura, salvo lo que permitas aquí.</string>
+    <string name="desktop_settings_remote_control">Permitir que el teléfono cambie el volumen, bloquee y suspenda este PC (Local y Tailscale)</string>
+    <string name="desktop_settings_remote_control_body">Desactivado mientras no lo actives. Un teléfono vinculado en tu red puede entonces ajustar el volumen, silenciar el sonido, bloquear la pantalla y suspender este PC. Nunca disponible por la nube.</string>
     <string name="desktop_settings_share_processes">Compartir procesos principales</string>
     <string name="desktop_settings_share_processes_body">Incluye en los datos enviados los 5 procesos que más CPU usan.</string>
     <string name="desktop_settings_share_processes_body_light">Incluye en los datos enviados los 5 procesos que más CPU usan. No se envían mientras el modo ligero está activado.</string>

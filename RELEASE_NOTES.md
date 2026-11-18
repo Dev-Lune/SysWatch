@@ -1,3 +1,35 @@
+# SysWatch 0.4.0 release notes
+
+**Released:** 18 Nov 2026 · **Desktop:** Windows 10 / 11, 64-bit · **Android app:** 1.3.0 · **Website:** [syswatch.devlune.in](https://syswatch.devlune.in)
+
+## Download
+
+| File | For |
+|---|---|
+| `SysWatch_0.4.0_x64-setup.exe` | Most people. Run it and follow the installer. |
+| `SysWatch_0.4.0_x64_en-US.msi` | IT-managed PCs that need an MSI. |
+
+Windows SmartScreen will warn that the installer is unrecognised, because it is not code signed yet. Choose **More info**, then **Run anyway**.
+
+## What is new since 0.3.0
+
+- **Controls from the phone.** Volume, mute, lock and sleep, in Local and Tailscale mode. Off until you switch it on in Settings on the PC. Protected by the pairing code and never sent through the cloud.
+- **PC offline screen (Android).** When the PC stops answering, Overview says so, shows when it was last seen and what to check, and comes back by itself.
+- **Processes card (Android).** The apps using the most CPU or memory, when "Share top processes" is on in the PC's Settings.
+- **A much smaller window.** Down to 720 x 520. Tiles drop detail in steps and nothing overlaps.
+- **Tray icon.** A double-click no longer opens the window and closes it again.
+- **Starting up.** While it loads, the PC now answers "not ready" instead of "wrong code", so a phone never mistakes a slow start for a changed code.
+
+The full list is in the [changelog](./CHANGELOG.md).
+
+## Updating
+
+Install 0.4.0 over the old version. Your pairing code and settings are kept.
+
+**The controls and the new cards need Android app 1.3.0**, which reaches Google Play separately. Everything else works with the Android app you have.
+
+---
+
 # SysWatch 0.3.0 release notes
 
 **Released:** 11 Nov 2026 · **Desktop:** Windows 10 / 11, 64-bit · **Android app:** 1.2.0 · **Website:** [syswatch.devlune.in](https://syswatch.devlune.in)

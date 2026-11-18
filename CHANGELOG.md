@@ -7,6 +7,29 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.4.0] · 2026-11-18
+
+Desktop 0.4.0 and Android 1.3.0. The Android version reaches Google Play separately; the controls need both.
+
+### Added
+
+**Android**
+- PC offline screen: when the PC stops answering, Overview shows a sleeping PC drawn in 3D, when it was last seen and what to check, instead of old numbers. It returns to live readings by itself.
+- Processes card: the apps using the most CPU or memory, when "Share top processes" is on in the PC's Settings.
+- Controls card: volume, mute, lock and sleep, in Local and Tailscale mode, when allowed on the PC. Sleep asks first.
+- Both new cards can be hidden or reordered in Settings like the others.
+
+**Desktop**
+- System controls from the phone: volume, mute, lock and sleep. Off by default, switched on in Settings, Local and Tailscale only, protected by the pairing code and rate limited. Nothing about it goes through the cloud.
+- The window can be made much smaller, down to 720 x 520. Tiles drop detail in steps (secondary rows, then the graph, then everything but the main figure) and nothing overlaps. Under 960 px wide the sidebar becomes an icon rail.
+
+### Fixed
+- Android: switching language on a Google Play install, the Overview tab not opening after a language change, and the app unpairing after a stray answer from the network.
+- Desktop: double-clicking the tray icon opened the window and closed it again. A left click now always shows the window.
+- Desktop: while starting, before the pairing code is loaded, the PC told the phone "wrong code". It now answers "not ready", which the phone waits out.
+- Desktop: battery details stay on one line in every language; long labels were cut in half in French, Spanish and Russian.
+- Desktop: in the Bold looks a short window cut the Copy and Regenerate buttons off the pairing panel.
+
 ## [0.3.0] · 2026-11-11
 
 Desktop 0.3.0 and Android 1.2.0. The Android version reaches Google Play separately; Now playing needs it.

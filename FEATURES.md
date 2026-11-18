@@ -1,6 +1,6 @@
 # SysWatch feature list
 
-Current versions: desktop 0.3.0, Android 1.2.0.
+Current versions: desktop 0.4.0, Android 1.3.0 (on its way to Google Play; the controls, the Processes card and the PC offline screen need it).
 
 ## Connection
 
@@ -12,9 +12,19 @@ Current versions: desktop 0.3.0, Android 1.2.0.
 - Pair by scanning one QR code. It carries the code, the mode, the PC's addresses and the port.
 - In local mode the phone finds the PC again by itself if the router gives it a new address.
 - The phone tries each address in order: Wi-Fi first, Tailscale last.
-- Read only, except media: in Local and Tailscale mode the phone can play, pause and skip what the PC is playing (switch it off in Settings on the PC). It cannot change or run anything else.
+- Read only, with two exceptions, both in Local and Tailscale mode only. Media: the phone can play, pause and skip what the PC is playing (on by default, switch it off in Settings on the PC). System controls: volume, mute, lock and sleep (off until you switch them on in Settings on the PC). It cannot change or run anything else.
 
-## Android app 1.2.0
+## Android app 1.3.0
+
+**PC offline screen**
+- When the PC stops answering, Overview shows a sleeping PC drawn in 3D, when it was last seen and what to check, instead of old numbers
+- Returns to live readings by itself; after Sleep from the phone it says the PC is asleep
+
+**Processes**
+- The apps using the most CPU or memory, when "Share top processes" is on in the PC's Settings
+
+**Controls** (Local and Tailscale, when allowed on the PC)
+- Volume, mute, lock and sleep; sleep asks first
 
 **Now playing** (Local and Tailscale)
 - What the PC is playing, with its cover and progress, on Overview
@@ -57,8 +67,10 @@ Current versions: desktop 0.3.0, Android 1.2.0.
 **Updates**
 - Google Play in-app updates, and a one-time list of what changed after updating
 
-## Desktop app 0.3.0
+## Desktop app 0.4.0
 
+- System controls from the phone: volume, mute, lock and sleep. Off by default, Local and Tailscale only, protected by the pairing code and rate limited
+- The window shrinks to 720 x 520: tiles drop detail in steps and nothing overlaps
 - Now playing card, read from Windows media controls; shared with the phone over the local connection only
 - English, German, French, Spanish and Russian, starting in the Windows language; new text arrives without an update
 - Lightweight mode; hidden in the tray it uses about 55 to 73 MB and under 0.5% of one core

@@ -19,6 +19,8 @@
     <string name="card_storage">Stockage</string>
     <string name="card_battery">Batterie</string>
     <string name="card_system">Système</string>
+    <string name="card_processes">Processus</string>
+    <string name="card_controls">Commandes</string>
     <string name="metric_clock">Fréquence</string>
     <string name="metric_temperature">Température</string>
     <string name="metric_cores">Cœurs</string>
@@ -56,7 +58,6 @@
     <string name="dash_machine">PC %1$s</string>
     <string name="dash_open_standby">Ouvrir la veille</string>
     <string name="dash_banner_paused">Votre PC a cessé d\'envoyer. Voici les dernières mesures reçues.</string>
-    <string name="dash_banner_offline">Aucune mesure depuis plus d\'une minute. Le PC est peut-être en veille, éteint ou hors du réseau.</string>
     <string name="dash_banner_error">La liaison avec votre PC a été coupée et n\'est pas revenue.</string>
     <string name="dash_banner_disconnected">Ce téléphone ne reçoit rien de votre PC pour le moment.</string>
     <string name="dash_reconnect">Reconnecter</string>
@@ -66,6 +67,43 @@
     <string name="dash_waiting">En attente de la première mesure de votre PC</string>
     <string name="dash_card_waiting">%1$s, en attente de données</string>
     <string name="dash_label_title">%1$s · %2$s</string>
+    <string name="offline_title">Votre PC ne répond pas</string>
+    <string name="offline_title_asleep">Votre PC est en veille</string>
+    <string name="offline_last_seen">Vu pour la dernière fois %1$s</string>
+    <string name="offline_last_seen_now">Vu il y a moins d\'une minute</string>
+    <string name="offline_never_seen">Aucune mesure depuis l\'ouverture de l\'application</string>
+    <string name="offline_slept">Vous avez mis ce PC en veille %1$s</string>
+    <string name="offline_slept_now">Vous venez de mettre ce PC en veille</string>
+    <string name="offline_slept_hint">Réveillez-le avec son clavier ou son bouton d\'alimentation. Les mesures reviennent d\'elles-mêmes.</string>
+    <string name="offline_checks_title">À vérifier</string>
+    <string name="offline_check_wifi">Ce téléphone et le PC sont sur le même Wi-Fi</string>
+    <string name="offline_check_awake">Le PC est allumé et actif, pas en veille</string>
+    <string name="offline_check_tray">SysWatch tourne dans la zone de notification du PC</string>
+    <string name="offline_check_tailscale">Tailscale est activé sur ce téléphone et sur le PC</string>
+    <string name="offline_check_pc_online">Le PC est allumé et connecté à Internet</string>
+    <string name="offline_check_phone_online">Ce téléphone est connecté à Internet</string>
+    <string name="offline_retry">Réessayer maintenant</string>
+    <string name="offline_retrying">Recherche de votre PC</string>
+    <string name="offline_guide">Ouvrir le guide</string>
+    <string name="proc_off">Votre PC ne les partage pas. Activez « Partager les processus principaux » dans les paramètres de SysWatch sur le PC.</string>
+    <string name="proc_spoken">%1$s, CPU %2$s, mémoire %3$s</string>
+    <string name="ctl_off">Le volume, le verrouillage et la mise en veille fonctionnent en mode Local ou Tailscale, une fois autorisés dans les paramètres de SysWatch sur votre PC.</string>
+    <string name="ctl_volume">Volume</string>
+    <string name="ctl_mute">Couper le son</string>
+    <string name="ctl_no_sound">Aucun périphérique audio trouvé sur votre PC</string>
+    <string name="ctl_lock">Verrouiller</string>
+    <string name="ctl_sleep">Veille</string>
+    <string name="ctl_sleep_title">Mettre votre PC en veille ?</string>
+    <string name="ctl_sleep_body">Votre PC va se mettre en veille et cesser d\'envoyer des mesures. Vous le réveillez sur le PC, pas depuis ce téléphone.</string>
+    <string name="ctl_sleep_confirm">Mettre en veille</string>
+    <string name="ctl_done_lock">Votre PC est verrouillé</string>
+    <string name="ctl_done_sleep">Votre PC se met en veille</string>
+    <string name="ctl_err_off">Les commandes sont désactivées sur votre PC. Autorisez-les là-bas, dans les paramètres de SysWatch.</string>
+    <string name="ctl_err_rate">Trop d\'appuis à la fois. Patientez un instant.</string>
+    <string name="ctl_err_not_ready">SysWatch démarre encore sur votre PC. Réessayez dans un instant.</string>
+    <string name="ctl_err_unavailable">Votre PC ne peut pas le faire pour le moment</string>
+    <string name="ctl_err_code">Votre PC n\'accepte plus cette association. Associez-le de nouveau.</string>
+    <string name="ctl_err_old">SysWatch sur votre PC est trop ancien pour cela. Mettez-le à jour sur le PC.</string>
     <plurals name="dash_spoken_percent">
         <item quantity="one">%1$s %2$d pour cent</item>
         <item quantity="other">%1$s %2$d pour cent</item>
@@ -319,6 +357,8 @@
     <string name="settings_group_about_about">Version, mises à jour et mentions légales.</string>
     <string name="settings_cards_shown">Affichée</string>
     <string name="settings_cards_hidden">Masquée</string>
+    <string name="settings_cards_processes_note">Affichée quand votre PC les partage</string>
+    <string name="settings_cards_controls_note">Affichée en mode Local ou Tailscale</string>
     <string name="settings_standby_fit_both">Fonctionne en portrait et en paysage.</string>
     <string name="settings_standby_fit_portrait">Un cadran portrait.</string>
     <string name="settings_standby_fit_landscape">Un cadran paysage.</string>
@@ -436,6 +476,12 @@
     <string name="update_action_check">Rechercher des mises à jour</string>
     <string name="whatsnew_title">Nouveautés de la version %1$s</string>
     <string name="whatsnew_dismiss">Compris</string>
+    <string-array name="whatsnew_1_3_0">
+        <item>Quand votre PC ne répond plus, la Vue d\'ensemble le dit : un écran PC hors ligne clair, avec ce qu\'il faut vérifier, au lieu d\'anciens chiffres.</item>
+        <item>Carte Processus : les applications qui utilisent le plus de CPU ou de mémoire sur votre PC.</item>
+        <item>Carte Commandes : volume, muet, verrouillage et veille depuis le téléphone en mode Local ou Tailscale, si vous l\'autorisez sur votre PC.</item>
+        <item>Corrigé : le changement de langue, l\'onglet Vue d\'ensemble qui ne s\'ouvrait pas et l\'application qui redemandait l\'association.</item>
+    </string-array>
     <string-array name="whatsnew_1_2_0">
         <item>Un nouveau design en six styles : Autocollants, Aplat, Bandeau, Tuiles, Pastilles et Classique, votre ancienne apparence. Choisissez le vôtre dans les Réglages, en clair, sombre ou noir absolu.</item>
         <item>En cours de lecture : voyez ce que joue votre PC, avec sa pochette, dans la Vue d\'ensemble et dans cinq nouveaux cadrans musique.</item>
@@ -500,7 +546,7 @@
     <string name="guide_phone_title">Sur ce téléphone</string>
     <string name="guide_phone_body">Cette application affiche les mesures en direct, trace des graphiques, déclenche des alertes, et propose des cadrans de veille et un widget.</string>
     <string name="guide_pairing">Associé une seule fois avec un code à 6 caractères, affiché en code QR sur le PC. Aucun compte.</string>
-    <string name="guide_read_only">Lecture seule, sauf la lecture, la pause et le changement de piste des médias en mode Local ou Tailscale, si vous l\'autorisez sur votre PC.</string>
+    <string name="guide_read_only">Lecture seule, sauf ce que vous autorisez sur votre PC en mode Local ou Tailscale : lecture, pause et changement de piste des médias, volume, verrouillage et mise en veille.</string>
     <string name="guide_compare_title">Types de connexion</string>
     <string name="guide_compare_body">Trois façons pour le téléphone de joindre le PC. Choisissez celle qui convient à l\'endroit où vous l\'utilisez.</string>
     <string name="guide_pros_limits">Avantages et limites</string>
@@ -784,9 +830,9 @@
     <string name="desktop_battery_status">État</string>
     <string name="desktop_battery_fully_charged">Complètement chargée</string>
     <string name="desktop_battery_charging_at">Charge à</string>
-    <string name="desktop_battery_power_draw">Consommation</string>
+    <string name="desktop_battery_power_draw">Puissance</string>
     <string name="desktop_battery_health">Santé</string>
-    <string name="desktop_battery_cycles">Nombre de cycles</string>
+    <string name="desktop_battery_cycles">Cycles</string>
     <string name="desktop_battery_voltage">Tension</string>
     <string name="desktop_battery_aria">Batterie à %1$s pour cent, %2$s</string>
     <string name="desktop_battery_glyph_aria">Batterie à %1$s pour cent</string>
@@ -904,7 +950,9 @@
     <string name="desktop_settings_media_share_body">Envoie le titre, l\'artiste, l\'album, le nom de l\'application et la pochette de ce que Windows affiche dans ses contrôles multimédias. Jamais envoyé via le cloud.</string>
     <string name="desktop_settings_media_control">Permettre au téléphone de lancer, mettre en pause et changer de piste (Local et Tailscale)</string>
     <string name="desktop_settings_media_control_body">Désactivé, le téléphone peut afficher la lecture en cours mais pas la modifier.</string>
-    <string name="desktop_settings_media_note">Le téléphone est en lecture seule, sauf la lecture, la pause et le changement de piste des médias, si vous l\'autorisez.</string>
+    <string name="desktop_settings_media_note">Le téléphone est en lecture seule, sauf pour ce que vous autorisez ici.</string>
+    <string name="desktop_settings_remote_control">Permettre au téléphone de régler le volume, de verrouiller ce PC et de le mettre en veille (Local et Tailscale)</string>
+    <string name="desktop_settings_remote_control_body">Désactivé tant que vous ne l\'activez pas. Un téléphone associé sur votre réseau peut alors régler le volume, couper le son, verrouiller l\'écran et mettre ce PC en veille. Jamais disponible via le cloud.</string>
     <string name="desktop_settings_share_processes">Partager les processus principaux</string>
     <string name="desktop_settings_share_processes_body">Inclure les 5 processus les plus gourmands en CPU dans les données envoyées.</string>
     <string name="desktop_settings_share_processes_body_light">Inclure les 5 processus les plus gourmands en CPU dans les données envoyées. Non envoyé quand le mode léger est activé.</string>
