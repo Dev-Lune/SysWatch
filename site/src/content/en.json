@@ -135,7 +135,7 @@
     "h2": "Privacy, plainly",
     "items": [
       { "t": "No account", "d": "A 6-character pairing code is the only thing linking phone and PC." },
-      { "t": "Read only, with one exception", "d": "The phone can see readings. It cannot change or run anything on your PC, except play, pause and skip for media in Local and Tailscale mode, when you allow it on your PC." },
+      { "t": "Read only, with two exceptions", "d": "The phone can see readings. It cannot change or run anything on your PC, with two exceptions in Local and Tailscale mode: play, pause and skip for media, and volume, mute, lock and sleep, which stay off until you switch them on in Settings on the PC." },
       { "t": "Local stays local", "d": "Local mode keeps readings on your own network. It is not encrypted there, so use a network you trust, or Tailscale, which encrypts the link." },
       { "t": "Cloud, said straight", "d": "Cloud by DevLune passes readings, and your phone's name, through DevLune's relay so the phone can reach the PC from anywhere." },
       { "t": "Nothing extra", "d": "Running program names are not sent unless you switch that on. The camera is used only to scan the pairing QR code. What is playing is never sent through the cloud." },
@@ -151,7 +151,7 @@
       { "q": "Is SysWatch free?", "a": "Yes. SysWatch is free on the phone and on the PC, with no ads and no account. If it earns a place on your desk, you can <a href=\"{sponsor}\">sponsor SysWatch on GitHub</a>." },
       { "q": "Does it work away from home?", "a": "Yes, in two of the three connection modes. Cloud by DevLune works from anywhere with internet and needs no setup. Tailscale is instant and private from anywhere, after about five minutes of setup with the <a href=\"{tailscale}\">Tailscale guide</a>. Local works on the same Wi-Fi." },
       { "q": "Does it need an account?", "a": "No. A 6-character pairing code is the only thing linking phone and PC. You scan one QR code and there is nothing to type." },
-      { "q": "What can the phone do to my PC?", "a": "Very little, on purpose. SysWatch is read only, except play, pause and skip for media in Local and Tailscale mode, when you allow it on your PC. That control is on by default and you switch it off in Settings on the PC. The phone cannot change or run anything else." },
+      { "q": "What can the phone do to my PC?", "a": "Very little, on purpose. SysWatch is read only, with two exceptions in Local and Tailscale mode. Play, pause and skip for media is on by default, and you switch it off in Settings on the PC. Volume, mute, lock and sleep are off until you switch them on there; they need desktop app 0.4.0 and the next Android app update, which is on its way to Google Play. The phone cannot change or run anything else." },
       { "q": "Can the phone show what my PC is playing?", "a": "Yes, in Local and Tailscale mode. The phone shows the title, artist and cover on Overview and in five music standby faces, and can play, pause and skip. None of it goes through the cloud." },
       { "q": "Which PCs are supported?", "a": "SysWatch runs on Windows today: Windows 10 and Windows 11, 64-bit. The phone app needs Android 7.0 or newer." },
       { "q": "Why does Windows warn about the installer?", "a": "The installer is not code signed yet, so Windows SmartScreen shows “Windows protected your PC”. Choose More info, then Run anyway. The <a href=\"{guide}\">SysWatch install guide</a> walks through every step." },
