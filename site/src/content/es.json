@@ -20,7 +20,7 @@
     "reassure": "Gratis. Sin anuncios. Sin cuenta."
   },
   "stats": [
-    ["29", "esferas de reposo"],
+    ["35", "esferas de reposo"],
     ["5", "diseños para el Resumen"],
     ["3", "formas de conectar"],
     ["0", "anuncios ni cuentas"]
@@ -33,7 +33,7 @@
       { "t": "Lecturas en directo", "d": "Un solo panel sereno, números grandes, un único color de acento.", "alt": "Resumen de SysWatch en un móvil Android: carga de CPU al 81 % con su gráfica de historial y, debajo, tarjetas de GPU, memoria, red y almacenamiento" },
       { "t": "Alertas", "d": "Pon un límite en cualquier indicador y elige cada cuánto puede repetirse.", "alt": "Editor de alertas de SysWatch: vigilar la carga de CPU, avisar cuando supere el 90 %, no repetir durante 5 minutos" },
       { "t": "Tu estilo", "d": "Color de acento, tema, densidad y orden de las tarjetas.", "alt": "Ajustes de SysWatch con siete colores de acento, temas claro, oscuro y negro puro, y un interruptor para cada tarjeta del Resumen" },
-      { "t": "Esferas de reposo", "d": "Una galería de 29 esferas siempre encendidas, con vista previa de tus propias lecturas.", "alt": "Galería de esferas de reposo con vistas previas de las esferas artísticas Horizon, Blocks, Bauhaus, Ink, Weave y Bloom" }
+      { "t": "Esferas de reposo", "d": "35 esferas siempre encendidas en cinco colecciones, con vista previa de tus propias lecturas.", "alt": "Galería de esferas de reposo con vistas previas de las esferas artísticas Horizon, Blocks, Bauhaus, Ink, Weave y Bloom" }
     ]
   },
   "alerts": {
@@ -67,7 +67,7 @@
   "standby": {
     "kicker": "Reposo",
     "h2": "Una segunda pantalla para tu escritorio",
-    "lead": "Coloca el móvil junto al teclado y se convierte en una segunda pantalla con las estadísticas de tu PC: 29 esferas de reposo siempre encendidas, 16 de instrumentos, 8 artísticas y 5 musicales, en vertical y en horizontal.",
+    "lead": "Coloca el móvil junto al teclado y se convierte en una segunda pantalla con las estadísticas de tu PC: 35 esferas de reposo siempre encendidas en cinco colecciones, Relojes, Diales, Gráficos, Arte y Música, en vertical y en horizontal.",
     "faces": [
       { "t": "Ink", "alt": "Esfera de reposo Ink: la carga de CPU en un gran 62 % con serifas y, debajo, GPU, memoria, red y almacenamiento" },
       { "t": "Bauhaus", "alt": "Esfera de reposo Bauhaus: un disco rojo dentro de un anillo azul, CPU al 10 % y barras para GPU, memoria y almacenamiento" },
@@ -75,17 +75,17 @@
     ],
     "points": [
       "8 esferas artísticas: Horizon, Blocks, Bauhaus, Ink, Weave, Bloom, Type y Pixel. Ink compone tus lecturas como una página impresa y Bauhaus convierte CPU, GPU y memoria en formas.",
-      "16 esferas de instrumentos, para elegir en una galería que muestra cada una con tus propias lecturas.",
+      "21 relojes, diales y gráficos, para elegir en la pestaña Esferas, que muestra cada uno con tus propias lecturas. Con los favoritos encuentras los tuyos enseguida.",
       "Protección contra quemado de pantalla. Las esferas pueden atenuarse en reposo o seguir brillantes, con marco o a pantalla completa.",
       "Un widget para la pantalla de inicio en cuatro estilos: anillos, barras, cifras, trazo."
     ]
   },
   "playing": {
     "h2": "Mira lo que suena en tu PC",
-    "lead": "La música o el vídeo que suena en el PC aparece en tu móvil con su portada: en el Resumen y en cinco esferas de reposo musicales para el escritorio.",
+    "lead": "La música o el vídeo que suena en el PC aparece en tu móvil con su portada: en el Resumen y en seis esferas de reposo musicales para el escritorio.",
     "points": [
       "Una tarjeta Reproduciendo en el Resumen, con título, artista y portada.",
-      "Cinco esferas musicales: Póster, Ambiente, Brillo, Vinilo y Calma.",
+      "Seis esferas musicales, con los colores de la portada: Póster, Ambiente, Brillo, Vinilo, Calma y Casete.",
       "Reproduce, pausa y salta pistas desde el móvil. Viene activado; puedes desactivarlo en los ajustes del PC."
     ],
     "only": "Solo en modo local y con Tailscale. Lo que reproduces nunca pasa por la nube.",
@@ -101,7 +101,7 @@
     "cells": [
       { "t": "Ligera en la bandeja", "d": "Oculta en la bandeja usa unos 55 a 73 MB de memoria y menos del 0,5 % de un núcleo de CPU. El modo ligero toma lecturas cada 3 segundos y envía cada 5 segundos en modo nube." },
       { "t": "En tu idioma", "d": "Inglés, alemán, francés, español o ruso. Empieza en el idioma de Windows y puedes cambiarlo en la configuración inicial o en los ajustes." },
-      { "t": "Ahorra en la nube", "d": "En modo nube, el PC envía como mucho una actualización cada 2 segundos." }
+      { "t": "Temporizadores y tareas", "d": "Inicia un temporizador en el PC o en el móvil y los dos lo muestran; en el PC queda en una ventana pequeña que se mantiene encima. Guarda comandos como tareas e inícialas desde el móvil, en modo local y con Tailscale." }
     ]
   },
   "connect": {
@@ -135,7 +135,7 @@
     "h2": "Privacidad, sin rodeos",
     "items": [
       { "t": "Sin cuenta", "d": "Un código de emparejamiento de 6 caracteres es lo único que une el móvil con el PC." },
-      { "t": "Solo lectura, con dos excepciones", "d": "El móvil puede ver las lecturas. No puede cambiar ni ejecutar nada en tu PC, con dos excepciones en modo local y con Tailscale: reproducir, pausar y saltar pistas multimedia, y el volumen, silencio, bloqueo y suspensión, que siguen desactivados hasta que los activas en los ajustes del PC." },
+      { "t": "Solo lectura, salvo que permitas más", "d": "El móvil puede ver las lecturas. En modo local y con Tailscale también puede reproducir, pausar y saltar pistas y compartir temporizadores con el PC, las dos cosas activadas de entrada, y, solo si lo activas en los ajustes del PC, cambiar el volumen, bloquear, suspender, reiniciar o apagar el PC, finalizar una tarea o iniciar un comando que hayas guardado. No puede ejecutar nada más." },
       { "t": "Lo local se queda en local", "d": "En modo local, las lecturas se quedan en tu red. Allí no van cifradas, así que usa una red de confianza o Tailscale, que cifra la conexión." },
       { "t": "La nube, dicho claro", "d": "En modo nube, las lecturas y el nombre del móvil pasan por el servidor de retransmisión de DevLune para que el móvil llegue al PC desde cualquier lugar." },
       { "t": "Nada más", "d": "Los nombres de los programas en ejecución no se envían salvo que lo actives. La cámara se usa solo para escanear el código QR de emparejamiento. Lo que suena nunca se envía por la nube." },
@@ -151,8 +151,8 @@
       { "q": "¿SysWatch es gratis?", "a": "Sí. SysWatch es gratis en el móvil y en el PC, sin anuncios y sin cuenta. Si se gana un sitio en tu escritorio, puedes <a href=\"{sponsor}\">patrocinar SysWatch en GitHub</a>." },
       { "q": "¿Funciona fuera de casa?", "a": "Sí, con dos de los tres modos de conexión. La nube de DevLune funciona en cualquier lugar con internet y sin configurar nada. Tailscale funciona al instante y en privado desde cualquier lugar, tras unos cinco minutos de configuración con la <a href=\"{tailscale}\">guía de Tailscale</a>. El modo local funciona en la misma Wi-Fi." },
       { "q": "¿Necesita una cuenta?", "a": "No. Un código de emparejamiento de 6 caracteres es lo único que une el móvil con el PC. Escaneas un código QR y no hay nada que escribir." },
-      { "q": "¿Qué puede hacer el móvil en mi PC?", "a": "Muy poco, a propósito. SysWatch es de solo lectura, con dos excepciones en modo local y con Tailscale. Reproducir, pausar y saltar pistas multimedia viene activado y se desactiva en los ajustes del PC. El volumen, silencio, bloqueo y suspensión están desactivados hasta que los activas allí; necesitan la app de escritorio 0.4.0 y la próxima actualización de la app de Android, que está en camino a Google Play. El móvil no puede cambiar ni ejecutar nada más." },
-      { "q": "¿Puede el móvil mostrar lo que suena en mi PC?", "a": "Sí, en modo local y con Tailscale. El móvil muestra el título, el artista y la portada en el Resumen y en cinco esferas musicales, y puede reproducir, pausar y saltar pistas. Nada de eso pasa por la nube." },
+      { "q": "¿Qué puede hacer el móvil en mi PC?", "a": "Solo lo que tú permites. SysWatch es de solo lectura, con excepciones que controlas en los ajustes del PC, todas solo en modo local y con Tailscale. Reproducir, pausar y saltar pistas multimedia, y los temporizadores, vienen activados. El volumen, silencio, bloqueo, suspensión, apagar la pantalla, reiniciar, apagar, finalizar una tarea e iniciar un comando guardado en el PC siguen desactivados hasta que los activas. El móvil nunca puede ejecutar un comando que no hayas guardado tú. Los temporizadores, las tareas y los controles nuevos necesitan la app de escritorio 0.5.0 y la próxima actualización de la app de Android, que está en camino a Google Play." },
+      { "q": "¿Puede el móvil mostrar lo que suena en mi PC?", "a": "Sí, en modo local y con Tailscale. El móvil muestra el título, el artista y la portada en el Resumen y en seis esferas musicales, y puede reproducir, pausar y saltar pistas. Nada de eso pasa por la nube." },
       { "q": "¿Qué PC son compatibles?", "a": "SysWatch funciona hoy en Windows: Windows 10 y Windows 11, de 64 bits. La app del móvil necesita Android 7.0 o posterior." },
       { "q": "¿Por qué Windows muestra un aviso con el instalador?", "a": "El instalador todavía no tiene firma de código, así que Windows SmartScreen muestra «Windows protegió su PC». Elige «Más información» y después «Ejecutar de todas formas». La <a href=\"{guide}\">guía de instalación de SysWatch</a> explica cada paso." },
       { "q": "¿Muestra la temperatura de la CPU?", "a": "Sí, cuando tu PC la informa. SysWatch muestra la temperatura de la CPU y la GPU junto a la carga, y las tarjetas gráficas NVIDIA se leen directamente. La temperatura de la CPU depende de lo que informe el PC, y SysWatch nunca muestra una lectura que tu PC no envía." },
@@ -183,9 +183,9 @@
   "features": [
     "Lecturas en directo de CPU, GPU, memoria, red, almacenamiento y batería",
     "Alertas cuando una lectura cruza un límite que fijas",
-    "29 esferas de reposo para un móvil en el escritorio",
+    "35 esferas de reposo para un móvil en el escritorio",
     "Reproduciendo con portada, y reproducir, pausar y saltar pistas en modo local y con Tailscale",
     "Tres formas de conectar: Local, Nube de DevLune, Tailscale",
-    "En inglés, alemán, francés, español y ruso"
+    "En inglés, alemán, francés, español y ruso", "Temporizadores, tareas y controles del PC desde el móvil en modo local y con Tailscale, si lo permites"
   ]
 }

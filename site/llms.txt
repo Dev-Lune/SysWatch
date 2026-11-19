@@ -8,11 +8,12 @@ SysWatch is two free apps made by DevLune, a software studio in Hyderabad, India
 
 - Readings: CPU, GPU, memory, network, storage, battery and uptime, each with a history graph. Temperatures are shown when the PC reports them.
 - Alerts: rules written as sentences (for example "CPU load above 90%"), each limit drawn as a red line on its gauge.
-- Standby: 29 always-on faces for a phone on a desk stand (16 instrument faces, 8 art faces, 5 music faces), dimmed when idle or always bright, framed or full screen, and a home screen widget in four looks.
-- Now playing: the phone shows what the PC is playing, with its cover, on Overview and in five music standby faces (Poster, Ambient, Glossy, Vinyl, Quiet). The phone can play, pause and skip media on the PC; this is on by default and is switched off in the PC app's Settings. Local and Tailscale mode only, never through the cloud.
+- Standby: 35 always-on faces for a phone on a desk stand, in five collections with favourites (7 clocks, 8 gauges, 6 graphs, 8 art faces, 6 music faces), dimmed when idle or always bright, framed or full screen, and a home screen widget in four looks.
+- Now playing: the phone shows what the PC is playing, with its cover, on Overview and in six music standby faces (Poster, Ambient, Glossy, Vinyl, Quiet, Cassette). The phone can play, pause and skip media on the PC; this is on by default and is switched off in the PC app's Settings. Local and Tailscale mode only, never through the cloud.
+- Tools (desktop 0.5.0 with the next Android app update, Local and Tailscale mode only): timers shared between PC and phone, jobs saved on the PC and started from the phone by number, and, only when switched on in the PC app, volume, mute, lock, sleep, display off, restart, shut down and end task. Nothing about them goes through the cloud.
 - Look: a chosen accent colour, light, dark or true black theme, five Overview layouts (Bridge, Gauges, Strip charts, Ledger, Focus).
 - Three ways to connect: Local (same Wi-Fi, instant, readings stay on the network), Cloud by DevLune (works from anywhere, nothing to set up, at most one update every 2 seconds), Tailscale (instant and private from anywhere).
-- Desktop app: Windows 10 and 11, 64-bit, version 0.4.0, about 3.7 MB. Hidden to the tray it uses about 55 to 73 MB of memory and under 0.5% of one CPU core; Lightweight mode samples every 3 seconds and sends every 5 seconds in Cloud mode. The installer is not code signed, so Windows SmartScreen shows a warning (More info, then Run anyway).
+- Desktop app: Windows 10 and 11, 64-bit, version 0.5.0, about 3.8 MB. Hidden to the tray it uses about 55 to 73 MB of memory and under 0.5% of one CPU core; Lightweight mode samples every 3 seconds and sends every 5 seconds in Cloud mode. The installer is not code signed, so Windows SmartScreen shows a warning (More info, then Run anyway).
 - Phone app: Android 7.0 and newer, on Google Play.
 - App languages: both apps are in English, German, French, Spanish and Russian; the Windows app starts in the Windows language and can be changed in setup or Settings. Community translations are welcome: one text file per language covers both apps, and a merged translation reaches the apps without an update.
 - Price: free on both sides.
@@ -24,13 +25,13 @@ Each guide is also in German, French, Spanish and Russian, under /de, /fr, /es a
 - [Install SysWatch and pair your phone](https://syswatch.devlune.in/install): Install SysWatch on Windows 10 or 11, get past the SmartScreen warning, choose Local, Cloud by DevLune or Tailscale, and pair your phone with one QR code.
 - [Watch your PC from anywhere with Tailscale](https://syswatch.devlune.in/tailscale): Set up Tailscale for SysWatch in about five minutes: a private, encrypted link between your phone and your Windows PC, so local mode works away from home.
 - [Check your PC’s CPU and GPU temperature from your phone](https://syswatch.devlune.in/pc-temperature-on-phone): See your Windows PC’s CPU and GPU temperature live on your Android phone and get told when it runs hot. Free, no ads, no account, set up in minutes.
-- [Turn an old Android phone into a PC stats display](https://syswatch.devlune.in/phone-as-pc-monitor): Turn a spare Android phone into an always-on display for your PC’s CPU, GPU, memory and temperatures. 29 faces, free, no ads, set up over Wi-Fi in minutes.
+- [Turn an old Android phone into a PC stats display](https://syswatch.devlune.in/phone-as-pc-monitor): Turn a spare Android phone into an always-on display for your PC’s CPU, GPU, memory and temperatures. 35 faces, free, no ads, set up over Wi-Fi in minutes.
 - [Translate SysWatch](https://syswatch.devlune.in/translate): Add your language to SysWatch or fix a translation: copy en.xml, translate the text and open a pull request. A merged translation reaches the app by itself.
 
 ## Links
 
 - [Website](https://syswatch.devlune.in/): this site, also in [Deutsch](https://syswatch.devlune.in/de), [Français](https://syswatch.devlune.in/fr), [Español](https://syswatch.devlune.in/es), [Русский](https://syswatch.devlune.in/ru)
-- [Download for Windows](https://github.com/Dev-Lune/SysWatch/releases/download/v0.4.0/SysWatch_0.4.0_x64-setup.exe)
+- [Download for Windows](https://github.com/Dev-Lune/SysWatch/releases/download/v0.5.0/SysWatch_0.5.0_x64-setup.exe)
 - [SysWatch on Google Play](https://play.google.com/store/apps/details?id=in.devlune.syswatch)
 - [All releases and changelog](https://github.com/Dev-Lune/SysWatch/releases)
 - [Translations folder](https://github.com/Dev-Lune/SysWatch/tree/main/translations)

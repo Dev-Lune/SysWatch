@@ -20,7 +20,7 @@
     "reassure": "Gratuit. Sans publicité. Sans compte."
   },
   "stats": [
-    ["29", "cadrans de veille"],
+    ["35", "cadrans de veille"],
     ["5", "dispositions de la Vue d'ensemble"],
     ["3", "façons de se connecter"],
     ["0", "publicité ni compte"]
@@ -33,7 +33,7 @@
       { "t": "Mesures en direct", "d": "Un seul panneau sobre, de grands chiffres, une seule couleur d'accent.", "alt": "Vue d'ensemble de SysWatch sur un téléphone Android : charge CPU à 81 % avec son graphique d'historique, puis les cartes GPU, mémoire, réseau et stockage" },
       { "t": "Alertes", "d": "Fixez un seuil sur n'importe quelle jauge et choisissez la fréquence des rappels.", "alt": "Éditeur d'alerte de SysWatch : surveiller la charge CPU, prévenir quand elle dépasse 90 %, ne pas répéter pendant 5 minutes" },
       { "t": "Votre style", "d": "Couleur d'accent, thème, densité et ordre des cartes.", "alt": "Réglages de SysWatch avec sept couleurs d'accent, les thèmes clair, sombre et noir absolu, et un interrupteur pour chaque carte de la Vue d'ensemble" },
-      { "t": "Cadrans de veille", "d": "Une galerie de 29 cadrans toujours allumés, en aperçu avec vos propres mesures.", "alt": "Galerie des cadrans de veille avec les aperçus des cadrans artistiques Horizon, Blocks, Bauhaus, Ink, Weave et Bloom" }
+      { "t": "Cadrans de veille", "d": "35 cadrans toujours allumés en cinq collections, en aperçu avec vos propres mesures.", "alt": "Galerie des cadrans de veille avec les aperçus des cadrans artistiques Horizon, Blocks, Bauhaus, Ink, Weave et Bloom" }
     ]
   },
   "alerts": {
@@ -67,7 +67,7 @@
   "standby": {
     "kicker": "Veille",
     "h2": "Un second écran pour votre bureau",
-    "lead": "Posez le téléphone à côté du clavier : il devient un second écran pour les stats de votre PC, avec 29 cadrans de veille toujours allumés, 16 cadrans d'instruments, 8 cadrans artistiques et 5 cadrans musicaux, en portrait comme en paysage.",
+    "lead": "Posez le téléphone à côté du clavier : il devient un second écran pour les stats de votre PC, avec 35 cadrans de veille toujours allumés en cinq collections, Horloges, Jauges, Graphiques, Art et Musique, en portrait comme en paysage.",
     "faces": [
       { "t": "Ink", "alt": "Cadran de veille Ink : la charge CPU en grand chiffre à empattements, 62 %, puis GPU, mémoire, réseau et stockage en liste" },
       { "t": "Bauhaus", "alt": "Cadran de veille Bauhaus : un disque rouge dans un anneau bleu, CPU à 10 % et des barres pour le GPU, la mémoire et le stockage" },
@@ -75,17 +75,17 @@
     ],
     "points": [
       "8 cadrans artistiques : Horizon, Blocks, Bauhaus, Ink, Weave, Bloom, Type et Pixel. Ink compose vos mesures comme une page imprimée, Bauhaus transforme CPU, GPU et mémoire en formes.",
-      "16 cadrans d'instruments, à choisir dans une galerie qui présente chacun avec vos propres mesures.",
+      "21 horloges, jauges et graphiques, à choisir dans l'onglet Cadrans, qui présente chacun avec vos propres mesures. Les favoris vous aident à retrouver les vôtres.",
       "Protection contre le marquage de l'écran. Les cadrans peuvent s'atténuer au repos ou rester lumineux, encadrés ou en plein écran.",
       "Un widget d'écran d'accueil en quatre styles : anneaux, barres, chiffres, courbe."
     ]
   },
   "playing": {
     "h2": "Voyez ce que joue votre PC",
-    "lead": "La musique ou la vidéo en cours sur le PC s'affiche sur votre téléphone avec sa pochette : dans la Vue d'ensemble, et dans cinq cadrans de veille musicaux pour le bureau.",
+    "lead": "La musique ou la vidéo en cours sur le PC s'affiche sur votre téléphone avec sa pochette : dans la Vue d'ensemble, et dans six cadrans de veille musicaux pour le bureau.",
     "points": [
       "Une carte Lecture en cours dans la Vue d'ensemble, avec le titre, l'artiste et la pochette.",
-      "Cinq cadrans musicaux : Affiche, Ambiance, Brillant, Vinyle et Calme.",
+      "Six cadrans musicaux, aux couleurs de la pochette : Affiche, Ambiance, Brillant, Vinyle, Calme et Cassette.",
       "Lecture, pause et changement de piste depuis le téléphone. C'est activé par défaut ; vous pouvez le désactiver dans les paramètres du PC."
     ],
     "only": "Uniquement en mode local et avec Tailscale. Ce que vous écoutez ne passe jamais par le cloud.",
@@ -101,7 +101,7 @@
     "cells": [
       { "t": "Légère dans la zone de notification", "d": "Masquée dans la zone de notification, elle utilise environ 55 à 73 Mo de mémoire et moins de 0,5 % d'un cœur de processeur. Le mode léger prend une mesure toutes les 3 secondes et envoie toutes les 5 secondes en mode cloud." },
       { "t": "Dans votre langue", "d": "Anglais, allemand, français, espagnol ou russe. Elle démarre dans la langue de Windows, et vous pouvez la changer lors de la configuration ou dans les paramètres." },
-      { "t": "Économe avec le cloud", "d": "En mode cloud, le PC envoie au plus une mise à jour toutes les 2 secondes." }
+      { "t": "Minuteurs et tâches", "d": "Lancez un minuteur sur le PC ou sur le téléphone et les deux l'affichent ; sur le PC, il tient dans une petite fenêtre qui reste au premier plan. Enregistrez des commandes comme tâches et lancez-les depuis le téléphone, en mode local et avec Tailscale." }
     ]
   },
   "connect": {
@@ -135,7 +135,7 @@
     "h2": "La confidentialité, sans détour",
     "items": [
       { "t": "Aucun compte", "d": "Un code d'association de 6 caractères est le seul lien entre le téléphone et le PC." },
-      { "t": "Lecture seule, à deux exceptions près", "d": "Le téléphone voit les mesures. Il ne peut rien modifier ni exécuter sur votre PC, à deux exceptions près, en mode local et avec Tailscale : la lecture, la pause et le changement de piste des médias, ainsi que le volume, le muet, le verrouillage et la veille, qui restent désactivés tant que vous ne les activez pas dans les paramètres du PC." },
+      { "t": "Lecture seule, sauf si vous autorisez plus", "d": "Le téléphone voit les mesures. En mode local et avec Tailscale, il peut aussi lancer, mettre en pause et changer de piste, et partager des minuteurs avec le PC, deux fonctions activées par défaut, et, seulement si vous l'activez dans les paramètres du PC, régler le volume, verrouiller, mettre en veille, redémarrer ou éteindre le PC, terminer une tâche ou lancer une commande que vous avez enregistrée. Il ne peut rien exécuter d'autre." },
       { "t": "Le local reste local", "d": "En mode local, les mesures restent sur votre réseau. Elles n'y sont pas chiffrées : utilisez un réseau de confiance, ou Tailscale, qui chiffre la liaison." },
       { "t": "Le cloud, dit clairement", "d": "En mode cloud, les mesures et le nom du téléphone transitent par le relais de DevLune pour que le téléphone joigne le PC de partout." },
       { "t": "Rien de plus", "d": "Les noms des programmes en cours ne sont envoyés que si vous l'activez. L'appareil photo sert uniquement à scanner le code QR d'association. Ce qui est en cours de lecture ne passe jamais par le cloud." },
@@ -151,8 +151,8 @@
       { "q": "SysWatch est-il gratuit ?", "a": "Oui. SysWatch est gratuit sur le téléphone comme sur le PC, sans publicité et sans compte. S'il mérite sa place sur votre bureau, vous pouvez <a href=\"{sponsor}\">soutenir SysWatch sur GitHub</a>." },
       { "q": "Fonctionne-t-il hors de chez moi ?", "a": "Oui, avec deux des trois modes de connexion. Le cloud par DevLune fonctionne partout où il y a Internet, sans rien configurer. Tailscale est instantané et privé de partout, après environ cinq minutes de configuration avec le <a href=\"{tailscale}\">guide Tailscale</a>. Le mode local fonctionne sur le même Wi-Fi." },
       { "q": "Faut-il créer un compte ?", "a": "Non. Un code d'association de 6 caractères est le seul lien entre le téléphone et le PC. Vous scannez un code QR et il n'y a rien à saisir." },
-      { "q": "Que peut faire le téléphone sur mon PC ?", "a": "Très peu, volontairement. SysWatch fonctionne en lecture seule, à deux exceptions près, en mode local et avec Tailscale. La lecture, la pause et le changement de piste des médias sont activés par défaut et se désactivent dans les paramètres du PC. Le volume, le muet, le verrouillage et la veille restent désactivés tant que vous ne les y activez pas ; ils nécessitent l'application de bureau 0.4.0 et la prochaine mise à jour de l'application Android, en cours d'arrivée sur Google Play. Le téléphone ne peut rien modifier ni exécuter d'autre." },
-      { "q": "Le téléphone peut-il afficher ce que joue mon PC ?", "a": "Oui, en mode local et avec Tailscale. Le téléphone affiche le titre, l'artiste et la pochette dans la Vue d'ensemble et dans cinq cadrans musicaux, et peut lancer, mettre en pause et changer de piste. Rien de tout cela ne passe par le cloud." },
+      { "q": "Que peut faire le téléphone sur mon PC ?", "a": "Seulement ce que vous autorisez. SysWatch fonctionne en lecture seule, avec des exceptions que vous contrôlez dans les paramètres du PC, toutes en mode local et avec Tailscale uniquement. La lecture, la pause et le changement de piste des médias, ainsi que les minuteurs, sont activés par défaut. Le volume, le muet, le verrouillage, la veille, l'extinction de l'écran, le redémarrage, l'arrêt, la fin d'une tâche et le lancement d'une commande enregistrée sur le PC restent désactivés tant que vous ne les activez pas. Le téléphone ne peut jamais exécuter une commande que vous n'avez pas enregistrée vous-même. Les minuteurs, les tâches et les nouvelles commandes nécessitent l'application de bureau 0.5.0 et la prochaine mise à jour de l'application Android, en cours d'arrivée sur Google Play." },
+      { "q": "Le téléphone peut-il afficher ce que joue mon PC ?", "a": "Oui, en mode local et avec Tailscale. Le téléphone affiche le titre, l'artiste et la pochette dans la Vue d'ensemble et dans six cadrans musicaux, et peut lancer, mettre en pause et changer de piste. Rien de tout cela ne passe par le cloud." },
       { "q": "Quels PC sont pris en charge ?", "a": "SysWatch fonctionne aujourd'hui sous Windows : Windows 10 et Windows 11, 64 bits. L'application mobile demande Android 7.0 ou une version ultérieure." },
       { "q": "Pourquoi Windows affiche-t-il un avertissement à l'installation ?", "a": "Le programme d'installation n'est pas encore signé numériquement : Windows SmartScreen affiche donc « Windows a protégé votre ordinateur ». Choisissez « Informations complémentaires », puis « Exécuter quand même ». Le <a href=\"{guide}\">guide d'installation de SysWatch</a> détaille chaque étape." },
       { "q": "Affiche-t-il la température du CPU ?", "a": "Oui, lorsque votre PC la communique. SysWatch affiche la température du CPU et du GPU à côté de la charge, et les cartes graphiques NVIDIA sont lues directement. La température du CPU dépend de ce que le PC communique, et SysWatch n'affiche jamais une mesure que votre PC n'envoie pas." },
@@ -183,9 +183,9 @@
   "features": [
     "Mesures en direct du CPU, du GPU, de la mémoire, du réseau, du stockage et de la batterie",
     "Alertes quand une mesure dépasse une limite que vous fixez",
-    "29 cadrans de veille pour un téléphone posé sur le bureau",
+    "35 cadrans de veille pour un téléphone posé sur le bureau",
     "Lecture en cours avec pochette, plus lecture, pause et changement de piste en mode local et avec Tailscale",
     "Trois façons de se connecter : Local, Cloud par DevLune, Tailscale",
-    "En anglais, allemand, français, espagnol et russe"
+    "En anglais, allemand, français, espagnol et russe", "Minuteurs, tâches et commandes du PC depuis le téléphone en mode local et avec Tailscale, si vous l'autorisez"
   ]
 }

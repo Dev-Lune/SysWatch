@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 // The one thing to change when a new desktop version ships.
-const RELEASE = { version: "0.4.0", sizeMb: 3.7, date: "2026-11-18" };
+const RELEASE = { version: "0.5.0", sizeMb: 3.8, date: "2026-11-19" };
 
 const ORIGIN = "https://syswatch.devlune.in";
 const LANGS = ["en", "de", "fr", "es", "ru"]; // first one is the default, served at /
@@ -727,8 +727,9 @@ SysWatch is two free apps made by DevLune, a software studio in Hyderabad, India
 
 - Readings: CPU, GPU, memory, network, storage, battery and uptime, each with a history graph. Temperatures are shown when the PC reports them.
 - Alerts: rules written as sentences (for example "CPU load above 90%"), each limit drawn as a red line on its gauge.
-- Standby: 29 always-on faces for a phone on a desk stand (16 instrument faces, 8 art faces, 5 music faces), dimmed when idle or always bright, framed or full screen, and a home screen widget in four looks.
-- Now playing: the phone shows what the PC is playing, with its cover, on Overview and in five music standby faces (Poster, Ambient, Glossy, Vinyl, Quiet). The phone can play, pause and skip media on the PC; this is on by default and is switched off in the PC app's Settings. Local and Tailscale mode only, never through the cloud.
+- Standby: 35 always-on faces for a phone on a desk stand, in five collections with favourites (7 clocks, 8 gauges, 6 graphs, 8 art faces, 6 music faces), dimmed when idle or always bright, framed or full screen, and a home screen widget in four looks.
+- Now playing: the phone shows what the PC is playing, with its cover, on Overview and in six music standby faces (Poster, Ambient, Glossy, Vinyl, Quiet, Cassette). The phone can play, pause and skip media on the PC; this is on by default and is switched off in the PC app's Settings. Local and Tailscale mode only, never through the cloud.
+- Tools (desktop 0.5.0 with the next Android app update, Local and Tailscale mode only): timers shared between PC and phone, jobs saved on the PC and started from the phone by number, and, only when switched on in the PC app, volume, mute, lock, sleep, display off, restart, shut down and end task. Nothing about them goes through the cloud.
 - Look: a chosen accent colour, light, dark or true black theme, five Overview layouts (Bridge, Gauges, Strip charts, Ledger, Focus).
 - Three ways to connect: Local (same Wi-Fi, instant, readings stay on the network), Cloud by DevLune (works from anywhere, nothing to set up, at most one update every 2 seconds), Tailscale (instant and private from anywhere).
 - Desktop app: Windows 10 and 11, 64-bit, version ${RELEASE.version}, about ${RELEASE.sizeMb} MB. Hidden to the tray it uses about 55 to 73 MB of memory and under 0.5% of one CPU core; Lightweight mode samples every 3 seconds and sends every 5 seconds in Cloud mode. The installer is not code signed, so Windows SmartScreen shows a warning (More info, then Run anyway).
