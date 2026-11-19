@@ -24,9 +24,9 @@ JOBS = {
     "alerts": ("07-alert-editor.png", APP, (360, 720)),
     "settings": ("02-settings.png", APP, (360, 720)),
     "gallery": ("03-standby-gallery.png", APP, (360, 720)),
-    "face-ink": ("04-standby-ink.png", PORTRAIT, (360, 720)),
-    "face-bauhaus": ("05-standby-bauhaus.png", PORTRAIT, (360, 720)),
-    "face-blocks": ("09-standby-blocks.png", PORTRAIT, (360, 720)),
+    "face-ink": ("04-standby-ink.png", TALL, (360, 720)),
+    "face-bauhaus": ("05-standby-bauhaus.png", TALL, (360, 720)),
+    "face-blocks": ("09-standby-blocks.png", TALL, (360, 720)),
     "landscape-light": ("08-overview-landscape-light.png", (0, 90, 2376, 1080), (720, 1440)),  # 2424x1080, 2.4:1 under the status bar
 }
 

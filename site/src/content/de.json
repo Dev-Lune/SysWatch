@@ -30,10 +30,10 @@
     "h2": "Die Werte deines PCs auf dem Handy, in Echtzeit",
     "lead": "Karten für CPU, GPU, Arbeitsspeicher, Netzwerk, Speicherplatz, Akku und Betriebszeit, jede mit eigenem Verlaufsdiagramm. SysWatch zeigt nur echte Werte: Was dein PC nicht meldet, wird weggelassen.",
     "items": [
-      { "t": "Live-Werte", "d": "Eine ruhige Oberfläche, große Zahlen, eine Akzentfarbe.", "alt": "SysWatch-Übersicht auf einem Android-Handy: CPU-Auslastung bei 81 % mit Verlaufsdiagramm, darunter Karten für GPU, Arbeitsspeicher, Netzwerk und Speicherplatz" },
+      { "t": "Live-Werte", "d": "Eine ruhige Oberfläche, große Zahlen, eine Akzentfarbe.", "alt": "SysWatch-Übersicht auf einem Android-Handy: CPU-Auslastung bei 60 % mit Verlaufsdiagramm und Warngrenze, darunter die GPU-Karte und was der PC gerade abspielt" },
       { "t": "Warnungen", "d": "Setze einen Grenzwert für jede Anzeige und lege fest, wie oft sie sich melden darf.", "alt": "Warnungseditor in SysWatch: CPU-Last beobachten, melden, wenn sie über 90 % steigt, 5 Minuten lang nicht wiederholen" },
-      { "t": "Dein Look", "d": "Akzentfarbe, Design, Dichte und Reihenfolge der Karten.", "alt": "SysWatch-Einstellungen mit sieben Akzentfarben, hellem, dunklem und rein schwarzem Design und einem Schalter für jede Karte der Übersicht" },
-      { "t": "Standby-Zifferblätter", "d": "35 Always-on-Zifferblätter in fünf Sammlungen, als Vorschau mit deinen eigenen Werten.", "alt": "Galerie der Standby-Zifferblätter mit Vorschauen der Kunst-Zifferblätter Horizon, Blocks, Bauhaus, Ink, Weave und Bloom" }
+      { "t": "Dein Look", "d": "Akzentfarbe, Design, Dichte und Reihenfolge der Karten.", "alt": "SysWatch-Einstellungen, Seite Look: die sechs Stile Sticker, Vollfarbe, Banner, Kacheln, Kapseln und Klassisch, Sticker ist ausgewählt" },
+      { "t": "Standby-Zifferblätter", "d": "35 Always-on-Zifferblätter in fünf Sammlungen, als Vorschau mit deinen eigenen Werten.", "alt": "Tab Designs in SysWatch: das aktuelle Zifferblatt Ringe mit Start-Schaltfläche, die Sammlungen als Chips und die Sammlung Uhren" }
     ]
   },
   "alerts": {
@@ -61,7 +61,7 @@
       { "t": "Fünf Layouts für die Übersicht", "d": "Brücke (Bridge), Rundanzeigen (Gauges), Verlaufskurven (Strip charts), Hauptbuch (Ledger) und Fokus (Focus)." },
       { "t": "Deine Karten, deine Reihenfolge", "d": "Du bestimmst, welche Karten erscheinen und in welcher Reihenfolge, luftig oder kompakt." }
     ],
-    "alt": "SysWatch-Übersicht im Querformat mit hellem Design: ein breites CPU-Diagramm über Karten für GPU, Arbeitsspeicher und Netzwerk",
+    "alt": "SysWatch-Übersicht im Querformat mit hellem Design: links die vier Tabs, daneben ein breites CPU-Diagramm",
     "cap": "Ein breites Layout für Querformat und Tablets, hell oder dunkel."
   },
   "standby": {
@@ -69,8 +69,8 @@
     "h2": "Ein zweiter Bildschirm für den Schreibtisch",
     "lead": "Stell das Handy neben die Tastatur und es wird zum Zweitbildschirm für deine PC-Werte: 35 Standby-Zifferblätter für das Always-on-Display in fünf Sammlungen, Uhren, Anzeigen, Graphen, Kunst und Musik, im Hoch- und Querformat.",
     "faces": [
-      { "t": "Ink", "alt": "Standby-Zifferblatt Ink: CPU-Auslastung als große Serifenzahl 62 %, darunter GPU, Arbeitsspeicher, Netzwerk und Speicherplatz" },
-      { "t": "Bauhaus", "alt": "Standby-Zifferblatt Bauhaus: eine rote Scheibe in einem blauen Ring, CPU bei 10 % und Balken für GPU, Arbeitsspeicher und Speicherplatz" },
+      { "t": "Ink", "alt": "Standby-Zifferblatt Ink: CPU-Auslastung als große Serifenzahl 77 %, darunter GPU, Arbeitsspeicher, Netzwerk und Speicherplatz" },
+      { "t": "Bauhaus", "alt": "Standby-Zifferblatt Bauhaus: eine rote Scheibe in einem blauen Ring, CPU bei 87 % und Balken für GPU, Arbeitsspeicher und Speicherplatz" },
       { "t": "Blocks", "alt": "Standby-Zifferblatt Blocks: rote, cremefarbene, blaue und gelbe Flächen, so groß wie CPU, GPU, Arbeitsspeicher und Speicherplatz" }
     ],
     "points": [

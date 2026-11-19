@@ -30,10 +30,10 @@
     "h2": "Las estadísticas de tu PC en el móvil, en tiempo real",
     "lead": "Tarjetas para CPU, GPU, memoria, red, almacenamiento, batería y tiempo de actividad, cada una con su gráfica de historial. SysWatch solo muestra lecturas reales: lo que tu PC no informa, no aparece.",
     "items": [
-      { "t": "Lecturas en directo", "d": "Un solo panel sereno, números grandes, un único color de acento.", "alt": "Resumen de SysWatch en un móvil Android: carga de CPU al 81 % con su gráfica de historial y, debajo, tarjetas de GPU, memoria, red y almacenamiento" },
+      { "t": "Lecturas en directo", "d": "Un solo panel sereno, números grandes, un único color de acento.", "alt": "Resumen de SysWatch en un móvil Android: carga de CPU al 60 % con su gráfica de historial y el límite de alerta y, debajo, la tarjeta de GPU y lo que suena en el PC" },
       { "t": "Alertas", "d": "Pon un límite en cualquier indicador y elige cada cuánto puede repetirse.", "alt": "Editor de alertas de SysWatch: vigilar la carga de CPU, avisar cuando supere el 90 %, no repetir durante 5 minutos" },
-      { "t": "Tu estilo", "d": "Color de acento, tema, densidad y orden de las tarjetas.", "alt": "Ajustes de SysWatch con siete colores de acento, temas claro, oscuro y negro puro, y un interruptor para cada tarjeta del Resumen" },
-      { "t": "Esferas de reposo", "d": "35 esferas siempre encendidas en cinco colecciones, con vista previa de tus propias lecturas.", "alt": "Galería de esferas de reposo con vistas previas de las esferas artísticas Horizon, Blocks, Bauhaus, Ink, Weave y Bloom" }
+      { "t": "Tu estilo", "d": "Color de acento, tema, densidad y orden de las tarjetas.", "alt": "Ajustes de aspecto de SysWatch: los seis estilos Pegatinas, Sólido, Cabecera, Mosaico, Cápsulas y Clásico, con Pegatinas elegido" },
+      { "t": "Esferas de reposo", "d": "35 esferas siempre encendidas en cinco colecciones, con vista previa de tus propias lecturas.", "alt": "Pestaña Esferas de SysWatch: la esfera actual Anillos con un botón para iniciarla, las colecciones en fichas y la colección Relojes" }
     ]
   },
   "alerts": {
@@ -61,7 +61,7 @@
       { "t": "Cinco diseños para el Resumen", "d": "Puente (Bridge), Indicadores (Gauges), Gráficas (Strip charts), Registro (Ledger) y Enfoque (Focus)." },
       { "t": "Tus tarjetas, tu orden", "d": "Elige qué tarjetas se muestran y en qué orden, en modo amplio o compacto." }
     ],
-    "alt": "Resumen de SysWatch en horizontal con el tema claro: una gráfica ancha de CPU sobre las tarjetas de GPU, memoria y red",
+    "alt": "Resumen de SysWatch en horizontal con el tema claro: las cuatro pestañas a la izquierda y una gráfica ancha de CPU",
     "cap": "Un diseño ancho para horizontal y tabletas, en claro u oscuro."
   },
   "standby": {
@@ -69,8 +69,8 @@
     "h2": "Una segunda pantalla para tu escritorio",
     "lead": "Coloca el móvil junto al teclado y se convierte en una segunda pantalla con las estadísticas de tu PC: 35 esferas de reposo siempre encendidas en cinco colecciones, Relojes, Diales, Gráficos, Arte y Música, en vertical y en horizontal.",
     "faces": [
-      { "t": "Ink", "alt": "Esfera de reposo Ink: la carga de CPU en un gran 62 % con serifas y, debajo, GPU, memoria, red y almacenamiento" },
-      { "t": "Bauhaus", "alt": "Esfera de reposo Bauhaus: un disco rojo dentro de un anillo azul, CPU al 10 % y barras para GPU, memoria y almacenamiento" },
+      { "t": "Ink", "alt": "Esfera de reposo Ink: la carga de CPU en un gran 77 % con serifas y, debajo, GPU, memoria, red y almacenamiento" },
+      { "t": "Bauhaus", "alt": "Esfera de reposo Bauhaus: un disco rojo dentro de un anillo azul, CPU al 87 % y barras para GPU, memoria y almacenamiento" },
       { "t": "Blocks", "alt": "Esfera de reposo Blocks: bloques rojo, crema, azul y amarillo con el tamaño de CPU, GPU, memoria y almacenamiento" }
     ],
     "points": [

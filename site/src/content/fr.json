@@ -30,10 +30,10 @@
     "h2": "Les stats de votre PC sur votre téléphone, en temps réel",
     "lead": "Des cartes pour le CPU, le GPU, la mémoire, le réseau, le stockage, la batterie et la durée de fonctionnement, chacune avec son graphique d'historique. SysWatch n'affiche que des mesures réelles : ce que votre PC ne communique pas n'apparaît pas.",
     "items": [
-      { "t": "Mesures en direct", "d": "Un seul panneau sobre, de grands chiffres, une seule couleur d'accent.", "alt": "Vue d'ensemble de SysWatch sur un téléphone Android : charge CPU à 81 % avec son graphique d'historique, puis les cartes GPU, mémoire, réseau et stockage" },
+      { "t": "Mesures en direct", "d": "Un seul panneau sobre, de grands chiffres, une seule couleur d'accent.", "alt": "Vue d'ensemble de SysWatch sur un téléphone Android : charge CPU à 60 % avec son graphique d'historique et la limite d'alerte, puis la carte GPU et ce que joue le PC" },
       { "t": "Alertes", "d": "Fixez un seuil sur n'importe quelle jauge et choisissez la fréquence des rappels.", "alt": "Éditeur d'alerte de SysWatch : surveiller la charge CPU, prévenir quand elle dépasse 90 %, ne pas répéter pendant 5 minutes" },
-      { "t": "Votre style", "d": "Couleur d'accent, thème, densité et ordre des cartes.", "alt": "Réglages de SysWatch avec sept couleurs d'accent, les thèmes clair, sombre et noir absolu, et un interrupteur pour chaque carte de la Vue d'ensemble" },
-      { "t": "Cadrans de veille", "d": "35 cadrans toujours allumés en cinq collections, en aperçu avec vos propres mesures.", "alt": "Galerie des cadrans de veille avec les aperçus des cadrans artistiques Horizon, Blocks, Bauhaus, Ink, Weave et Bloom" }
+      { "t": "Votre style", "d": "Couleur d'accent, thème, densité et ordre des cartes.", "alt": "Réglages d'apparence de SysWatch : les six styles Autocollants, Aplat, Bandeau, Tuiles, Pastilles et Classique, avec Autocollants sélectionné" },
+      { "t": "Cadrans de veille", "d": "35 cadrans toujours allumés en cinq collections, en aperçu avec vos propres mesures.", "alt": "Onglet Cadrans de SysWatch : le cadran actuel Anneaux avec un bouton pour le lancer, les collections en pastilles et la collection Horloges" }
     ]
   },
   "alerts": {
@@ -61,7 +61,7 @@
       { "t": "Cinq dispositions pour la Vue d'ensemble", "d": "Passerelle (Bridge), Cadrans (Gauges), Courbes (Strip charts), Registre (Ledger) et Focus." },
       { "t": "Vos cartes, votre ordre", "d": "Choisissez les cartes affichées et leur ordre, en mode aéré ou compact." }
     ],
-    "alt": "Vue d'ensemble de SysWatch en mode paysage avec le thème clair : un large graphique CPU au-dessus des cartes GPU, mémoire et réseau",
+    "alt": "Vue d'ensemble de SysWatch en mode paysage avec le thème clair : les quatre onglets à gauche et un large graphique CPU",
     "cap": "Un affichage large pour le mode paysage et les tablettes, en clair ou en sombre."
   },
   "standby": {
@@ -69,8 +69,8 @@
     "h2": "Un second écran pour votre bureau",
     "lead": "Posez le téléphone à côté du clavier : il devient un second écran pour les stats de votre PC, avec 35 cadrans de veille toujours allumés en cinq collections, Horloges, Jauges, Graphiques, Art et Musique, en portrait comme en paysage.",
     "faces": [
-      { "t": "Ink", "alt": "Cadran de veille Ink : la charge CPU en grand chiffre à empattements, 62 %, puis GPU, mémoire, réseau et stockage en liste" },
-      { "t": "Bauhaus", "alt": "Cadran de veille Bauhaus : un disque rouge dans un anneau bleu, CPU à 10 % et des barres pour le GPU, la mémoire et le stockage" },
+      { "t": "Ink", "alt": "Cadran de veille Ink : la charge CPU en grand chiffre à empattements, 77 %, puis GPU, mémoire, réseau et stockage en liste" },
+      { "t": "Bauhaus", "alt": "Cadran de veille Bauhaus : un disque rouge dans un anneau bleu, CPU à 87 % et des barres pour le GPU, la mémoire et le stockage" },
       { "t": "Blocks", "alt": "Cadran de veille Blocks : des blocs rouge, crème, bleu et jaune dimensionnés selon le CPU, le GPU, la mémoire et le stockage" }
     ],
     "points": [

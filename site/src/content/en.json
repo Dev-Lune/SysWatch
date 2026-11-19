@@ -30,10 +30,10 @@
     "h2": "Your PC stats on your phone, as they move",
     "lead": "Cards for CPU, GPU, memory, network, storage, battery and uptime, each with its own history graph. SysWatch only shows real readings: if your PC does not report something, it is left out.",
     "items": [
-      { "t": "Live readings", "d": "One calm panel, big numbers, one accent colour.", "alt": "SysWatch Overview on an Android phone: CPU load at 81% with its history graph, then GPU, memory, network and storage cards" },
+      { "t": "Live readings", "d": "One calm panel, big numbers, one accent colour.", "alt": "SysWatch Overview on an Android phone: CPU load at 60% with its history graph and alert limit, then the GPU card and what the PC is playing" },
       { "t": "Alerts", "d": "Set a limit on any gauge and choose how often it may repeat.", "alt": "Alert editor in SysWatch: watch CPU load, tell me when it goes above 90%, do not repeat for 5 minutes" },
-      { "t": "Your look", "d": "Accent, theme, density and the order of the cards.", "alt": "SysWatch settings with seven accent colours, light, dark and true black themes, and a switch for each Overview card" },
-      { "t": "Standby faces", "d": "35 always-on faces in five collections, previewed with your own readings.", "alt": "Standby face gallery with previews of the art faces Horizon, Blocks, Bauhaus, Ink, Weave and Bloom" }
+      { "t": "Your look", "d": "Accent, theme, density and the order of the cards.", "alt": "SysWatch Look settings: the six styles Stickers, Solid, Banner, Tiles, Pills and Classic, with Stickers chosen" },
+      { "t": "Standby faces", "d": "35 always-on faces in five collections, previewed with your own readings.", "alt": "Faces tab in SysWatch: the current face Rings with a Start button, collection chips and the Clocks collection" }
     ]
   },
   "alerts": {
@@ -61,7 +61,7 @@
       { "t": "Five Overview layouts", "d": "Bridge, Gauges, Strip charts, Ledger and Focus." },
       { "t": "Your cards, your order", "d": "Choose which cards show and in what order, roomy or compact." }
     ],
-    "alt": "SysWatch Overview in landscape with the light theme: a wide CPU graph above GPU, memory and network cards",
+    "alt": "SysWatch Overview in landscape with the light theme: the four tabs on the left and a wide CPU graph",
     "cap": "A wide layout for landscape and tablets, in light or dark."
   },
   "standby": {
@@ -69,8 +69,8 @@
     "h2": "A second screen for your desk",
     "lead": "Stand the phone next to your keyboard and it becomes a second screen for your PC stats: 35 always-on standby faces in five collections, Clocks, Gauges, Graphs, Art and Music, in portrait and landscape.",
     "faces": [
-      { "t": "Ink", "alt": "Ink standby face: CPU load as a large serif 62% with GPU, memory, network and storage listed below" },
-      { "t": "Bauhaus", "alt": "Bauhaus standby face: a red disc inside a blue ring, CPU at 10% and bars for GPU, memory and storage" },
+      { "t": "Ink", "alt": "Ink standby face: CPU load as a large serif 77% with GPU, memory, network and storage listed below" },
+      { "t": "Bauhaus", "alt": "Bauhaus standby face: a red disc inside a blue ring, CPU at 87% and bars for GPU, memory and storage" },
       { "t": "Blocks", "alt": "Blocks standby face: red, cream, blue and yellow blocks sized by CPU, GPU, memory and storage" }
     ],
     "points": [
