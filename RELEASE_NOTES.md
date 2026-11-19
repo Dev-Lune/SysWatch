@@ -1,3 +1,36 @@
+# SysWatch 0.5.0 release notes
+
+**Released:** 19 Nov 2026 · **Desktop:** Windows 10 / 11, 64-bit · **Android app:** 1.4.0 · **Website:** [syswatch.devlune.in](https://syswatch.devlune.in)
+
+## Download
+
+| File | For |
+|---|---|
+| `SysWatch_0.5.0_x64-setup.exe` | Most people. Run it and follow the installer. |
+| `SysWatch_0.5.0_x64_en-US.msi` | IT-managed PCs that need an MSI. |
+
+Windows SmartScreen will warn that the installer is unrecognised, because it is not code signed yet. Choose **More info**, then **Run anyway**.
+
+## What is new since 0.4.0
+
+- **Timers.** Start a timer on the PC or the phone and both show it. Presets of 1, 5, 10 and 25 minutes, a custom length and a stopwatch. On the PC a small window stays on top while a timer runs; click it for the full timer face.
+- **Jobs.** Save a command on the PC under Tools and start it from the phone. The phone only sends the job's number, so it can never run anything you did not save yourself.
+- **More controls from the phone**, if you switch them on: end a task, turn the display off, restart and shut down. Restart and shut down wait 15 seconds and can be cancelled from the phone. The switch is off by default.
+- **A neutral dark background.** Graphite instead of navy, in every look.
+- **Settings in seven pages** instead of one long list, and a setup step for what the phone may do.
+
+Timers, jobs and controls work in Local and Tailscale mode only. Nothing about them goes through the cloud.
+
+The full list is in the [changelog](./CHANGELOG.md).
+
+## Updating
+
+Install 0.5.0 over the old version. Your pairing code and settings are kept. Timers live in memory: quitting SysWatch ends them.
+
+**Timers, jobs and the new controls need Android app 1.4.0**, which reaches Google Play separately. Everything else works with the Android app you have.
+
+---
+
 # SysWatch 0.4.0 release notes
 
 **Released:** 18 Nov 2026 · **Desktop:** Windows 10 / 11, 64-bit · **Android app:** 1.3.0 · **Website:** [syswatch.devlune.in](https://syswatch.devlune.in)

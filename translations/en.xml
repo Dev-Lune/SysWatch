@@ -295,6 +295,73 @@
     <string name="widget_short_storage">Disk</string>
     <string name="widget_short_battery">Bat</string>
     <string name="widget_short_network">Net</string>
+    <!-- Face names, shown in the gallery and when swiping in standby. -->
+    <string name="face_split">Split</string>
+    <string name="face_dots">Dots</string>
+    <string name="face_cluster">Cluster</string>
+    <string name="face_night">Night</string>
+    <!-- Split face: the panel beside the clock. A tap turns it to the next one. -->
+    <string name="face_split_next">Show the next panel</string>
+    <string name="face_split_rings">Gauges panel</string>
+    <string name="face_split_trace">Trace panel</string>
+    <string name="face_split_readings">Readings panel</string>
+    <!-- Read aloud when a swipe in standby settles on a face. %1$s is the face's name. -->
+    <string name="standby_face_announce">%1$s face</string>
+    <!-- Faces added in the music and timer round of 1.4.0. -->
+    <string name="music_face_cassette">Cassette</string>
+    <string name="face_timer">Timer</string>
+    <!-- Read aloud for the bar on a music face. %1$s is where the song is ("1:21"), %2$s its length ("3:35"). -->
+    <string name="music_position_state">%1$s of %2$s</string>
+    <!-- A music face with nothing to show: one line that names the reason, one that says what to do. -->
+    <string name="music_notice_idle_title">Nothing is playing on your PC</string>
+    <string name="music_notice_idle_body">Start a song or a video in any player there and it shows here.</string>
+    <string name="music_notice_cloud_title">Music needs Wi-Fi or Tailscale</string>
+    <string name="music_notice_cloud_body">The cloud connection carries readings only. Join the same Wi-Fi as your PC, or connect over Tailscale.</string>
+    <!-- The Timer standby face with no timer running. -->
+    <string name="face_timer_empty_title">No timer is running</string>
+    <string name="face_timer_empty_body">Start one here. It counts on your PC too.</string>
+    <!-- Read aloud for a chip that shows another timer. %1$s is its name, %2$s the time left. -->
+    <string name="face_timer_other">Show %1$s, %2$s</string>
+    <!-- The volume plate standby shows over the Split and Desk faces after a tap. -->
+    <string name="standby_volume_plate">PC volume</string>
+    <!-- The Faces tab. Collections are named for what their faces are for. -->
+    <string name="faces_collection_clocks">Clocks</string>
+    <string name="faces_collection_gauges">Gauges</string>
+    <string name="faces_collection_graphs">Graphs</string>
+    <!-- The filter chips before the collections. -->
+    <string name="faces_filter_all">All</string>
+    <string name="faces_filter_favourites">Favourites</string>
+    <!-- A chip or a section heading as it is shown: %1$s is its name, %2$d how many faces it holds. -->
+    <string name="faces_count_label">%1$s %2$d</string>
+    <!-- The same, read aloud. -->
+    <plurals name="faces_count_spoken">
+        <item quantity="one">%1$s, %2$d face</item>
+        <item quantity="other">%1$s, %2$d faces</item>
+    </plurals>
+    <!-- The kicker over the large preview. -->
+    <string name="faces_current">Current face</string>
+    <!-- Read aloud when another face is chosen. %1$s is the face, %2$s its collection. -->
+    <string name="faces_current_spoken">%1$s, %2$s, current face</string>
+    <!-- Start standby, where there is room for one word only. Read aloud as "Start standby". -->
+    <string name="faces_start">Start</string>
+    <!-- The button that opens the sheet with orientation, dimming and size; and the sheet's title. -->
+    <string name="faces_options">Display options</string>
+    <string name="faces_options_title">How standby shows a face</string>
+    <!-- What a tap on a face does, read aloud: on one that is not chosen, and on the chosen one. -->
+    <string name="faces_tile_choose">choose this face</string>
+    <string name="faces_tile_start">start standby</string>
+    <!-- The star on a face, read aloud with its on or off state. %1$s is the face. -->
+    <string name="faces_favourite">%1$s, favourite</string>
+    <!-- Favourites with nothing starred yet. -->
+    <string name="faces_favourites_empty_title">No favourites yet</string>
+    <string name="faces_favourites_empty_body">Tap the star on a face to keep it here. Favourites come first in standby too.</string>
+    <!-- Why a face cannot show what it is for right now: one short line under its name. -->
+    <string name="faces_reason_music_idle">Nothing is playing</string>
+    <string name="faces_reason_local_only">Needs Wi-Fi or Tailscale</string>
+    <string name="faces_reason_timers_off">Timers are off on your PC</string>
+    <string name="faces_reason_old_desktop">Needs a newer SysWatch on your PC</string>
+    <!-- The strip of faces at the foot of standby, read aloud for the row. -->
+    <string name="standby_strip">Faces</string>
     <!-- Name of the Overview card that shows the song the PC is playing, and its label above the song. Short. -->
     <string name="music_card">Now playing</string>
     <!-- Heading of the gallery shelf with the music faces. One word. -->
@@ -718,6 +785,12 @@
     <!-- Dialog button. -->
     <string name="whatsnew_dismiss">Got it</string>
     <!-- Release notes for version 1.2.0, one sentence per bullet. Overview is the name of the main tab. -->
+    <string-array name="whatsnew_1_4_0">
+        <item>A new look: a neutral dark background, four tabs (Overview, Faces, Tools, Settings) and Settings split into pages.</item>
+        <item>35 standby faces, redrawn to fill the screen, in five collections with favourites. New: Split, Dots, Cluster, Night, Cassette and Timer.</item>
+        <item>Music faces take their colours from the cover and carry a volume control with haptics.</item>
+        <item>Tools, on Wi-Fi or Tailscale when you allow them on your PC (desktop app 0.5.0): timers shared with your PC, volume, ending a task, running saved jobs and power.</item>
+    </string-array>
     <string-array name="whatsnew_1_3_0">
         <item>When your PC stops answering, Overview says so: a clear PC offline screen with what to check, instead of old numbers.</item>
         <item>Processes card: the apps using the most CPU or memory on your PC.</item>
@@ -986,6 +1059,214 @@
     <!-- Alert notification text, for example "CPU > 90.0 · observed 95".
         %1$s is the metric code, %2$s a comparison symbol, %3$s the limit, %4$d the value seen. -->
     <string name="notif_alert_text">%1$s %2$s %3$s · observed %4$d</string>
+    <!-- Tab names. One short word each: four of them share the width of a small phone. -->
+    <string name="nav_faces">Faces</string>
+    <string name="nav_tools">Tools</string>
+    <!-- Tools page. -->
+    <string name="tools_heading">Tools</string>
+    <string name="tools_about">What this phone can do for your PC, beyond showing its readings.</string>
+    <!-- Under the Alerts card. %1$d is how many alerts are switched on, %2$d how many there are. The plural follows %2$d. -->
+    <plurals name="tools_alerts_summary">
+        <item quantity="one">%1$d of %2$d alert switched on</item>
+        <item quantity="other">%1$d of %2$d alerts switched on</item>
+    </plurals>
+    <string name="tools_alerts_none">None yet. Set a limit and get told when your PC crosses it.</string>
+    <!-- Why a tool cannot work right now. -->
+    <string name="tools_need_cloud">This works in Local and Tailscale mode. The cloud connection carries readings only.</string>
+    <!-- Read aloud after the name of a short Overview entry that opens the Tools tab. -->
+    <string name="tools_entry_opens">Opens in Tools</string>
+    <!-- Settings index: the pages whose names differ from the old group names. -->
+    <string name="settings_page_power">Battery and background</string>
+    <string name="settings_page_pc">Your PC</string>
+    <string name="settings_page_help">Help and about</string>
+    <!-- Two values on one line, for example "Bridge · 8 of 10 cards shown". -->
+    <string name="settings_sum_join">%1$s · %2$s</string>
+    <!-- %1$d is how many Overview cards are shown, %2$d how many there are. The plural follows %2$d. -->
+    <plurals name="settings_sum_cards">
+        <item quantity="one">%1$d of %2$d card shown</item>
+        <item quantity="other">%1$d of %2$d cards shown</item>
+    </plurals>
+    <!-- What is switched on under Battery and background, as short as possible. -->
+    <string name="settings_sum_power_screen">Screen stays on</string>
+    <string name="settings_sum_power_saver">Low power</string>
+    <string name="settings_sum_power_background">Runs in the background</string>
+    <string name="settings_sum_power_none">Nothing extra switched on</string>
+    <string name="settings_sum_backup">Export or import your alert rules</string>
+    <!-- Section title on the Your PC page, above the paired code and the unpair row. -->
+    <string name="settings_pc_section_link">This pairing</string>
+    <!-- The row on the Standby page that opens the Faces tab. -->
+    <string name="settings_standby_open_faces">Open the Faces tab</string>
+    <!-- First run. The step that says what the app can do. -->
+    <string name="onboarding_can_title">What it can do</string>
+    <string name="onboarding_can_body">Readings come first. The rest is there when you want it, one tab each.</string>
+    <string name="onboarding_can_readings_title">Live readings</string>
+    <string name="onboarding_can_readings_body">CPU, GPU, memory, network, storage and battery, about once a second.</string>
+    <string name="onboarding_can_faces_title">Standby faces</string>
+    <string name="onboarding_can_faces_body">A spare phone becomes a desk display: clocks, instruments, art and what is playing.</string>
+    <string name="onboarding_can_tools_title">Tools</string>
+    <string name="onboarding_can_tools_body">Timers, and controls: volume, lock, sleep, display off, ending a task, running your saved jobs, restart and shut down. Controls stay off until you allow them in SysWatch on your PC, and never go through the cloud.</string>
+    <string name="onboarding_can_alerts_title">Alerts</string>
+    <string name="onboarding_can_alerts_body">Set a limit and get a notification when your PC crosses it. The red line on the sample above is one.</string>
+    <!-- Above the live preview on the look step. -->
+    <string name="onboarding_look_preview">Preview</string>
+    <!-- Why a tool cannot work right now. -->
+    <string name="tools_need_timers_off">Timers are switched off on your PC. Switch them on in SysWatch Settings there, under Phone access.</string>
+    <string name="tools_close">Close</string>
+    <!-- Under a control that must not go off by accident. -->
+    <string name="hold_hint">Hold to do it straight away, or tap to be asked first.</string>
+    <!-- ===== Timers ===== -->
+    <string name="timers_title">Timers</string>
+    <string name="timers_empty">Nothing is running. A timer you start here also shows on your PC, and one started there shows here.</string>
+    <string name="timers_new">New timer</string>
+    <!-- A preset button. Short: four of them share a line. -->
+    <plurals name="timers_preset">
+        <item quantity="one">%d min</item>
+        <item quantity="other">%d min</item>
+    </plurals>
+    <!-- What a screen reader says for a preset button. -->
+    <plurals name="timers_preset_spoken">
+        <item quantity="one">Start a %d minute timer</item>
+        <item quantity="other">Start a %d minute timer</item>
+    </plurals>
+    <string name="timers_custom">Custom</string>
+    <string name="timers_custom_spoken">Set a timer of any length</string>
+    <string name="timers_stopwatch">Stopwatch</string>
+    <string name="timers_stopwatch_spoken">Start a stopwatch</string>
+    <string name="timers_open_face">Show the timer full screen</string>
+    <!-- Shown when a finished timer cannot be promised to ring. -->
+    <string name="timers_ring_service_off">Running in the background is off, so a finished timer rings only while SysWatch is open on this phone. Switch it on in Settings, under Battery and background.</string>
+    <string name="timers_ring_notifications_off">Notifications are off for SysWatch. A finished timer still makes its sound, but shows no notification to dismiss it from.</string>
+    <string name="timers_allow_notifications">Allow notifications</string>
+    <!-- The sheet for a timer of any length. -->
+    <string name="timers_custom_title">Custom timer</string>
+    <string name="timers_unit_hours">Hours</string>
+    <string name="timers_unit_minutes">Minutes</string>
+    <string name="timers_unit_seconds">Seconds</string>
+    <!-- Read aloud for the plus and minus buttons. %1$s is Hours, Minutes or Seconds. -->
+    <string name="timers_step_more">%1$s, one more</string>
+    <string name="timers_step_less">%1$s, one less</string>
+    <string name="timers_label">Name (optional)</string>
+    <string name="timers_start">Start</string>
+    <!-- On the Start button of the sheet. %1$s is a length such as 05:00. -->
+    <string name="timers_start_for">Start %1$s</string>
+    <!-- What a timer is, and the state it is in. Always shown in words, never by colour alone. -->
+    <string name="timer_kind_timer">Timer</string>
+    <string name="timer_kind_stopwatch">Stopwatch</string>
+    <string name="timer_state_running">Running</string>
+    <string name="timer_state_paused">Paused</string>
+    <string name="timer_state_done">Time is up</string>
+    <!-- Actions on one timer. -->
+    <string name="timer_pause">Pause</string>
+    <string name="timer_resume">Resume</string>
+    <string name="timer_add_minute">+1 min</string>
+    <string name="timer_add_minute_spoken">Add one minute</string>
+    <string name="timer_cancel">Cancel</string>
+    <string name="timer_stop">Stop</string>
+    <string name="timer_dismiss">Dismiss</string>
+    <string name="timer_again">Run again</string>
+    <!-- Read aloud for an action when several timers are listed. %1$s is the action, %2$s the name of the timer. -->
+    <string name="timer_action_for">%1$s, %2$s</string>
+    <!-- Lengths of time, read aloud. -->
+    <plurals name="timer_hours">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+    <plurals name="timer_minutes">
+        <item quantity="one">%d minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <plurals name="timer_seconds">
+        <item quantity="one">%d second</item>
+        <item quantity="other">%d seconds</item>
+    </plurals>
+    <!-- Read aloud for the time of a timer and of a stopwatch. %1$s is a length such as "4 minutes 12 seconds". -->
+    <string name="timer_spoken_left">%1$s left</string>
+    <string name="timer_spoken_run">%1$s so far</string>
+    <!-- The floating pill. Read aloud: %1$s is the name, %2$s its state or time. -->
+    <string name="timer_pill_spoken">%1$s, %2$s. Opens the timer full screen.</string>
+    <!-- Read aloud after the pill when more timers exist. -->
+    <plurals name="timer_pill_more_spoken">
+        <item quantity="one">%d more timer</item>
+        <item quantity="other">%d more timers</item>
+    </plurals>
+    <!-- The full-screen timer. -->
+    <string name="timer_shrink">Make the timer small</string>
+    <string name="timer_none">No timer is running</string>
+    <string name="timer_others">Your timers</string>
+    <!-- What came of a request. -->
+    <string name="timer_err_many">Your PC keeps eight timers at most, finished ones included. Dismiss or cancel one first.</string>
+    <!-- A request the PC turned down as not valid, for example more than 24 hours on one timer. -->
+    <string name="timer_err_refused">Your PC did not accept that. A timer runs for 24 hours at most.</string>
+    <string name="timer_err_gone">That one is already gone</string>
+    <string name="timer_err_off">Timers are switched off on your PC</string>
+    <!-- The notification of a finished timer. -->
+    <string name="timer_notif_channel">Timers</string>
+    <string name="timer_notif_channel_description">Shows a timer that has finished, until you dismiss it.</string>
+    <string name="timer_notif_title">Timer finished</string>
+    <plurals name="timer_notif_many">
+        <item quantity="one">%d timer finished</item>
+        <item quantity="other">%d timers finished</item>
+    </plurals>
+    <string name="timer_notif_text">Dismiss it here or on your PC</string>
+    <!-- Read aloud as what a tap on a process row does. -->
+    <string name="proc_row_opens">Show details</string>
+    <string name="proc_sheet_pid">Process ID</string>
+    <string name="proc_end">End task</string>
+    <!-- %1$s is the name of a process, for example chrome.exe. -->
+    <string name="proc_end_title">End %1$s?</string>
+    <string name="proc_end_body">Anything not saved in it is lost.</string>
+    <string name="proc_ended">%1$s was ended</string>
+    <string name="proc_gone">%1$s had already closed</string>
+    <string name="proc_protected">Windows needs %1$s, so it is protected and cannot be ended from here.</string>
+    <string name="proc_failed">Windows would not end %1$s</string>
+    <string name="proc_closed">It is no longer running</string>
+    <!-- ===== Jobs ===== -->
+    <string name="jobs_title">Jobs</string>
+    <string name="jobs_empty">No jobs yet. You create them in SysWatch on your PC, under Tools, Jobs. This phone only ever sends the id of a job you saved there, never a command, so nothing can run that you did not set up yourself.</string>
+    <string name="jobs_state_idle">Ready</string>
+    <string name="jobs_state_running">Running</string>
+    <string name="jobs_state_ok">Done</string>
+    <string name="jobs_state_failed">Failed</string>
+    <!-- A state with when it happened: "Done, 5 minutes ago". -->
+    <string name="jobs_state_when">%1$s, %2$s</string>
+    <!-- Read aloud for a job button. %1$s is the name of the job. -->
+    <string name="jobs_run_spoken">Run %1$s</string>
+    <string name="jobs_confirm_title">Run %1$s?</string>
+    <string name="jobs_confirm_body">It starts on your PC right away.</string>
+    <string name="jobs_confirm_run">Run</string>
+    <string name="jobs_started">%1$s started</string>
+    <string name="jobs_err_gone">That job was removed on your PC</string>
+    <string name="jobs_err_busy">It is still running</string>
+    <!-- ===== Power ===== -->
+    <string name="power_title">Power</string>
+    <string name="power_display_off">Display off</string>
+    <string name="power_restart">Restart</string>
+    <string name="power_shutdown">Shut down</string>
+    <string name="power_hold_hint">Restart and Shut down: hold to do it straight away, or tap to be asked first. Your PC then waits 15 seconds, and you can cancel.</string>
+    <string name="power_restart_title">Restart your PC?</string>
+    <string name="power_restart_body">Open apps are closed. It happens after 15 seconds, and you can cancel until then.</string>
+    <string name="power_shutdown_title">Shut down your PC?</string>
+    <string name="power_shutdown_body">Open apps are closed and your PC switches off. It happens after 15 seconds, and you can cancel until then. You switch it on again at the PC, not from this phone.</string>
+    <plurals name="power_restart_in">
+        <item quantity="one">Your PC restarts in %d second</item>
+        <item quantity="other">Your PC restarts in %d seconds</item>
+    </plurals>
+    <plurals name="power_shutdown_in">
+        <item quantity="one">Your PC shuts down in %d second</item>
+        <item quantity="other">Your PC shuts down in %d seconds</item>
+    </plurals>
+    <string name="power_restart_now">Your PC is restarting</string>
+    <string name="power_shutdown_now">Your PC is shutting down</string>
+    <string name="power_cancel_restart">Cancel restart</string>
+    <string name="power_cancel_shutdown">Cancel shutdown</string>
+    <string name="power_aborted">Cancelled. Your PC stays on.</string>
+    <string name="power_done_display">The display is off</string>
+    <string name="power_need_new">Display off, restart and shut down need SysWatch 0.5.0 or newer on your PC.</string>
+    <!-- ===== Volume ===== -->
+    <string name="volume_title">Volume</string>
+    <!-- Read aloud as the state of the volume control. -->
+    <string name="volume_state">%1$d percent</string>
+    <string name="volume_state_muted">Muted</string>
     <!-- Shared: shown whenever a web link could not be opened in the browser. %1$s is the system error, in English -->
     <string name="desktop_common_open_link_failed">Couldn\'t open link: %1$s</string>
     <!-- Shared: a setting could not be written to disk. %1$s is the system error, in English -->
@@ -1041,7 +1322,8 @@
     <string name="desktop_look_bold_light_body">Bright and flat, with cobalt blue headers.</string>
     <!-- Look: the dark version of the bold look. A short name -->
     <string name="desktop_look_bold_dark">Bold dark</string>
-    <string name="desktop_look_bold_dark_body">Deep navy, cobalt blue panels, white numbers.</string>
+    <!-- 0.5.0: the dark ground is neutral graphite now. A new name, so a translation that still says "navy" is not shown -->
+    <string name="desktop_look_bold_dark_about">Graphite, cobalt blue panels, white numbers.</string>
     <!-- Setup step 3: choosing how the phone connects -->
     <string name="desktop_onboarding_title_setup">Connection setup</string>
     <!-- Setup: closes the setup when it was reopened from Settings -->
@@ -1070,7 +1352,18 @@
     <!-- "Full guide" is a link button right after this text -->
     <string name="desktop_onboarding_tailscale_note">You can continue either way. If Tailscale connects after you pair, scan the QR again so your phone learns the Tailscale address.</string>
     <string name="desktop_onboarding_tailscale_guide">Full guide</string>
-    <!-- Setup step 5: pair the phone -->
+    <!-- Setup step 5 (0.5.0): three switches for what the phone may do. The third switch's line is desktop_phone_controls_body -->
+    <string name="desktop_onboarding_title_phone">What the phone may do</string>
+    <string name="desktop_onboarding_phone_body">Your phone only reads stats unless you allow more. Pick now, change any of it later in Settings.</string>
+    <string name="desktop_onboarding_phone_media">Play, pause and skip</string>
+    <string name="desktop_onboarding_phone_media_body">The phone can control what is playing on this PC.</string>
+    <string name="desktop_onboarding_phone_timers">Timers</string>
+    <string name="desktop_onboarding_phone_timers_body">The phone can start and stop timers. They show in a small window on this PC.</string>
+    <string name="desktop_onboarding_phone_controls">Controls</string>
+    <string name="desktop_onboarding_phone_note">All three work on Local and Tailscale only.</string>
+    <!-- Shown instead of that note when Cloud by DevLune was chosen in step 3 -->
+    <string name="desktop_onboarding_phone_cloud">These work on Local and Tailscale only. Through Cloud by DevLune the phone only sees your stats.</string>
+    <!-- Setup step 6: pair the phone -->
     <string name="desktop_onboarding_title_pair">Pair your phone</string>
     <string name="desktop_onboarding_pair_body">Open SysWatch on your phone and scan this code.</string>
     <string name="desktop_onboarding_get_app">Get the Android app</string>
@@ -1118,6 +1411,8 @@
     <!-- Sidebar: navigation. Settings is also the gear button in the top bar -->
     <string name="desktop_nav_primary">Primary</string>
     <string name="desktop_nav_overview">Overview</string>
+    <!-- Sidebar: the view with timers and saved jobs -->
+    <string name="desktop_nav_tools">Tools</string>
     <string name="desktop_nav_pairing">Pairing</string>
     <string name="desktop_nav_settings">Settings</string>
     <!-- Sidebar: the small system card at the bottom -->
@@ -1345,6 +1640,30 @@
     <!-- "Help translate" is a link button after this line -->
     <string name="desktop_language_help">Translations come from people who use SysWatch.</string>
     <string name="desktop_language_help_link">Help translate</string>
+    <!-- Settings (0.5.0): the pages, as a list beside the page in view. Short names. "Look" and "Connection" reuse their older strings -->
+    <string name="desktop_settings_group_general">General</string>
+    <string name="desktop_settings_group_phone">Phone access</string>
+    <string name="desktop_settings_group_readings">Readings</string>
+    <string name="desktop_settings_group_advanced">Advanced</string>
+    <string name="desktop_settings_group_about">About</string>
+    <!-- The line under the title of each page -->
+    <string name="desktop_settings_group_general_lead">Language, starting with Windows, and how the window behaves.</string>
+    <string name="desktop_settings_group_look_lead">How SysWatch looks. It changes right away.</string>
+    <string name="desktop_settings_group_connection_lead">How your phone reaches this PC, and how often it hears from it.</string>
+    <string name="desktop_settings_group_phone_lead">Your phone only reads stats unless you allow more here. Everything on this page works on Local and Tailscale only, never through the cloud.</string>
+    <string name="desktop_settings_group_readings_lead">Which readings SysWatch shows.</string>
+    <string name="desktop_settings_group_advanced_lead">Logs, the settings folder, updates, and quitting.</string>
+    <!-- The small line under a page name in the list: what that page is set to now. Keep these very short -->
+    <string name="desktop_settings_phone_short_media">Media</string>
+    <string name="desktop_settings_phone_short_timers">Timers</string>
+    <string name="desktop_settings_phone_short_controls">Controls</string>
+    <!-- Nothing is allowed: the phone only reads -->
+    <string name="desktop_settings_phone_short_none">Read only</string>
+    <!-- %1$d of the %2$d readings are switched on -->
+    <string name="desktop_settings_readings_summary">%1$d of %2$d shown</string>
+    <string name="desktop_settings_advanced_summary">Logs, updates, quit</string>
+    <!-- The card with the three connection choices -->
+    <string name="desktop_settings_connection_mode">How the phone connects</string>
     <!-- Settings: section titles -->
     <string name="desktop_settings_streaming">Streaming</string>
     <string name="desktop_settings_media">Media</string>
@@ -1392,13 +1711,19 @@
     <string name="desktop_settings_media_share_body">Sends the title, artist, album, app name and cover of what Windows shows in its media controls. Never sent through the cloud.</string>
     <string name="desktop_settings_media_control">Let the phone play, pause and skip (Local and Tailscale)</string>
     <string name="desktop_settings_media_control_body">With this off, the phone can show what is playing but cannot change it.</string>
-    <string name="desktop_settings_media_note">The phone is read only, except for what you allow here.</string>
-    <string name="desktop_settings_remote_control">Let the phone change volume, lock and sleep this PC (Local and Tailscale)</string>
-    <string name="desktop_settings_remote_control_body">Off unless you turn it on. A paired phone on your network can then set the volume, mute, lock the screen and put this PC to sleep. Never available through the cloud.</string>
+    <!-- 0.5.0. The two switches under "Tools" on the Phone access page. New names: what Controls allows grew, so an older translation must not be shown -->
+    <string name="desktop_phone_timers">Timers from the phone (Local and Tailscale)</string>
+    <string name="desktop_phone_timers_body">The phone can see your timers and start, pause and cancel them. They show in a small window on this PC. Timers you start on this PC work with this off.</string>
+    <string name="desktop_phone_controls">Controls from the phone (Local and Tailscale)</string>
+    <!-- The whole list of what the switch allows. Keep every item -->
+    <string name="desktop_phone_controls_body">Off unless you turn it on. A paired phone on your network can then: set the volume, mute, lock the screen, put this PC to sleep, turn the display off, end a task, run your saved jobs, restart and shut down. Never available through the cloud.</string>
+    <!-- Under those two. Followed by a link, "Open Tools" -->
+    <string name="desktop_phone_jobs_note">The phone runs only jobs you saved on this PC.</string>
+    <string name="desktop_phone_jobs_link">Open Tools</string>
     <!-- Settings, Privacy -->
     <string name="desktop_settings_share_processes">Share top processes</string>
-    <string name="desktop_settings_share_processes_body">Include the top 5 CPU-heavy processes in the broadcast payload.</string>
-    <string name="desktop_settings_share_processes_body_light">Include the top 5 CPU-heavy processes in the broadcast payload. Not sent while Lightweight mode is on.</string>
+    <string name="desktop_phone_processes_body">Sends the busiest processes to the phone: 12 on Local and Tailscale, 5 through the cloud. Ending a task from the phone needs this on.</string>
+    <string name="desktop_phone_processes_body_light">Sends the busiest processes to the phone: 12 on Local and Tailscale, 5 through the cloud. Ending a task from the phone needs this on. Not sent while Lightweight mode is on.</string>
     <!-- Settings, System -->
     <string name="desktop_settings_autostart">Launch at login</string>
     <string name="desktop_settings_autostart_on">Enabled: SysWatch starts hidden when you sign in.</string>
@@ -1462,6 +1787,132 @@
     <string name="desktop_close_hiding">Hiding…</string>
     <string name="desktop_close_exiting">Exiting…</string>
     <string name="desktop_close_exit">Exit</string>
+    <!-- Timers: the heading in Tools and in the floating timer window -->
+    <string name="desktop_timers_title">Timers</string>
+    <!-- What an unnamed one is called, and the small word above the time -->
+    <string name="desktop_timers_timer">Timer</string>
+    <string name="desktop_timers_stopwatch">Stopwatch</string>
+    <!-- A timer that is not counting. One word -->
+    <string name="desktop_timers_paused">Paused</string>
+    <!-- A timer that reached zero. One word, shown large in the small window -->
+    <string name="desktop_timers_done">Done</string>
+    <!-- Read aloud and shown as a toast when a timer ends. %1$s is its label, or "Timer" -->
+    <string name="desktop_timers_done_named">%1$s is done</string>
+    <!-- The Windows notification when a timer ends; the label of the timer follows it on the next line -->
+    <string name="desktop_timers_done_notice">Timer done</string>
+    <!-- Read aloud for the time on a timer. %1$s is its label, %2$s the time, like 4:59 -->
+    <string name="desktop_timers_time_aria">%1$s: %2$s</string>
+    <!-- Buttons on a finished timer -->
+    <string name="desktop_timers_again">Run again</string>
+    <string name="desktop_timers_dismiss">Dismiss</string>
+    <!-- Read aloud for the buttons of one timer. %1$s is its label, or "Timer" -->
+    <string name="desktop_timers_again_aria">Run %1$s again</string>
+    <string name="desktop_timers_dismiss_aria">Dismiss %1$s</string>
+    <string name="desktop_timers_pause_aria">Pause %1$s</string>
+    <string name="desktop_timers_resume_aria">Resume %1$s</string>
+    <string name="desktop_timers_add_minute_aria">Add one minute to %1$s</string>
+    <string name="desktop_timers_cancel_aria">Cancel %1$s</string>
+    <!-- Starting one: the name of the row of buttons, for screen readers -->
+    <string name="desktop_timers_new">New timer</string>
+    <!-- A one-click length. Keep it short: "5 min" -->
+    <plurals name="desktop_timers_minutes">
+        <item quantity="one">%1$d min</item>
+        <item quantity="other">%1$d min</item>
+    </plurals>
+    <plurals name="desktop_timers_start_minutes_aria">
+        <item quantity="one">Start a %1$d minute timer</item>
+        <item quantity="other">Start a %1$d minute timer</item>
+    </plurals>
+    <!-- Opens two boxes to type a length and a label -->
+    <string name="desktop_timers_custom">Custom</string>
+    <string name="desktop_timers_custom_close">Back to the quick lengths</string>
+    <string name="desktop_timers_start_stopwatch">Start a stopwatch</string>
+    <string name="desktop_timers_length">Length</string>
+    <string name="desktop_timers_length_hint">Minutes, or minutes:seconds, or hours:minutes:seconds. 1 second to 24 hours.</string>
+    <string name="desktop_timers_label">Label</string>
+    <string name="desktop_timers_label_placeholder">Label (optional)</string>
+    <string name="desktop_timers_start">Start</string>
+    <!-- The PC keeps at most eight timers and stopwatches -->
+    <string name="desktop_timers_too_many">Eight is the most. Cancel one first.</string>
+    <!-- For example a minute added to a timer that would then run past 24 hours -->
+    <string name="desktop_timers_refused">That is outside what a timer can do (1 second to 24 hours).</string>
+    <!-- %1$s is the system error, in English -->
+    <string name="desktop_timers_failed">The timer did not change: %1$s</string>
+    <!-- The floating timer window. Small: a pill with one timer. Large: all of them -->
+    <string name="desktop_timerwin_grow">Show all timers</string>
+    <string name="desktop_timerwin_shrink">Make the window small</string>
+    <!-- Read aloud on the small window when it holds more than the one shown -->
+    <plurals name="desktop_timerwin_more">
+        <item quantity="one">%1$d more</item>
+        <item quantity="other">%1$d more</item>
+    </plurals>
+    <!-- Read aloud as the name of the list under the big timer -->
+    <string name="desktop_timerwin_others">Other timers</string>
+    <string name="desktop_timerwin_only_one">Nothing else is counting. Start another below, or from your phone.</string>
+    <string name="desktop_timerwin_none">No timers</string>
+    <!-- ============================================================ tools view (0.5.0) -->
+    <string name="desktop_tools_timers_lead">Start one here or from your phone. While any exists, a small window stays on top of everything; click it for the full face.</string>
+    <string name="desktop_tools_timers_empty">No timers yet</string>
+    <string name="desktop_tools_timers_empty_body">Pick a length above, or start a stopwatch. A small floating window shows it over any app or game, and your phone shows it too.</string>
+    <!-- Under the timers: what the phone is allowed. Followed by a link, "Phone access" -->
+    <string name="desktop_tools_timers_phone_on">Your phone can see, start and stop these on Local and Tailscale.</string>
+    <string name="desktop_tools_timers_phone_off">Your phone cannot see these right now: it needs Local or Tailscale, and Timers from the phone turned on.</string>
+    <!-- The link after those lines. Opens Settings on the Phone access page -->
+    <string name="desktop_tools_phone_link">Open Phone access</string>
+    <string name="desktop_tools_jobs_lead">Commands you save here and start with one click, from this window or from your phone.</string>
+    <string name="desktop_tools_jobs_empty">No jobs yet</string>
+    <string name="desktop_tools_jobs_empty_body">A job is one command line with a name and an icon: back up a folder, start a server, open an app. Add one and it gets a Run button here and, if you allow it, on your phone.</string>
+    <string name="desktop_tools_jobs_phone_on">Controls from the phone is on: a paired phone on Local or Tailscale can run these. It only ever sends which job, never a command.</string>
+    <string name="desktop_tools_jobs_phone_off">Your phone can run these only when Controls from the phone is on, over Local or Tailscale.</string>
+    <!-- Jobs: the heading, and the button that opens the dialog for a new one -->
+    <string name="desktop_jobs_title">Jobs</string>
+    <string name="desktop_jobs_add">Add a job</string>
+    <string name="desktop_jobs_edit">Edit job</string>
+    <!-- Read aloud for the pencil button on a job. %1$s is the name of the job -->
+    <string name="desktop_jobs_edit_aria">Edit %1$s</string>
+    <string name="desktop_jobs_run">Run</string>
+    <string name="desktop_jobs_run_aria">Run %1$s</string>
+    <!-- How the last run of a job went. %1$s is when, already in words: "3 minutes ago" -->
+    <string name="desktop_jobs_running">Running...</string>
+    <string name="desktop_jobs_ok">Finished %1$s</string>
+    <string name="desktop_jobs_failed">Failed %1$s</string>
+    <string name="desktop_jobs_last">Last run %1$s</string>
+    <string name="desktop_jobs_never">Not run yet</string>
+    <!-- On a job whose "ask on the phone" switch is on -->
+    <string name="desktop_jobs_asks_first">Phone asks first</string>
+    <!-- Toasts. %1$s is the name of the job -->
+    <string name="desktop_jobs_toast_ok">%1$s finished</string>
+    <string name="desktop_jobs_toast_failed">%1$s failed</string>
+    <string name="desktop_jobs_busy">%1$s is still running</string>
+    <!-- %1$s is the system error, in English -->
+    <string name="desktop_jobs_run_failed">Could not start it: %1$s</string>
+    <!-- The dialog -->
+    <string name="desktop_jobs_name">Name</string>
+    <string name="desktop_jobs_name_placeholder">Backup photos</string>
+    <string name="desktop_jobs_command">Command</string>
+    <!-- cmd /C is a Windows command, keep it as it is -->
+    <string name="desktop_jobs_command_note">One line. It runs through cmd /C with no window, from your home folder, as you. Anything you could type in a Command Prompt works.</string>
+    <string name="desktop_jobs_icon">Icon</string>
+    <string name="desktop_jobs_icon_play">Play</string>
+    <string name="desktop_jobs_icon_terminal">Terminal</string>
+    <string name="desktop_jobs_icon_folder">Folder</string>
+    <string name="desktop_jobs_icon_globe">Web</string>
+    <string name="desktop_jobs_icon_game">Game</string>
+    <string name="desktop_jobs_icon_music">Music</string>
+    <string name="desktop_jobs_icon_power">Power</string>
+    <string name="desktop_jobs_icon_code">Code</string>
+    <string name="desktop_jobs_icon_backup">Backup</string>
+    <string name="desktop_jobs_icon_rocket">Rocket</string>
+    <string name="desktop_jobs_confirm">Ask on the phone before running</string>
+    <string name="desktop_jobs_confirm_body">The phone shows a question first, so a stray tap does not start it.</string>
+    <string name="desktop_jobs_save">Save</string>
+    <string name="desktop_jobs_remove">Remove</string>
+    <string name="desktop_jobs_remove_ask">Remove this job?</string>
+    <string name="desktop_jobs_remove_yes">Remove</string>
+    <string name="desktop_jobs_remove_keep">Keep it</string>
+    <string name="desktop_jobs_need_command">Type the command this job runs.</string>
+    <!-- The PC keeps at most 24 jobs -->
+    <string name="desktop_jobs_too_many">24 jobs is the most. Remove one first.</string>
     <!-- Menu on the tray icon (right click). Works even while the window is closed -->
     <string name="desktop_tray_show">Show Dashboard</string>
     <string name="desktop_tray_pair">Copy Pairing Code</string>

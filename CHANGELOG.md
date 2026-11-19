@@ -7,6 +7,39 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.5.0] · 2026-11-19
+
+Desktop 0.5.0 and Android 1.4.0. The Android version reaches Google Play separately and carries everything listed under 1.3.0 below, which was never published there. The tools need both.
+
+### Added
+
+**Both apps**
+- Timers shared between PC and phone: start one on either side and both show it. Presets of 1, 5, 10 and 25 minutes, a custom length and a stopwatch. Local and Tailscale only.
+- Jobs: commands you save on the PC and start from the phone. The phone only ever sends a job's number, never a command.
+- More controls from the phone, all behind the "Controls from the phone" switch on the PC, which is off by default: end a task (also needs "Share processes"), turn the display off, restart and shut down. Restart and shut down wait 15 seconds and can be cancelled from the phone.
+
+**Android**
+- Four tabs: Overview, Faces, Tools and Settings. Alerts moved into Tools, with a bell on Overview.
+- Faces tab: 35 standby faces in five collections (Clocks, Gauges, Graphs, Art, Music), with favourites, on one screen that adapts to portrait, landscape and tablets.
+- New faces: Split, Dots, Cluster, Night, Cassette and Timer. The 16 instrument faces are redrawn to fill the screen, with new numeral fonts.
+- Music faces take their colours from the cover and carry a stepped volume control with haptics.
+- Tools tab: timers (with a small pill on every screen and a full timer face), volume, processes with end task, jobs and power.
+- Settings is an index of pages instead of one long list. First run is five steps.
+- A strip of thumbnails in standby to change face.
+
+**Desktop**
+- A Tools view with Timers and Jobs.
+- A small timer window that stays on top while a timer exists; click it for the full timer face.
+- Settings in seven pages: General, Look, Connection, Phone access, Readings, Advanced, About.
+- Setup has a step for what the phone may do.
+
+### Changed
+- The dark background is neutral graphite in every look, on both apps. No navy.
+- The process list sent over the local connection holds 12 entries (5 through the cloud, as before).
+
+### Fixed
+- Android: the fixes listed under 0.4.0 reach Google Play with this version.
+
 ## [0.4.0] · 2026-11-18
 
 Desktop 0.4.0 and Android 1.3.0. The Android version reaches Google Play separately; the controls need both.

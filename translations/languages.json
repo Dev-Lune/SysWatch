@@ -4,30 +4,30 @@
     {
       "code": "de",
       "name": "Deutsch",
-      "version": "b6f5210749b3",
-      "strings": 967,
-      "total": 967
+      "version": "3fc3feb02564",
+      "strings": 1262,
+      "total": 1262
     },
     {
       "code": "es",
       "name": "Español",
-      "version": "f7d31c755918",
-      "strings": 967,
-      "total": 967
+      "version": "de9a7eccc60a",
+      "strings": 1262,
+      "total": 1262
     },
     {
       "code": "fr",
       "name": "Français",
-      "version": "90a6f21245c1",
-      "strings": 967,
-      "total": 967
+      "version": "a2d44ed44ba7",
+      "strings": 1262,
+      "total": 1262
     },
     {
       "code": "ru",
       "name": "Русский",
-      "version": "52c3e6f8fd0e",
-      "strings": 967,
-      "total": 967
+      "version": "0ce124803760",
+      "strings": 1262,
+      "total": 1262
     }
   ]
 }

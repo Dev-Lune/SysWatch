@@ -30,7 +30,7 @@
     <td align="center" width="25%"><img src="./images/store-01-overview.png" alt="Overview screen with a large CPU reading and its graph" width="210"><br><sub><b>Live readings</b></sub></td>
     <td align="center" width="25%"><img src="./images/store-02-alerts.png" alt="Alert editor" width="210"><br><sub><b>Alerts</b></sub></td>
     <td align="center" width="25%"><img src="./images/store-03-settings.png" alt="Settings with the list of six styles" width="210"><br><sub><b>Six styles</b></sub></td>
-    <td align="center" width="25%"><img src="./images/store-04-standby.png" alt="Gallery of standby faces" width="210"><br><sub><b>29 standby faces</b></sub></td>
+    <td align="center" width="25%"><img src="./images/store-04-standby.png" alt="Gallery of standby faces" width="210"><br><sub><b>35 standby faces</b></sub></td>
   </tr>
   <tr>
     <td align="center" width="25%"><img src="./images/store-05-playing.png" alt="Poster, Vinyl and Glossy music faces showing what the PC is playing" width="210"><br><sub><b>Now playing</b></sub></td>
@@ -151,7 +151,7 @@ At home the phone uses your Wi-Fi address. Away from home, with Tailscale on, it
     <td width="50%" valign="top">
       <h3>A second screen on your desk</h3>
       <ul>
-        <li>29 standby faces, instruments, art and music, portrait and landscape</li>
+        <li>35 standby faces in five collections, with favourites, portrait and landscape</li>
         <li>Now playing: what your PC plays, with its cover, and play, pause and skip from the phone (Local and Tailscale)</li>
         <li>Burn-in protection and auto dim</li>
         <li>Home screen widget in four looks</li>
@@ -164,6 +164,9 @@ At home the phone uses your Wi-Fi address. Away from home, with Tailscale on, it
       <ul>
         <li>Lives in the tray, starts with Windows if you want</li>
         <li>Pause and resume from the tray</li>
+        <li>Timers shared with the phone, in a small window that stays on top</li>
+        <li>Jobs: commands you save on the PC and start from the phone</li>
+        <li>Volume, lock, sleep, display off, restart, shut down and end task from the phone, only if you switch them on</li>
         <li>NVIDIA GPUs read through NVML; other GPUs show what the system exposes</li>
       </ul>
     </td>

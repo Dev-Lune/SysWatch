@@ -1,6 +1,6 @@
 # SysWatch feature list
 
-Current versions: desktop 0.4.0, Android 1.3.0 (on its way to Google Play; the controls, the Processes card and the PC offline screen need it).
+Current versions: desktop 0.5.0, Android 1.4.0 (on its way to Google Play; timers, jobs, the controls, the Processes card and the PC offline screen need it).
 
 ## Connection
 
@@ -12,9 +12,20 @@ Current versions: desktop 0.4.0, Android 1.3.0 (on its way to Google Play; the c
 - Pair by scanning one QR code. It carries the code, the mode, the PC's addresses and the port.
 - In local mode the phone finds the PC again by itself if the router gives it a new address.
 - The phone tries each address in order: Wi-Fi first, Tailscale last.
-- Read only, with two exceptions, both in Local and Tailscale mode only. Media: the phone can play, pause and skip what the PC is playing (on by default, switch it off in Settings on the PC). System controls: volume, mute, lock and sleep (off until you switch them on in Settings on the PC). It cannot change or run anything else.
+- Read only, with two exceptions, both in Local and Tailscale mode only. Media: the phone can play, pause and skip what the PC is playing (on by default, switch it off in Settings on the PC). Controls: volume, mute, lock, sleep, display off, restart, shut down, ending a task and starting a job you saved on the PC (all off until you switch them on in Settings on the PC). Timers shared with the phone are a separate switch, on by default: a timer only shows a small window on the PC. The phone cannot run anything you did not save as a job yourself.
 
-## Android app 1.3.0
+## Android app 1.4.0
+
+**Four tabs**
+- Overview, Faces, Tools and Settings; Alerts lives in Tools, with a bell on Overview
+- Settings is an index of pages; first run is five steps
+
+**Tools** (Local and Tailscale, when allowed on the PC)
+- Timers shared with the PC: presets, a custom length and a stopwatch, a pill on every screen and a full timer face
+- Volume in steps with haptics, mute
+- Processes with end task
+- Jobs saved on the PC, started by number
+- Lock, sleep, display off, restart and shut down; restart and shut down wait 15 seconds and can be cancelled
 
 **PC offline screen**
 - When the PC stops answering, Overview shows a sleeping PC drawn in 3D, when it was last seen and what to check, instead of old numbers
@@ -24,11 +35,11 @@ Current versions: desktop 0.4.0, Android 1.3.0 (on its way to Google Play; the c
 - The apps using the most CPU or memory, when "Share top processes" is on in the PC's Settings
 
 **Controls** (Local and Tailscale, when allowed on the PC)
-- Volume, mute, lock and sleep; sleep asks first
+- Volume, mute, lock and sleep on Overview; sleep asks first
 
 **Now playing** (Local and Tailscale)
 - What the PC is playing, with its cover and progress, on Overview
-- Five music standby faces: Poster, Ambient, Glossy, Vinyl, Quiet, coloured from the cover
+- Music standby faces coloured from the cover, with a stepped volume control: Poster, Ambient, Glossy, Vinyl, Quiet and Cassette
 - Play, pause and skip from the phone
 
 **Overview**
@@ -41,7 +52,7 @@ Current versions: desktop 0.4.0, Android 1.3.0 (on its way to Google Play; the c
 **Look**
 - Six styles: Stickers (the default), Solid, Banner, Tiles, Pills and Classic, chosen in setup or Settings
 - One accent colour, chosen by you: cobalt, amber, cyan, green, violet, rose, mono, or matched to your wallpaper on Android 12 and newer
-- Light, dark and true black themes
+- Light, dark and true black themes; the dark background is neutral graphite
 
 **Alerts**
 - Rules as sentences: "CPU load above 90%"
@@ -50,7 +61,9 @@ Current versions: desktop 0.4.0, Android 1.3.0 (on its way to Google Play; the c
 - One-tap starter alerts; export and import as a file
 
 **Standby**
-- 29 always-on faces for a phone on a stand: 16 instrument faces, 8 art faces and 5 music faces, portrait and landscape, picked from a gallery
+- 35 always-on faces for a phone on a stand, in five collections (Clocks, Gauges, Graphs, Art, Music) with favourites, portrait and landscape, picked on the Faces tab
+- New in 1.4.0: Split, Dots, Cluster, Night, Cassette and Timer; the instrument faces are redrawn to fill the screen
+- A strip of thumbnails in standby to change face
 - Burn-in protection; dim when idle or stay bright; framed or full screen
 
 **Widget**
@@ -67,8 +80,12 @@ Current versions: desktop 0.4.0, Android 1.3.0 (on its way to Google Play; the c
 **Updates**
 - Google Play in-app updates, and a one-time list of what changed after updating
 
-## Desktop app 0.4.0
+## Desktop app 0.5.0
 
+- Tools: timers (1, 5, 10 and 25 minutes, custom, stopwatch) with a small always-on-top timer window, and jobs (saved commands the phone can start by number)
+- Settings in seven pages: General, Look, Connection, Phone access, Readings, Advanced, About
+- "Controls from the phone" also covers ending a task, display off, restart and shut down
+- Neutral graphite dark background in every look
 - System controls from the phone: volume, mute, lock and sleep. Off by default, Local and Tailscale only, protected by the pairing code and rate limited
 - The window shrinks to 720 x 520: tiles drop detail in steps and nothing overlaps
 - Now playing card, read from Windows media controls; shared with the phone over the local connection only
